@@ -11,11 +11,21 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { NavLink } from "react-router-dom";
+import logo from "../logo/logoNavbar.png";
+import logoText from "../logo/textLogo.png";
+import classes from "./MainNavigation.module.css";
 
-const pages = ["Products", "Pricing", "Blog", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  "Начало",
+  "Инфооо",
+  "За насс",
+  "Резултати",
+  "Джаджи",
+  "Събития",
+  "Контакти",
+];
+const settings = ["Профил", "Акаунт", "Управление", "Излизане"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,7 +50,8 @@ function ResponsiveAppBar() {
     <AppBar>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <img src={logo} alt="logo" className={classes.logoOn} />
+          <img src={logoText} alt="logo" className={classes.logoTextOn} />
           <Typography
             variant="h6"
             noWrap
@@ -51,13 +62,10 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
-          </Typography>
+          ></Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -93,7 +101,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <img src={logo} alt="logo" className={classes.logo} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -105,12 +113,13 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              // letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            LOGO
+            <img src={logo} alt="logo" className={classes.logoOff} />
+            <img src={logoText} alt="logo" className={classes.logoTextOff} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

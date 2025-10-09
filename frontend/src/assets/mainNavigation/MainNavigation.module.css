@@ -1,0 +1,28 @@
+.logoOn {
+    width: 80px;
+    height: 65px;
+}
+
+.logoOff {
+    width: 80px;
+    height: 65px;
+}
+
+.logoTextOn {
+    width: 80px;
+    height: 65px;
+}
+
+.logoTextOff {
+    width: 80px;
+    height: 65px;
+}
+
+@media only screen and (max-width: 900px) {
+    .logoTextOn {
+        display: none;
+    }
+    .logoOn {
+        display: none;
+    }
+}

@@ -7,6 +7,7 @@ import ForUsPage from "./assets/pages/ForUs";
 import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
+import Footer from "./assets/mainNavigation/Footer";
 
 const router = createBrowserRouter([
   {

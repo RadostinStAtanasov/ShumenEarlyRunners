@@ -48,7 +48,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src={logo} alt="logo" className={classes.logoOn} />

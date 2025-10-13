@@ -83,37 +83,34 @@ const Footer = () => {
               Бързи линкове
             </Typography>
             <Box display="flex" flexDirection="column" gap={1}>
-              <NavLink to="начало">
-                <FooterLink onClick={scrollToTop} aria-label="Navigate to Home">
-                  Начало
-                </FooterLink>
-              </NavLink>
-              <NavLink to="/за насс">
-                <FooterLink
-                  onClick={scrollToTop}
-                  aria-label="Navigate to Products"
-                >
-                  За нас
-                </FooterLink>
-              </NavLink>
-              <NavLink to="/резултати">
-                <FooterLink
-                  href="#"
-                  onClick={scrollToTop}
-                  aria-label="Navigate to Contact"
-                >
-                  Резултати
-                </FooterLink>
-              </NavLink>
-              <NavLink to="/джаджи">
-                <FooterLink
-                  href="#"
-                  onClick={scrollToTop}
-                  aria-label="Navigate to Contact"
-                >
-                  Джаджи
-                </FooterLink>
-              </NavLink>
+              <FooterLink
+                href="/начало"
+                onClick={scrollToTop}
+                aria-label="Navigate to Home"
+              >
+                Начало
+              </FooterLink>
+              <FooterLink
+                href="/за насс"
+                onClick={scrollToTop}
+                aria-label="Navigate to Products"
+              >
+                За нас
+              </FooterLink>
+              <FooterLink
+                href="/резултати"
+                onClick={scrollToTop}
+                aria-label="Navigate to Contact"
+              >
+                Резултати
+              </FooterLink>
+              <FooterLink
+                href="/джаджи"
+                onClick={scrollToTop}
+                aria-label="Navigate to Contact"
+              >
+                Джаджи
+              </FooterLink>
             </Box>
           </Grid>
 

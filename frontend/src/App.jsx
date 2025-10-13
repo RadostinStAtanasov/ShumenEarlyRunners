@@ -8,6 +8,7 @@ import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
 import Footer from "./assets/mainNavigation/Footer";
+import ProductsPage from "./assets/pages/Products";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
+      { path: "/продукти", element: <ProductsPage /> },
     ],
   },
 ]);

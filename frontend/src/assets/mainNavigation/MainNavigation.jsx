@@ -21,6 +21,7 @@ const pages = [
   "Инфооо",
   "За насс",
   "Резултати",
+  "Продукти",
   "Джаджи",
   "Събития",
   "Контакти",
@@ -101,7 +102,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          {/* <img src={logo} alt="logo" className={classes.logo} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -113,7 +113,6 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              // letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
             }}

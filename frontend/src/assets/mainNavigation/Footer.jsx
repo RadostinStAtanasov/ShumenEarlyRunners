@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import classes from "../mainNavigation/Footer.module.css";
+import { NavLink } from "react-router-dom";
+// import classes from "../mainNavigation/Footer.module.css";
 
 const StyledFooter = styled("footer")(({ theme }) => ({
   backgroundColor: "#1a237e",
@@ -82,35 +83,37 @@ const Footer = () => {
               Бързи линкове
             </Typography>
             <Box display="flex" flexDirection="column" gap={1}>
-              <FooterLink
-                href="#"
-                onClick={scrollToTop}
-                aria-label="Navigate to Home"
-              >
-                Начало
-              </FooterLink>
-
-              <FooterLink
-                href="#"
-                onClick={scrollToTop}
-                aria-label="Navigate to Products"
-              >
-                За нас
-              </FooterLink>
-              <FooterLink
-                href="#"
-                onClick={scrollToTop}
-                aria-label="Navigate to Contact"
-              >
-                Резултати
-              </FooterLink>
-              <FooterLink
-                href="#"
-                onClick={scrollToTop}
-                aria-label="Navigate to Contact"
-              >
-                Джаджи
-              </FooterLink>
+              <NavLink to="начало">
+                <FooterLink onClick={scrollToTop} aria-label="Navigate to Home">
+                  Начало
+                </FooterLink>
+              </NavLink>
+              <NavLink to="/за насс">
+                <FooterLink
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Products"
+                >
+                  За нас
+                </FooterLink>
+              </NavLink>
+              <NavLink to="/резултати">
+                <FooterLink
+                  href="#"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Contact"
+                >
+                  Резултати
+                </FooterLink>
+              </NavLink>
+              <NavLink to="/джаджи">
+                <FooterLink
+                  href="#"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Contact"
+                >
+                  Джаджи
+                </FooterLink>
+              </NavLink>
             </Box>
           </Grid>
 
@@ -122,7 +125,7 @@ const Footer = () => {
               <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box>
               <Box mb={1}>България, Шумен 9700</Box>
               <Box mb={1}>Телефон: +1 234 567 8900</Box>
-              <Box>Имеил: info@example.com</Box>
+              <Box>Имейл: info@example.com</Box>
             </Typography>
           </Grid>
 
@@ -178,16 +181,32 @@ const Footer = () => {
           </Typography>
 
           <Box>
-            <SocialIcon aria-label="Visit our Facebook page">
+            <SocialIcon
+              aria-label="Visit our FaceBook page"
+              onClick={() =>
+                window.open("https://www.facebook.com/groups/118564220164455")
+              }
+            >
               <FaFacebook />
             </SocialIcon>
-            <SocialIcon aria-label="Visit our Twitter page">
+            <SocialIcon
+              aria-label="Visit our Twitter page"
+              onClick={() => window.open("https://x.com/tweeter?lang=bg")}
+            >
               <FaTwitter />
             </SocialIcon>
-            <SocialIcon aria-label="Visit our Instagram page">
+            <SocialIcon
+              aria-label="Visit our Instagram page"
+              onClick={() =>
+                window.open("https://www.instagram.com/shumenearlyrunners/")
+              }
+            >
               <FaInstagram />
             </SocialIcon>
-            <SocialIcon aria-label="Visit our LinkedIn page">
+            <SocialIcon
+              aria-label="Visit our LinkedIn page"
+              onClick={() => window.open("https://www.linkedin.com/feed/")}
+            >
               <FaLinkedin />
             </SocialIcon>
           </Box>

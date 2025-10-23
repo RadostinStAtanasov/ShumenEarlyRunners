@@ -1,4 +1,5 @@
 .runEatSleep {
-    width: 600px;
-
+    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
 }

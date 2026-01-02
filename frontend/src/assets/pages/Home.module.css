@@ -1,9 +1,11 @@
 .firstVontainer {
     display: flex;
     justify-content: center;
+    margin-bottom: 50px;
+    /* background-image: url('../images/forest4.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%; */
 }
-
-
 
 .image {
     width: 500px; 
@@ -21,4 +23,13 @@
     /* border: 1px solid #ddd; */
     border-radius: 4px;
     padding: 5px;
+    /* opacity: 0.5; */
 }
+
+/* .images:hover {
+    opacity: 1;
+} */
+
+/* .buttonFiveKm {
+    margin-bottom: 50px;
+} */

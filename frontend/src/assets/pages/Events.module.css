@@ -8,6 +8,9 @@
     height: 300px;
     margin-bottom: 50px;
     margin-top: 50px;
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
 .images {

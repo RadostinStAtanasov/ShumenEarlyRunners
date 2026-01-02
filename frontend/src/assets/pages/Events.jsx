@@ -10,6 +10,7 @@ export default function EventsPage() {
         <div className={classes.image}>
           <a href="https://tracksport.live/e/sumensko-plato-2025">
             <img className={classes.images} src={shumenskoPlato} alt="" />
+            {/* <div className={classes.textOnImage}>Запиши се ТУК!</div> */}
           </a>
         </div>
         <div className={classes.image}>

@@ -1,6 +1,7 @@
 import classes from "./ForUs.module.css";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Box from "@mui/material/Box";
 // import first from "../images/1.jpg";
 // import second from "../images/2.jpg";
 // import third from "../images/3.jpg";
@@ -95,28 +96,44 @@ function srcset(image, size, rows = 1, cols = 1) {
 export default function ForUsPage() {
   return (
     <div className={classes.mainContainer}>
-      <ImageList
-        sx={{ width: 2000, height: 950 }}
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              className={classes.im}
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <Box sx={{ width: 1850, height: 850, overflowY: "scroll" }}>
+        <ImageList variant="masonry" cols={3} gap={8}>
+          {itemData.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                alt={item.title}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Box>
     </div>
+    // <div className={classes.mainContainer}>
+    //   <ImageList
+    //     sx={{ width: 2000, height: 950 }}
+    //     variant="quilted"
+    //     cols={4}
+    //     rowHeight={121}
+    //   >
+    //     {itemData.map((item) => (
+    //       <ImageListItem
+    //         key={item.img}
+    //         cols={item.cols || 1}
+    //         rows={item.rows || 1}
+    //       >
+    //         <img
+    //           className={classes.im}
+    //           {...srcset(item.img, 121, item.rows, item.cols)}
+    //           alt={item.title}
+    //           loading="lazy"
+    //         />
+    //       </ImageListItem>
+    //     ))}
+    //   </ImageList>
+    // </div>
   );
 }
 

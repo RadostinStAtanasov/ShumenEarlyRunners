@@ -1,4 +1,4 @@
-.firstVontainer {
+.firstContainer {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
@@ -26,10 +26,35 @@
     /* opacity: 0.5; */
 }
 
-/* .images:hover {
-    opacity: 1;
-} */
-
-/* .buttonFiveKm {
+.imageUpcomingEvents {
+    width: 300px; 
+    height: 300px;
     margin-bottom: 50px;
-} */
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.imagesUpcomingEvents {
+    width: 300px; 
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.NewsEventsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1 { 
+    text-align: center;
+}
+
+.textCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

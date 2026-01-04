@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { path: "/начало", element: <HomePage /> },
       { path: "/контакти", element: <ContactPage /> },
       { path: "/галерия", element: <GalleryPage /> },
-      { path: "/инфооо", element: <InfoPage /> },
+      { path: "/новини", element: <InfoPage /> },
       { path: "/за насс", element: <ForUsPage /> },
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },

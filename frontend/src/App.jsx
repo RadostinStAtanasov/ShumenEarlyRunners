@@ -7,6 +7,7 @@ import ForUsPage from "./assets/pages/ForUs";
 import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
+import GalleryPage from "./assets/pages/Gallery";
 import Footer from "./assets/mainNavigation/Footer";
 import ProductsPage from "./assets/pages/Products";
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/начало", element: <HomePage /> },
       { path: "/контакти", element: <ContactPage /> },
+      { path: "/галерия", element: <GalleryPage /> },
       { path: "/инфооо", element: <InfoPage /> },
       { path: "/за насс", element: <ForUsPage /> },
       { path: "/резултати", element: <ResultsPage /> },

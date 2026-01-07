@@ -1,0 +1,15 @@
+p { 
+    /* margin: 200px 200px; */
+    width: 1000px;
+    font-size: 20px;
+}
+
+.parafraphContainer {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 800px;
+    height:500px;
+}

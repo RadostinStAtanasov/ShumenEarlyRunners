@@ -10,6 +10,7 @@ import EventsPage from "./assets/pages/Events";
 import GalleryPage from "./assets/pages/Gallery";
 import Footer from "./assets/mainNavigation/Footer";
 import ProductsPage from "./assets/pages/Products";
+import MadaraPage from "./assets/pages/MadaraTrail";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
       { path: "/продукти", element: <ProductsPage /> },
+      { path: "/мадараТрейл", element: <MadaraPage /> },
     ],
   },
 ]);

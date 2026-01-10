@@ -14,7 +14,7 @@ import {
 import { styled } from "@mui/system";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-// import classes from "../mainNavigation/Footer.module.css";
+import classes from "../mainNavigation/Footer.module.css";
 
 const StyledFooter = styled("footer")(({ theme }) => ({
   backgroundColor: "#1a237e",
@@ -67,8 +67,8 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={3}>
+        <Grid container spacing={4} className={classes.fastLinks}>
+          <Grid item xs={12} sm={6} md={3} className={classes.forUs}>
             <Typography variant="h6" gutterBottom>
               За Нас
             </Typography>
@@ -76,6 +76,39 @@ const Footer = () => {
               Ние сме ангажирани да предоставяме изключителни услуги и решения
               на нашите ценни бягания.
             </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3} className>
+            <Typography variant="h6" gutterBottom>
+              Булетин
+            </Typography>
+            <Box component="form" noValidate>
+              <TextField
+                fullWidth
+                size="small"
+                placeholder="напиши своя имеил"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: 1,
+                  input: { color: "#fff" },
+                }}
+                aria-label="Newsletter subscription email input"
+              />
+              <Button
+                fullWidth
+                variant="contained"
+                sx={{
+                  mt: 2,
+                  backgroundColor: "#90caf9",
+                  "&:hover": { backgroundColor: "#42a5f5" },
+                }}
+                onClick={handleSubscribe}
+                aria-label="Subscribe to newsletter"
+              >
+                Абонирай се
+              </Button>
+            </Box>
           </Grid>
 
           <Grid item xs={12} sm={6} md={3}>
@@ -125,40 +158,6 @@ const Footer = () => {
               <Box>Имейл: info@example.com</Box>
             </Typography>
           </Grid>
-
-          {/* <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" gutterBottom>
-              Булетин
-            </Typography>
-            <Box component="form" noValidate>
-              <TextField
-                fullWidth
-                size="small"
-                placeholder="напиши своя имеил"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: 1,
-                  input: { color: "#fff" },
-                }}
-                aria-label="Newsletter subscription email input"
-              />
-              <Button
-                fullWidth
-                variant="contained"
-                sx={{
-                  mt: 2,
-                  backgroundColor: "#90caf9",
-                  "&:hover": { backgroundColor: "#42a5f5" },
-                }}
-                onClick={handleSubscribe}
-                aria-label="Subscribe to newsletter"
-              >
-                Абонирай се
-              </Button>
-            </Box>
-          </Grid> */}
         </Grid>
 
         <Box
@@ -177,7 +176,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Your Company Name. All rights reserved.
           </Typography>
 
-          <Box>
+          <Box className={classes.icons}>
             <SocialIcon
               aria-label="Visit our FaceBook page"
               onClick={() =>

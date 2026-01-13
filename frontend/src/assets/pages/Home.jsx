@@ -23,7 +23,7 @@ export default function HomePage() {
           <div className={classes.textCenter}>
             <h1>Предстоящи събития</h1>
             <div className={classes.imageUpcomingEvents}>
-              <a href="https://www.racecalendar.bg/run-race/madaratrail-2026">
+              <a href="http://localhost:5173/мадараТрейл">
                 <img
                   className={classes.imagesUpcomingEvents}
                   src={madaraRun}

@@ -1,0 +1,11 @@
+.cutTheText {
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 400px;
+}
+
+.containerParagraph {
+    width: 300px;
+}

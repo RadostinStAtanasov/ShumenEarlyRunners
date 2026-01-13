@@ -2,7 +2,6 @@ import madaraRun from "../images/madaraRun.jpg";
 import shumenskoPlato from "../images/shumenskoPlato2.jpg";
 import stenataRun from "../images/stenataRun.jpg";
 import classes from "../pages/Events.module.css";
-import MadaraTrailPage from "./MadaraTrail";
 
 export default function EventsPage() {
   return (
@@ -11,13 +10,10 @@ export default function EventsPage() {
         <div className={classes.image}>
           <a href="https://tracksport.live/e/sumensko-plato-2025">
             <img className={classes.images} src={shumenskoPlato} alt="" />
-            {/* <div className={classes.textOnImage}>Запиши се ТУК!</div> */}
           </a>
         </div>
         <div className={classes.image}>
-          {/* <a href="https://www.racecalendar.bg/run-race/madaratrail-2026"> */}
           <a href="http://localhost:5173/мадараТрейл">
-            {/* <a href={MadaraTrailPage}> */}
             <img className={classes.images} src={madaraRun} alt="" />
           </a>
         </div>

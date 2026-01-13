@@ -10,7 +10,7 @@ import forth2 from "../images/picsFromRunning/4.jpg";
 import five2 from "../images/picsFromRunning/5.jpg";
 import six2 from "../images/picsFromRunning/6.jpg";
 import seven2 from "../images/picsFromRunning/7.jpg";
-import eight2 from "../images/picsFromRunning/8.jpg";
+//import eight2 from "../images/picsFromRunning/8.jpg";
 import nine2 from "../images/picsFromRunning/9.jpg";
 import ten2 from "../images/picsFromRunning/10.jpg";
 import first3 from "../images/picsFromRunning/11.jpg";
@@ -54,8 +54,8 @@ import eight6 from "../images/picsFromRunning/48.jpg";
 import nine6 from "../images/picsFromRunning/49.jpg";
 import ten6 from "../images/picsFromRunning/50.jpg";
 import first7 from "../images/picsFromRunning/51.jpg";
-import second7 from "../images/picsFromRunning/52.jpg";
-import third7 from "../images/picsFromRunning/53.jpg";
+//import second7 from "../images/picsFromRunning/52.jpg";
+//import third7 from "../images/picsFromRunning/53.jpg";
 import forth7 from "../images/picsFromRunning/54.jpg";
 import five7 from "../images/picsFromRunning/55.jpg";
 import six7 from "../images/picsFromRunning/56.jpg";
@@ -134,10 +134,10 @@ const itemData = [
     img: seven2,
     title: "Basketball",
   },
-  {
-    img: eight2,
-    title: "Fern",
-  },
+  // {
+  //   img: eight2,
+  //   title: "Fern",
+  // },
   {
     img: nine2,
     title: "Mushrooms",
@@ -350,14 +350,14 @@ const itemData = [
     rows: 2,
     cols: 2,
   },
-  {
-    img: second7,
-    title: "Burger",
-  },
-  {
-    img: third7,
-    title: "Camera",
-  },
+  // {
+  //   img: second7,
+  //   title: "Burger",
+  // },
+  // {
+  //   img: third7,
+  //   title: "Camera",
+  // },
   {
     img: forth7,
     title: "Coffee",

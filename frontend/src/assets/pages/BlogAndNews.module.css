@@ -1,11 +1,63 @@
-.cutTheText {
-    overflow: hidden;
-    /* white-space: nowrap; */
-    text-overflow: ellipsis;
-    width: 400px;
-    height: 400px;
-}
-
 .containerParagraph {
     width: 300px;
+}
+
+.cutTheText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+    width: 394px;
+    font-size: 13px;
+}
+
+.imageContainer {
+    width: 364px;
+    height: 300px;
+}
+
+.imagesBlogAndNews {
+    width: 364px;
+    height: 246px;
+}
+
+.containerPostedBy {
+    width: 364px;
+    height: 54px;
+    font-size: 11px;
+}
+
+.headerCard {
+    font-size: 18px;
+}
+
+.containerLikesAndLeaveAComment {
+    width: 364px;
+    height: 24px;
+    font-size: 10px;
+    margin-bottom: 50px;
+}
+
+.mainCardContainer {
+    width: 394px;
+    height: 795px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.buttonContinuedReading {
+    border-radius: 0px;
+    border: 1px solid white ;
+    background-color: white;
+    color: black;
+    width: 156px;
+    height: 32px;
+    font-size: 11px;
+}
+
+.buttonContinuedReading:hover {
+    border-radius: 0px;
+    border: 1px solid white ;
+    background-color: black;
+    color: white;
 }

@@ -4,14 +4,22 @@ import classes from "../pages/BlogAndNews.module.css";
 export default function BlogAndNewsPage() {
   return (
     <>
-      <div className={classes.mainContainer}>
-        <a href="">
-          <img src={NikolaiGinchev} alt="" />
-        </a>
+      <div className={classes.mainCardContainer}>
+        <div className={classes.imageContainer}>
+          <a href="">
+            <img
+              className={classes.imagesBlogAndNews}
+              src={NikolaiGinchev}
+              alt=""
+            />
+          </a>
+        </div>
         <div className={classes.containerPostedBy}>
           Постед '{"Бай Радо"}' | 07 Декември | новина или блог да се направи
         </div>
-        <h2>Заглавие</h2>
+        <div className={classes.headerCard}>
+          <a href="">Заглавие</a>
+        </div>
         <div className={classes.containerParagraph}>
           <p className={classes.cutTheText}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
@@ -131,10 +139,15 @@ export default function BlogAndNewsPage() {
           </p>
         </div>
         <div className={classes.containerLikesAndLeaveAComment}>
-          /икона за лайкове/ /брояч на лайкове/ likes /икона за коментари/ leave
-          a comment
+          <a href="">
+            <FontAwesomeIcon icon="fa-solid fa-heart-circle-plus" />
+            likes
+          </a>
+          <a href="">/икона за коментари/ leave a comment</a>
         </div>
-        <button>бутон да продължиш да четеш</button>
+        <button className={classes.buttonContinuedReading}>
+          продължиш да четеш
+        </button>
       </div>
     </>
   );

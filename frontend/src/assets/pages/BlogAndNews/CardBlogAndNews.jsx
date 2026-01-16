@@ -1,7 +1,10 @@
-import NikolaiGinchev from "../images/picsFromRunning/1.jpg";
-import classes from "../pages/BlogAndNews.module.css";
+import NikolaiGinchev from "../../images/picsFromRunning/1.jpg";
+import classes from "../BlogAndNews/CardBlogAndNews.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export default function BlogAndNewsPage() {
+export default function CardBlogAndNewsPage() {
   return (
     <>
       <div className={classes.mainCardContainer}>
@@ -140,10 +143,13 @@ export default function BlogAndNewsPage() {
         </div>
         <div className={classes.containerLikesAndLeaveAComment}>
           <a href="">
-            <FontAwesomeIcon icon="fa-solid fa-heart-circle-plus" />
-            likes
+            <FontAwesomeIcon icon={faHeart} />
+            <span> likes</span>
           </a>
-          <a href="">/икона за коментари/ leave a comment</a>
+          <a href="">
+            <FontAwesomeIcon icon={faCommentDots} />
+            <span> leave a comment</span>
+          </a>
         </div>
         <button className={classes.buttonContinuedReading}>
           продължиш да четеш

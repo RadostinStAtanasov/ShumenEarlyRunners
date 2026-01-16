@@ -1,5 +1,9 @@
+/* main {
+    background-color: white;
+} */
+
 .containerParagraph {
-    width: 300px;
+    width: 384px;
 }
 
 .cutTheText {
@@ -7,18 +11,24 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 10;
     overflow: hidden;
-    width: 394px;
+    width: 380px;
     font-size: 13px;
 }
 
 .imageContainer {
-    width: 364px;
+    /* display: flex;
+    justify-content: center; */
+    width: 384px;
     height: 300px;
 }
 
 .imagesBlogAndNews {
     width: 364px;
     height: 246px;
+}
+
+.imagesBlogAndNews:hover {
+    transform: scale(1.1);
 }
 
 .containerPostedBy {
@@ -29,6 +39,7 @@
 
 .headerCard {
     font-size: 18px;
+    width: 366px;
 }
 
 .containerLikesAndLeaveAComment {
@@ -36,12 +47,19 @@
     height: 24px;
     font-size: 10px;
     margin-bottom: 50px;
+    
+}
+
+.containerLikesAndLeaveAComment a {
+    margin-right: 25px;
 }
 
 .mainCardContainer {
+    display: flex;
+    flex-direction: column;
     width: 394px;
     height: 795px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     border-radius: 5px;
 }
 

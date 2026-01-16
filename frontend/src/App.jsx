@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./assets/pages/Home";
 import ContactPage from "./assets/pages/Contact";
 import RootLayout from "./assets/Root";
-import NewsPage from "./assets/pages/BlogAndNews";
+import NewsPage from "./assets/pages/BlogAndNews/BlogAndNews";
 import ForUsPage from "./assets/pages/ForUs";
 import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";

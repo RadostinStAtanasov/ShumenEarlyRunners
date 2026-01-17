@@ -21,7 +21,7 @@ export default function CardBlogAndNewsPage() {
           Постед '{"Бай Радо"}' | 07 Декември | новина или блог да се направи
         </div>
         <div className={classes.headerCard}>
-          <a href="">Заглавие</a>
+          <a href="/Блог енд Нюзс/ню нюсс">Заглавие</a>
         </div>
         <div className={classes.containerParagraph}>
           <p className={classes.cutTheText}>
@@ -151,9 +151,11 @@ export default function CardBlogAndNewsPage() {
             <span> leave a comment</span>
           </a>
         </div>
-        <button className={classes.buttonContinuedReading}>
-          продължиш да четеш
-        </button>
+        <a href="/Блог енд Нюзс/ню нюсс">
+          <button className={classes.buttonContinuedReading}>
+            продължиш да четеш
+          </button>
+        </a>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ import magicBazar from "../images/pazarOfMagic.jpg";
 export default function HomePage() {
   return (
     <>
-      <div>
+      <div className={classes.mainContainer}>
         <div className={classes.firstContainer}>
           <div className={classes.image}>
             <img className={classes.images} src={fiveKmImage} alt="" />

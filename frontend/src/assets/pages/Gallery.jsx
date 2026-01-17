@@ -74,6 +74,33 @@ import eight8 from "../images/picsFromRunning/68.jpg";
 import nine8 from "../images/picsFromRunning/69.jpg";
 import ten8 from "../images/picsFromRunning/70.jpg";
 
+import fiveKm1 from "../images/5kmCommon/1-5km.jpg";
+import fiveKm2 from "../images/5kmCommon/2-5km.jpg";
+import fiveKm3 from "../images/5kmCommon/3-5km.jpg";
+import fiveKm4 from "../images/5kmCommon/4-5km.jpg";
+
+import ds1 from "../images/5kmCommon/DSC05701.jpg";
+import ds2 from "../images/5kmCommon/DSC05702.jpg";
+import ds3 from "../images/5kmCommon/DSC05703.jpg";
+import ds4 from "../images/5kmCommon/DSC05704.jpg";
+import ds5 from "../images/5kmCommon/DSC05705.jpg";
+import ds6 from "../images/5kmCommon/DSC05706.jpg";
+import ds7 from "../images/5kmCommon/DSC05707.jpg";
+import ds8 from "../images/5kmCommon/DSC05708.jpg";
+import ds9 from "../images/5kmCommon/DSC05709.jpg";
+import ds10 from "../images/5kmCommon/DSC05710.jpg";
+import ds11 from "../images/5kmCommon/DSC05712.jpg";
+import ds12 from "../images/5kmCommon/DSC05711.jpg";
+import ds13 from "../images/5kmCommon/DSC05713.jpg";
+import ds14 from "../images/5kmCommon/DSC05714.jpg";
+import ds15 from "../images/5kmCommon/DSC05715.jpg";
+import ds16 from "../images/5kmCommon/DSC05716.jpg";
+import ds17 from "../images/5kmCommon/DSC05717.jpg";
+import ds18 from "../images/5kmCommon/DSC05718.jpg";
+import ds19 from "../images/5kmCommon/DSC05719.jpg";
+import ds20 from "../images/5kmCommon/DSC05720.jpg";
+import ds21 from "../images/5kmCommon/DSC05721.jpg";
+
 export default function GalleryPage() {
   return (
     <div className={classes.mainContainer}>
@@ -99,6 +126,156 @@ export default function GalleryPage() {
 }
 
 const itemData = [
+  {
+    img: fiveKm1,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: fiveKm2,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: fiveKm3,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: fiveKm4,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds1,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds2,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds3,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds4,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds5,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds6,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds7,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds8,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds9,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds10,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds11,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds12,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds13,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds14,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds15,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds16,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds17,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds18,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds19,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds20,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ds21,
+    title: "Breakfast",
+    rows: 2,
+    cols: 2,
+  },
   {
     img: first2,
     title: "Breakfast",
@@ -134,10 +311,6 @@ const itemData = [
     img: seven2,
     title: "Basketball",
   },
-  // {
-  //   img: eight2,
-  //   title: "Fern",
-  // },
   {
     img: nine2,
     title: "Mushrooms",

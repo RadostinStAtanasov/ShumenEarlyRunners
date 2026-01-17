@@ -1,0 +1,35 @@
+.mainContainer {
+    font-style: normal;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleAndPostedBy {
+    width: 1000px;
+}
+
+.titleAndPostedBy div {
+    color: #828282;
+    font-size: 11px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 28px;
+    color: #a8a8a8;
+}
+
+img {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

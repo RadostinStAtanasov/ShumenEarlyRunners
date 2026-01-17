@@ -1,0 +1,22 @@
+.eventsContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image {
+    width: 300px; 
+    height: 300px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.images {
+    width: 300px; 
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}

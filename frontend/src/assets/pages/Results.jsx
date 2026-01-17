@@ -1,10 +1,10 @@
-import classes from "../pages/Events.module.css";
+import classes from "../pages/Results.module.css";
 import shumenskoPlato from "../images/shumenskoPlato2.jpg";
 import madaraImage from "../images/madaraRun.jpg";
 
 export default function ResultsPage() {
   return (
-    <div>
+    <div className={classes.eventsContainer}>
       <div className={classes.image}>
         <a href="https://tracksport.live/r/sumensko-plato-2025">
           <img className={classes.images} src={shumenskoPlato} alt="" />

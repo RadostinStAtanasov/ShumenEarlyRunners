@@ -12,6 +12,7 @@ import GalleryPage from "./assets/pages/Gallery";
 import ProductsPage from "./assets/pages/Products";
 import MadaraPage from "./assets/pages/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
+import GenerateBlogAndNewsPage from "./assets/pages/BlogAndNews/AddedBlogAndNews/GenerateTitleForNewBlogOrNews";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/контакти", element: <ContactPage /> },
       { path: "/галерия", element: <GalleryPage /> },
       { path: "/Блог енд Нюзс", element: <NewsPage /> },
+      { path: "/Блог енд Нюзс/ню нюсс", element: <GenerateBlogAndNewsPage /> },
       { path: "/заНасс", element: <ForUsPage /> },
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },

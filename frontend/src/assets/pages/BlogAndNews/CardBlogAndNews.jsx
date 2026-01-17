@@ -9,7 +9,7 @@ export default function CardBlogAndNewsPage() {
     <>
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
-          <a href="">
+          <a href="/Блог енд Нюзс/ню нюсс">
             <img
               className={classes.imagesBlogAndNews}
               src={NikolaiGinchev}

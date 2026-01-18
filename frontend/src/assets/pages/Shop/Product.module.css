@@ -28,11 +28,16 @@
 
 
 .button {
-    width: 300px;
+    width: 250px;
+    height: 34px;
+    border-color: #c50000;
+    padding: 0;
 }
 
 .button:hover {
-    background-color: rgb(109, 1, 1);
+    background-color: #c50000;
+    border-color: #c50000;
+    color: black;
 }
 
 .productName {

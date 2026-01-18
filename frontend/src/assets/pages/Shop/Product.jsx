@@ -5,7 +5,9 @@ export default function Product() {
   return (
     <div className={classes.mainContainerProduct}>
       <div className={classes.images}>
-        <img className={classes.image} src={tshirt} alt="" />
+        <a href="/магазин/детайли">
+          <img className={classes.image} src={tshirt} alt="" />
+        </a>
       </div>
       <div className={classes.productName}>Тениска Early Runners</div>
       <div className={classes.price}>26.36 € / 52лв.</div>

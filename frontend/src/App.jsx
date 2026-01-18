@@ -13,6 +13,7 @@ import ShopPage from "./assets/pages/Shop/Shop";
 import MadaraPage from "./assets/pages/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
 import GenerateBlogAndNewsPage from "./assets/pages/BlogAndNews/AddedBlogAndNews/GenerateTitleForNewBlogOrNews";
+import DetailPage from "./assets/pages/Shop/Detail";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
       { path: "/магазин", element: <ShopPage /> },
+      { path: "/магазин/детайли", element: <DetailPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },
       { path: "партньори", element: <PartnersPage /> },
     ],

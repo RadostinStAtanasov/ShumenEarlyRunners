@@ -73,8 +73,8 @@ const Footer = () => {
               За Нас
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
-              Ние сме ангажирани да предоставяме изключителни услуги и решения
-              на нашите ценни бягания.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              quisquam distinctio maxime enim ipsa dolorum.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={3} className>

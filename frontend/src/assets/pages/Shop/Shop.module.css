@@ -1,0 +1,10 @@
+.mainContainerShop {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 100px 100px;
+}
+
+.orderMessage {
+    background-color: rgb(177, 0, 0);
+}

@@ -18,6 +18,10 @@
     height: 65px;
 }
 
+.menuHeader {
+    height: 78px;
+}
+
 @media only screen and (max-width: 900px) {
     .logoTextOn {
         display: none;

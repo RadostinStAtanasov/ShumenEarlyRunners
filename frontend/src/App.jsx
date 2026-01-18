@@ -9,7 +9,7 @@ import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
 import GalleryPage from "./assets/pages/Gallery";
 //import Footer from "./assets/mainNavigation/Footer";
-import ProductsPage from "./assets/pages/Products";
+import ShopPage from "./assets/pages/Shop/Shop";
 import MadaraPage from "./assets/pages/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
 import GenerateBlogAndNewsPage from "./assets/pages/BlogAndNews/AddedBlogAndNews/GenerateTitleForNewBlogOrNews";
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
-      { path: "/продукти", element: <ProductsPage /> },
+      { path: "/магазин", element: <ShopPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },
       { path: "партньори", element: <PartnersPage /> },
     ],

@@ -5,7 +5,7 @@ import classes from "../pages/Events.module.css";
 
 export default function EventsPage() {
   return (
-    <div>
+    <div className={classes.mainContainer}>
       <div className={classes.habibi}>
         <div className={classes.image}>
           <a href="https://tracksport.live/e/sumensko-plato-2025">

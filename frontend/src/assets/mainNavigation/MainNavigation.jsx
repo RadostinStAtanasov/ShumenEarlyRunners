@@ -23,7 +23,7 @@ const pages = [
   "Галерия",
   "Събития",
   "Резултати",
-  "Продукти",
+  "Магазин",
   "Джаджи",
   "Партньори",
   "Контакти",
@@ -51,7 +51,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container className={classes.menuHeader} maxWidth="xl">
         <Toolbar disableGutters>
           <img src={logo} alt="logo" className={classes.logoOn} />
           <img src={logoText} alt="logo" className={classes.logoTextOn} />

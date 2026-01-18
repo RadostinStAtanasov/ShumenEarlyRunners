@@ -1,3 +1,7 @@
+.mainContainer {
+    margin-bottom: 100px;
+}
+
 .habibi {
     display: flex;
     justify-content: space-evenly;

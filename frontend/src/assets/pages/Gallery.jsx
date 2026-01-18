@@ -101,6 +101,8 @@ import ds19 from "../images/5kmCommon/DSC05719.jpg";
 import ds20 from "../images/5kmCommon/DSC05720.jpg";
 import ds21 from "../images/5kmCommon/DSC05721.jpg";
 
+//dont stop when you are tired, STOP when you are DONE!
+
 export default function GalleryPage() {
   return (
     <div className={classes.mainContainer}>
@@ -108,7 +110,6 @@ export default function GalleryPage() {
         <ImageList variant="masonry" cols={3} gap={8}>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
-              {/* <a href={item.img}> */}
               <img
                 href={item.img}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -116,7 +117,6 @@ export default function GalleryPage() {
                 alt={item.title}
                 loading="lazy"
               />
-              {/* </a> */}
             </ImageListItem>
           ))}
         </ImageList>

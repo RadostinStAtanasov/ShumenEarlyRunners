@@ -1,0 +1,72 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.imageDetails {
+    width: 562px;
+    height: 450px;
+}
+
+.image {
+     width: 562px;
+    height: 450px;
+}
+
+.containerDescription {
+    width: 462px;
+}
+
+p {
+    width: 462px;
+}
+
+.productTitle {
+    font-size: 20px;
+}
+
+.inStock {
+    font-size: 13px;
+    color: black;
+    background-color: #33cc33;
+    width: 98px;
+}
+
+.justUnderline {
+    width: 50px;
+    border-bottom: 1px solid white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+p {
+    margin-bottom: 50px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight:bolder;
+    margin-bottom: 25px;
+}
+
+.containerSexSize {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.sizeAndSex {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+select {
+    width: 215px;
+}

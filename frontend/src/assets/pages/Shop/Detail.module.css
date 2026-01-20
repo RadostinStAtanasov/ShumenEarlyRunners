@@ -70,3 +70,33 @@ label {
 select {
     width: 215px;
 }
+
+.numberQuantity {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    background-color: #a0a0a0de;
+    /* height: 50px; */
+}
+
+.btnsQuantity {
+    display: flex;
+    gap: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.inputTextNumber {
+    width: 50px;
+    text-align: center;
+}
+
+.buyButton {
+    text-decoration: none;
+    color: black;
+}
+
+.buyButton:hover {
+    text-decoration: none;
+    color: red;
+}

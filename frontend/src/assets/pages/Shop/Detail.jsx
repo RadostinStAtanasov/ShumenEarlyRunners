@@ -2,8 +2,20 @@ import classes from "../Shop/Detail.module.css";
 import tShirt1 from "../../images/tshirtImages/tshirt1.jpg";
 import tShirt2 from "../../images/tshirtImages/tshirt2.jpg";
 import tShirt3 from "../../images/tshirtImages/tshirt3.jpg";
+import tSDhirtER from "../../images/tshirtImages/tSDhirtER.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+import { useState } from "react";
 
 export default function DetailPage() {
+  const [counter, setCounter] = useState(1);
+  const incrementCounter = () => setCounter(counter + 1);
+  let decrementCounter = () => setCounter(counter - 1);
+  if (counter <= 0) {
+    decrementCounter = () => setCounter(1);
+  }
+
   return (
     <>
       <h1>
@@ -11,7 +23,7 @@ export default function DetailPage() {
       </h1>
       <div className={classes.mainContainer}>
         <div className={classes.imageDetails}>
-          <img className={classes.image} src={tShirt1} alt="" />
+          <img className={classes.image} src={tSDhirtER} alt="" />
         </div>
         <div className={classes.containerDescription}>
           <h2 className={classes.productTitle}>
@@ -54,9 +66,32 @@ export default function DetailPage() {
               </select>
             </div>
           </div>
-          <div>
-            <button>+1-</button>
-            <div>icona s koshnica i kupi nadpis</div>
+          <div className={classes.numberQuantity}>
+            <div className={classes.btnsQuantity}>
+              <input
+                type="button"
+                value="-"
+                className="minus"
+                onClick={decrementCounter}
+              />
+              <input
+                name="quantity"
+                value={counter}
+                className={classes.inputTextNumber}
+              />
+              <input
+                type="button"
+                value="+"
+                className="plus"
+                onClick={incrementCounter}
+              />
+            </div>
+            <div>
+              <a href="" className={classes.buyButton}>
+                КУПИ
+                <FontAwesomeIcon icon={faCartArrowDown} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

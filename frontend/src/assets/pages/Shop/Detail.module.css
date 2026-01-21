@@ -19,10 +19,6 @@
     width: 462px;
 }
 
-p {
-    width: 462px;
-}
-
 .productTitle {
     font-size: 20px;
 }
@@ -41,8 +37,9 @@ p {
     margin-bottom: 25px;
 }
 
-p {
+.paragraph {
     margin-bottom: 50px;
+    width: 462px;
 }
 
 .price {
@@ -62,7 +59,7 @@ p {
     flex-direction: column;
 }
 
-label {
+.label {
     font-size: 13px;
     font-weight: bolder;
     margin-bottom: 8px;
@@ -100,3 +97,10 @@ select {
     text-decoration: none;
     color: red;
 }
+
+
+/*
+    headyra s menuto da opravq
+
+    na4alnata stranica da izmislq ne6to background-image
+*/

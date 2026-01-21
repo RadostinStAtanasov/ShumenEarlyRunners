@@ -5,6 +5,7 @@ import tShirt3 from "../../images/tshirtImages/tshirt3.jpg";
 import tSDhirtER from "../../images/tshirtImages/tSDhirtER.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import DetailsGallery from "../../components/DetailsGallery.jsx";
 
 import { useState } from "react";
 
@@ -23,7 +24,8 @@ export default function DetailPage() {
       </h1>
       <div className={classes.mainContainer}>
         <div className={classes.imageDetails}>
-          <img className={classes.image} src={tSDhirtER} alt="" />
+          {/* <img className={classes.image} src={tSDhirtER} alt="" /> */}
+          <DetailsGallery />
         </div>
         <div className={classes.containerDescription}>
           <h2 className={classes.productTitle}>
@@ -31,7 +33,7 @@ export default function DetailPage() {
           </h2>
           <h3 className={classes.inStock}>в наличност</h3>
           <div className={classes.justUnderline}> </div>
-          <p>
+          <p className={classes.paragraph}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             totam accusantium pariatur. Optio aliquam quidem pariatur ut ex
             porro libero ullam commodi fugit, numquam similique atque aperiam
@@ -48,14 +50,14 @@ export default function DetailPage() {
           <div className={classes.price}>26.36 € / 52лв.</div>
           <div className={classes.containerSexSize}>
             <div className={classes.sizeAndSex}>
-              <label>МЪЖКА / ДАМСКА</label>
+              <label className={classes.label}>МЪЖКА / ДАМСКА</label>
               <select>
                 <option value="xs">мъжка</option>
                 <option value="s">дамска</option>
               </select>
             </div>
             <div className={classes.sizeAndSex}>
-              <label>РАЗМЕР</label>
+              <label className={classes.label}>РАЗМЕР</label>
               <select>
                 <option value="xs">XS</option>
                 <option value="s">S</option>

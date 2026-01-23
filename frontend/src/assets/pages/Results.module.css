@@ -21,3 +21,22 @@
     border-radius: 4px;
     padding: 5px;
 }
+.underline{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    margin: 25px 20px;
+    width: 155px;
+    border: 2px solid #ff9100;
+    margin-top: 8px;
+}
+.headerAndUnderline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerAndUnderline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

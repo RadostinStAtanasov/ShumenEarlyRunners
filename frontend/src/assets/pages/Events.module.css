@@ -29,3 +29,23 @@
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
   background-color: purple;
 }
+
+.underline{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    margin: 25px 20px;
+    width: 155px;
+    border: 2px solid #ff9100;
+    margin-top: 8px;
+}
+.headerAndUnderline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerAndUnderline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

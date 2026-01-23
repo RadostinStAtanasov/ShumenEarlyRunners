@@ -105,23 +105,29 @@ import ds21 from "../images/5kmCommon/DSC05721.jpg";
 
 export default function GalleryPage() {
   return (
-    <div className={classes.mainContainer}>
-      <Box sx={{ width: 1850, height: 850, overflowY: "scroll" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                href={item.img}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
-    </div>
+    <>
+      <div className={classes.headerAndUnderline}>
+        <h1 className={classes.title}>Галерия</h1>
+        <div className={classes.underline}></div>
+      </div>
+      <div className={classes.mainContainer}>
+        <Box sx={{ width: 1850, height: 850, overflowY: "scroll" }}>
+          <ImageList variant="masonry" cols={3} gap={8}>
+            {itemData.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  href={item.img}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+      </div>
+    </>
   );
 }
 

@@ -8,7 +8,10 @@ export default function ForUs() {
   return (
     <>
       <div>
-        <h1>За нас</h1>
+        <div className={classes.headerAndUnderline}>
+          <h1 className={classes.title}>За Нас</h1>
+          <div className={classes.underline}></div>
+        </div>
         <div className={classes.parafraphContainer}>
           <p>
             Сдружение „СК Ранобудни бегачи Шумен“ е създадено като продължение

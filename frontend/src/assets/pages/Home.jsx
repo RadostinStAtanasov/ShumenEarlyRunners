@@ -1,8 +1,8 @@
-import fiveKmImage from "../images/giveKmshNew.bmp";
+import fiveKmImage from "../images/logos/giveKmshNew.bmp";
 import classes from "../pages/Home.module.css";
 import Button from "@mui/material/Button";
-import madaraRun from "../images/madaraRun.jpg";
-import magicBazar from "../images/pazarOfMagic.jpg";
+import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
+import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
 
 export default function HomePage() {
   return (

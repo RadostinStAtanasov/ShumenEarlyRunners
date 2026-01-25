@@ -1,4 +1,4 @@
-import NikolaiGinchev from "../../images/picsFromRunning/1.jpg";
+import NikolaiGinchev from "../../images/Gallery/1.jpg";
 import classes from "../BlogAndNews/CardBlogAndNews.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";

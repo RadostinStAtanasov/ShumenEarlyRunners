@@ -1,6 +1,6 @@
-import madaraRun from "../images/madaraRun.jpg";
-import shumenskoPlato from "../images/shumenskoPlato2.jpg";
-import stenataRun from "../images/stenataRun.jpg";
+import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
+import shumenskoPlato from "../images/blogAndNewsImages/shumenskoPlato2.jpg";
+import stenataRun from "../images/blogAndNewsImages/stenataRun.jpg";
 import classes from "../pages/Events.module.css";
 
 export default function EventsPage() {

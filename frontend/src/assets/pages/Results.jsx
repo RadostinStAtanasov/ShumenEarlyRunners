@@ -1,6 +1,6 @@
 import classes from "../pages/Results.module.css";
-import shumenskoPlato from "../images/shumenskoPlato2.jpg";
-import madaraImage from "../images/madaraRun.jpg";
+import shumenskoPlato from "../images/blogAndNewsImages/shumenskoPlato2.jpg";
+import madaraImage from "../images/blogAndNewsImages/madaraRun.jpg";
 
 export default function ResultsPage() {
   return (

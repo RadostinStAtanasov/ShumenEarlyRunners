@@ -1,8 +1,8 @@
 import classes from "../pages/ForUs.module.css";
-import massRun from "../images/masovoRunning.jpg";
-import stenataWall from "../images/stenataRun.jpg";
-import mustacRun from "../images/mustacRun.jpg";
-import punkt from "../images/punkt.jpg";
+import massRun from "../images/blogAndNewsImages/masovoRunning.jpg";
+import stenataWall from "../images/blogAndNewsImages/stenataRun.jpg";
+import mustacRun from "../images/blogAndNewsImages/mustacRun.jpg";
+import punkt from "../images/blogAndNewsImages/punkt.jpg";
 
 export default function ForUs() {
   return (

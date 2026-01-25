@@ -17,3 +17,28 @@
     flex-direction: column;
     align-items: center;
 }
+
+.containerFormContacts {
+    border: solid 1px white;
+    width: 650px;
+}
+
+.images {
+    width: 650px;
+}
+
+.image {
+    width: 650px;
+}
+
+.containerForm {
+    display: flex;
+}
+
+.connectWithUsContainer {
+    height: 556px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

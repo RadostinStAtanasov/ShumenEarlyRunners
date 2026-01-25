@@ -1,4 +1,4 @@
-import madaraPlato from "../images/madarskoto-plato.jpg";
+import madaraPlato from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 import classes from "../pages/MadaraTrail.module.css";
 import Button from "@mui/material/Button";
 

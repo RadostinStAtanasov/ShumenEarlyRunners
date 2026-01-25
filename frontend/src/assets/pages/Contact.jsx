@@ -1,21 +1,31 @@
 import classes from "../pages/Contacts.module.css";
+import forest from "../images/home-page.bmp";
 
 export default function ContactPage() {
   return (
-    <>
+    <div className={classes.mainContainer}>
       <div className={classes.headerAndUnderline}>
         <h1 className={classes.title}>Контакти</h1>
         <div className={classes.underline}></div>
       </div>
-      <div className={classes.containerFormContacts}>
-        <div>На живо</div>
-        <div>По телефона</div>
-        <div>По емейла</div>
-        <div>Как да се свържеш с нас ела всяка събота на живо 08:30</div>
-        <img src="" alt="" />
-        ТУК или на ТЕЛ: 1234567890/ емайл: асдфас@yahoo.цом
+      <div className={classes.containerForm}>
+        <div className={classes.containerFormContacts}>
+          <div>На живо</div>
+          <div>По телефона</div>
+          <div>По емейла</div>
+          <div>Как да се свържеш с нас ела всяка събота на живо 08:30</div>
+          ТУК или на ТЕЛ: 1234567890/ емайл: асдфас@yahoo.цом
+        </div>
+        <div className={classes.images}>
+          <img className={classes.image} src={forest} alt="" />
+        </div>
+        <div className={classes.connectWithUsContainer}>
+          <input type="text" />
+          <textarea name="" id=""></textarea>
+          <button>Submit</button>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,3 +1,11 @@
+.mainContainer {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .underline{
     font-size: 20px;
     color: black;
@@ -21,14 +29,21 @@
 .containerFormContacts {
     border: solid 1px white;
     width: 650px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgb(81, 81, 81);
+    font-size: 18px;
 }
 
 .images {
-    width: 650px;
+    width: 850px;
 }
 
 .image {
-    width: 650px;
+    width: 850px;
 }
 
 .containerForm {
@@ -36,9 +51,80 @@
 }
 
 .connectWithUsContainer {
-    height: 556px;
+    height: 350px;
     width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.connectWithUsContainer span {
+    font-size: 18px;
+}
+
+.connectWithUsContainer input {
+    height: 20px;
+    width: 350px;
+}
+
+.connectWithUsContainer textarea {
+    height: 50px;
+    width: 350px;
+}
+
+.btnSubmit {
+    width: 150px;
+    height: 30px;
+    padding: 0;
+    font-size: 13px;
+}
+
+.icons {
+    padding-right: 10px;
+    color: burlywood
+}
+
+.rotateLeft .rotateRight {
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+.rotateRight {
+  float: left;
+  transform: rotate(7deg);
+  width: 284px; 
+  height: 384px;
+  border: solid #BFBFBF 1px;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.rotateLeft {
+  float: left;
+  transform: rotate(-8deg);
+  width: 284px; 
+  height: 384px;
+  border: solid grey 1px;
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.imagesContacts {
+    width: 284px; 
+    height: 244px;
+}
+
+.paragraph {
+    width: 284px;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+.containerImagesContacts {
+    height: 400px;
 }

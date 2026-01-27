@@ -3,6 +3,7 @@ import classes from "../pages/Home.module.css";
 import Button from "@mui/material/Button";
 import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
+import iRun from "../images/iRun.jpg";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,12 @@ export default function HomePage() {
         <div className={classes.firstContainer}>
           <div className={classes.image}>
             <img className={classes.images} src={fiveKmImage} alt="" />
+          </div>
+
+          <div>
+            <img className={classes.iRUnLogo} src={iRun} alt="" />
+          </div>
+          <div>
             <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
               <Button variant="contained" className={classes.buttonFiveKm}>
                 Виж къде бягаме всяка събота 5км от 08:30 на Шуменското плато

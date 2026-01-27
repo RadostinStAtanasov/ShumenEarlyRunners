@@ -27,7 +27,7 @@
 }
 
 .containerFormContacts {
-    border: solid 1px white;
+    /* border: solid 1px white; */
     width: 650px;
     height: 300px;
     display: flex;
@@ -36,6 +36,7 @@
     gap: 15px;
     background-color: rgb(81, 81, 81);
     font-size: 18px;
+    border-radius: 5px;
 }
 
 .images {
@@ -81,6 +82,7 @@
 }
 
 .icons {
+    padding-left: 20px;
     padding-right: 10px;
     color: burlywood
 }

@@ -17,9 +17,35 @@
     margin-top: 20px;
 }
 
+.textSecondContainer h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.iconTextParagraph h6 {
+    font-size: 18px;
+}
+
+.iconTextParagraph p {
+    font-size: 14px;
+    width: 650px;
+    line-height: 1.1;
+}
+
 .firstContainerTitle {
     display: flex;
     justify-content: space-between;
+}
+
+.secondContTextWhyRun {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+}
+
+.secondConOurKeyBen {
+    width: 600px;
 }
 
 .firstContainerTextContainer {
@@ -92,6 +118,82 @@
     /* border: solid red 1px; */
     background-color: whitesmoke;
     border-radius: 20px;
+}
+
+.secondConBackGrdn {
+    /* background-color: rgb(108, 108, 108); */
+    display: flex;
+    width: 1400px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.fourPictures {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.secondConIconAndText {
+    display: flex;
+
+}
+
+.secondConIconAndText p {
+    margin: 0;
+}
+
+.secondConIconAndText h6 {
+    margin: 0;
+}
+
+.iconSecondCon1 {
+    font-size: 28px;
+    height: 50px;
+    margin-right: 10px;
+    color: lightcoral;
+}
+.iconSecondCon2 {
+    font-size: 28px;
+    height: 50px;
+    margin-right: 10px;
+    color: lightpink;
+}
+.iconSecondCon3 {
+    font-size: 28px;
+    height: 50px;
+    margin-right: 10px;
+    color: rgb(47, 43, 43);
+}
+.iconSecondCon4 {
+    font-size: 28px;
+    height: 50px;
+    margin-right: 10px;
+    color: lightsteelblue;
+}
+
+.secondContainerWhyToRun {
+    /* border: solid red 1px; */
+    display: flex;
+    justify-content: center;
+    background-color: rgb(70, 70, 70);
+    margin-top: 50px;
+}
+
+.imageSecondContainer1 {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.imageSecondContainer2 {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 .image {

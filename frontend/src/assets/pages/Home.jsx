@@ -1,11 +1,19 @@
-import fiveKmImage from "../images/logos/giveKmshNew.bmp";
-import fiveKmImage2 from "../images/logos/5kmshNewNew.bmp";
+import pametnik2 from "../images/logos/home-page2.jpg";
 import classes from "../pages/Home.module.css";
-import Button from "@mui/material/Button";
 import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
-import pametnik from "../images/logos/homePageLogo.jpg";
-import pametnik2 from "../images/logos/home-page2.jpg";
+
+import allStars from "../images/home-page.jpg";
+import shumenskataKrepost from "../images/glavna-snimka-shumenska-krepost.jpg";
+import pametnik from "../images/monument.jpg";
+import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBrain,
+  faHandHoldingHeart,
+  faPersonRunning,
+  faWeightScale,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function HomePage() {
   return (
@@ -29,7 +37,7 @@ export default function HomePage() {
             </div>
           </div>
         </div> */}
-        <div className={classes.firstContainerTitle}>
+        <section className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
             <div className={classes.firstContainerTextContainer}>
               <h3>Твоето мечтано пътуване към бягането</h3>
@@ -60,7 +68,94 @@ export default function HomePage() {
           <div className={classes.imageFirstContainer}>
             <img className={classes.imageHomePage} src={pametnik2} alt="" />
           </div>
-        </div>
+        </section>
+        <section className={classes.secondContainerWhyToRun}>
+          <div className={classes.secondConBackGrdn}>
+            <div className={classes.fourPictures}>
+              <img
+                className={classes.imageSecondContainer1}
+                src={pametnik}
+                alt=""
+              />
+              <img
+                className={classes.imageSecondContainer2}
+                src={allStars}
+                alt=""
+              />
+              <img
+                className={classes.imageSecondContainer2}
+                src={massRunn}
+                alt=""
+              />
+              <img
+                className={classes.imageSecondContainer1}
+                src={shumenskataKrepost}
+                alt=""
+              />
+            </div>
+            <div className={classes.secondConOurKeyBen}>
+              <div className={classes.textSecondContainer}>
+                <h4>Бенефити от бягането</h4>
+                <h2>Защо да бягаш изобщо</h2>
+                <div className={classes.secondContTextWhyRun}>
+                  <div className={classes.secondConIconAndText}>
+                    <FontAwesomeIcon
+                      className={classes.iconSecondCon1}
+                      icon={faHandHoldingHeart}
+                    />
+                    <div className={classes.iconTextParagraph}>
+                      <h6>По-добро сърдечно-съдово здраве</h6>
+                      <p>Укрепването на сърцето и кръвоносните съдове.</p>
+                    </div>
+                  </div>
+                  <div className={classes.secondConIconAndText}>
+                    <FontAwesomeIcon
+                      className={classes.iconSecondCon2}
+                      icon={faBrain}
+                    />
+                    <div className={classes.iconTextParagraph}>
+                      <h6>По-добро психично здраве</h6>
+                      <p>
+                        Доказано е, че физическата активност сред природата
+                        подобрява настроението, намалява стреса и повишава
+                        чувството за благополучие.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={classes.secondConIconAndText}>
+                    <FontAwesomeIcon
+                      className={classes.iconSecondCon3}
+                      icon={faPersonRunning}
+                    />
+                    <div className={classes.iconTextParagraph}>
+                      <h6>
+                        Подобряване на физическото състояние и издръжливостта
+                      </h6>
+                      <p>
+                        Редовното бягане помага заувеличаване на капацитета на
+                        белите дробове и подобряване на издръжливостта, което
+                        улеснява извършването на ежедневните дейности.
+                      </p>
+                    </div>
+                  </div>
+                  <div className={classes.secondConIconAndText}>
+                    <FontAwesomeIcon
+                      className={classes.iconSecondCon4}
+                      icon={faWeightScale}
+                    />
+                    <div className={classes.iconTextParagraph}>
+                      <h6>Контрол над теглото</h6>
+                      <p>
+                        Бягането е енергична дейност, което означава, че
+                        изгаряте калории ефективно.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <div className={classes.NewsEventsContainer}>
           <div className={classes.textCenter}>
             <h1>Предстоящи събития</h1>

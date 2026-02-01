@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
 import pametnik from "../images/logos/homePageLogo.jpg";
+import pametnik2 from "../images/logos/home-page2.jpg";
 
 export default function HomePage() {
   return (
@@ -30,30 +31,34 @@ export default function HomePage() {
         </div> */}
         <div className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
-            <h3>Your dream journey</h3>
-            <h2>Explorer Destinations Like Nver Before</h2>
-            <p>
-              Discover stunning destinations and seamless travel experiences
-              tailored just for you
-            </p>
-            <button>Explorer destinations</button>
-            <div className={classes.firstCOntainerFooter}>
-              <div>
-                <span>40+</span>
-                <span>Exotic Destinations</span>
-              </div>
-              <div>
-                <span>70+</span>
-                <span>Exclusive Offers</span>
-              </div>
-              <div>
-                <span>250+</span>
-                <span>Worldwide Adventures</span>
+            <div className={classes.firstContainerTextContainer}>
+              <h3>Твоето мечтано пътуване към бягането</h3>
+              <h2 className={classes.secondTitle}>
+                Открии себе си и нови дестинации за бягане в Шумен и околността
+              </h2>
+              <p>
+                Открийте зашеметяващи дестинации и безпроблемни пътешествия,
+                създадени специално за вас
+              </p>
+              <button>Открии дестинации</button>
+              <div className={classes.firstCоntainerFooter}>
+                <div className={classes.explorerDestinations}>
+                  <span className={classes.text}>40+</span>
+                  <span>Exotic Destinations</span>
+                </div>
+                <div className={classes.explorerDestinations}>
+                  <span>70+</span>
+                  <span>Exclusive Offers</span>
+                </div>
+                <div className={classes.explorerDestinations}>
+                  <span>250+</span>
+                  <span>Worldwide Adventures</span>
+                </div>
               </div>
             </div>
           </section>
           <div className={classes.imageFirstContainer}>
-            <img src={pametnik} alt="" />
+            <img className={classes.imageHomePage} src={pametnik2} alt="" />
           </div>
         </div>
         <div className={classes.NewsEventsContainer}>

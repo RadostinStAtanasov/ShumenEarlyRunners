@@ -16,14 +16,32 @@
 
 .firstContainerTitle {
     display: flex;
+    justify-content: space-between;
+}
+
+.firstContainerTextContainer {
+    width: 650px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.secondTitle {
+    font-size: 38px;
+    font-weight: 800;
 }
 
 .firstContainerText {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
     width: 800px;
 }
 
-img { 
+.imageHomePage { 
     margin: 0;
+    margin-top: -20px;
 }
 
 .containerCard5Km {
@@ -37,6 +55,22 @@ img {
     height: 100px;
     margin: 0;
     border-radius: 50%;
+}
+
+.explorerDestinations {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-weight: 2000;
+}
+
+.explorerDestinations span:nth-child(1) {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(75, 207, 251)
 }
 
 .firstContainer {
@@ -114,43 +148,8 @@ h1 {
     width: 500px;
 }
 
-
-/* .flipcard {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
+.firstCоntainerFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
-.flipcardinner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.flipcard:hover .flipcardinner {
-  transform: rotateY(180deg);
-}
-
-.flipcardfront, .flipcardback {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flipcardfront {
-  background-color: #bbb;
-  color: black;
-}
-
-.flipcardback {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateY(180deg);
-} */

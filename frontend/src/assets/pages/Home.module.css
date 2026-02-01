@@ -1,4 +1,7 @@
 .mainContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1920px;
+
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
@@ -69,7 +72,7 @@
 .explorerDestinations span:nth-child(1) {
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     color: rgb(75, 207, 251)
 }
 
@@ -106,7 +109,6 @@
     height: 500px;
     border-radius: 4px;
     padding: 5px;
-    /* border-radius: 25px; */
 }
 
 .imageUpcomingEvents {
@@ -117,6 +119,24 @@
     position: relative;
     text-align: center;
     color: white;
+}
+
+.btnHomePage {
+    width: 400px;
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../images/ERImage.jpg');
+    color: black;
+    font-weight: 600;
+    background-color: lightblue;
+    /* -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0% 100%); */
+}
+
+.btnHomePage:hover {
+    width: 400px;
+    clip-path: polygon(34% 6%, 88% 7%, 97% 33%, 97% 60%, 69% 88%, 30% 95%, 4% 60%, 5% 34%);
+
+    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.6)), url('../images/ERImage.jpg');
+    color: black;
+    font-weight: 600;
 }
 
 .imagesUpcomingEvents {
@@ -152,4 +172,5 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 25px;
 }

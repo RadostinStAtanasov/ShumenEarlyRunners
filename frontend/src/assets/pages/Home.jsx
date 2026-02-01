@@ -40,19 +40,19 @@ export default function HomePage() {
                 Открийте зашеметяващи дестинации и безпроблемни пътешествия,
                 създадени специално за вас
               </p>
-              <button>Открии дестинации</button>
+              <button className={classes.btnHomePage}>Открии дестинации</button>
               <div className={classes.firstCоntainerFooter}>
                 <div className={classes.explorerDestinations}>
                   <span className={classes.text}>40+</span>
-                  <span>Exotic Destinations</span>
+                  <span>Екзотични бягания</span>
                 </div>
                 <div className={classes.explorerDestinations}>
                   <span>70+</span>
-                  <span>Exclusive Offers</span>
+                  <span>Трейл мероприятия</span>
                 </div>
                 <div className={classes.explorerDestinations}>
                   <span>250+</span>
-                  <span>Worldwide Adventures</span>
+                  <span>Асфалтови бягания</span>
                 </div>
               </div>
             </div>

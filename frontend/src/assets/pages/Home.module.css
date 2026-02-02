@@ -17,6 +17,50 @@
     margin-top: 20px;
 }
 
+.topCTCard {
+    border: solid red 1px;
+    border-radius: 10px;
+    width: 250px;
+    height: 400px;
+    background-image: url('../images/triteMashini.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 350px 450px;
+}
+
+.footerCard span:nth-child(1) {
+    font-size: 28px;
+}
+
+.titleCard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.titleCard span:nth-child(1) {
+    font-size: 22px;
+}
+
+.titleCard span:nth-child(1) span{
+    font-size:14px;
+}
+
+.titleCard span:nth-child(2) {
+    font-size: 22px;
+}
+
+.titleCard span:nth-child(2) span{
+    font-size:14px;
+}
+
+
+.imageCard {
+    width: 200px;
+    height: 100px;
+}
+
+
 .textSecondContainer h2 {
     font-size: 28px;
     font-weight: 600;
@@ -77,6 +121,9 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 150px;
+
+    position: relative;
+    top: -700px
 }
 
 .iRUnLogo {
@@ -103,21 +150,19 @@
 }
 
 .firstContainer {
-    /* background-image: url('../images/ERImage.jpg'); */
     background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('../images/ERImage.jpg');
-    /* background-size: cover; */
-    /* filter: blur(4px); */
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-around;
     margin-bottom: 150px;
     margin-top: 150px;
-    width: 540px;
-    height: 800px;
-    /* border: solid red 1px; */
+    width: 270px;
+    height: 400px;
     background-color: whitesmoke;
     border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .secondConBackGrdn {
@@ -197,20 +242,21 @@
 }
 
 .image {
-    width: 500px; 
-    height: 500px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    width: 250px; 
+    height: 250px;
+    /* margin-bottom: 50px;
+    margin-top: 50px; */
     position: relative;
     text-align: center;
     color: white;
 }
 
 .images {
-    width: 492px; 
-    height: 500px;
+    width: 200px; 
+    height: 200px;
     border-radius: 4px;
     padding: 5px;
+    margin: 0;
 }
 
 .imageUpcomingEvents {
@@ -250,6 +296,7 @@
 }
 
 .NewsEventsContainer {
+    margin-top: -300px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -267,7 +314,8 @@ h1 {
 }
 
 .buttonFiveKm {
-    width: 500px;
+    width: 250px;
+    font-size: 8px !important;
 }
 
 .firstCоntainerFooter {

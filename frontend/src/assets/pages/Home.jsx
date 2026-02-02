@@ -3,10 +3,12 @@ import classes from "../pages/Home.module.css";
 import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
 
+import Button from "@mui/material/Button";
 import allStars from "../images/home-page.jpg";
 import shumenskataKrepost from "../images/glavna-snimka-shumenska-krepost.jpg";
 import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
+import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBrain,
@@ -19,24 +21,6 @@ export default function HomePage() {
   return (
     <>
       <div className={classes.mainContainer}>
-        {/* <div className={classes.containerCard5Km}>
-
-          <div className={classes.firstContainer}>
-            <div className={classes.image}>
-              <img className={classes.images} src={fiveKmImage2} alt="" />
-            </div>
-
-     
-            <div>
-              <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
-                <Button variant="contained" className={classes.buttonFiveKm}>
-                  Виж къде бягаме всяка събота 5км от 08:30 на Шуменското плато
-                  Кликкк..!!!
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div> */}
         <section className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
             <div className={classes.firstContainerTextContainer}>
@@ -156,7 +140,25 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <div className={classes.NewsEventsContainer}>
+
+        <div className={classes.containerCard5Km}>
+          <div className={classes.firstContainer}>
+            <div className={classes.image}>
+              <img className={classes.images} src={fiveKmImage2} alt="" />
+            </div>
+
+            <div>
+              <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
+                <Button variant="contained" className={classes.buttonFiveKm}>
+                  Виж къде бягаме всяка събота 5км от 08:30 на Шуменското плато
+                  Кликкк..!!!
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <section className={classes.NewsEventsContainer}>
           <div className={classes.textCenter}>
             <h1>Предстоящи събития</h1>
             <div className={classes.imageUpcomingEvents}>
@@ -181,7 +183,30 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section className={classes.topCommonTracks}>
+          <div className={classes.topComTracksContainer}>
+            <h2>Топ тракове за бягане на ШП</h2>
+            <div className={classes.topCTCard}>
+              <div className={classes.titleCard}>
+                <span>
+                  5 <span>km</span>{" "}
+                </span>
+                <span>
+                  3:47 <span>pace</span>{" "}
+                </span>
+              </div>
+              <div>
+                <img className={classes.imageCard} src="" alt="" />
+              </div>
+              <div className={classes.footerCard}>
+                <span>Всяка събота 5км RUN</span>
+                <div>Поредния съботен ден гонейки под 17 мин. 5км</div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

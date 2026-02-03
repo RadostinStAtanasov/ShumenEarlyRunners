@@ -27,6 +27,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 350px 450px;
+         display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footerCard {
+    color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 .footerCard span:nth-child(1) {

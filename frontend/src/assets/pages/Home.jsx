@@ -185,7 +185,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className={classes.topCommonTracks}>
+        {/* <section className={classes.topCommonTracks}>
           <div className={classes.topComTracksContainer}>
             <h2>Топ тракове за бягане на ШП</h2>
             <div className={classes.topCTCard}>
@@ -197,16 +197,14 @@ export default function HomePage() {
                   3:47 <span>pace</span>{" "}
                 </span>
               </div>
-              <div>
-                <img className={classes.imageCard} src="" alt="" />
-              </div>
+             
               <div className={classes.footerCard}>
                 <span>Всяка събота 5км RUN</span>
                 <div>Поредния съботен ден гонейки под 17 мин. 5км</div>
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

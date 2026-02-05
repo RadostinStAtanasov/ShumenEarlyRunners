@@ -8,7 +8,6 @@ import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
 import GalleryPage from "./assets/pages/Gallery";
-//import Footer from "./assets/mainNavigation/Footer";
 import ShopPage from "./assets/pages/Shop/Shop";
 import MadaraPage from "./assets/pages/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";

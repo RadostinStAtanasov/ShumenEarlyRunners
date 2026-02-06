@@ -1,6 +1,6 @@
 import classes from "../pages/Contacts.module.css";
 import monument from "../images/pametnik.jpg";
-import shumenskaKrepost from "../images/glavna-snimka-shumenska-krepost.jpg";
+import shumenskaKrepost from "../images/shumenska-krepost.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";

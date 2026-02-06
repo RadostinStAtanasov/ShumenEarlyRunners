@@ -5,7 +5,7 @@ import tShirt3 from "../../images/tshirtImages/tshirt3.jpg";
 import tSDhirtER from "../../images/tshirtImages/tSDhirtER.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
-import DetailsGallery from "../../components/DetailsGallery.jsx";
+// import DetailsGallery from "../../components/DetailsGallery.jsx";
 
 import { useState } from "react";
 
@@ -25,7 +25,7 @@ export default function DetailPage() {
       <div className={classes.mainContainer}>
         <div className={classes.imageDetails}>
           {/* <img className={classes.image} src={tSDhirtER} alt="" /> */}
-          <DetailsGallery />
+          {/* <DetailsGallery /> */}
         </div>
         <div className={classes.containerDescription}>
           <h2 className={classes.productTitle}>

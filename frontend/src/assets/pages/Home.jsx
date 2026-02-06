@@ -5,7 +5,7 @@ import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
 
 import Button from "@mui/material/Button";
 import allStars from "../images/home-page.jpg";
-import shumenskataKrepost from "../images/glavna-snimka-shumenska-krepost.jpg";
+import shumenskataKrepost from "../images/shumenska-krepost.jpg";
 import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
 import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";

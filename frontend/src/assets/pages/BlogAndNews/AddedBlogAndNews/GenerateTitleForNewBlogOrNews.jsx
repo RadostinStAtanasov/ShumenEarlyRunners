@@ -1,10 +1,10 @@
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 
 import image1 from "../../../images/Gallery/71.jpg";
-import image2 from "../../../images/Gallery/72.jpg";
-import image3 from "../../../images/Gallery/73.jpg";
-import image4 from "../../../images/Gallery/74.jpg";
-import image5 from "../../../images/Gallery/75.jpg";
+import image2 from "../../../images/Gallery/71.jpg";
+import image3 from "../../../images/Gallery/71.jpg";
+import image4 from "../../../images/Gallery/71.jpg";
+import image5 from "../../../images/Gallery/71.jpg";
 
 export default function GenerateTitleForNewBlogOrNews() {
   return (

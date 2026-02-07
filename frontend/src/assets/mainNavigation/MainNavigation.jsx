@@ -12,8 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { NavLink } from "react-router-dom";
-import logo from "../logo/logoNavbar.png";
-import logoText from "../logo/textLogo.png";
+import logo from "../images/logos/logoNavbar.png";
+import logoText from "../images/logos/textLogo.png";
 import classes from "./MainNavigation.module.css";
 
 const pages = [

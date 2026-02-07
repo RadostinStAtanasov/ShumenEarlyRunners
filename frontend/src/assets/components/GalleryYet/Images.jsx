@@ -1,4 +1,4 @@
-import classes from "../components/Images.module.css";
+import classes from "./Images.module.css";
 
 export default function Images(props) {
   const { data, onClick } = props;

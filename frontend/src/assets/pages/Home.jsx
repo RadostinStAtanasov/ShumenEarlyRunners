@@ -32,7 +32,11 @@ export default function HomePage() {
                 Открийте зашеметяващи дестинации и безпроблемни пътешествия,
                 създадени специално за вас
               </p>
-              <button className={classes.btnHomePage}>Открии дестинации</button>
+              <a href="">
+                <button className={classes.btnHomePage}>
+                  Открии дестинации
+                </button>
+              </a>
               <div className={classes.firstCоntainerFooter}>
                 <div className={classes.explorerDestinations}>
                   <span className={classes.text}>40+</span>

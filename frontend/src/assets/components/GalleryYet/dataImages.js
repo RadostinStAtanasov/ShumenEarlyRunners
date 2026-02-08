@@ -1,4 +1,3 @@
-//import ds1 from "../../images/5kmCommon/DSC05702.jpg";
 import ds2 from "../../images/5kmCommon/DSC05702.jpg";
 import ds3 from "../../images/5kmCommon/DSC05703.jpg";
 import ds4 from "../../images/5kmCommon/DSC05704.jpg";
@@ -98,11 +97,6 @@ import i80 from "../../images/Gallery/80.jpg";
 import i81 from "../../images/Gallery/81.jpg";
 
 export const slides = [
-  // {
-  //   src: ds1,
-  //   title: "Irun logo",
-  //   desciption: "image1 caption",
-  // },
   {
     src: ds2,
     title: "Irun logo2",

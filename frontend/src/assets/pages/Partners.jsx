@@ -8,6 +8,7 @@ import shumenPytAvtotransport from "../images/logos/shumenPytnicheskiAvtotranspo
 import ilchovHill from "../images/logos/cyclingClubIlchovHills.jpg";
 import iRun from "../images/logos/iRun.jpg";
 import marchela from "../images/logos/marchela.jpg";
+import allInOne from "../images/logos/allInOne.jpg";
 
 export default function PartnersPage() {
   return (
@@ -46,7 +47,7 @@ export default function PartnersPage() {
                     “ELUMATEC”.
                   </p>
                   <a href="https://enev-bg.com/">
-                    <button>Open</button>
+                    <button>ERun</button>
                   </a>
                 </div>
               </div>
@@ -89,7 +90,7 @@ export default function PartnersPage() {
                     </div> */}
                   </p>
                   <a href="https://mussalains.com/">
-                    <button>Open</button>
+                    <button>MURun</button>
                   </a>
                 </div>
               </div>
@@ -120,7 +121,7 @@ export default function PartnersPage() {
                     около 250 – 300 м.
                   </p>
                   <a href="https://www.shumen.bg/bg/">
-                    <button>Open</button>
+                    <button>ShRun</button>
                   </a>
                 </div>
               </div>
@@ -150,7 +151,7 @@ export default function PartnersPage() {
                     www.tvshumen.tv
                   </p>
                   <a href="https://tvshumen.bg/">
-                    <button>Open</button>
+                    <button>TVRun</button>
                   </a>
                 </div>
               </div>
@@ -180,7 +181,7 @@ export default function PartnersPage() {
                     ООД от братята Жечко и Красен Кюркчиеви.
                   </p>
                   <a href="https://tesy.bg/">
-                    <button>Open</button>
+                    <button>TRun</button>
                   </a>
                 </div>
               </div>
@@ -211,7 +212,7 @@ export default function PartnersPage() {
                     пътни превозни средства...
                   </p>
                   <a href="https://www.shumenpat.com/">
-                    <button>Open</button>
+                    <button>ПАRun</button>
                   </a>
                 </div>
               </div>
@@ -243,7 +244,7 @@ export default function PartnersPage() {
                     спускания по технични и стръмни наклони...
                   </p>
                   <a href="https://ilchovbair.com/">
-                    <button>Open</button>
+                    <button>IBRun</button>
                   </a>
                 </div>
               </div>
@@ -276,7 +277,7 @@ export default function PartnersPage() {
                     iRun.bg ста
                   </p>
                   <a href="https://www.irun.bg/">
-                    <button>Open</button>
+                    <button>iRun</button>
                   </a>
                 </div>
               </div>
@@ -308,9 +309,31 @@ export default function PartnersPage() {
                     всеки ден, до всяка точка на България.
                   </p>
                   <a href="https://marchelaltd.com/">
-                    <button>Open</button>
+                    <button>mRun</button>
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.flipCardBig}>
+            <div className={classes.flipCardInnerBig}>
+              <div className={classes.flipCardFrontBig}>
+                <img
+                  className={classes.img}
+                  src={allInOne}
+                  alt="Avatar"
+                  style={{
+                    width: "1600px",
+                    height: "600px",
+                  }}
+                />
+              </div>
+              <div className={classes.flipCardBackBig}>
+                {/* <h2>Marchela OOD</h2>
+                <h1 className={classes.summaryPartnersBig}>Нашите партньори</h1>
+                <a href="https://marchelaltd.com/">
+                  <button>Run</button>
+                </a> */}
               </div>
             </div>
           </div>

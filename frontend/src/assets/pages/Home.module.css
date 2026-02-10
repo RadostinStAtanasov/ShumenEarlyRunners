@@ -175,7 +175,6 @@
 }
 
 .secondConBackGrdn {
-    /* background-color: rgb(108, 108, 108); */
     display: flex;
     width: 1400px;
     margin-top: 25px;
@@ -332,4 +331,62 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 25px;
+}
+
+.latestStories {
+    margin-top: -300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.latestStoriesBody {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.latestStoriesHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    max-width: 250px;
+    max-height: 300px;
+    border-radius: 50px;
+}
+
+.latestStoriesBody h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    line-height: 1.8;
+    width: 230px;
+    height: 80px;
+    font-size: 14px;
+}
+
+
+.latestStoriesBody p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 12px;
+    width: 230px;
+    height: 50px;
+    margin: 0;
+}
+
+.containerLatestStoryHomePage {
+    display: flex;
+    gap: 20px;
 }

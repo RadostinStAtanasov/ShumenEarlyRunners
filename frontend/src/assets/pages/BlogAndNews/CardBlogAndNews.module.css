@@ -1,7 +1,3 @@
-/* main {
-    background-color: white;
-} */
-
 .containerParagraph {
     width: 384px;
 }
@@ -16,8 +12,6 @@
 }
 
 .imageContainer {
-    /* display: flex;
-    justify-content: center; */
     width: 384px;
     height: 300px;
 }
@@ -78,5 +72,4 @@
     border: 1px solid white ;
     background-color: black;
     color: white;
-    
 }

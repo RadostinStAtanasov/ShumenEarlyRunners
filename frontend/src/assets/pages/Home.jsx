@@ -17,6 +17,8 @@ import {
   faWeightScale,
 } from "@fortawesome/free-solid-svg-icons";
 
+import CardSlider from "../components/CardSlider";
+
 export default function HomePage() {
   return (
     <>
@@ -170,7 +172,7 @@ export default function HomePage() {
           </div>
 
           <div className={classes.containerLatestStoryHomePage}>
-            <div className={classes.latestStoriesBody}>
+            {/* <div className={classes.latestStoriesBody}>
               <div className={classes.imgs}>
                 <img className={classes.img} src="" alt="" />
               </div>
@@ -313,7 +315,8 @@ export default function HomePage() {
                 Voluptatum a, vel placeat repellat quod recusandae molestias,
                 illo nobis ipsum vitae dolore perspiciatis voluptas!
               </p>
-            </div>
+            </div> */}
+            <CardSlider />
           </div>
 
           {/* </div> */}

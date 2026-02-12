@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunflower:wght@300&family=Work+Sans&display=swap');
 
-*,*::before,*::after {
+ *,*::before,*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
 
-main {
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: #03171d;
+    height:100vh;
+    width: 100vw;
+    background: #2d2e2f;
     font-family: "Poppins", sans-serif;
     overflow: hidden;
 }
-
+    
 .container {
     width: 85%;
 }
@@ -37,7 +38,7 @@ main {
     user-select: none;
 }
 
-swiper-slide-active {
+.swiper-slide-active {
     border: 3px solid #fff;
     transition: 0.6s ease-in-out;
 }
@@ -67,7 +68,7 @@ swiper-slide-active {
     flex-direction: column;
     justify-content: end;
     height: 100%;
-    padding: 15px 25px 30px;
+    padding: 25px 25px 30px;
 }
 .title h1 {
     font-family: "Sunflower", sans-serif;
@@ -112,7 +113,7 @@ swiper-slide-active {
 .score {
     position: absolute;
     top: 12px;
-    right: 12px;
+    right: 18px;
     width: 45px;
     aspect-ratio: 1/1;
     display: flex;
@@ -122,8 +123,8 @@ swiper-slide-active {
     background-color: #ffe550;
     border-radius: 50%;
     box-shadow: 0 50px 50px -20px rgba(50, 50, 93, 0.25),
-    0 30px 60px -30px rgba(0, 0, 0, 0.3),
-    inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);
+        0 30px 60px -30px rgba(0, 0, 0, 0.3),
+        inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);
     font-size: 1rem;
     font-weight: 600;
     opacity: 0;
@@ -151,12 +152,12 @@ swiper-slide-active {
     font-family: "Sunflower", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin:0;
     transform: translateY(-100%);
-    opacity: 1;
+    opacity: 0;
 }
 
-swiper-slide-active .text h2 {
+.swiper-slide-active .text h2 {
     transform: translateY(0);
     opacity: 1;
     transition: 1s;
@@ -169,6 +170,8 @@ swiper-slide-active .text h2 {
     line-height: 1.4;
     transform: translateY(100%);
     opacity: 0;
+    margin: 0;
+    width: 342px;
 }
 
 .swiper-slide-active .text p {
@@ -201,8 +204,8 @@ swiper-slide-active .text h2 {
 
 .swiper-slide-active .genre span {
     opacity: 1;
-    transition: 0.8s;
-    transition-delay: calc(2.4s + var(--i) 0.4s);
+    transition: 0.8s ease-out;
+    transition-delay: calc(2.4s + var(--i) * 0.4s);
 }
 
 .swiper-pagination-bullet {
@@ -210,14 +213,15 @@ swiper-slide-active .text h2 {
     height: 16px;
     background-color: #fff;
     border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 .swiper-pagination-bullet-active {
     width: 32px;
     border-radius: 14px;
-    background: linear-gradient(120deg #f0d11b, #ffc750);
+    background: linear-gradient(120deg, #f0d11b, #ffc750);
     box-shadow: 0 0 20px 0 rgba(255, 200, 80, 0.7);
-    transition: all 0.8s ease;
+    transition: all 0.8s ease-in-out;
 }
 
 @media (max-width: 480px) {

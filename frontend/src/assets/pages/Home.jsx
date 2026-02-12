@@ -10,14 +10,14 @@ import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
 import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faBrain,
   faHandHoldingHeart,
   faPersonRunning,
   faWeightScale,
 } from "@fortawesome/free-solid-svg-icons";
-
-import CardSlider from "../components/CardSlider";
+import CardSlider from "../components/CardSlider/CardSlider.jsx";
 
 export default function HomePage() {
   return (

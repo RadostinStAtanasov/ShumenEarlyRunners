@@ -10,7 +10,7 @@ import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
 import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MarqueeSlider from "../components/ChakraMarquee/MarqueeSlideFooterRightToLeft.jsx";
+import MarqueeSlider from "../components/FastMarquee/MarqueeSlideFooterRightToLeft.jsx";
 
 import {
   faBrain,
@@ -177,7 +177,7 @@ export default function HomePage() {
         </section>
         <section className={classes.runningTracksContainer}>
           <div className={classes.headRunTrackContainer}>
-            <h1>Най-бяганите тракове на Шуменското Плато</h1>
+            <h2>Най-бяганите тракове на Шуменското Плато</h2>
             <h3>Изтегли от тука</h3>
           </div>
           <MarqueeSlider />

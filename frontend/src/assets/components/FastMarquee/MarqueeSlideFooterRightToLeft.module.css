@@ -1,0 +1,16 @@
+.marqueeContainer {
+    /* max-width: 1300px; */
+    margin-top: 25px;
+    height: 380px;
+    display: flex;
+    gap: 65px;
+}
+
+.imgWrapper {
+    width: 150px;
+    height: 300px;
+}
+
+img {
+    border-radius: 8px;
+}

@@ -358,6 +358,20 @@ h1 {
     margin-bottom: 50px;
 }
 
+.runningTracksContainer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headRunTrackContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .img {
     max-width: 250px;
     max-height: 300px;

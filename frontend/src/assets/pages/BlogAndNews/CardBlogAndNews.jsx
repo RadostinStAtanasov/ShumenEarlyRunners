@@ -9,13 +9,11 @@ export default function CardBlogAndNewsPage() {
     <>
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
-          <a href="/Блог енд Нюзс/ню нюсс">
-            <img
-              className={classes.imagesBlogAndNews}
-              src={NikolaiGinchev}
-              alt=""
-            />
-          </a>
+          <img
+            className={classes.imagesBlogAndNews}
+            src={NikolaiGinchev}
+            alt=""
+          />
         </div>
         <div className={classes.containerPostedBy}>
           Постед '{"Бай Радо"}' | 07 Декември | новина или блог да се направи

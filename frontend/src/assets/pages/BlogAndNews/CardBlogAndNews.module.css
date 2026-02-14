@@ -12,18 +12,36 @@
 }
 
 .imageContainer {
-    width: 384px;
-    height: 300px;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .imagesBlogAndNews {
+    display: block;
+    transition: transform .04s;
+    width: 364px;
+    height: 246px;
+    margin: 0;
+}
+
+
+.imagesBlogAndNews:hover {
+    transform: scale(1.3);
+    transform-origin: 50% 50% ;
+}
+
+/* .imagesBlogAndNews {
+    overflow: hidden;
     width: 364px;
     height: 246px;
 }
 
 .imagesBlogAndNews:hover {
-    transform: scale(1.1);
-}
+    transform: scale(1.5);
+    overflow: hidden; 
+} */
 
 .containerPostedBy {
     width: 364px;
@@ -51,15 +69,15 @@
 .mainCardContainer {
     display: flex;
     flex-direction: column;
+    align-items: baseline;
     width: 394px;
     height: 795px;
-    /* border: 1px solid red; */
     border-radius: 5px;
 }
 
 .buttonContinuedReading {
     border-radius: 0px;
-    border: 1px solid white ;
+    border: 2px solid black ;
     background-color: white;
     color: black;
     width: 156px;
@@ -69,7 +87,7 @@
 
 .buttonContinuedReading:hover {
     border-radius: 0px;
-    border: 1px solid white ;
+    border: 2px solid white ;
     background-color: black;
     color: white;
 }

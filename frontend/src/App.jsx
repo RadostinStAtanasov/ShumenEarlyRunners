@@ -14,28 +14,34 @@ import PartnersPage from "./assets/pages/Partners";
 import GenerateBlogAndNewsPage from "./assets/pages/BlogAndNews/AddedBlogAndNews/GenerateTitleForNewBlogOrNews";
 import DetailPage from "./assets/pages/Shop/Detail";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/начало", element: <HomePage /> },
-      { path: "/контакти", element: <ContactPage /> },
-      { path: "/галерия", element: <GalleryPage /> },
-      { path: "/Блог енд Нюзс", element: <NewsPage /> },
-      { path: "/Блог енд Нюзс/ню нюсс", element: <GenerateBlogAndNewsPage /> },
-      { path: "/заНасс", element: <ForUsPage /> },
-      { path: "/резултати", element: <ResultsPage /> },
-      { path: "/джаджи", element: <GadgetsPage /> },
-      { path: "/събития", element: <EventsPage /> },
-      { path: "/магазин", element: <ShopPage /> },
-      { path: "/магазин/детайли", element: <DetailPage /> },
-      { path: "/мадараТрейл", element: <MadaraPage /> },
-      { path: "партньори", element: <PartnersPage /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        { path: "/начало", element: <HomePage /> },
+        { path: "/контакти", element: <ContactPage /> },
+        { path: "/галерия", element: <GalleryPage /> },
+        { path: "/Блог енд Нюзс", element: <NewsPage /> },
+        {
+          path: "/Блог енд Нюзс/ню нюсс",
+          element: <GenerateBlogAndNewsPage />,
+        },
+        { path: "/заНасс", element: <ForUsPage /> },
+        { path: "/резултати", element: <ResultsPage /> },
+        { path: "/джаджи", element: <GadgetsPage /> },
+        { path: "/събития", element: <EventsPage /> },
+        { path: "/магазин", element: <ShopPage /> },
+        { path: "/магазин/детайли", element: <DetailPage /> },
+        { path: "/мадараТрейл", element: <MadaraPage /> },
+        { path: "партньори", element: <PartnersPage /> },
+      ],
+    },
+  ],
+  // { basename: "/https://github.com/RadostinStAtanasov/ShumenEarlyRunners" },
+);
 
 function App() {
   return (

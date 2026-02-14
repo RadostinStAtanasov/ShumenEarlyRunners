@@ -29,7 +29,7 @@ p {
     color: #a8a8a8;
 }
 
-img {
-    margin-top: 25px;
-    margin-bottom: 25px;
+.imgBlogAndNews {
+    width: 800px;
+    height: 500px;
 }

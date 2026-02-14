@@ -18,83 +18,47 @@ export default function TrackSlider() {
         <div className={classes.marqueeContainer}>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run1}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run1} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run2}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run2} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run3}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run3} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run4}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run4} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run5}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run5} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run6}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run6} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run7}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run7} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run8}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run8} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <a href="">
-              <img
-                src={run9}
-                alt=""
-                style={{ width: "150px", height: "300px" }}
-              />
+              <img src={run9} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
         </div>

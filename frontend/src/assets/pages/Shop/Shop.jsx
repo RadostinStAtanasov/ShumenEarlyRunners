@@ -4,18 +4,20 @@ import classes from "../Shop/Shop.module.css";
 export default function ShopPage() {
   return (
     <>
-      <div className={classes.headerAndUnderline}>
-        <h1 className={classes.title}>Магазин</h1>
-        <div className={classes.underline}></div>
-      </div>
-      <h1 className={classes.orderMessage}>
-        Заявките за сега стават по <br />
-        емейл: irinova@yahoo.com / телефон: 0878688970
-      </h1>
       <div className={classes.mainContainerShop}>
-        <Product />
-        <Product />
-        <Product />
+        <div className={classes.headerAndUnderline}>
+          <h1 className={classes.title}>Магазин</h1>
+          <div className={classes.underline}></div>
+        </div>
+        <h1 className={classes.orderMessage}>
+          Заявките за сега стават по <br />
+          емейл: irinova@yahoo.com / телефон: 0878688970
+        </h1>
+        <div className={classes.bodyContainerShop}>
+          <Product />
+          <Product />
+          <Product />
+        </div>
       </div>
     </>
   );

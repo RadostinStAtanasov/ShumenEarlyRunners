@@ -27,7 +27,7 @@ export default function GenerateTitleForNewBlogOrNews() {
         Inventore sapiente distinctio soluta blanditiis eaque illum optio
         nostrum? Temporibus quisquam libero non reiciendis architecto voluptatem
         <div>
-          <img src={image1} alt="" />
+          <img className={classes.imgBlogAndNews} src={image1} alt="" />
         </div>
         earum consectetur officia sapiente velit laborum ab odit totam tempora
         ipsa fugit corporis adipisci possimus, similique exercitationem voluptas

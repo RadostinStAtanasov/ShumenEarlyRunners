@@ -6,7 +6,7 @@ import "../pages/Events.module.css";
 
 export default function EventsPage() {
   return (
-    <div className={classes.mainContainer}>
+    <div className={classes.mainContainerEvents}>
       <div className={classes.headerAndUnderline}>
         <h1 className={classes.title}>Събития</h1>
         <div className={classes.underline}></div>

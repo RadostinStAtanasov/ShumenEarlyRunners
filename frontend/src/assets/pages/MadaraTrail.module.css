@@ -11,5 +11,9 @@
     flex-direction: column;
     align-items: center;
     width: 1200px;
+}
 
+.imgMadaraTrail {
+    width: 800px;
+    height: 800px;
 }

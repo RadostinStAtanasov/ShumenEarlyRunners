@@ -32,17 +32,6 @@
     transform-origin: 50% 50% ;
 }
 
-/* .imagesBlogAndNews {
-    overflow: hidden;
-    width: 364px;
-    height: 246px;
-}
-
-.imagesBlogAndNews:hover {
-    transform: scale(1.5);
-    overflow: hidden; 
-} */
-
 .containerPostedBy {
     width: 364px;
     height: 54px;

@@ -1,4 +1,8 @@
 .mainContainerShop {
+    margin-top: 100px;
+}
+
+.bodyContainerShop {
     display: flex;
     justify-content: center;
     gap: 50px;

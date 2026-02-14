@@ -10,6 +10,7 @@ import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
 import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MarqueeSlider from "../components/ChakraMarquee/MarqueeSlideFooterRightToLeft.jsx";
 
 import {
   faBrain,
@@ -163,7 +164,6 @@ export default function HomePage() {
           </div>
         </div>
         <section className={classes.latestStories}>
-          {/* <div className={classes.latestStoriesContainer}> */}
           <div className={classes.latestStoriesHeader}>
             <h3>Нашия Блог</h3>
             <h1>Latest Новинис</h1>
@@ -172,154 +172,15 @@ export default function HomePage() {
           </div>
 
           <div className={classes.containerLatestStoryHomePage}>
-            {/* <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div>
-            <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div>
-            <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div>
-            <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div>
-            <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div>
-            <div className={classes.latestStoriesBody}>
-              <div className={classes.imgs}>
-                <img className={classes.img} src="" alt="" />
-              </div>
-              <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                velit nostrum voluptatem repudiandae dolorum nemo deserunt ipsam
-                impedit quo. Illum?
-              </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-                ipsa consectetur quidem sapiente saepe, hic, culpa aspernatur
-                omnis architecto odit laudantium natus et tempora nisi.
-                Molestiae itaque facilis at cumque minima exercitationem, nam,
-                commodi obcaecati maiores, aperiam blanditiis ut vitae aut hic
-                eveniet. Laboriosam sit placeat tempora aspernatur ullam porro
-                beatae laudantium debitis autem adipisci, aut, saepe minima id
-                harum deleniti quam itaque vero officiis! Doloribus cupiditate
-                et ad! Ex, in temporibus ipsa doloremque minima odit hic
-                laudantium eum praesentium asperiores culpa quo minus voluptas!
-                Voluptatum a, vel placeat repellat quod recusandae molestias,
-                illo nobis ipsum vitae dolore perspiciatis voluptas!
-              </p>
-            </div> */}
             <CardSlider />
           </div>
-
-          {/* </div> */}
+        </section>
+        <section className={classes.runningTracksContainer}>
+          <div className={classes.headRunTrackContainer}>
+            <h1>Най-бяганите тракове на Шуменското Плато</h1>
+            <h3>Изтегли от тука</h3>
+          </div>
+          <MarqueeSlider />
         </section>
 
         {/* <section className={classes.NewsEventsContainer}>

@@ -352,8 +352,10 @@ h1 {
 .latestStoriesHeader {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: 200px;
+    margin-bottom: 50px;
 }
 
 .img {

@@ -97,8 +97,8 @@
 .rotateRight {
   float: left;
   transform: rotate(7deg);
-  width: 284px; 
-  height: 384px;
+  /* width: 284px; 
+  height: 384px; */
   border: solid #BFBFBF 1px;
   padding: 10px;
   background-color: aliceblue;
@@ -108,8 +108,8 @@
 .rotateLeft {
   float: left;
   transform: rotate(-8deg);
-  width: 284px; 
-  height: 384px;
+  /* width: 284px; 
+  height: 384px; */
   border: solid grey 1px;
   padding: 10px;
   background-color: aliceblue;

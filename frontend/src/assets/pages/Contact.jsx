@@ -10,68 +10,71 @@ import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
 export default function ContactPage() {
   return (
     <>
-      <div className={classes.headerAndUnderline}>
-        <h1 className={classes.title}>Контакти</h1>
-        <div className={classes.underline}></div>
-      </div>
-      <div className={classes.mainContainer}>
-        <div className={classes.containerImagesContacts}>
-          <div className={classes.rotateRight}>
-            <img
-              className={classes.imagesContacts}
-              src={monument}
-              alt="Pulpit rock"
-            />
-
-            <p className={classes.paragraph}>
-              „Създателите на българската държава“, известен също като „1300
-              години България“, е архитектурен комплекс, посветен на
-              1300-годишнината от създаването на българската държава. Монументът
-              е разположен в най-високата част на Дунавската равнина.
-            </p>
-          </div>
-
-          <div className={classes.rotateLeft}>
-            <img
-              className={classes.imagesContacts}
-              src={shumenskaKrepost}
-              alt="Monterosso al Mare"
-            />
-
-            <p className={classes.paragraph}>
-              Крепостта се намира на два километра западно от град Шумен. В
-              района се намира важен кръстопът на маршрути, свързващи дунавския
-              бряг (при Силистра) с Адрианопол и Константинопол, и северното
-              черноморско крайбрежие със западните български земи.
-            </p>
-          </div>
+      <div className={classes.mainContainerContacts}>
+        <div className={classes.headerAndUnderline}>
+          <h1 className={classes.title}>Контакти</h1>
+          <div className={classes.underline}></div>
         </div>
-        <div className={classes.containerForm}>
-          <div className={classes.containerFormContacts}>
-            <div>
-              <FontAwesomeIcon
-                className={classes.icons}
-                icon={faPersonThroughWindow}
+        <div className={classes.mainContainer}>
+          <div className={classes.containerImagesContacts}>
+            <div className={classes.rotateRight}>
+              <img
+                className={classes.imagesContacts}
+                src={monument}
+                alt="Pulpit rock"
               />
-              На живо: Как да се свържеш с нас ела всяка събота 08:30
-              <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
-                <FontAwesomeIcon icon={faThumbtack} />
-              </a>
+
+              <p className={classes.paragraph}>
+                „Създателите на българската държава“, известен също като „1300
+                години България“, е архитектурен комплекс, посветен на
+                1300-годишнината от създаването на българската държава.
+                Монументът е разположен в най-високата част на Дунавската
+                равнина.
+              </p>
             </div>
-            <div>
-              <FontAwesomeIcon className={classes.icons} icon={faPhone} />
-              По телефона: 0878688970
-            </div>
-            <div>
-              <FontAwesomeIcon className={classes.icons} icon={faEnvelope} />
-              По емейла: irinova@yahoo.com
+
+            <div className={classes.rotateLeft}>
+              <img
+                className={classes.imagesContacts}
+                src={shumenskaKrepost}
+                alt="Monterosso al Mare"
+              />
+
+              <p className={classes.paragraph}>
+                Крепостта се намира на два километра западно от град Шумен. В
+                района се намира важен кръстопът на маршрути, свързващи
+                дунавския бряг (при Силистра) с Адрианопол и Константинопол, и
+                северното черноморско крайбрежие със западните български земи.
+              </p>
             </div>
           </div>
-          <div className={classes.connectWithUsContainer}>
-            <span>Пиши ни на нашата контактна форма</span>
-            <input type="text" />
-            <textarea name="" id=""></textarea>
-            <button className={classes.btnSubmit}>Изпрати</button>
+          <div className={classes.containerForm}>
+            <div className={classes.containerFormContacts}>
+              <div>
+                <FontAwesomeIcon
+                  className={classes.icons}
+                  icon={faPersonThroughWindow}
+                />
+                На живо: Как да се свържеш с нас ела всяка събота 08:30
+                <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
+                  <FontAwesomeIcon icon={faThumbtack} />
+                </a>
+              </div>
+              <div>
+                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
+                По телефона: 0878688970
+              </div>
+              <div>
+                <FontAwesomeIcon className={classes.icons} icon={faEnvelope} />
+                По емейла: irinova@yahoo.com
+              </div>
+            </div>
+            <div className={classes.connectWithUsContainer}>
+              <span>Пиши ни на нашата контактна форма</span>
+              <input type="text" />
+              <textarea name="" id=""></textarea>
+              <button className={classes.btnSubmit}>Изпрати</button>
+            </div>
           </div>
         </div>
       </div>
@@ -80,5 +83,3 @@ export default function ContactPage() {
 }
 
 // Шумен, В.Преслав, Плиска, Мадара
-// свържи се с нас да се преливат картинките като пъзел
-// да измисля нещо за заглавната страница

@@ -35,7 +35,7 @@ export default function HomePage() {
                 Открийте зашеметяващи дестинации и безпроблемни пътешествия,
                 създадени специално за вас
               </p>
-              <a href="">
+              <a href="https://racecalendar.bg">
                 <button className={classes.btnHomePage}>
                   Открии дестинации
                 </button>
@@ -182,54 +182,6 @@ export default function HomePage() {
           </div>
           <MarqueeSlider />
         </section>
-
-        {/* <section className={classes.NewsEventsContainer}>
-          <div className={classes.textCenter}>
-            <h1>Предстоящи събития</h1>
-            <div className={classes.imageUpcomingEvents}>
-              <a href="http://localhost:5173/мадараТрейл">
-                <img
-                  className={classes.imagesUpcomingEvents}
-                  src={madaraRun}
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-          <div className={classes.textCenter}>
-            <h1>Нюзз</h1>
-            <div className={classes.imageUpcomingEvents}>
-              <a href="https://www.facebook.com/story.php?story_fbid=122274184238132451&id=61553973546554&rdid=5MmU5DoUSmiOUuMd#">
-                <img
-                  className={classes.imagesUpcomingEvents}
-                  src={magicBazar}
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section className={classes.topCommonTracks}>
-          <div className={classes.topComTracksContainer}>
-            <h2>Топ тракове за бягане на ШП</h2>
-            <div className={classes.topCTCard}>
-              <div className={classes.titleCard}>
-                <span>
-                  5 <span>km</span>{" "}
-                </span>
-                <span>
-                  3:47 <span>pace</span>{" "}
-                </span>
-              </div>
-             
-              <div className={classes.footerCard}>
-                <span>Всяка събота 5км RUN</span>
-                <div>Поредния съботен ден гонейки под 17 мин. 5км</div>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </div>
     </>
   );

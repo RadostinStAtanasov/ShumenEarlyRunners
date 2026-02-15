@@ -15,8 +15,6 @@ export default function ShopPage() {
         </h1>
         <div className={classes.bodyContainerShop}>
           <Product />
-          <Product />
-          <Product />
         </div>
       </div>
     </>

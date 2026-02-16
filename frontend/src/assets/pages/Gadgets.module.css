@@ -11,9 +11,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 }
 .headerAndUnderline {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mainContainerGadgets {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 32px; */
+}
+
+.gadgets {
+      width: 620px;
+    height: 420px;
+    text-align: center;
+    color: black;
+}
+
+.backGroundImgRaceCalendar {
+    background-image: url('../images/logos/raceCalendar.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 620px;
+    height: 320px;
+    border-radius: 8px;
+    font-weight: 800;
+
+}
+.backGroundImgAllTrails {
+    background-image: url('../images/logos/allTrails.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 620px;
+    height: 320px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+.backGroundImgStrava {
+    background-image: url('../images/logos/strava.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 620px;
+    height: 320px;
+    font-weight: 800;
+    border-radius: 8px;
 }

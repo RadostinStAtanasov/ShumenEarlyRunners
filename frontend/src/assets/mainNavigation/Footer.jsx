@@ -185,12 +185,12 @@ const Footer = () => {
             >
               <FaFacebook />
             </SocialIcon>
-            <SocialIcon
+            {/* <SocialIcon
               aria-label="Visit our Twitter page"
               onClick={() => window.open("https://x.com/tweeter?lang=bg")}
             >
               <FaTwitter />
-            </SocialIcon>
+            </SocialIcon> */}
             <SocialIcon
               aria-label="Visit our Instagram page"
               onClick={() =>
@@ -199,12 +199,12 @@ const Footer = () => {
             >
               <FaInstagram />
             </SocialIcon>
-            <SocialIcon
+            {/* <SocialIcon
               aria-label="Visit our LinkedIn page"
               onClick={() => window.open("https://www.linkedin.com/feed/")}
             >
               <FaLinkedin />
-            </SocialIcon>
+            </SocialIcon> */}
           </Box>
         </Box>
       </Container>

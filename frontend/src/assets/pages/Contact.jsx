@@ -6,14 +6,23 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPersonThroughWindow } from "@fortawesome/free-solid-svg-icons";
 import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
+import TextField from "@mui/material/TextField";
+
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
 
 export default function ContactPage() {
   return (
     <>
       <div className={classes.mainContainerContacts}>
         <div className={classes.headerAndUnderline}>
-          <h1 className={classes.title}>Контакти</h1>
+          <h2 className={classes.title}>Контакти</h2>
           <div className={classes.underline}></div>
+          <h1>Свържи се с нас</h1>
+          <p>
+            Имаш въпроси или търсиш обратна връзка? Бъди свободен да се свържеш
+            с нас, като инзпозваш нашата контактна форма.
+          </p>
         </div>
         <div className={classes.mainContainer}>
           <div className={classes.containerImagesContacts}>
@@ -32,7 +41,6 @@ export default function ContactPage() {
                 равнина.
               </p>
             </div>
-
             <div className={classes.rotateLeft}>
               <img
                 className={classes.imagesContacts}
@@ -48,7 +56,57 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-          <div className={classes.containerForm}>
+          <div className={classes.mainContainerSendAndContact}>
+            <div className={classes.containerSendaMessage}>
+              <div>Изпрати съобщение</div>
+              <TextField
+                required
+                id="outlined-required"
+                label="Име"
+                //defaultValue="Име"
+              />
+              <TextField
+                required
+                id="outlined-required"
+                label="Фамилия"
+                //defaultValue="Име"
+              />
+              <TextField
+                id="outlined"
+                label="Тема"
+                //defaultValue="Име"
+              />
+              <TextField
+                id="outlined-multiline-static"
+                label="Съобщение"
+                multiline
+                rows={8}
+                //defaultValue="Default Value"
+              />
+              <Button variant="contained" endIcon={<SendIcon />}>
+                Изпрати
+              </Button>
+            </div>
+            <div className={classes.containerContactLinks}>
+              <div>Контакти</div>
+              <div className={classes.sectionLinks}>
+                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
+                <span>Обадисе</span>
+                <span>+359878688970</span>
+              </div>
+              <div className={classes.sectionLinks}>
+                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
+                <span>Обадисе</span>
+                <span>+359878688970</span>
+              </div>
+              <div className={classes.sectionLinks}>
+                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
+                <span>Обадисе</span>
+                <span>+359878688970</span>
+              </div>
+            </div>
+          </div>
+          {/* <div className={classes.containerForm}>
             <div className={classes.containerFormContacts}>
               <div>
                 <FontAwesomeIcon
@@ -75,7 +133,7 @@ export default function ContactPage() {
               <textarea name="" id=""></textarea>
               <button className={classes.btnSubmit}>Изпрати</button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

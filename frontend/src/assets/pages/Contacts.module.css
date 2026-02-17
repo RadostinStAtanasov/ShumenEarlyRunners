@@ -130,3 +130,19 @@
 .mainContainerContacts {
     margin-top: 100px;
 }
+
+.mainContainerSendAndContact {
+    margin-top: 48px;
+    width: 800px;
+    background-color: lightslategray;
+    display: flex;
+}
+
+.sectionLinks {
+
+}
+
+.containerSendaMessage {
+    display: flex;
+    flex-direction: column;
+}

@@ -4,8 +4,13 @@ import shumenskaKrepost from "../images/shumenska-krepost.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+<script
+  src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js"
+  data-auto-a11y="true"
+></script>;
+
 import { faPersonThroughWindow } from "@fortawesome/free-solid-svg-icons";
-import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
 import TextField from "@mui/material/TextField";
 
 import Button from "@mui/material/Button";
@@ -58,26 +63,26 @@ export default function ContactPage() {
           </div>
           <div className={classes.mainContainerSendAndContact}>
             <div className={classes.containerSendaMessage}>
-              <div>Изпрати съобщение</div>
+              <div className={classes.sendMess}>Изпрати съобщение</div>
               <TextField
                 required
-                id="outlined-required"
+                className={classes.outlinedRequired}
                 label="Име"
                 //defaultValue="Име"
               />
               <TextField
                 required
-                id="outlined-required"
+                className={classes.outlinedRequired}
                 label="Фамилия"
                 //defaultValue="Име"
               />
               <TextField
-                id="outlined"
+                className={classes.outlinedRequired}
                 label="Тема"
                 //defaultValue="Име"
               />
               <TextField
-                id="outlined-multiline-static"
+                className={classes.outlinedMultilineStatic}
                 label="Съобщение"
                 multiline
                 rows={8}
@@ -88,52 +93,39 @@ export default function ContactPage() {
               </Button>
             </div>
             <div className={classes.containerContactLinks}>
-              <div>Контакти</div>
+              <div className={classes.callContacts}>Контакти</div>
               <div className={classes.sectionLinks}>
-                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
-                <span>Обадисе</span>
+                <span>
+                  <FontAwesomeIcon className={classes.icons} icon={faPhone} />
+                  Обадисе
+                </span>
                 <span>+359878688970</span>
+                <div className={classes.underlineSocials}></div>
               </div>
               <div className={classes.sectionLinks}>
-                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
-                <span>Обадисе</span>
-                <span>+359878688970</span>
+                <span>
+                  <FontAwesomeIcon
+                    className={classes.icons}
+                    icon={faEnvelope}
+                  />
+                  Емеил
+                </span>
+                <span>irinova@yahoo.com</span>
+                <div className={classes.underlineSocials}></div>
               </div>
               <div className={classes.sectionLinks}>
-                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
-                <span>Обадисе</span>
-                <span>+359878688970</span>
+                <span>
+                  <FontAwesomeIcon
+                    className={classes.icons}
+                    icon={faCommentDots}
+                  />
+                  Сошълс
+                </span>
+                <span className={classes.iconsSocials}></span>
+                <div className={classes.underlineSocials}></div>
               </div>
             </div>
           </div>
-          {/* <div className={classes.containerForm}>
-            <div className={classes.containerFormContacts}>
-              <div>
-                <FontAwesomeIcon
-                  className={classes.icons}
-                  icon={faPersonThroughWindow}
-                />
-                На живо: Как да се свържеш с нас ела всяка събота 08:30
-                <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
-                  <FontAwesomeIcon icon={faThumbtack} />
-                </a>
-              </div>
-              <div>
-                <FontAwesomeIcon className={classes.icons} icon={faPhone} />
-                По телефона: 0878688970
-              </div>
-              <div>
-                <FontAwesomeIcon className={classes.icons} icon={faEnvelope} />
-                По емейла: irinova@yahoo.com
-              </div>
-            </div>
-            <div className={classes.connectWithUsContainer}>
-              <span>Пиши ни на нашата контактна форма</span>
-              <input type="text" />
-              <textarea name="" id=""></textarea>
-              <button className={classes.btnSubmit}>Изпрати</button>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

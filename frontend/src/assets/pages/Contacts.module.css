@@ -82,9 +82,9 @@
 }
 
 .icons {
-    padding-left: 20px;
-    padding-right: 10px;
-    color: burlywood
+    /* padding-left: 20px;
+    padding-right: 10px; */
+    color: lightcoral
 }
 
 .rotateLeft .rotateRight {
@@ -136,13 +136,74 @@
     width: 800px;
     background-color: lightslategray;
     display: flex;
+    justify-content: space-around;
+    height: 600px;
+    max-width: 1000px;
+    border-radius: 4px;
+    border-top-left-radius: 48px;
+    border-bottom-right-radius: 48px;
 }
 
 .sectionLinks {
-
+    display: flex;
+    flex-direction: column;
+    background-color: silver;
+    height: 102px;
 }
 
 .containerSendaMessage {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: silver; */ 
 }
+
+.sendMess {
+    font-size: 32px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.outlinedRequired {
+    /* height: 38px; */
+}
+
+.containerContactLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 400px;
+    max-height: 420px;
+    background-color: silver;
+    border-radius: 12px;
+    margin-top: 8px;
+}
+
+.sectionLinks {
+    width: 326px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.callContacts {
+    font-size: 32px;
+    font-family:'Courier New', Courier, monospace;
+    padding-left: 18px;
+}
+
+.underlineSocials {
+    font-size: 2px;
+    /* color: black; */
+    font-weight: 500;
+    margin: 25px 20px;
+    width: 280px;
+    border: 1px solid lightgray;
+    margin-top: 8px;
+    border-radius: 48px;
+}
+
+/* .iconsSocials i {
+    font-size: 12px;
+    color: black;
+} */

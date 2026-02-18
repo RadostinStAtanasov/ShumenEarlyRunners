@@ -27,9 +27,6 @@ export default function DetailPage() {
           irinova@yahoo.com
         </h1>
         <div className={classes.mainContainer}>
-          {/* <div className={classes.imageDetails}>
-            <img className={classes.image} src={tSDhirtER} alt="" />
-          </div> */}
           <div>
             <div className={classes.detailsImagesAndMainImage}>
               <div className={classes.sideImagesInColumn}>

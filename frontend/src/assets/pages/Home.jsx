@@ -29,7 +29,8 @@ export default function HomePage() {
             <div className={classes.firstContainerTextContainer}>
               <h3>Твоето мечтано пътуване към бягането</h3>
               <h2 className={classes.secondTitle}>
-                Открии себе си и нови дестинации за бягане в Шумен и околността
+                Открийте себе си и нови дестинации за бягане в Шумен на
+                околността
               </h2>
               <p>
                 Открийте зашеметяващи дестинации и безпроблемни пътешествия,
@@ -60,6 +61,19 @@ export default function HomePage() {
             <img className={classes.imageHomePage} src={pametnik2} alt="" />
           </div>
         </section>
+        <section className={classes.latestStories}>
+          <div className={classes.latestStoriesHeader}>
+            {/* <h3>Нашия Блог най-нови събития</h3> */}
+            <h1>Новинис и събития</h1>
+            {/* <h4>Открии зашеметяващи stories, разкази енд новини за runnинг</h4> */}
+            <Button variant="contained">Всички постове</Button>
+          </div>
+
+          <div className={classes.containerLatestStoryHomePage}>
+            <CardSlider />
+          </div>
+        </section>
+
         <section className={classes.secondContainerWhyToRun}>
           <div className={classes.secondConBackGrdn}>
             <div className={classes.fourPictures}>
@@ -147,7 +161,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <div className={classes.containerCard5Km}>
+        {/* <div className={classes.containerCard5Km}>
           <div className={classes.firstContainer}>
             <div className={classes.image}>
               <img className={classes.images} src={fiveKmImage2} alt="" />
@@ -162,19 +176,8 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-        </div>
-        <section className={classes.latestStories}>
-          <div className={classes.latestStoriesHeader}>
-            <h3>Нашия Блог</h3>
-            <h1>Latest Новинис</h1>
-            <h4>Открии зашеметяващи stories, разкази енд новини за runnинг</h4>
-            <Button variant="outlined">Всички постове</Button>
-          </div>
+        </div> */}
 
-          <div className={classes.containerLatestStoryHomePage}>
-            <CardSlider />
-          </div>
-        </section>
         <section className={classes.runningTracksContainer}>
           <div className={classes.headRunTrackContainer}>
             <h2>Най-бяганите тракове на Шуменското Плато</h2>

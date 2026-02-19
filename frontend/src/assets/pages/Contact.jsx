@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+
 <script
   src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js"
   data-auto-a11y="true"
 ></script>;
 
-import { faPersonThroughWindow } from "@fortawesome/free-solid-svg-icons";
 import TextField from "@mui/material/TextField";
 
 import Button from "@mui/material/Button";
@@ -24,13 +24,13 @@ export default function ContactPage() {
           <h2 className={classes.title}>Контакти</h2>
           <div className={classes.underline}></div>
           <h1>Свържи се с нас</h1>
-          <p>
+          {/* <p>
             Имаш въпроси или търсиш обратна връзка? Бъди свободен да се свържеш
             с нас, като инзпозваш нашата контактна форма.
-          </p>
+          </p> */}
         </div>
         <div className={classes.mainContainer}>
-          <div className={classes.containerImagesContacts}>
+          {/* <div className={classes.containerImagesContacts}>
             <div className={classes.rotateRight}>
               <img
                 className={classes.imagesContacts}
@@ -60,7 +60,7 @@ export default function ContactPage() {
                 северното черноморско крайбрежие със западните български земи.
               </p>
             </div>
-          </div>
+          </div> */}
           <div className={classes.mainContainerSendAndContact}>
             <div className={classes.containerSendaMessage}>
               <div className={classes.sendMess}>Изпрати съобщение</div>

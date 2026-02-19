@@ -10,8 +10,9 @@ export default function ShopPage() {
           <div className={classes.underline}></div>
         </div>
         <h1 className={classes.orderMessage}>
-          Заявките за сега стават по <br />
-          емейл: irinova@yahoo.com / телефон: 0878688970
+          Заявки
+          <br />
+          irinova@yahoo.com / телефон: 0878688970
         </h1>
         <div className={classes.bodyContainerShop}>
           <Product />

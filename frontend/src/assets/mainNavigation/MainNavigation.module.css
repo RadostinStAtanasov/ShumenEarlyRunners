@@ -1,25 +1,25 @@
 .logoOn {
-    width: 80px;
-    height: 65px;
+    width: 120px;
+    height: 92px;
 }
 
 .logoOff {
-    width: 80px;
-    height: 65px;
+  width: 120px;
+    height: 92px;
 }
 
 .logoTextOn {
-    width: 80px;
-    height: 65px;
+     width: 120px;
+    height: 92px;;
 }
 
 .logoTextOff {
-    width: 80px;
-    height: 65px;
+    width: 120px;
+    height: 92px;
 }
 
 .menuHeader {
-    height: 78px;
+    height: 92px;
 }
 
 @media only screen and (max-width: 900px) {

@@ -22,10 +22,7 @@ export default function DetailPage() {
   return (
     <>
       <div className={classes.mainContainerShopDetails}>
-        <h1>
-          За да поръчаш се обади: 0878688970 или изпрати имейл:
-          irinova@yahoo.com
-        </h1>
+        <h1>За да поръчаш: 0878688970 / irinova@yahoo.com</h1>
         <div className={classes.mainContainer}>
           <div>
             <div className={classes.detailsImagesAndMainImage}>

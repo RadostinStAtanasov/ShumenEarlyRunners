@@ -148,12 +148,6 @@
     border-bottom-right-radius: 48px;
 }
 
-.sectionLinks {
-    display: flex;
-    flex-direction: column;
-    background-color: silver;
-    height: 102px;
-}
 
 .containerSendaMessage {
     display: flex;
@@ -166,9 +160,6 @@
     font-family:'Courier New', Courier, monospace;
 }
 
-.outlinedRequired {
-    /* height: 38px; */
-}
 
 .containerContactLinks {
     display: flex;
@@ -178,15 +169,32 @@
     max-height: 420px;
     background-color: silver;
     border-radius: 12px;
-    margin-top: 8px;
+    margin-top: 18px;
 }
 
+.sectionLinks span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 .sectionLinks {
+    background-color: silver;
+    height: 102px;
     width: 326px;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: baseline;
+}
+
+.sectionLinks:hover {
+   color: lightseagreen;
+}
+
+.sectionLinkSocial:hover {
+   color: lightseagreen;
+
 }
 
 .callContacts {
@@ -205,7 +213,61 @@
     border-radius: 48px;
 }
 
-/* .iconsSocials i {
-    font-size: 12px;
+.icn svg {
+    /* font-size: 12px; */
     color: black;
-} */
+    width: 28px;
+    height: 28px;
+}
+.icn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 12px;
+    margin-top: 12px;
+    max-width: 402px;
+}
+
+.sectionLinksSocials {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.usefulLinks {
+    margin-top: 32px;
+    background-color: lightskyblue;
+    border-radius: 12px;
+    max-width: 402px;
+    height: 162px;
+}
+.imgCon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.uLinks {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    gap: 8px;
+}
+
+.usefulinksHeader {
+    text-align:start;
+    padding-left: 18px;
+    padding-top: 12px;
+}
+
+.underlineHeader {
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    margin-left: 12px;
+    width: 136px;
+    border: 1px solid silver;
+    margin-top: 4px;
+}

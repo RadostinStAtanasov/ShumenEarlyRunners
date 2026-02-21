@@ -66,7 +66,9 @@ export default function HomePage() {
             {/* <h3>Нашия Блог най-нови събития</h3> */}
             <h1>Новинис и събития</h1>
             {/* <h4>Открии зашеметяващи stories, разкази енд новини за runnинг</h4> */}
-            <Button variant="contained">Всички постове</Button>
+            <a href="./Блог енд Нюзс">
+              <Button variant="contained">Всички постове</Button>
+            </a>
           </div>
 
           <div className={classes.containerLatestStoryHomePage}>

@@ -4,7 +4,7 @@ import classes from "./MarqueeHomePageTop.module.css";
 export default function HomePageTopSlider() {
   return (
     <>
-      <Marquee>
+      <Marquee className={classes.backGround}>
         <div className={classes.marqueeContainer}>
           <div className={classes.textWraper}>
             <a href="">

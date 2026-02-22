@@ -5,6 +5,9 @@
     display: flex;
     gap: 88px;
 }
+.backGround {
+    background-color: whitesmoke;
+}
 
 .textWraper {
     max-width: 362px;
@@ -13,7 +16,7 @@
 
 .textSlider {
     color: orangered;
-    border: 3px ridge red;
+    border: 3px solid red;
     border-radius: 8px;
     max-width: 362px; 
     height: 32px;

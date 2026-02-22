@@ -1,6 +1,4 @@
 .marqueeContainer {
-    /* max-width: 1300px; */
-    /* margin-top: 25px; */
     height: 32px;
     display: flex;
     gap: 88px;

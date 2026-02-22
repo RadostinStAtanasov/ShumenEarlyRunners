@@ -9,6 +9,8 @@ import allTrails from "../images/Alltrails.png";
 import fiveKmSat from "../images/5kmSatelit.png";
 import calc from "../images/calcpace.png";
 
+import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
+
 <script
   src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js"
   data-auto-a11y="true"
@@ -186,6 +188,22 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className={classes.containerCard5Km}>
+          <div className={classes.firstContainer}>
+            <div className={classes.image}>
+              <img className={classes.images} src={fiveKmImage2} alt="" />
+            </div>
+
+            <div>
+              <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
+                <Button variant="contained" className={classes.buttonFiveKm}>
+                  Виж къде бягаме всяка събота 5км от 08:30 на Шуменското плато
+                  Кликкк..!!!
+                </Button>
+              </a>
             </div>
           </div>
         </div>

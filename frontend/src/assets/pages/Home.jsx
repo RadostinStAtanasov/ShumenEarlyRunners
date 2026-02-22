@@ -8,7 +8,6 @@ import allStars from "../images/home-page.jpg";
 import shumenskataKrepost from "../images/shumenska-krepost.jpg";
 import pametnik from "../images/monument.jpg";
 import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
-import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MarqueeSlider from "../components/FastMarquee/MarqueeSlideFooterRightToLeft.jsx";
 
@@ -63,9 +62,7 @@ export default function HomePage() {
         </section>
         <section className={classes.latestStories}>
           <div className={classes.latestStoriesHeader}>
-            {/* <h3>Нашия Блог най-нови събития</h3> */}
             <h1>Новинис и събития</h1>
-            {/* <h4>Открии зашеметяващи stories, разкази енд новини за runnинг</h4> */}
             <a href="./Блог енд Нюзс">
               <Button variant="contained">Всички постове</Button>
             </a>
@@ -163,22 +160,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        {/* <div className={classes.containerCard5Km}>
-          <div className={classes.firstContainer}>
-            <div className={classes.image}>
-              <img className={classes.images} src={fiveKmImage2} alt="" />
-            </div>
-
-            <div>
-              <a href="https://www.google.com/maps/place/Parking/@43.2578646,26.9224865,123m/data=!3m1!1e3!4m6!3m5!1s0x40a58aef74d63f0d:0x5a1f94674ff36d5f!8m2!3d43.2579096!4d26.9230636!16s%2Fg%2F11cjhq28bh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D">
-                <Button variant="contained" className={classes.buttonFiveKm}>
-                  Виж къде бягаме всяка събота 5км от 08:30 на Шуменското плато
-                  Кликкк..!!!
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div> */}
 
         <section className={classes.runningTracksContainer}>
           <div className={classes.headRunTrackContainer}>

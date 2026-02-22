@@ -271,3 +271,50 @@
     border: 1px solid silver;
     margin-top: 4px;
 }
+
+.containerCard5Km {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 150px;
+    position: relative;
+    top: -852px
+}
+
+.firstContainer {
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('../images/ERImage.jpg');
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 150px;
+    margin-top: 150px;
+    width: 270px;
+    height: 400px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.image {
+    width: 250px; 
+    height: 250px;
+    /* margin-bottom: 50px;
+    margin-top: 50px; */
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.images {
+    width: 200px; 
+    height: 200px;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 0;
+}
+
+.buttonFiveKm {
+    width: 250px;
+    font-size: 12px !important;
+}

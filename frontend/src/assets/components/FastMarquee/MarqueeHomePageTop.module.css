@@ -1,0 +1,21 @@
+.marqueeContainer {
+    /* max-width: 1300px; */
+    /* margin-top: 25px; */
+    height: 32px;
+    display: flex;
+    gap: 88px;
+}
+
+.textWraper {
+    max-width: 362px;
+    height: 32px;
+}
+
+.textSlider {
+    color: orangered;
+    border: 3px ridge red;
+    border-radius: 8px;
+    max-width: 362px; 
+    height: 32px;
+    font-weight: 600;
+}

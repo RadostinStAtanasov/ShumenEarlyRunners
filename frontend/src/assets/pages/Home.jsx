@@ -18,11 +18,13 @@ import {
   faWeightScale,
 } from "@fortawesome/free-solid-svg-icons";
 import CardSlider from "../components/CardSlider/CardSlider.jsx";
+import HomePageTopSlider from "../components/FastMarquee/MarqueeHomePageTop.jsx";
 
 export default function HomePage() {
   return (
     <>
       <div className={classes.mainContainer}>
+        <HomePageTopSlider />
         <section className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
             <div className={classes.firstContainerTextContainer}>
@@ -72,7 +74,6 @@ export default function HomePage() {
             <CardSlider />
           </div>
         </section>
-
         <section className={classes.secondContainerWhyToRun}>
           <div className={classes.secondConBackGrdn}>
             <div className={classes.fourPictures}>
@@ -160,7 +161,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
         <section className={classes.runningTracksContainer}>
           <div className={classes.headRunTrackContainer}>
             <h2>Най-бяганите тракове на Шуменското Плато</h2>

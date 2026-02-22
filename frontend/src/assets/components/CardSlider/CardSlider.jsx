@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import "./CardSlider.css";
 
 export default function CardSlider() {
@@ -81,7 +81,7 @@ export default function CardSlider() {
             </a>
           </SwiperSlide>
           <SwiperSlide className="swiper-slide slide-3">
-            <a href="/Блог енд нюзс/ню нюсс">
+            <a href="/мадараТрейл">
               <div className="title">
                 <h1>Мадара Трейл 1 сезон</h1>
               </div>

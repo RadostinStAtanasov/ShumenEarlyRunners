@@ -7,28 +7,28 @@ export default function HomePageTopSlider() {
       <Marquee className={classes.backGround}>
         <div className={classes.marqueeContainer}>
           <div className={classes.textWraper}>
-            <a href="">
+            <a href="/мадараТрейл">
               <div className={classes.textSlider}>
                 Регистрирай се за Мадара Трейл 05.04.2026г.
               </div>
             </a>
           </div>
           <div className={classes.textWraper}>
-            <a href="">
+            <a href="/мадараТрейл">
               <div className={classes.textSlider}>
                 Регистрирай се за Мадара Трейл 05.04.2026г.
               </div>
             </a>
           </div>
           <div className={classes.textWraper}>
-            <a href="">
+            <a href="/мадараТрейл">
               <div className={classes.textSlider}>
                 Регистрирай се за Мадара Трейл 05.04.2026г.
               </div>
             </a>
           </div>
           <div className={classes.textWraper}>
-            <a href="">
+            <a href="/мадараТрейл">
               <div className={classes.textSlider}>
                 Регистрирай се за Мадара Трейл 05.04.2026г.
               </div>

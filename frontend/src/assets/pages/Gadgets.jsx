@@ -26,8 +26,8 @@ export default function GadgetsPage() {
         </div>
         <div className={classes.gadgets}>
           <div className={classes.backGroundImgStrava}>
-            ИИИ най-важното бягай/спортувай и го сподели къде? в strava в провен
-            случай не е направено ако не е споделено.
+            ИИИ най-важното бягай/спортувай и го сподели къде? в strava в
+            противен случай не е направено ако не е споделено.
           </div>
           <a href="https://www.strava.com/">
             <button>Цък</button>

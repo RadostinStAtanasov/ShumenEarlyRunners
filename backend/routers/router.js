@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const router = express.Router();
 const Papa = require("papaparse");
+const { delimiter } = require("path");
 
 router.get("/BlogAndNews", (req, res) => {
   const fileContent = fs.readFileSync("./data/BlogAndNews.csv", "utf-8");
@@ -11,7 +12,7 @@ router.get("/BlogAndNews", (req, res) => {
     dynamicTyping: true,
   });
 
-  res.status(200).json(jsonFile);
+  res.status(200).json(jsonFile.data);
 });
 
 module.exports = router;

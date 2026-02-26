@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 
 import image1 from "../../../images/Gallery/71.jpg";
@@ -7,10 +8,23 @@ import image4 from "../../../images/Gallery/71.jpg";
 import image5 from "../../../images/Gallery/71.jpg";
 
 export default function GenerateTitleForNewBlogOrNews() {
+  const [blogOrNews, setBlogOrNews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/BlogAndNews")
+      .then((response) => response.json())
+      .then((response) => {
+        setBlogOrNews(response);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  console.log(blogOrNews[0].Title);
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.titleAndPostedBy}>
-        <h2>Заглавие което трябва да е по голяма от постед бай</h2>
+        <h2>{blogOrNews[0].Title}</h2>
         <div>posted by Radku | DD/MM/YYYY</div>
       </div>
       <p>
@@ -26,9 +40,9 @@ export default function GenerateTitleForNewBlogOrNews() {
         tempore porro perferendis enim consequuntur excepturi repellendus?
         Inventore sapiente distinctio soluta blanditiis eaque illum optio
         nostrum? Temporibus quisquam libero non reiciendis architecto voluptatem
-        <div>
+        <span>
           <img className={classes.imgBlogAndNews} src={image1} alt="" />
-        </div>
+        </span>
         earum consectetur officia sapiente velit laborum ab odit totam tempora
         ipsa fugit corporis adipisci possimus, similique exercitationem voluptas
         vero! Quasi libero cumque assumenda quam, eos aperiam rerum quia
@@ -60,9 +74,9 @@ export default function GenerateTitleForNewBlogOrNews() {
         ducimus, fugit repellendus facilis velit rerum quasi nobis illum
         veritatis iste. A libero hic nulla natus non repellat, ea suscipit, sed
         modi, perferendis officiis voluptas dolore maiores quas nostrum. Beatae,
-        <div>
-          <img src={image2} alt="" />
-        </div>
+        <span>
+          <img className={classes.imgBlogAndNews} src={image2} alt="" />
+        </span>
         alias adipisci. Sapiente, corporis. Autem, obcaecati? Voluptatibus, eum
         deserunt distinctio sed nemo iure laudantium, sapiente rerum ducimus
         placeat tempore exercitationem incidunt minima quia accusamus aspernatur
@@ -437,9 +451,9 @@ export default function GenerateTitleForNewBlogOrNews() {
         minus maxime necessitatibus soluta incidunt natus voluptatem facilis
         libero est, non, voluptatibus repellat atque cum eligendi hic architecto
         sapiente? Sed enim temporibus dolore iste nihil autem, perspiciatis
-        <div>
-          <img src={image3} alt="" />
-        </div>
+        <span>
+          <img className={classes.imgBlogAndNews} src={image3} alt="" />
+        </span>
         saepe atque sit deleniti! Voluptatem, repudiandae reiciendis suscipit
         earum quia delectus deleniti, rerum sint labore nemo incidunt libero.
         Quos est, quidem illum nisi nihil harum alias vel non! Vitae, atque
@@ -627,9 +641,9 @@ export default function GenerateTitleForNewBlogOrNews() {
         unde, nemo beatae iste eveniet eaque ipsam magni! Perspiciatis ullam
         corporis harum quae veniam illum voluptates cum facere iusto officia ad,
         minus praesentium dolorem amet! Nulla tenetur est laborum, ad error
-        <div>
-          <img src={image4} alt="" />
-        </div>
+        <span>
+          <img className={classes.imgBlogAndNews} src={image4} alt="" />
+        </span>
         aperiam architecto animi repudiandae et deserunt velit quo inventore
         incidunt dolor recusandae maiores, consequatur dolorem earum saepe ullam
         dicta placeat quisquam quis. Aliquid repellat officia facilis tempore
@@ -812,9 +826,9 @@ export default function GenerateTitleForNewBlogOrNews() {
         culpa! Maxime ipsam quia aperiam ipsum molestias saepe dolores at ab
         nulla, recusandae repudiandae veritatis tempore cupiditate facere quae
         aspernatur impedit fugiat non, enim porro voluptatem aliquid accusamus
-        <div>
-          <img src={image5} alt="" />
-        </div>
+        <span>
+          <img className={classes.imgBlogAndNews} src={image5} alt="" />
+        </span>
         tempora quo. Libero quas doloribus impedit! Numquam animi deserunt qui
         excepturi porro tenetur in praesentium, consequatur modi, earum quo
         veritatis exercitationem repellat id! Voluptatum iure suscipit sunt

@@ -2,7 +2,20 @@ import CardBlogAndNewsPage from "../BlogAndNews/CardBlogAndNews";
 import classes from "../BlogAndNews/BlogAndNews.module.css";
 import HeadBlogAndNewsCard from "./HeadBlogAndNewsCard";
 
+import { useEffect, useState } from "react";
+
 export default function BlogAndNewsPage() {
+  // const [blogOrNews, setBlogOrNews] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/BlogAndNews")
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setBlogOrNews(response);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+
   return (
     <>
       <div className={classes.headerAndUnderline}>

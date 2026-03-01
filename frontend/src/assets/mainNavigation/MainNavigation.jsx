@@ -18,8 +18,8 @@ import classes from "./MainNavigation.module.css";
 
 const pages = [
   "Начало",
-  "Блог енд Нюзс",
-  "ЗаНасс",
+  "Блог енд Нюз",
+  "За Нас",
   "Галерия",
   "Събития",
   "Резултати",

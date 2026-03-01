@@ -13,11 +13,6 @@ export default function EventsPage() {
       </div>
       <div className={classes.habibi}>
         <div className={classes.image}>
-          <a href="https://tracksport.live/e/sumensko-plato-2025">
-            <img className={classes.images} src={shumenskoPlato} alt="" />
-          </a>
-        </div>
-        <div className={classes.image}>
           <a href="http://localhost:5173/мадараТрейл">
             <img className={classes.images} src={madaraRun} alt="" />
           </a>
@@ -25,6 +20,11 @@ export default function EventsPage() {
         <div className={classes.image}>
           <a href="https://visitshumen.bg/стената-run-шуменско-езеро-2025">
             <img className={classes.images} src={stenataRun} alt="" />
+          </a>
+        </div>
+        <div className={classes.image}>
+          <a href="https://tracksport.live/e/sumensko-plato-2025">
+            <img className={classes.images} src={shumenskoPlato} alt="" />
           </a>
         </div>
       </div>

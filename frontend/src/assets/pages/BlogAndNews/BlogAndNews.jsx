@@ -19,7 +19,7 @@ export default function BlogAndNewsPage() {
   return (
     <>
       <div className={classes.headerAndUnderline}>
-        <h1 className={classes.title}>Блог анд Нюзс</h1>
+        <h1 className={classes.title}>Блог енд Нюз</h1>
         <div className={classes.underline}></div>
       </div>
       <div className={classes.headBlogANews}>

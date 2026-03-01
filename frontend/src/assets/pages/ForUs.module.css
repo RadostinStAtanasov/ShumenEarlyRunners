@@ -9,6 +9,10 @@ p {
     margin-top: 50px;
 }
 
+.parafraphContainer p {
+    font-size: 18px;
+}
+
 .imgForUs {
     width: 800px;
     height:500px;

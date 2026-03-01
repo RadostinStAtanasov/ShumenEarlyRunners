@@ -154,8 +154,8 @@ const Footer = () => {
             <Typography variant="body2" component="div">
               <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box>
               <Box mb={1}>България, Шумен 9700</Box>
-              <Box mb={1}>Телефон: +1 234 567 8900</Box>
-              <Box>Имейл: info@example.com</Box>
+              <Box mb={1}>Телефон: +359 878688970 </Box>
+              <Box>Имейл: irinova@yahoo.com</Box>
             </Typography>
           </Grid>
         </Grid>

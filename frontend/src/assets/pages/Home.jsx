@@ -1,13 +1,11 @@
 import pametnik2 from "../images/logos/home-page2.jpg";
 import classes from "../pages/Home.module.css";
-import madaraRun from "../images/blogAndNewsImages/madaraRunNewLogo.jpg";
-import magicBazar from "../images/blogAndNewsImages/pazarOfMagic.jpg";
 
 import Button from "@mui/material/Button";
 import allStars from "../images/home-page.jpg";
 import shumenskataKrepost from "../images/shumenska-krepost.jpg";
 import pametnik from "../images/monument.jpg";
-import massRunn from "../images/blogAndNewsImages/masovoRunning.jpg";
+import massRunn from "../images/5kmCommon/DSC05703.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MarqueeSlider from "../components/FastMarquee/MarqueeSlideFooterRightToLeft.jsx";
 
@@ -33,10 +31,10 @@ export default function HomePage() {
                 Открийте себе си и нови дестинации за бягане в Шумен на
                 околността
               </h2>
-              <p>
+              {/* <p>
                 Открийте зашеметяващи дестинации и безпроблемни пътешествия,
                 създадени специално за вас
-              </p>
+              </p> */}
               <a href="https://racecalendar.bg">
                 <button className={classes.btnHomePage}>
                   Открии дестинации
@@ -64,7 +62,7 @@ export default function HomePage() {
         </section>
         <section className={classes.latestStories}>
           <div className={classes.latestStoriesHeader}>
-            <h1>Новинис и събития</h1>
+            <h1>Новини и събития</h1>
             <a href="./Блог енд Нюзс">
               <Button variant="contained">Всички постове</Button>
             </a>

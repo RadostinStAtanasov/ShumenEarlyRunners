@@ -2,7 +2,6 @@ const express = require("express");
 const fs = require("fs");
 const router = express.Router();
 const Papa = require("papaparse");
-const { delimiter } = require("path");
 
 router.get("/BlogAndNews", (req, res) => {
   const fileContent = fs.readFileSync("./data/BlogAndNews.csv", "utf-8");

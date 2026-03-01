@@ -105,6 +105,10 @@ select {
     margin-bottom: 50px;
 }
 
+.mainContainerShopDetails h1 {
+    text-transform: none;
+}
+
 .detailsImagesAndMainImage {
     display: flex;
     justify-content: space-around;

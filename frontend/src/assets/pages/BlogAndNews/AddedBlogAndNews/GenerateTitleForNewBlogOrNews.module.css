@@ -9,11 +9,13 @@
 
 .titleAndPostedBy {
     width: 1000px;
+    font-size: 42px;
+    color: #828282;
 }
 
 .titleAndPostedBy div {
-    color: #828282;
-    font-size: 11px;
+    font-size: 14px;
+    color: whitesmoke;
 }
 
 h2 {

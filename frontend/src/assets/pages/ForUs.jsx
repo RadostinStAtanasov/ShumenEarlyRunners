@@ -2,7 +2,7 @@ import classes from "../pages/ForUs.module.css";
 import massRun from "../images/blogAndNewsImages/masovoRunning.jpg";
 import stenataWall from "../images/blogAndNewsImages/stenataRun.jpg";
 import mustacRun from "../images/blogAndNewsImages/mustacRun.jpg";
-import punkt from "../images/blogAndNewsImages/punkt.jpg";
+import satelit from "../images/5kmSatelit.png";
 
 export default function ForUs() {
   return (
@@ -44,7 +44,7 @@ export default function ForUs() {
             инициативи и каузи. С личен пример насърчаваме и утвърждаваме
             доброволчеството.
             <br />
-            <img className={classes.imgForUs} src={punkt} alt="" />
+            <img className={classes.imgForUs} src={satelit} alt="" />
             <br />
             /снимка от пункт от фейса/ Наша основна кауза е да насърчим
             спортуването от ранна детска възраст и да покажем на младите хора,

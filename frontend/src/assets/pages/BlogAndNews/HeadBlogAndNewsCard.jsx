@@ -7,7 +7,7 @@ export default function HeadBlogAndNewsCard() {
       <div className={classes.outerLine}>
         <div className={classes.mainContainerHeadCard}>
           <div className={classes.headMainCont}>
-            The details are not the details. They make the design.
+            Празник на любовта, виното и бягането
           </div>
           <div className={classes.imgContHeadBlogNewsCard}>
             <a href="/Блог енд Нюзс/ню нюсс">
@@ -19,9 +19,7 @@ export default function HeadBlogAndNewsCard() {
             </a>
           </div>
           <div className={classes.footerBlogAndNews}>
-            <span>
-              Real comfort, visual and physical, is vital to every room
-            </span>
+            {/* <span>Ядахме, пихме и бягахме</span> */}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad
               id, quae delectus sapiente nobis voluptate, tempore officia

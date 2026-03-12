@@ -8,8 +8,6 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-
-
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
@@ -27,6 +25,7 @@
     "@mui/styled-engine-sc": "^7.3.3",
     "baseline-browser-mapping": "^2.9.14",
     "mdb-ui-kit": "^9.2.0",
+    "pg": "^8.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",

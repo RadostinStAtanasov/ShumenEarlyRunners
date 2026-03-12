@@ -10,12 +10,15 @@
 .titleAndPostedBy {
     width: 1000px;
     font-size: 42px;
-    color: #828282;
+    color: #d4d4d4;
+    margin-top: 22px;
+    margin-bottom: 42px;
 }
 
-.titleAndPostedBy div {
+.postedByText {
     font-size: 14px;
     color: whitesmoke;
+    margin-bottom: 22px;
 }
 
 h2 {
@@ -26,7 +29,7 @@ h2 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 16spx;
     line-height: 28px;
     color: #a8a8a8;
 }

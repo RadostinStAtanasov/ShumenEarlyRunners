@@ -23,7 +23,6 @@ const StyledFooter = styled("footer")(({ theme }) => ({
   position: "sticky",
   bottom: 0,
   width: "100%",
-  //   zIndex: 1000,
 }));
 
 const SocialIcon = styled(IconButton)(({ theme }) => ({

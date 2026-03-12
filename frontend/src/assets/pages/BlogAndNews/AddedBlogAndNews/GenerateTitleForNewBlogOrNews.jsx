@@ -17,12 +17,12 @@ export default function GenerateTitleForNewBlogOrNews() {
 
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.titleAndPostedBy}>
-        {blogOrNews.Title}
-        <div>
+      <div className={classes.titleAndPostedBy}>{blogOrNews.Title}</div>
+      <div>
+        <div className={classes.postedByText}>
           posted by {blogOrNews.PostedBy} | {blogOrNews.PostedDate}
-          <p>{blogOrNews.InfoBlogAndNews}</p>
         </div>
+        <p>{blogOrNews.InfoBlogAndNews}</p>
       </div>
       <span>
         <img className={classes.imgBlogAndNews} src={image1} alt="" />

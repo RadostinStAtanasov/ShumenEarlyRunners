@@ -1,20 +1,21 @@
 import CardBlogAndNewsPage from "../BlogAndNews/CardBlogAndNews";
 import classes from "../BlogAndNews/BlogAndNews.module.css";
 import HeadBlogAndNewsCard from "./HeadBlogAndNewsCard";
+import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
 export default function BlogAndNewsPage() {
-  // const [blogOrNews, setBlogOrNews] = useState([]);
+  const [blogOrNews, setBlogOrNews] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/BlogAndNews")
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       setBlogOrNews(response);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:3000/BlogAndNews")
+      .then((response) => response.json())
+      .then((response) => {
+        setBlogOrNews(response);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <>
@@ -23,12 +24,18 @@ export default function BlogAndNewsPage() {
         <div className={classes.underline}></div>
       </div>
       <div className={classes.headBlogANews}>
-        <HeadBlogAndNewsCard />
+        {blogOrNews.slice(0, 1).map((objHeadblog, index) => (
+          <div key={index}>
+            <HeadBlogAndNewsCard infoHeadBlog={objHeadblog} />
+          </div>
+        ))}
       </div>
       <div className={classes.cardOrder}>
-        <CardBlogAndNewsPage />
-        <CardBlogAndNewsPage />
-        <CardBlogAndNewsPage />
+        {blogOrNews.slice(1).map((obj, index) => (
+          <div key={index}>
+            <CardBlogAndNewsPage info={obj} />
+          </div>
+        ))}
       </div>
     </>
   );

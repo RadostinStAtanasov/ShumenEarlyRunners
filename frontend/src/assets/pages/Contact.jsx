@@ -4,7 +4,7 @@ import { faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import rc from "../images/images.png";
-import irun from "../images/iRun.jpg";
+import iRun from "../images/iRun.jpg";
 import allTrails from "../images/Alltrails.png";
 import fiveKmSat from "../images/5kmSatelit.png";
 import calc from "../images/calcpace.png";
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   </a>
                   <a href="https://www.irun.bg/">
                     <div className={classes.uLinks}>
-                      <img className={classes.imgCon} src={irun} alt="" />
+                      <img className={classes.imgCon} src={iRun} alt="" />
                       <div>iRun</div>
                     </div>
                   </a>

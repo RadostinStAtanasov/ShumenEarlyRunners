@@ -1,0 +1,129 @@
+name: Deploy Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+    environment: CP
+
+    steps:
+      - name: Deploy backend via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CP_HOST }}
+          username: ${{ secrets.CP_USER }}
+          password: ${{ secrets.CP_PASS }}
+
+          script: |
+            echo "Deploying backend..."
+
+            REPO=${{ github.event.repository.name }}
+            USER=${{ secrets.CP_USER }}
+
+            cd /home/$USER/projects
+
+            if [ ! -d "$REPO" ]; then
+              git clone https://github.com/${{ github.repository }}.git $REPO
+            fi
+
+            cd /home/$USER/projects/$REPO/backend
+
+            git fetch origin
+            git reset --hard origin/main
+
+            source /home/$USER/nodevenv/projects/$REPO/backend/20/bin/activate
+
+            cd /home/$USER/projects/$REPO/backend
+
+            rm -rf node_modules
+
+            npm install -f
+
+            echo "Backend deployed!"
+
+  deploy-frontend:
+    runs-on: ubuntu-latest
+    needs: deploy-backend
+    environment: CP
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 25
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Upload frontend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.CP_HOST }}
+          protocol: ftp
+          port: 21
+          username: ${{ secrets.CP_USER }}
+          password: ${{ secrets.CP_PASS }}
+          local-dir: ./frontend/dist/
+          server-dir: /public_html/
+  deploy-restart:
+    runs-on: ubuntu-latest
+    needs: deploy-frontend
+    environment: CP
+
+    steps:
+      - name: Deploy backend via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CP_HOST }}
+          username: ${{ secrets.CP_USER }}
+          password: ${{ secrets.CP_PASS }}
+
+          script: |
+            echo "Deploying backend..."
+
+            REPO=${{ github.event.repository.name }}
+            USER=${{ secrets.CP_USER }}
+
+            touch /home/$USER/projects/$REPO/backend/tmp/restart.txt
+
+            cat /public_html/.htaccess << EOF
+            <IfModule mod_rewrite.c>
+                Options +FollowSymLinks
+                IndexIgnore */*
+                RewriteEngine On
+                RewriteCond %{HTTPS} off
+                RewriteRule ^(.*) https://%{HTTP_HOST}/$1 [R,L]
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{REQUEST_FILENAME} !\/$
+                RewriteRule ^(.*) /
+            </IfModule>
+
+            <IfModule mod_headers.c>
+                <FilesMatch "sw\.js$">
+                    Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+                    Header set Pragma "no-cache"
+                </FilesMatch>
+            </IfModule>
+
+            <IfModule mime_module>
+              AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+            </IfModule>
+
+            <IfModule Litespeed>
+            </IfModule>
+            EOF

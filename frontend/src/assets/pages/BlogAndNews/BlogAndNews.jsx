@@ -1,8 +1,6 @@
 import CardBlogAndNewsPage from "../BlogAndNews/CardBlogAndNews";
 import classes from "../BlogAndNews/BlogAndNews.module.css";
 import HeadBlogAndNewsCard from "./HeadBlogAndNewsCard";
-import { Link } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 
 export default function BlogAndNewsPage() {

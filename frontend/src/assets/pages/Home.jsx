@@ -28,7 +28,7 @@ export default function HomePage() {
             <div className={classes.firstContainerTextContainer}>
               <h3>Твоето мечтано пътуване към бягането</h3>
               <h2 className={classes.secondTitle}>
-                Открийте себе си и нови дестинации за бягане в Шумен на
+                Открийте себе си и нови дестинации за бягане в Шумен и
                 околността
               </h2>
               {/* <p>
@@ -63,7 +63,7 @@ export default function HomePage() {
         <section className={classes.latestStories}>
           <div className={classes.latestStoriesHeader}>
             <h1>Новини и събития</h1>
-            <a href="./Блог енд Нюзс">
+            <a href="./Блог енд Нюз">
               <Button variant="contained">Всички постове</Button>
             </a>
           </div>

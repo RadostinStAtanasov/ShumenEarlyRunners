@@ -14,4 +14,18 @@ router.get("/BlogAndNews", (req, res) => {
   res.status(200).json(jsonFile.data);
 });
 
+router.get("/BlogAndNews/:blogAndNewsId", (req, res) => {
+  const id = req.params.blogAndNewsId;
+  const fileContent = fs.readFileSync("./data/BlogAndNews.csv", "utf8");
+
+  const jsonFile = Papa.parse(fileContent, {
+    header: true,
+    dynamicTyping: true,
+  });
+
+  let result = jsonFile.data.find((a) => a.ID == id);
+
+  res.status(200).json(result);
+});
+
 module.exports = router;

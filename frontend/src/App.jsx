@@ -9,9 +9,9 @@ import GadgetsPage from "./assets/pages/Gadgets";
 import EventsPage from "./assets/pages/Events";
 import GalleryPage from "./assets/pages/Gallery";
 import ShopPage from "./assets/pages/Shop/Shop";
-import MadaraPage from "./assets/pages/MadaraTrail";
+import MadaraPage from "./assets/pages/BlogAndNews/News/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
-import GenerateBlogAndNewsPage from "./assets/pages/BlogAndNews/AddedBlogAndNews/GenerateTitleForNewBlogOrNews";
+import GeneratedClickedBlogOrNews from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews";
 import DetailPage from "./assets/pages/Shop/Detail";
 
 const router = createBrowserRouter(
@@ -26,8 +26,8 @@ const router = createBrowserRouter(
         { path: "/галерия", element: <GalleryPage /> },
         { path: "/Блог енд Нюз", element: <NewsPage /> },
         {
-          path: "/Блог енд Нюзс/ню нюсс",
-          element: <GenerateBlogAndNewsPage />,
+          path: "/Блог енд Нюз/:blogAndNewsId",
+          element: <GeneratedClickedBlogOrNews />,
         },
         { path: "/За Нас", element: <ForUsPage /> },
         { path: "/резултати", element: <ResultsPage /> },
@@ -36,7 +36,7 @@ const router = createBrowserRouter(
         { path: "/магазин", element: <ShopPage /> },
         { path: "/магазин/детайли", element: <DetailPage /> },
         { path: "/мадараТрейл", element: <MadaraPage /> },
-        { path: "партньори", element: <PartnersPage /> },
+        { path: "/партньори", element: <PartnersPage /> },
       ],
     },
   ],

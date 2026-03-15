@@ -5,26 +5,18 @@ import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function CardBlogAndNewsPage({ info }) {
-  console.log(info);
-
   return (
     <>
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
-          <a href="/Блог енд Нюзс/ню нюсс">
-            <img
-              className={classes.imagesBlogAndNews}
-              src={NikolaiGinchev}
-              alt=""
-            />
+          <a href={`/Блог енд Нюз/${info.ID}`}>
+            <img className={classes.imagesBlogAndNews} src={info.Pic} alt="" />
           </a>
         </div>
         <div className={classes.containerPostedBy}>
           posted by {info.PostedBy} | {info.PostedDate} | {info.bOrN}
         </div>
-        <div className={classes.headerCard}>
-          <a href="/Блог енд Нюзс/ню нюсс"></a>
-        </div>
+        <div className={classes.headerCard}></div>
         <div className={classes.containerParagraph}>
           <p className={classes.cutTheText}>{info.InfoBlogAndNews}</p>
         </div>
@@ -38,7 +30,7 @@ export default function CardBlogAndNewsPage({ info }) {
             <span> leave a comment</span>
           </a>
         </div>
-        <a href="/Блог енд Нюзс/ню нюсс">
+        <a href={`/Блог енд Нюз/${info.ID}`}>
           <button className={classes.buttonContinuedReading}>
             продължиш да четеш
           </button>

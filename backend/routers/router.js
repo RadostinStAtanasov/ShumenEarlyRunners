@@ -26,6 +26,7 @@ router.get("/BlogAndNews/:blogAndNewsId", (req, res) => {
   let result = jsonFile.data.find((a) => a.ID == id);
 
   res.status(200).json(result);
+  console.log(result);
 });
 
 module.exports = router;

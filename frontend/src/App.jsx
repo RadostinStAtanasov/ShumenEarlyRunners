@@ -14,34 +14,31 @@ import PartnersPage from "./assets/pages/Partners";
 import GeneratedClickedBlogOrNews from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews";
 import DetailPage from "./assets/pages/Shop/Detail";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <RootLayout />,
-      children: [
-        { path: "/", element: <HomePage /> },
-        { path: "/начало", element: <HomePage /> },
-        { path: "/контакти", element: <ContactPage /> },
-        { path: "/галерия", element: <GalleryPage /> },
-        { path: "/Блог енд Нюз", element: <NewsPage /> },
-        {
-          path: "/Блог енд Нюз/:blogAndNewsId",
-          element: <GeneratedClickedBlogOrNews />,
-        },
-        { path: "/За Нас", element: <ForUsPage /> },
-        { path: "/резултати", element: <ResultsPage /> },
-        { path: "/джаджи", element: <GadgetsPage /> },
-        { path: "/събития", element: <EventsPage /> },
-        { path: "/магазин", element: <ShopPage /> },
-        { path: "/магазин/детайли", element: <DetailPage /> },
-        { path: "/мадараТрейл", element: <MadaraPage /> },
-        { path: "/партньори", element: <PartnersPage /> },
-      ],
-    },
-  ],
-  // { basename: "/https://github.com/RadostinStAtanasov/ShumenEarlyRunners" },
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/начало", element: <HomePage /> },
+      { path: "/контакти", element: <ContactPage /> },
+      { path: "/галерия", element: <GalleryPage /> },
+      { path: "/Блог енд Нюз", element: <NewsPage /> },
+      {
+        path: "/Блог енд Нюз/:blogAndNewsId",
+        element: <GeneratedClickedBlogOrNews />,
+      },
+      { path: "/За Нас", element: <ForUsPage /> },
+      { path: "/резултати", element: <ResultsPage /> },
+      { path: "/джаджи", element: <GadgetsPage /> },
+      { path: "/събития", element: <EventsPage /> },
+      { path: "/магазин", element: <ShopPage /> },
+      { path: "/магазин/детайли", element: <DetailPage /> },
+      { path: "/мадараТрейл", element: <MadaraPage /> },
+      { path: "/партньори", element: <PartnersPage /> },
+    ],
+  },
+]);
 
 function App() {
   return (

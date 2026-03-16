@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
-import madara from "../../images/blogAndNewsImages/madaraRun.jpg";
 
 export default function CardSlider() {
   const [blogAndNews, setBlogsAndNews] = useState([]);
@@ -17,8 +16,6 @@ export default function CardSlider() {
       })
       .catch((error) => console.log(error));
   }, []);
-
-  console.log(blogAndNews);
 
   return (
     <div className="main">

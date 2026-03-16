@@ -266,3 +266,107 @@
         border-radius: 14px;
     }
 }
+
+@media (max-width: 1620px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 120vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1340px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 140vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1140px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 160vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1000px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 180vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 880px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 200vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 880px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 240vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 710px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 280vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 608px ) {
+    .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:75vh;
+        width: 380vw;
+        background: rgb(70, 70, 70);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+}

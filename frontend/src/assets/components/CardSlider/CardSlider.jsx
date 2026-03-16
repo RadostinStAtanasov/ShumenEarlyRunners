@@ -3,8 +3,23 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./CardSlider.css";
+import { useEffect, useState } from "react";
+import madara from "../../images/blogAndNewsImages/madaraRun.jpg";
 
 export default function CardSlider() {
+  const [blogAndNews, setBlogsAndNews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/blogAndNews")
+      .then((response) => response.json())
+      .then((response) => {
+        setBlogsAndNews(response);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  console.log(blogAndNews);
+
   return (
     <div className="main">
       <div className="container">
@@ -24,37 +39,43 @@ export default function CardSlider() {
             650: { spaceBetween: 30 },
           }}
         >
-          <SwiperSlide className="swiper-slide slide-1">
-            <a href="/Блог енд нюзс/ню нюсс">
-              <div className="title">
-                <h1>Св.Валентин</h1>
-              </div>
-              <div className="content">
-                {/* <div className="score">8.6</div> */}
-                <div className="text">
-                  <h2>Св.Валентин</h2>
-                  <p>
-                    Както всяка година празнуваме празника на виното и любовта
-                    на пистата.
-                  </p>
+          {blogAndNews.map((info, index) => (
+            <SwiperSlide
+              key={index}
+              style={{
+                backgroundImage: `url(${info.Pic})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className="swiper-slide slide-1"
+            >
+              <a href={`/Блог енд нюз/${info.ID}`}>
+                <div className="title">
+                  <h1>{info.Title}</h1>
                 </div>
-                <div className="genre">
-                  <span style={{ "--i": 1 }}>5км</span>
-                  <span style={{ "--i": 2 }}>Early Runners</span>
-                  <span style={{ "--i": 3 }}>Вино</span>
-                  <span style={{ "--i": 4 }}>Шоколад</span>
-                  <span style={{ "--i": 5 }}>Любов</span>
+                <div className="content">
+                  <div className="text">
+                    <h2>{info.Title}</h2>
+                    <p>{info.infoBlogAndNews}</p>
+                  </div>
+                  <div className="genre">
+                    <span style={{ "--i": 1 }}>5км</span>
+                    <span style={{ "--i": 2 }}>Early Runners</span>
+                    {/* <span style={{ "--i": 3 }}>Вино</span>
+                    <span style={{ "--i": 4 }}>Шоколад</span>
+                    <span style={{ "--i": 5 }}>Любов</span> */}
+                  </div>
                 </div>
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide className="swiper-slide slide-2">
+              </a>
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide className="swiper-slide slide-2">
             <a href="/Блог енд нюзс/ню нюсс">
               <div className="title">
                 <h1>5км Зелев сок</h1>
               </div>
               <div className="content">
-                {/* <div className="score">8.6</div> */}
                 <div className="text">
                   <h2>5км Зелев сок</h2>
                   <p>
@@ -79,14 +100,14 @@ export default function CardSlider() {
                 </div>
               </div>
             </a>
-          </SwiperSlide>
-          <SwiperSlide className="swiper-slide slide-3">
+          </SwiperSlide> */}
+          {/* <SwiperSlide className="swiper-slide slide-3">
             <a href="/мадараТрейл">
               <div className="title">
                 <h1>Мадара Трейл 1 сезон</h1>
               </div>
               <div className="content">
-                {/* <div className="score">8.6</div> */}
+              
                 <div className="text">
                   <h2>Мадара Трейл</h2>
                   <p>
@@ -114,7 +135,7 @@ export default function CardSlider() {
                 <h1>МАДАРА TRAIL 2026 С НОВИ ПРИЯТЕЛИ</h1>
               </div>
               <div className="content">
-                {/* <div className="score">8.6</div> */}
+              
                 <div className="text">
                   <h2>МАДАРА TRAIL 2026 С НОВИ ПРИЯТЕЛИ</h2>
                   <p>
@@ -146,7 +167,7 @@ export default function CardSlider() {
                 <h1>Flash</h1>
               </div>
               <div className="content">
-                {/* <div className="score">8.6</div> */}
+                
                 <div className="text">
                   <h2>Flash</h2>
                   <p>
@@ -165,7 +186,7 @@ export default function CardSlider() {
                 </div>
               </div>
             </a>
-          </SwiperSlide>
+          </SwiperSlide> */}
           <div className="swiper-pagination"></div>
         </Swiper>
       </div>

@@ -43,7 +43,7 @@
     transition: 0.6s ease-in-out;
 }
 
-.slide-1 {
+/* .slide-1 {
     background: url("../../images/blogAndNewsImages/st.Valentines.jpg") no-repeat center / cover;
 }
 
@@ -61,7 +61,7 @@
 
 .slide-5 {
     background: url("../../images/monument.jpg") no-repeat center / cover;
-}
+} */
 
 .title {
     display: flex;

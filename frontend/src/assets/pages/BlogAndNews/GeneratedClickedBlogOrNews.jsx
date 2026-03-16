@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
-import React from "react";
-import ReactDOM from "react-dom";
-
-import image1 from "../../images/blogAndNewsImages/st.Valentines.jpg";
 
 export default function GeneratedClickedBlogOrNews() {
   const [blogOrNews, setBlogOrNews] = useState([]);

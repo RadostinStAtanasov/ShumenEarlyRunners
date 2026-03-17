@@ -100,7 +100,7 @@ jobs:
 
             touch /home/$USER/projects/$REPO/backend/tmp/restart.txt
 
-            cat /public_html/.htaccess << EOF
+            cat /home/$USER/public_html/.htaccess << EOF
             <IfModule mod_rewrite.c>
                 Options +FollowSymLinks
                 IndexIgnore */*

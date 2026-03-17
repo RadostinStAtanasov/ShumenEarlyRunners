@@ -69,11 +69,11 @@ const Footer = () => {
         <Grid container spacing={4} className={classes.fastLinks}>
           <Grid item xs={12} sm={6} md={3} className={classes.forUs}>
             <Typography variant="h6" gutterBottom>
-              За Нас
+              {/* За Нас */}
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
-              quisquam distinctio maxime enim ipsa dolorum.
+              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+              quisquam distinctio maxime enim ipsa dolorum. */}
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} md={3} className>
@@ -123,7 +123,7 @@ const Footer = () => {
                 Начало
               </FooterLink>
               <FooterLink
-                href="/за насс"
+                href="/за нас"
                 onClick={scrollToTop}
                 aria-label="Navigate to Products"
               >
@@ -151,7 +151,7 @@ const Footer = () => {
               Информация за контакти
             </Typography>
             <Typography variant="body2" component="div">
-              <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box>
+              {/* <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box> */}
               <Box mb={1}>България, Шумен 9700</Box>
               <Box mb={1}>Телефон: +359 878688970 </Box>
               <Box>Имейл: irinova@yahoo.com</Box>

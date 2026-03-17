@@ -83,6 +83,7 @@ function ResponsiveAppBar() {
             </IconButton>
             <Menu
               id="menu-appbar"
+              className={classes.menuAppbar}
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",

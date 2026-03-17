@@ -22,6 +22,10 @@
     height: 92px;
 }
 
+.menuAppbar ul {
+     width: 468px;
+}
+
 @media only screen and (max-width: 900px) {
     .logoTextOn {
         display: none;

@@ -9,7 +9,7 @@ export default function BlogAndNewsPage() {
     {
       ID: 1,
       Title: "5 км. Става на 5 години",
-      Pic: "/Public/blogAndNews/st.Valentines.jpg",
+      Pic: "../../images/blogAndNewsImages/5kmRD.jpg",
       PostedDate: "2/14/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -18,7 +18,7 @@ export default function BlogAndNewsPage() {
     {
       ID: 2,
       Title: "Празник на любовта.Виното.Бягането",
-      Pic: "/Public/blogAndNews/5kmRD2.jpg",
+      Pic: "../../images/blogAndNewsImages/st.Valentines.jpg",
       PostedDate: "3/14/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -28,7 +28,7 @@ export default function BlogAndNewsPage() {
     {
       ID: 3,
       Title: "МАДАРА TRAIL 2026 С НОВИ ПРИЯТЕЛИ",
-      Pic: "/Public/blogAndNews/shumenEarlyWithNewPartners.jpg",
+      Pic: "../../images/blogAndNewsImages/madaraRun2.jpg",
       PostedDate: "3/1/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -38,7 +38,7 @@ export default function BlogAndNewsPage() {
     {
       ID: 4,
       Title: "StenataRun",
-      Pic: "/Public/blogAndNews/stenataRun.jpg",
+      Pic: "../../images/blogAndNewsImages/stenataRun.jpg",
       PostedDate: "5/25/2026",
       PostedBy: "Rado",
       BOrN: "news",
@@ -48,7 +48,7 @@ export default function BlogAndNewsPage() {
     {
       ID: 5,
       Title: "ПЪРВИ 5 КМ. ЗА 2006 ГОДИНА – ЗА ЗЕЛЕВ СОК",
-      Pic: "/Public/blogAndNews/zaZelevSokStartOfTheYear.jpg",
+      Pic: "../../images/blogAndNewsImages/zelevSok.jpg",
       PostedDate: "1/02/2026",
       PostedBy: "IrinaAndRado",
       BOrN: "bigNews",

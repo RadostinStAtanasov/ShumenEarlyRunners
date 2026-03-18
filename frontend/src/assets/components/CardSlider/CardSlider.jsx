@@ -6,11 +6,11 @@ import "./CardSlider.css";
 import { useEffect, useState } from "react";
 
 export default function CardSlider() {
-  const [blogAndNews, setBlogOrNews] = useState([
+  const [blogOrNews, setBlogOrNews] = useState([
     {
       ID: 1,
       Title: "5 км. Става на 5 години",
-      Pic: "/Public/blogAndNews/st.Valentines.jpg",
+      Pic: "../../images/blogAndNewsImages/5kmRD.jpg",
       PostedDate: "2/14/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -19,7 +19,7 @@ export default function CardSlider() {
     {
       ID: 2,
       Title: "Празник на любовта.Виното.Бягането",
-      Pic: "/Public/blogAndNews/5kmRD2.jpg",
+      Pic: "../../images/blogAndNewsImages/st.Valentines.jpg",
       PostedDate: "3/14/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -29,7 +29,7 @@ export default function CardSlider() {
     {
       ID: 3,
       Title: "МАДАРА TRAIL 2026 С НОВИ ПРИЯТЕЛИ",
-      Pic: "/Public/blogAndNews/shumenEarlyWithNewPartners.jpg",
+      Pic: "../../images/blogAndNewsImages/madaraRun2.jpg",
       PostedDate: "3/1/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -39,7 +39,7 @@ export default function CardSlider() {
     {
       ID: 4,
       Title: "StenataRun",
-      Pic: "/Public/blogAndNews/stenataRun.jpg",
+      Pic: "../../images/blogAndNewsImages/stenataRun.jpg",
       PostedDate: "5/25/2026",
       PostedBy: "Rado",
       BOrN: "news",
@@ -49,7 +49,7 @@ export default function CardSlider() {
     {
       ID: 5,
       Title: "ПЪРВИ 5 КМ. ЗА 2006 ГОДИНА – ЗА ЗЕЛЕВ СОК",
-      Pic: "/Public/blogAndNews/zaZelevSokStartOfTheYear.jpg",
+      Pic: "../../images/blogAndNewsImages/zelevSok.jpg",
       PostedDate: "1/02/2026",
       PostedBy: "IrinaAndRado",
       BOrN: "bigNews",
@@ -57,6 +57,7 @@ export default function CardSlider() {
         "Стартираме 2026 г. надъхани за нови приключения и много настроение. Още в първия ден на годината тичахме „За зелев сок“. Забавното първо януарско събитие провеждаме за трета поредна година. Зелевият сок винаги е топ опция в първия ден след дългите празници. А съчетан с раздвижване дава добър старт на годината.След оспорвана дегустация всички определиха че най-атрактивния зелев сок е на Милко Милков той го гомбинира с айран и така спечели приза.  Кой каза че зимното бягане не е забавно? Всяка събота старт 8.30 часа от паркинга до паметник “Създатели на българската държава“ на шуменското плато.",
     },
   ]);
+
   //const [blogAndNews, setBlogsAndNews] = useState([]);
 
   // useEffect(() => {

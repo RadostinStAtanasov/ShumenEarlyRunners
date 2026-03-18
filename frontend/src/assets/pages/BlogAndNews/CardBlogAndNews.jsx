@@ -2,6 +2,7 @@ import classes from "../BlogAndNews/CardBlogAndNews.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import testImage from "../../images/blogAndNewsImages/5kmRD.jpg";
 
 export default function CardBlogAndNewsPage({ info }) {
   return (
@@ -9,7 +10,7 @@ export default function CardBlogAndNewsPage({ info }) {
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
           <a href={`/Блог енд Нюз/${info.ID}`}>
-            <img className={classes.imagesBlogAndNews} src={info.Pic} alt="" />
+            <img className={classes.imagesBlogAndNews} src={testImage} alt="" />
           </a>
         </div>
         <div className={classes.containerPostedBy}>

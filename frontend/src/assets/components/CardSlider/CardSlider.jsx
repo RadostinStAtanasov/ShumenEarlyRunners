@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
+import testImage from "../../images/blogAndNewsImages/5kmRD.jpg";
 
 export default function CardSlider() {
   const [blogOrNews, setBlogOrNews] = useState([
@@ -88,11 +89,11 @@ export default function CardSlider() {
             650: { spaceBetween: 30 },
           }}
         >
-          {blogAndNews.map((info, index) => (
+          {blogOrNews.map((info, index) => (
             <SwiperSlide
               key={index}
               style={{
-                backgroundImage: `url(${info.Pic})`,
+                backgroundImage: `url(${testImage})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",

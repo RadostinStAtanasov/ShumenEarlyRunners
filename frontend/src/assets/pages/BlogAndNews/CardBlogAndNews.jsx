@@ -2,7 +2,7 @@ import classes from "../BlogAndNews/CardBlogAndNews.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import testImage from "../../../../public/blogAndNews/5kmRD2.jpg";
+import testImage from "../../images/blogAndNewsImages/blog1.jpg";
 
 export default function CardBlogAndNewsPage({ info }) {
   return (

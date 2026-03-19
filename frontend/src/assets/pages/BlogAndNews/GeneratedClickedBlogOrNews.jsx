@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
+import img from "/Public/blogAndNews/st.Valentines.jpg";
 
 export default function GeneratedClickedBlogOrNews() {
   //const [blogOrNews, setBlogOrNews] = useState([]);
@@ -9,7 +10,7 @@ export default function GeneratedClickedBlogOrNews() {
     {
       ID: 1,
       Title: "5 км. Става на 5 години",
-      Pic: "../../images/blogAndNewsImages/5kmRD.jpg",
+      Pic: "5kmRD",
       PostedDate: "2/14/2026",
       PostedBy: "Irina",
       BOrN: "blog",
@@ -60,6 +61,7 @@ export default function GeneratedClickedBlogOrNews() {
   const params = useParams();
   const id = params.blogAndNewsId;
   const blodAndNewsId = id - 1;
+  //const img = blogOrNews[blodAndNewsId].Pic;
 
   // useEffect(() => {
   //   fetch("http://localhost:3000/BlogAndNews/" + id)
@@ -70,7 +72,7 @@ export default function GeneratedClickedBlogOrNews() {
   //     .catch((error) => console.log(error));
   // }, []);
 
-  console.log(id);
+  console.log(blogOrNews[blodAndNewsId].Pic);
 
   return (
     <div className={classes.mainContainer}>
@@ -83,11 +85,7 @@ export default function GeneratedClickedBlogOrNews() {
           {blogOrNews[blodAndNewsId].PostedDate}
         </div>
         <span>
-          <img
-            className={classes.imgBlogAndNews}
-            src={blogOrNews[blodAndNewsId].Pic}
-            alt=""
-          />
+          <img className={classes.imgBlogAndNews} src={img} alt=""></img>
         </span>
         <p>{blogOrNews[blodAndNewsId].InfoBlogAndNews}</p>
       </div>

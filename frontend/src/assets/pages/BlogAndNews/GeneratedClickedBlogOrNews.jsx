@@ -85,7 +85,11 @@ export default function GeneratedClickedBlogOrNews() {
           {blogOrNews[blodAndNewsId].PostedDate}
         </div>
         <span>
-          <img className={classes.imgBlogAndNews} src={img} alt=""></img>
+          <img
+            className={classes.imgBlogAndNews}
+            src={blogOrNews[blodAndNewsId].Pic}
+            alt=""
+          ></img>
         </span>
         <p>{blogOrNews[blodAndNewsId].InfoBlogAndNews}</p>
       </div>

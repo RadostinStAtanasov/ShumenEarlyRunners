@@ -1,10 +1,22 @@
 import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
-import img from "/public/blogAndNews/st.Valentines.jpg";
+
+import fiveKmRD from "../../images/blogAndNewsImages/5kmRD.jpg";
+import valentines from "../../images/blogAndNewsImages/st.Valentines.jpg";
+import shumEarlyRun from "../../images/blogAndNewsImages/newPartners.jpg";
+import stenataRun from "../../images/blogAndNewsImages/stenataRun.jpg";
+import zelevSok from "../../images/blogAndNewsImages/zelevSok.jpg";
 
 export default function GeneratedClickedBlogOrNews() {
   //const [blogOrNews, setBlogOrNews] = useState([]);
+  const [blogOrNewsPics, setBlogOrNewsPics] = useState([
+    fiveKmRD,
+    valentines,
+    shumEarlyRun,
+    stenataRun,
+    zelevSok,
+  ]);
 
   const [blogOrNews, setBlogOrNews] = useState([
     {
@@ -87,7 +99,7 @@ export default function GeneratedClickedBlogOrNews() {
         <span>
           <img
             className={classes.imgBlogAndNews}
-            src={blogOrNews[blodAndNewsId].Pic}
+            src={blogOrNewsPics[blodAndNewsId]}
             alt=""
           ></img>
         </span>

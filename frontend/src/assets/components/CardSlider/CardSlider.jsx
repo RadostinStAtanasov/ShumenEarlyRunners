@@ -4,9 +4,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
-import testImage from "../../images/blogAndNewsImages/5kmRD.jpg";
+
+import fiveKmRD from "../../images/blogAndNewsImages/5kmRD.jpg";
+import valentines from "../../images/blogAndNewsImages/st.Valentines.jpg";
+import shumEarlyRun from "../../images/blogAndNewsImages/newPartners.jpg";
+import stenataRun from "../../images/blogAndNewsImages/stenataRun.jpg";
+import zelevSok from "../../images/blogAndNewsImages/zelevSok.jpg";
 
 export default function CardSlider() {
+  const [blogOrNewsPics, setBlogOrNewsPics] = useState([
+    fiveKmRD,
+    valentines,
+    shumEarlyRun,
+    stenataRun,
+    zelevSok,
+  ]);
+
   const [blogOrNews, setBlogOrNews] = useState([
     {
       ID: 1,
@@ -93,7 +106,7 @@ export default function CardSlider() {
             <SwiperSlide
               key={index}
               style={{
-                backgroundImage: `url(${testImage})`,
+                backgroundImage: `url(${blogOrNewsPics[index]})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",

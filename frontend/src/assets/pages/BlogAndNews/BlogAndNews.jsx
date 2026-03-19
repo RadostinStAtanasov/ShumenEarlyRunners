@@ -3,8 +3,22 @@ import classes from "../BlogAndNews/BlogAndNews.module.css";
 import HeadBlogAndNewsCard from "./HeadBlogAndNewsCard";
 import { useEffect, useState } from "react";
 
+import fiveKmRD from "../../images/blogAndNewsImages/5kmRD.jpg";
+import valentines from "../../images/blogAndNewsImages/st.Valentines.jpg";
+import shumEarlyRun from "../../images/blogAndNewsImages/newPartners.jpg";
+import stenataRun from "../../images/blogAndNewsImages/stenataRun.jpg";
+import zelevSok from "../../images/blogAndNewsImages/zelevSok.jpg";
+
 export default function BlogAndNewsPage() {
   // const [blogOrNews, setBlogOrNews] = useState([]);
+  const [blogOrNewsPics, setBlogOrNewsPics] = useState([
+    fiveKmRD,
+    valentines,
+    shumEarlyRun,
+    stenataRun,
+    zelevSok,
+  ]);
+
   const [blogOrNews, setBlogOrNews] = useState([
     {
       ID: 1,
@@ -82,7 +96,7 @@ export default function BlogAndNewsPage() {
       <div className={classes.cardOrder}>
         {blogOrNews.slice(1).map((obj, index) => (
           <div key={index}>
-            <CardBlogAndNewsPage info={obj} />
+            <CardBlogAndNewsPage info={obj} imgs={blogOrNewsPics} />
           </div>
         ))}
       </div>

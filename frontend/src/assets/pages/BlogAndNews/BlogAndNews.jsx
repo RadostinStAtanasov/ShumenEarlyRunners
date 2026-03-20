@@ -71,18 +71,20 @@ export default function BlogAndNewsPage() {
     },
   ]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/BlogAndNews")
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       setBlogOrNews(response);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    fetch("https://api.earlyrunners.bg")
+      .then((response) => response.json())
+      .then((response) => {
+        setBlogOrNews(response);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  console.log(blogOrNews);
 
   return (
     <>
-      <div className={classes.headerAndUnderline}>
+      {/* <div className={classes.headerAndUnderline}>
         <h1 className={classes.title}>Блог енд Нюз</h1>
         <div className={classes.underline}></div>
       </div>
@@ -99,7 +101,7 @@ export default function BlogAndNewsPage() {
             <CardBlogAndNewsPage info={obj} imgs={blogOrNewsPics} />
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

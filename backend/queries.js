@@ -1,14 +1,14 @@
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "me",
-  host: "localhost",
-  database: "api",
-  password: "radostin",
-  port: 5432,
+  user: "earlyrunners_me",
+  host: "93.94.140.42",
+  database: "earlyrunners_api",
+  password: "}B9#9(ijq;y.JLK-",
+  //port: 5432,
 });
 
-const getUsers = (req, res) => {
-  pool.query("SELECT * FROM users ORDER BY id ASC", (error, results) => {
+const getBlogs = (req, res) => {
+  pool.query("SELECT * FROM blogs", (error, results) => {
     if (error) {
       throw error;
     }
@@ -70,7 +70,7 @@ const deleteUser = (req, res) => {
 };
 
 module.exports = {
-  getUsers,
+  getBlogs,
   getUserById,
   createUser,
   updateUser,

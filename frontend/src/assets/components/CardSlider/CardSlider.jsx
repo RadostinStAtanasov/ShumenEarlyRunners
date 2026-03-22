@@ -5,12 +5,6 @@ import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
 
-import fiveKmRD from "../../images/blogAndNewsImages/5kmRD.jpg";
-import valentines from "../../images/blogAndNewsImages/st.Valentines.jpg";
-import shumEarlyRun from "../../images/blogAndNewsImages/newPartners.jpg";
-import stenataRun from "../../images/blogAndNewsImages/stenataRun.jpg";
-import zelevSok from "../../images/blogAndNewsImages/zelevSok.jpg";
-
 export default function CardSlider() {
   const [blogOrNews, setBlogsAndNews] = useState([]);
 

@@ -1,9 +1,9 @@
 const Pool = require("pg").Pool;
 const pool = new Pool({
-  user: "earlyrunners_me",
-  host: "93.94.140.42",
-  database: "earlyrunners_api",
-  password: "}B9#9(ijq;y.JLK-",
+  user: process.env.USER_cpanel,
+  host: process.env.host_cpanelIP,
+  database: database_cpanel,
+  password: password_database,
   //port: 5432,
 });
 

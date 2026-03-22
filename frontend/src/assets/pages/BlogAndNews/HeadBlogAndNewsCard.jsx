@@ -7,7 +7,7 @@ export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
     <div className={classes.mainManiBlogAndNews}>
       <div className={classes.outerLine}>
         <div className={classes.mainContainerHeadCard}>
-          <div className={classes.headMainCont}>{infoHeadBlog.Title}</div>
+          <div className={classes.headMainCont}>{infoHeadBlog.title}</div>
 
           <div className={classes.imgContHeadBlogNewsCard}>
             <Link to="/Блог енд Нюз/1" relative="path">
@@ -19,7 +19,7 @@ export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
             </Link>
           </div>
           <div className={classes.footerBlogAndNews}>
-            <p>{infoHeadBlog.InfoBlogAndNews}</p>
+            <p>{infoHeadBlog.infoBlogAndNews}</p>
           </div>
         </div>
       </div>

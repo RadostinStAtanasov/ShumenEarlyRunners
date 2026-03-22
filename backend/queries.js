@@ -16,16 +16,16 @@ const getBlogs = (req, res) => {
   });
 };
 
-// const getUserById = (req, res) => {
-//   const id = parseInt(req.params.id);
+const getBlogsById = (req, res) => {
+  const id = req.params.blogAndNewsId;
 
-//   pool.query("SELECT * FROM users WHERE id = $1", [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+  pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
 
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
@@ -71,7 +71,7 @@ const getBlogs = (req, res) => {
 
 module.exports = {
   getBlogs,
-  // getUserById,
+  getBlogsById,
   // createUser,
   // updateUser,
   // deleteUser,

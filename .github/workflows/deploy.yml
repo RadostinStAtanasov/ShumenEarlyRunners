@@ -9,10 +9,10 @@ jobs:
   deploy-backend:
     runs-on: ubuntu-latest
     env:
-      USER_CPANEL: ${{secrets.USER_CPANEL}}
-      HOST_CPANELIP: ${{secrets.HOST_CPANELIP}}
-      DATABASE_CPANEL: ${{secrets.DATABASE_CPANEL}}
-      PASSWORD_DATABASE: ${{secrets.PASSWORD_DATABASE}}
+      user: ${{secrets.USER_CPANEL}}
+      host: ${{secrets.HOST_CPANELIP}}
+      database: ${{secrets.DATABASE_CPANEL}}
+      password: ${{secrets.PASSWORD_DATABASE}}
     environment: CP
     steps:
       - name: Deploy backend via SSH

@@ -19,6 +19,9 @@ const getBlogs = (req, res) => {
 const getBlogsById = (req, res) => {
   const id = req.params.blogAndNewsId;
 
+  console.log(id);
+  console.log("adadadad");
+
   pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
     if (error) {
       throw error;

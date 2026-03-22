@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blogs", db.getBlogs);
-app.get("/blogs/:id", db.getBlogsById);
+app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);
 // app.delete("/users/:id", db.deleteUser);

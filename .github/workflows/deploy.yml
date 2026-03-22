@@ -16,7 +16,7 @@ jobs:
     environment: CP
     steps:
       - name: Deploy backend via SSH
-        uses: appleboy/scp-action@v1.0.3
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.CP_HOST }}
           username: ${{ secrets.CP_USER }}

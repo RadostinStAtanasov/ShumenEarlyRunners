@@ -84,24 +84,24 @@ export default function BlogAndNewsPage() {
 
   return (
     <>
-      {/* <div className={classes.headerAndUnderline}>
+      <div className={classes.headerAndUnderline}>
         <h1 className={classes.title}>Блог енд Нюз</h1>
         <div className={classes.underline}></div>
       </div>
       <div className={classes.headBlogANews}>
-        {blogOrNews.slice(0, 1).map((objHeadblog, index) => (
+        {blogOrNewsPics.slice(0, 1).map((objHeadblog, index) => (
           <div key={index}>
             <HeadBlogAndNewsCard infoHeadBlog={objHeadblog} />
           </div>
         ))}
       </div>
       <div className={classes.cardOrder}>
-        {blogOrNews.slice(1).map((obj, index) => (
+        {blogOrNewsPics.slice(1).map((obj, index) => (
           <div key={index}>
             <CardBlogAndNewsPage info={obj} imgs={blogOrNewsPics} />
           </div>
         ))}
-      </div> */}
+      </div>
     </>
   );
 }

@@ -18,11 +18,11 @@ app.use(cors(corsOption));
 app.use("/", router);
 
 app.get("/", (req, res) => {
-  res.json({ info: "Node.js, Express, and Postgres API" });
+  res.json({ info: "Node.js, Express, and Postgres API!!!" });
 });
 
 app.get("/blogs", db.getBlogs);
-app.get("/users/:id", db.getUserById);
+// app.get("/users/:id", db.getUserById);
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);
 // app.delete("/users/:id", db.deleteUser);

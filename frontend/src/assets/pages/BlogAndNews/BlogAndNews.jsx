@@ -3,12 +3,6 @@ import classes from "../BlogAndNews/BlogAndNews.module.css";
 import HeadBlogAndNewsCard from "./HeadBlogAndNewsCard";
 import { useEffect, useState } from "react";
 
-import fiveKmRD from "../../images/blogAndNewsImages/5kmRD.jpg";
-import valentines from "../../images/blogAndNewsImages/st.Valentines.jpg";
-import shumEarlyRun from "../../images/blogAndNewsImages/newPartners.jpg";
-import stenataRun from "../../images/blogAndNewsImages/stenataRun.jpg";
-import zelevSok from "../../images/blogAndNewsImages/zelevSok.jpg";
-
 export default function BlogAndNewsPage() {
   const [blogOrNews, setBlogOrNews] = useState([]);
 

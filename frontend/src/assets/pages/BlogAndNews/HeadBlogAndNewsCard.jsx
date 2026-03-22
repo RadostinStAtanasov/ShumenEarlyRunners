@@ -1,5 +1,5 @@
 import classes from "./HeadBlogAndNewsCard.module.css";
-import testImage from "../../images/blogAndNewsImages/5kmRD.jpg";
+import testImage from "../../../../public/blogAndNews/5kmRD.jpg";
 import { Link } from "react-router-dom";
 
 export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
@@ -13,7 +13,7 @@ export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
             <Link to="/Блог енд Нюз/1" relative="path">
               <img
                 className={classes.imgBlogANewsHead}
-                src={infoHeadBlog.pic}
+                src={testImage}
                 alt=""
               />
             </Link>

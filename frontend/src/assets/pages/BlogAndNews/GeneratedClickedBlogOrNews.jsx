@@ -17,23 +17,23 @@ export default function GeneratedClickedBlogOrNews() {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(blogAndNews[id].pic);
+  console.log(blogAndNews);
 
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.titleAndPostedBy}>{blogAndNews[id].title}</div>
+      <div className={classes.titleAndPostedBy}>{blogAndNews.title}</div>
       <div>
         <div className={classes.postedByText}>
-          posted by {blogAndNews[id].postedBy} |{blogAndNews[id].postedDate}
+          posted by {blogAndNews.postedBy} | {blogAndNews.postedDate}
         </div>
         <span>
-          <img
+          {/* <img
             className={classes.imgBlogAndNews}
             src={blogAndNews[id].pic}
             alt=""
-          ></img>
+          ></img> */}
         </span>
-        <p>{blogAndNews[id].infoBlogAndNews}</p>
+        <p>{blogAndNews.infoBlogAndNews}</p>
       </div>
     </div>
   );

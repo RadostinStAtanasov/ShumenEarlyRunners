@@ -8,8 +8,12 @@ on:
 jobs:
   deploy-backend:
     runs-on: ubuntu-latest
+    env:
+      USER_CPANEL: ${{secrets.USER_CPANEL}}
+      HOST_CPANELIP: ${{secrets.HOST_CPANELIP}}
+      DATABASE_CPANEL: ${{secrets.DATABASE_CPANEL}}
+      PASSWORD_DATABASE: ${{secrets.PASSWORD_DATABASE}}
     environment: CP
-
     steps:
       - name: Deploy backend via SSH
         uses: appleboy/ssh-action@v1.0.3

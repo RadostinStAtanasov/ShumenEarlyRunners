@@ -13,7 +13,7 @@ export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
             <Link to="/Блог енд Нюз/1" relative="path">
               <img
                 className={classes.imgBlogANewsHead}
-                src={testImage}
+                src={infoHeadBlog.pic}
                 alt=""
               />
             </Link>

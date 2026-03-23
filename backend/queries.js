@@ -1,9 +1,13 @@
 const Pool = require("pg").Pool;
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 const pool = new Pool({
-  user: "earlyrunners_me",
-  host: "93.94.140.42",
-  database: "earlyrunners_api",
-  password: "}B9#9(ijq;y.JLK-",
+  user: process.env.USER_CPANEL,
+  host: process.env.HOST_CPANELIP,
+  database: process.env.DATABASE_CPANEL,
+  password: process.env.PASSWORD_DATABASE,
   port: 5432,
 });
 
@@ -13,6 +17,7 @@ const getBlogs = (req, res) => {
       throw error;
     }
     res.status(200).json(results.rows);
+    console.log("asd");
   });
 };
 

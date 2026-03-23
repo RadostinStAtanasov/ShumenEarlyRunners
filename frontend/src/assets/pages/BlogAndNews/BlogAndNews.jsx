@@ -16,6 +16,7 @@ export default function BlogAndNewsPage() {
   }, []);
 
   console.log(blogOrNews);
+  console.log(blogOrNews);
 
   return (
     <>

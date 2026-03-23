@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
+const userHost = process.env.USER_CPANEL;
+
+console.log(userHost);
+
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);
 // app.delete("/users/:id", db.deleteUser);

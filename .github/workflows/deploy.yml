@@ -21,11 +21,6 @@ jobs:
           host: ${{ secrets.CP_HOST }}
           username: ${{ secrets.CP_USER }}
           password: ${{ secrets.CP_PASS }}
-          # USER_CPANEL: ${{secrets.USER_CPANEL}}
-          # HOST_CPANELIP: ${{secrets.HOST_CPANELIP}}
-          # DATABASE_CPANEL: ${{secrets.DATABASE_CPANEL}}
-          # PASSWORD_DATABASE: ${{secrets.PASSWORD_DATABASE}}
-
           script: |
             echo "Deploying backend..."
 

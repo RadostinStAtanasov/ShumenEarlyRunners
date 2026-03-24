@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
   res.json({ info: "Node.js, Express, and Postgres API!!!" });
 });
 
+app.use("/images", express.static("images"));
+
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 

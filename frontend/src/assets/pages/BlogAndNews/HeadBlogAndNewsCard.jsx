@@ -1,5 +1,4 @@
 import classes from "./HeadBlogAndNewsCard.module.css";
-import testImage from "../../../../public/blogAndNews/5kmRD.jpg";
 import { Link } from "react-router-dom";
 
 export default function HeadBlogAndNewsCard({ infoHeadBlog }) {

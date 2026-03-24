@@ -23,9 +23,6 @@ app.get("/", (req, res) => {
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-const userHost = process.env.USER_CPANEL;
-
-console.log(userHost);
 
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);
@@ -35,7 +32,7 @@ app.use((err, req, res, next) => {
   console.error("Error:", err.message);
   res.status(500).send("Internal Server Error");
 });
-
+// da mahna sekretite
 app.use((req, res, next) => {
   const error = new Error("Something went wrong");
   next(error);

@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
 
-import fivekmRD from "../../../../public/blogAndNews/5kmRD2.jpg";
+import fivekmRD from "../../../../public/blogAndNews/5KmRD2.jpg";
 import madaraRun from "../../../../public/blogAndNews/madaraRunTrail.jpg";
 import stValentines from "../../../../public/blogAndNews/st.Valentines.jpg";
 import stenataRun from "../../../../public/blogAndNews/stenataRun.jpg";

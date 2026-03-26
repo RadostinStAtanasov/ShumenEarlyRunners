@@ -27,7 +27,7 @@ app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 
 app.get("/awsbucket", db.getAwsbucket);
-app.post("/blogs", db.createBlog);
+app.post("/awsbucket", db.createBlog);
 
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);

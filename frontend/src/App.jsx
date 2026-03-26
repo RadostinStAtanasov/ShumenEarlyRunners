@@ -13,6 +13,7 @@ import MadaraPage from "./assets/pages/BlogAndNews/News/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
 import GeneratedClickedBlogOrNews from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews";
 import DetailPage from "./assets/pages/Shop/Detail";
+import Awsbucket from "./assets/pages/Awsbucket";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: "/магазин/детайли", element: <DetailPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },
       { path: "/партньори", element: <PartnersPage /> },
+      { path: "/Awsbucket", element: <Awsbucket /> },
     ],
   },
 ]);

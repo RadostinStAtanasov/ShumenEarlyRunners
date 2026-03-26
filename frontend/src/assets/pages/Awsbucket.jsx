@@ -1,8 +1,6 @@
-import "./App.css";
-
 import { useState, useEffect } from "react";
 
-function App() {
+export default function AwsbucketPage() {
   const [file, setFile] = useState();
   const [caption, setCaption] = useState("");
 
@@ -51,5 +49,3 @@ function App() {
     </form>
   );
 }
-
-export default App;

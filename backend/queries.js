@@ -106,6 +106,7 @@ module.exports = {
   getBlogs,
   getBlogsById,
   createBlog,
+  getAwsbucket,
   // updateUser,
   // deleteUser,
 };

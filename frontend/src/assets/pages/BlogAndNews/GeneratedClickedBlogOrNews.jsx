@@ -2,8 +2,23 @@ import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
 
+import fivekmRD from "../../../../public/blogAndNews/5kmRD2.jpg";
+import madaraRun from "../../../../public/blogAndNews/madaraRunTrail.jpg";
+import stValentines from "../../../../public/blogAndNews/st.Valentines.jpg";
+import stenataRun from "../../../../public/blogAndNews/stenataRun.jpg";
+import zaZelevSokStartOfTheYear from "../../../../public/blogAndNews/zaZelevSokStartOfTheYear.jpg";
+import shumenEarlyWithNewPartners from "../../../../public/blogAndNews/shumenEarlyWithNewPartners.jpg";
+
 export default function GeneratedClickedBlogOrNews() {
   const [blogAndNews, setBlogOrNews] = useState([]);
+  const [blogOrNewsImages, setBlogOrNewsImages] = useState([
+    fivekmRD,
+    stValentines,
+    shumenEarlyWithNewPartners,
+    stenataRun,
+    zaZelevSokStartOfTheYear,
+    madaraRun,
+  ]);
 
   const params = useParams();
   const id = params.blogAndNewsId;
@@ -27,7 +42,7 @@ export default function GeneratedClickedBlogOrNews() {
         <span>
           <img
             className={classes.imgBlogAndNews}
-            src={blogAndNews.pic}
+            src={blogOrNewsImages[id - 1]}
             alt=""
           ></img>
         </span>

@@ -1,7 +1,7 @@
 const Pool = require("pg").Pool;
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 
-dotenv.config();
+// dotenv.config();
 
 const pool = new Pool({
   user: "earlyrunners_me",
@@ -17,7 +17,6 @@ const getBlogs = (req, res) => {
       throw error;
     }
     res.status(200).json(results.rows);
-    console.log("asd");
   });
 };
 
@@ -33,6 +32,32 @@ const getBlogsById = (req, res) => {
     }
     res.status(200).json(results.rows[0]);
   });
+};
+
+const getAwsbucket = (req, res) => {
+  pool.query("SELECT * FROM awsbucket", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
+
+const createBlog = (req, res) => {
+  const { idname, image } = req.body;
+
+  pool.query(
+    "INSERT INTO awsbucket (idname, image) VALUES ($1, $2)",
+    [idname, image],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      console.log(results);
+
+      res.status(201).send(`image added with ID: ${results.insertId}`);
+    },
+  );
 };
 
 // const createUser = (req, res) => {
@@ -80,7 +105,7 @@ const getBlogsById = (req, res) => {
 module.exports = {
   getBlogs,
   getBlogsById,
-  // createUser,
+  createBlog,
   // updateUser,
   // deleteUser,
 };

@@ -11,19 +11,20 @@ export default function AwsbucketPage() {
     formData.append("image", file);
     formData.append("caption", caption);
 
-    useEffect(() => {
-      fetch("https://api.earlyrunnrs.bg/awsbucket", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          idname: caption,
-          image: file,
-        }),
-      });
-    }, []);
+    fetch("https://api.earlyrunners.bg/awsbucket", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        idname: caption,
+        image: file,
+      }),
+    });
+
+    console.log(caption);
+    console.log(file);
 
     // await axios.post("/posts", formData, {
     //   headers: {
@@ -33,19 +34,23 @@ export default function AwsbucketPage() {
   };
 
   return (
-    <form onSubmit={submit}>
-      <input
-        onChange={(e) => setFile(e.target.files[0])}
-        type="file"
-        accept="image/*"
-      ></input>
-      <input
-        value={caption}
-        onChange={(e) => setCaption(e.target.value)}
-        type="text"
-        placeholder="Caption"
-      ></input>
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <br />
+      <br />
+      <form onSubmit={submit}>
+        <input
+          onChange={(e) => setFile(e.target.files[0])}
+          type="file"
+          accept="image/*"
+        ></input>
+        <input
+          value={caption}
+          onChange={(e) => setCaption(e.target.value)}
+          type="text"
+          placeholder="Caption"
+        ></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 }

@@ -53,11 +53,12 @@ const createBlog = (req, res) => {
       if (error) {
         throw error;
       }
-      console.log(results);
+      console.log("req.body", req.body);
 
       res.status(201).send(`image added with ID: ${results.insertId}`);
     },
   );
+  console.log("req.body", req.body);
 };
 
 // const createUser = (req, res) => {

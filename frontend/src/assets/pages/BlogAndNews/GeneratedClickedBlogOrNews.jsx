@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
 
-import fivekmRD from "../../../../public/blogAndNews/5kmRD2.jpg";
+import fivekmRD from "../../../../public/blogAndNews/5KmRD2.jpg";
 import madaraRun from "../../../../public/blogAndNews/madaraRunTrail.jpg";
 import stValentines from "../../../../public/blogAndNews/st.Valentines.jpg";
 import stenataRun from "../../../../public/blogAndNews/stenataRun.jpg";

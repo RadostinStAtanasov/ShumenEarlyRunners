@@ -1,4 +1,10 @@
 const Pool = require("pg").Pool;
+const multer = require("multer");
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+upload.single("image");
 // const dotenv = require("dotenv");
 
 // dotenv.config();

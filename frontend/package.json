@@ -23,6 +23,7 @@
     "@mui/lab": "^7.0.1-beta.18",
     "@mui/material": "^7.3.4",
     "@mui/styled-engine-sc": "^7.3.3",
+    "axios": "^1.13.6",
     "baseline-browser-mapping": "^2.9.14",
     "mdb-ui-kit": "^9.2.0",
     "pg": "^8.20.0",

@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 
-app.get("/awsbucket", db.getAwsbucket);
 app.post("/awsbucket", db.createBlog);
+app.get("/awsbucket", db.getAwsbucket);
 
 // app.post("/users", db.createUser);
 // app.put("/users/:id", db.updateUser);

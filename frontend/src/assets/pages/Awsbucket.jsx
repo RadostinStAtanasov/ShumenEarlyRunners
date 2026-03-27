@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function AwsbucketPage() {
   const [file, setFile] = useState();
@@ -11,26 +12,25 @@ export default function AwsbucketPage() {
     formData.append("image", file);
     formData.append("caption", caption);
 
-    fetch("https://api.earlyrunners.bg/awsbucket", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        idname: caption,
-        image: file,
-      }),
-    });
+    // fetch("https://api.earlyrunners.bg/awsbucket", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    //   body: JSON.stringify({
+    //     idname: caption,
+    //     image: file,
+    //   }),
+    // });
 
     console.log(caption);
     console.log(file);
 
-    // await axios.post("/posts", formData, {
-    //   headers: {
-    //     "Content-Type": "multipart/form-data",
-    //   },
-    // });
+    await axios.post("/awsBucket", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
   };
 
   return (

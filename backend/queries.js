@@ -53,8 +53,8 @@ const createBlog = (req, res) => {
   const { idname, image } = req.body;
 
   pool.query(
-    "INSERT INTO awsbucket (idname, image) VALUES ($1, $2)",
-    [idname, image],
+    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2)",
+    [nameimage, image],
     (error, results) => {
       if (error) {
         throw error;

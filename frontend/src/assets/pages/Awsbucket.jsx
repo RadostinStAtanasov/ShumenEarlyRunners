@@ -26,7 +26,7 @@ export default function AwsbucketPage() {
     console.log(caption);
     console.log(file);
 
-    await axios.post("/awsBucket", formData, {
+    await axios.post("/https://api.earlyrunners.bg/awsbucket", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

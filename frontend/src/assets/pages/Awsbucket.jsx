@@ -12,19 +12,17 @@ export default function AwsbucketPage() {
     formData.append("image", file);
     formData.append("caption", caption);
 
-    (async () => {
-      fetch("https://api.earlyrunners.bg/awsbucket", {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        body: JSON.stringify({
-          idimage: 2,
-          nameimage: "caption",
-          image: "file",
-        }),
-      });
-    })();
+    fetch("https://api.earlyrunners.bg/awsbucket", {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      body: JSON.stringify({
+        idimage: 2,
+        nameimage: "caption",
+        image: "file",
+      }),
+    });
 
     //console.log(formData);
     // console.log(nameimage);
@@ -49,6 +47,8 @@ export default function AwsbucketPage() {
 
   return (
     <>
+      <br />
+      <br />
       <form onSubmit={submit}>
         <input
           onChange={(e) => setFile(e.target.files[0])}

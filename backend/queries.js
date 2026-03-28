@@ -42,13 +42,13 @@ const getAwsbucket = (req, res) => {
 };
 
 const createBlog = async (req, res) => {
-  const { idimage, nameimage, image } = req.body;
+  const { nameimage, image } = req.body;
 
   console.log(req.body);
 
   pool.query(
-    "INSERT INTO awsbucket (idimage, nameimage, image) VALUES ($1, $2, $3)",
-    [idimage, nameimage, image],
+    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2)",
+    [nameimage, image],
     (error, results) => {
       if (error) {
         throw console.log(`this message ${error}`);

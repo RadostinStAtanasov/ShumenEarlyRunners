@@ -12,37 +12,31 @@ export default function AwsbucketPage() {
     formData.append("image", file);
     formData.append("caption", caption);
 
-    fetch("https://api.earlyrunners.bg/awsbucket", {
-      method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      body: JSON.stringify({
-        idimage: 2,
-        nameimage: "caption",
-        image: "file",
-      }),
-    });
+    //const caption = formData.caption;
 
-    //console.log(formData);
-    // console.log(nameimage);
-    // console.log(image);
+    // fetch("https://api.earlyrunners.bg/awsbucket", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     nameimage: "caption2",
+    //     image: "file2",
+    //   }),
+    // });
 
-    // axios
-    //   .post("https://api.earlyrunners.bg/awsbucket", formData, {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   })
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-    // console.log(formData.image);
-    // console.log(formData.caption);
-    // console.log("aaaaaaaaaa");
+    axios
+      .post("https://api.earlyrunners.bg/awsbucket", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

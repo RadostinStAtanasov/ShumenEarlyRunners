@@ -1,10 +1,5 @@
 const Pool = require("pg").Pool;
-const multer = require("multer");
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
-upload.single("image");
 // const dotenv = require("dotenv");
 
 // dotenv.config();
@@ -29,9 +24,6 @@ const getBlogs = (req, res) => {
 const getBlogsById = (req, res) => {
   const id = req.params.blogAndNewsId;
 
-  console.log(id);
-  console.log("adadadad");
-
   pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
     if (error) {
       throw error;
@@ -49,17 +41,18 @@ const getAwsbucket = (req, res) => {
   });
 };
 
-const createBlog = (req, res) => {
-  const { idname, image } = req.body;
+const createBlog = async (req, res) => {
+  const { idimage, nameimage, image } = req.body;
+
+  console.log(req.body);
 
   pool.query(
-    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2)",
-    [nameimage, image],
+    "INSERT INTO awsbucket (idimage, nameimage, image) VALUES ($1, $2, $3)",
+    [idimage, nameimage, image],
     (error, results) => {
       if (error) {
-        throw error;
+        throw console.log(`this message ${error}`);
       }
-      console.log("req.body", req.body);
 
       res.status(201).send(`image added with ID: ${results.insertId}`);
     },

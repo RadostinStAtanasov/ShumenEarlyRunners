@@ -5,6 +5,13 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
+const multer = require("multer");
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+upload.single("image");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -26,6 +33,7 @@ app.get("/", (req, res) => {
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 
+// app.post("/awsbucket", upload.single("image"), db.createBlog);
 app.post("/awsbucket", db.createBlog);
 app.get("/awsbucket", db.getAwsbucket);
 

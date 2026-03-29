@@ -15,7 +15,7 @@ export default function Images(props) {
           key={index}
           className={classes.image}
         >
-          <img src={slide.src} alt={slide.description} />
+          <img src={slide} alt={slide.description} />
         </div>
       ))}
     </div>

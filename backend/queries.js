@@ -32,7 +32,7 @@ const getBlogsById = async (req, res) => {
 };
 
 const getTestImages = async (req, res) => {
-  pool.query("SELECT * FROM Test", (error, results) => {
+  pool.query("SELECT * FROM Gallery", (error, results) => {
     if (error) {
       throw error;
     }

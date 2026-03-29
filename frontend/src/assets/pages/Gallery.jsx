@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import { slides } from "../components/GalleryYet/dataImages";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -11,18 +10,28 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
-import ds1 from "../images/5kmCommon/DSC05701.jpg";
-import ds2 from "../images/5kmCommon/DSC05702.jpg";
-import ds3 from "../images/5kmCommon/DSC05703.jpg";
-import ds4 from "../images/5kmCommon/DSC05704.jpg";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.earlyrunners.bg/test")
+      .then((response) => response.json())
+      .then((response) => {
+        setImages(response[0].data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  console.log(images);
+  console.log("asddsa");
 
   return (
     <>
       <Images
-        data={slides}
+        data={images}
         onClick={(currentIndex) => setIndex(currentIndex)}
       />
 

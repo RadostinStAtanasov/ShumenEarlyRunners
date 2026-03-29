@@ -1,5 +1,5 @@
 import Lightbox from "yet-another-react-lightbox";
-import { slides } from "../components/GalleryYet/dataImages";
+// import { slides } from "../components/GalleryYet/dataImages";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import Download from "yet-another-react-lightbox/plugins/download";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -14,24 +14,23 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const [index, setIndex] = useState(-1);
-  const [images, setImages] = useState([]);
+  const [imagesData, setImagesData] = useState([]);
+  const [imagesSlides, setImagesSlides] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.earlyrunners.bg/test")
+    fetch("https://api.earlyrunners.bg/gallery")
       .then((response) => response.json())
       .then((response) => {
-        setImages(response[0].data);
+        setImagesData(response[0].data);
+        setImagesSlides(response[0].slides);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(images);
-  console.log("asddsa");
-
   return (
     <>
       <Images
-        data={images}
+        data={imagesData}
         onClick={(currentIndex) => setIndex(currentIndex)}
       />
 
@@ -44,7 +43,7 @@ export default function App() {
           descriptionTextAlign: "end",
         }}
         index={index}
-        slides={slides}
+        slides={imagesSlides}
       />
     </>
   );

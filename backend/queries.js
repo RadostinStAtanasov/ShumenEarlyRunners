@@ -13,7 +13,7 @@ const pool = new Pool({
 });
 
 const getBlogs = async (req, res) => {
-  await pool.query("SELECT * FROM blogs", (error, results) => {
+  pool.query("SELECT * FROM blogs", (error, results) => {
     if (error) {
       throw error;
     }
@@ -23,21 +23,16 @@ const getBlogs = async (req, res) => {
 
 const getBlogsById = async (req, res) => {
   const id = req.params.blogAndNewsId;
-
-  await pool.query(
-    "SELECT * FROM blogs WHERE id = $1",
-    [id],
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      res.status(200).json(results.rows[0]);
-    },
-  );
+  pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows[0]);
+  });
 };
 
-const getAwsbucket = async (req, res) => {
-  await pool.query("SELECT * FROM awsbucket", (error, results) => {
+const getTestImages = async (req, res) => {
+  pool.query("SELECT * FROM Test", (error, results) => {
     if (error) {
       throw error;
     }
@@ -45,21 +40,20 @@ const getAwsbucket = async (req, res) => {
   });
 };
 
-const createBlog = async (req, res) => {
-  const { nameimage, image } = req.body;
+// const createBlog = async (req, res) => {
 
-  pool.query(
-    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2) RETURNING *",
-    [nameimage, image],
+//   pool.query(
+//     "SELECT * FROM Test",
+//     [nameimage, image],
 
-    (error, results) => {
-      if (error) {
-        throw console.log(`this message ${error}`);
-      }
-      res.status(201).send(`image added with ID: ${results.insertId}`);
-    },
-  );
-};
+//     (error, results) => {
+//       if (error) {
+//         throw console.log(`this message ${error}`);
+//       }
+//       res.status(201).send(`image added with ID: ${results.insertId}`);
+//     },
+//   );
+// };
 
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
@@ -106,8 +100,8 @@ const createBlog = async (req, res) => {
 module.exports = {
   getBlogs,
   getBlogsById,
-  createBlog,
-  getAwsbucket,
+  getTestImages,
+  // createBlog,
   // updateUser,
   // deleteUser,
 };

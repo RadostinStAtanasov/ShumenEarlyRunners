@@ -5,23 +5,8 @@ import "swiper/css/pagination";
 import "./CardSlider.css";
 import { useEffect, useState } from "react";
 
-import fivekmRD from "../../../../public/blogAndNews/5KmRD2.jpg";
-import madaraRun from "../../../../public/blogAndNews/madaraRunTrail.jpg";
-import stValentines from "../../../../public/blogAndNews/st.Valentines.jpg";
-import stenataRun from "../../../../public/blogAndNews/stenataRun.jpg";
-import zaZelevSokStartOfTheYear from "../../../../public/blogAndNews/zaZelevSokStartOfTheYear.jpg";
-import shumenEarlyWithNewPartners from "../../../../public/blogAndNews/shumenEarlyWithNewPartners.jpg";
-
 export default function CardSlider() {
   const [blogOrNews, setBlogsAndNews] = useState([]);
-  const [blogOrNewsImages, setBlogOrNewsImages] = useState([
-    fivekmRD,
-    stValentines,
-    shumenEarlyWithNewPartners,
-    stenataRun,
-    zaZelevSokStartOfTheYear,
-    madaraRun,
-  ]);
 
   useEffect(() => {
     fetch("https://api.earlyrunners.bg/blogs")
@@ -55,7 +40,7 @@ export default function CardSlider() {
             <SwiperSlide
               key={index}
               style={{
-                backgroundImage: `url(${blogOrNewsImages[index]})`,
+                backgroundImage: `url(${info.pic})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",

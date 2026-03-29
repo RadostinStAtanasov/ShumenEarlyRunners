@@ -1,7 +1,6 @@
 import classes from "./HeadBlogAndNewsCard.module.css";
-import { Link } from "react-router-dom";
 
-export default function HeadBlogAndNewsCard({ infoHeadBlog, image }) {
+export default function HeadBlogAndNewsCard({ infoHeadBlog }) {
   return (
     <div className={classes.mainManiBlogAndNews}>
       <div className={classes.outerLine}>
@@ -9,12 +8,16 @@ export default function HeadBlogAndNewsCard({ infoHeadBlog, image }) {
           <div className={classes.headMainCont}>{infoHeadBlog.title}</div>
 
           <div className={classes.imgContHeadBlogNewsCard}>
-            <Link to="/Блог енд Нюз/1" relative="path">
-              <img className={classes.imgBlogANewsHead} src={image} alt="" />
-            </Link>
+            <a href={`/Блог енд Нюз/1`}>
+              <img
+                className={classes.imgBlogANewsHead}
+                src={infoHeadBlog.pic}
+                alt=""
+              />
+            </a>
           </div>
           <div className={classes.footerBlogAndNews}>
-            <p>{infoHeadBlog.infoBlogAndNews}</p>
+            <p>{infoHeadBlog.infoblogandnews}</p>
           </div>
         </div>
       </div>

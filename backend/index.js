@@ -5,13 +5,6 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
-const multer = require("multer");
-
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-
-upload.single("image");
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -32,24 +25,6 @@ app.get("/", (req, res) => {
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-
-// app.post("/awsbucket", upload.single("image"), db.createBlog);
-app.post("/awsbucket", db.createBlog);
-app.get("/awsbucket", db.getAwsbucket);
-
-// app.post("/users", db.createUser);
-// app.put("/users/:id", db.updateUser);
-// app.delete("/users/:id", db.deleteUser);
-
-app.use((err, req, res, next) => {
-  console.error("Error:", err.message);
-  res.status(500).send("Internal Server Error");
-});
-
-app.use((req, res, next) => {
-  const error = new Error("Something went wrong");
-  next(error);
-});
 
 const PORT = 3000;
 app.listen(PORT, () => {

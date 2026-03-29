@@ -12,8 +12,8 @@ const pool = new Pool({
   port: 5432,
 });
 
-const getBlogs = (req, res) => {
-  pool.query("SELECT * FROM blogs", (error, results) => {
+const getBlogs = async (req, res) => {
+  await pool.query("SELECT * FROM blogs", (error, results) => {
     if (error) {
       throw error;
     }
@@ -21,19 +21,23 @@ const getBlogs = (req, res) => {
   });
 };
 
-const getBlogsById = (req, res) => {
+const getBlogsById = async (req, res) => {
   const id = req.params.blogAndNewsId;
 
-  pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
-    if (error) {
-      throw error;
-    }
-    res.status(200).json(results.rows[0]);
-  });
+  await pool.query(
+    "SELECT * FROM blogs WHERE id = $1",
+    [id],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(results.rows[0]);
+    },
+  );
 };
 
-const getAwsbucket = (req, res) => {
-  pool.query("SELECT * FROM awsbucket", (error, results) => {
+const getAwsbucket = async (req, res) => {
+  await pool.query("SELECT * FROM awsbucket", (error, results) => {
     if (error) {
       throw error;
     }
@@ -44,20 +48,17 @@ const getAwsbucket = (req, res) => {
 const createBlog = async (req, res) => {
   const { nameimage, image } = req.body;
 
-  console.log(req.body);
-
   pool.query(
-    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2)",
+    "INSERT INTO awsbucket (nameimage, image) VALUES ($1, $2) RETURNING *",
     [nameimage, image],
+
     (error, results) => {
       if (error) {
         throw console.log(`this message ${error}`);
       }
-
       res.status(201).send(`image added with ID: ${results.insertId}`);
     },
   );
-  console.log("req.body", req.body);
 };
 
 // const createUser = (req, res) => {

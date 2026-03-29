@@ -3,25 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export default function CardBlogAndNewsPage({ info, images }) {
+export default function CardBlogAndNewsPage({ info }) {
   return (
     <>
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
           <a href={`/Блог енд Нюз/${info.id}`}>
-            <img
-              className={classes.imagesBlogAndNews}
-              src={images[info.id - 1]}
-              alt=""
-            />
+            <img className={classes.imagesBlogAndNews} src={info.pic} alt="" />
           </a>
         </div>
         <div className={classes.containerPostedBy}>
-          posted by {info.postedBy} | {info.postedDate} | {info.blogOrNews}
+          posted by {info.postedby} | {info.posteddate} | {info.blogornews}
         </div>
         <div className={classes.headerCard}></div>
         <div className={classes.containerParagraph}>
-          <p className={classes.cutTheText}>{info.infoBlogAndNews}</p>
+          <p className={classes.cutTheText}>{info.infoblogandnews}</p>
         </div>
         <div className={classes.containerLikesAndLeaveAComment}>
           <a href="">

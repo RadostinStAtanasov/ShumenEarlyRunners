@@ -40,7 +40,7 @@ export default function CardSlider() {
             <SwiperSlide
               key={index}
               style={{
-                backgroundImage: `url(${info.pic})`,
+                backgroundImage: `url(${info.images[0]})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",

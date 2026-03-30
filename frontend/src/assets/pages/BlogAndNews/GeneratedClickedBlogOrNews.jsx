@@ -17,6 +17,9 @@ export default function GeneratedClickedBlogOrNews() {
       .catch((error) => console.log(error));
   }, []);
 
+  console.log(blogAndNews);
+  let images = blogAndNews.images;
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.titleAndPostedBy}>{blogAndNews.title}</div>
@@ -24,14 +27,12 @@ export default function GeneratedClickedBlogOrNews() {
         <div className={classes.postedByText}>
           posted by {blogAndNews.postedby} | {blogAndNews.posteddate}
         </div>
-        <span>
-          <img
-            className={classes.imgBlogAndNews}
-            src={blogAndNews.pic}
-            alt=""
-          ></img>
-        </span>
         <p>{blogAndNews.infoblogandnews}</p>
+        <div className={classes.imageCenter}>
+          {images?.map((image, index) => (
+            <img className={classes.imgBlogAndNews} src={image} alt="dali" />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import classes from "./MadaraTrail.module.css";
 import Button from "@mui/material/Button";
-import madaraPlato from "../../../images/blogAndNewsImages/madataRunNewLogo.jpg";
+import madaraPlato from "../../../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 
 export default function MadaraTrailPage() {
   return (

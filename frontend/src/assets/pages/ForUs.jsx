@@ -1,7 +1,7 @@
 import classes from "../pages/ForUs.module.css";
 import massRun from "../images/blogAndNewsImages/masovoRunning.jpg";
 import stenataWall from "../images/blogAndNewsImages/stenataRun.jpg";
-import mustacRun from "../images/blogAndNewsImages/mustacRun.jpg";
+import mustacRun from "../images/blogAndNewsImages/triteMashini.jpg";
 import satelit from "../images/5kmSatelit.png";
 
 export default function ForUs() {

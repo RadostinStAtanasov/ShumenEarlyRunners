@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       <div className={classes.mainContainer}>
-        <HomePageTopSlider />
+        {/* <HomePageTopSlider /> */}
         <section className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
             <div className={classes.firstContainerTextContainer}>
@@ -31,10 +31,6 @@ export default function HomePage() {
                 Открийте себе си и нови дестинации за бягане в Шумен и
                 околността
               </h2>
-              {/* <p>
-                Открийте зашеметяващи дестинации и безпроблемни пътешествия,
-                създадени специално за вас
-              </p> */}
               <a href="https://racecalendar.bg">
                 <button className={classes.btnHomePage}>
                   Открии дестинации
@@ -42,7 +38,7 @@ export default function HomePage() {
               </a>
               <div className={classes.firstCоntainerFooter}>
                 <div className={classes.explorerDestinations}>
-                  <span className={classes.text}>40+</span>
+                  <span>40+</span>
                   <span>Екзотични бягания</span>
                 </div>
                 <div className={classes.explorerDestinations}>

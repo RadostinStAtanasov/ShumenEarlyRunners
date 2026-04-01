@@ -12,7 +12,7 @@
     margin-top: 20px;
 }
 
-.topCTCard {
+/* .topCTCard {
     border: solid red 1px;
     border-radius: 10px;
     width: 250px;
@@ -25,7 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
 .footerCard {
     color: black;
@@ -118,9 +118,9 @@
 
 .imageHomePage { 
     margin: 0;
-    margin-top: -52px;
-    width: 1000px;
-    height: 680px;
+    margin-top: -22px;
+    max-width: 1000px;
+    max-height: 680px;
 }
 
 .iRUnLogo {
@@ -241,7 +241,6 @@
     color: black;
     font-weight: 600;
     background-color: lightblue;
-    /* -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0% 100%); */
 }
 
 .btnHomePage:hover {
@@ -359,4 +358,396 @@ h1 {
 .containerLatestStoryHomePage {
     display: flex;
     gap: 20px;
+}
+
+@media (min-width: 1940px) {
+
+    .mainContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 2300px;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 20px;
+    }
+ 
+    .firstContainerTitle {
+        display: flex;
+        justify-content: space-between;
+        max-width: 2300px;  
+    }
+
+    .imageHomePage {
+        margin: 0;
+        margin-top: -22px;
+        max-width: 1100px;
+        max-height: 1280px;
+    }
+
+    .imageFirstContainer {
+        max-width: 1500px;
+        max-height: 1200px;
+    }
+    
+   .firstContainerText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        max-width: 1200px;
+    }
+
+    .firstContainerTextContainer {
+        max-width: 1050px;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .secondTitle {
+        font-size: 48px;
+        font-weight: 800;
+    }
+    .firstContainerTextContainer h3 {
+        font-size: 32px;
+    }
+    .btnHomePage {
+        width: 500px;
+        height: 60px;
+        background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../images/ERImage.jpg');
+        font-size: 20px;
+        color: black;
+        font-weight: 600;
+        background-color: lightblue;
+    }
+    .firstCоntainerFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 850px;
+    }
+
+    .explorerDestinations span:nth-child(1) {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: rgb(75, 207, 251)
+    }
+    .explorerDestinations span:nth-child(2) {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+
+ @media (min-width: 2300px) {
+   .mainContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 2500px;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 20px;
+    }
+ 
+    .imageFirstContainer {
+        max-width: 1700px;
+        max-height: 1400px;
+    }
+
+    .imageHomePage {
+        margin: 0;
+        margin-top: -22px;
+        max-width: 1300px;
+        max-height: 1180px;
+    }
+
+    .firstContainerTitle {
+        display: flex;
+        justify-content: space-between;
+        max-width: 2500px;  
+    }
+    
+    .firstContainerText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        max-width: 1400px;
+    }
+
+    .firstContainerTextContainer {
+        max-width: 1250px;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+}
+
+ @media (min-width: 2500px) {
+
+    .mainContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 2800px;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 20px;
+    }
+    .imageFirstContainer {
+        max-width: 1600px;
+        max-height: 1400px;
+    }
+
+    .imageHomePage {
+        margin: 0;
+        margin-top: -22px;
+        max-width: 1600px;
+        max-height: 1380px;
+    }
+ 
+    .firstContainerTitle {
+        display: flex;
+        justify-content: space-between;
+        max-width: 2800px;
+    }
+
+    .firstContainerText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        width: 1000px;
+    }
+
+    .firstContainerTextContainer {
+        width: 900px;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .secondTitle {
+        font-size: 58px;
+        font-weight: 800;
+    }
+    .firstContainerTextContainer h3 {
+        font-size: 38px;
+    }
+    .btnHomePage {
+        width: 700px;
+        height: 80px;
+        font-size: 28px;
+        background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../images/ERImage.jpg');
+        color: black;
+        font-weight: 800;
+        background-color: lightblue;
+    }
+    .firstCоntainerFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 850px;
+    }
+    .explorerDestinations span:nth-child(1) {
+        font-size: 38px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: rgb(75, 207, 251)
+    }
+    .explorerDestinations span:nth-child(2) {
+        font-size: 26px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 2800px) {
+
+    .mainContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 3200px;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 20px;
+    }
+ 
+     .imageFirstContainer {
+        max-width: 1700px;
+        max-height: 1500px;
+    }
+
+    .imageHomePage {
+        margin: 0;
+        margin-top: -22px;
+        max-width: 2000px;
+        max-height: 1680px;
+    }
+
+    .firstContainerTitle {
+        display: flex;
+        justify-content: space-between;
+        max-width: 3200px;
+    }
+
+    .firstContainerText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        width: 1800px;
+    }
+
+    .firstContainerTextContainer {
+        width: 1250px;
+        height: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+     .secondTitle {
+        font-size: 68px;
+        font-weight: 800;
+    }
+    .firstContainerTextContainer h3 {
+        font-size: 44px;
+    }
+    .btnHomePage {
+        width: 900px;
+        height: 100px;
+        font-size: 32px;
+        background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../images/ERImage.jpg');
+        color: black;
+        font-weight: 800;
+        background-color: lightblue;
+    }
+    .firstCоntainerFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 1050px;
+    }
+
+    .explorerDestinations span:nth-child(1) {
+        font-size: 42px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: rgb(75, 207, 251)
+    }
+    .explorerDestinations span:nth-child(2) {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 3200px) {
+
+    .mainContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 3600px;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 20px;
+    }
+ 
+ .imageFirstContainer {
+        max-width: 1800px;
+        max-height: 1600px;
+    }
+
+    .imageHomePage {
+        margin: 0;
+        margin-top: -22px;
+        max-width: 1500px;
+        max-height: 1380px;
+    }
+
+    .firstContainerTitle {
+        display: flex;
+        justify-content: space-between;
+        max-width: 3600px;
+    }
+
+    .firstContainerText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        max-width: 1400px;
+    }
+
+    .firstContainerTextContainer {
+        max-width: 1650px;
+        max-height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .secondTitle {
+        font-size: 78px;
+        font-weight: 800;
+    }
+    .firstContainerTextContainer h3 {
+        font-size: 58px;
+    }
+    .btnHomePage {
+        width: 1100px;
+        height: 120px;
+        font-size: 42px;
+        background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../images/ERImage.jpg');
+        color: black;
+        font-weight: 900;
+        background-color: lightblue;
+    }
+    .firstCоntainerFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+        width: 1200px;
+    }
+    .explorerDestinations span:nth-child(1) {
+        font-size: 44px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: rgb(75, 207, 251)
+    }
+    .explorerDestinations span:nth-child(2) {
+        font-size: 38px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
 }

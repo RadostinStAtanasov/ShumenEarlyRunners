@@ -58,12 +58,10 @@
     font-size:14px;
 }
 
-
 .imageCard {
     width: 200px;
     height: 100px;
 }
-
 
 .textSecondContainer h2 {
     font-size: 28px;
@@ -118,7 +116,7 @@
 
 .imageHomePage { 
     margin: 0;
-    margin-top: -22px;
+    margin-top: -20px;
     max-width: 1000px;
     max-height: 680px;
 }
@@ -308,7 +306,6 @@ h1 {
     align-items: center;
     height: 200px;
     margin-top: 42px;
-    /* margin-bottom: 50px; */
 }
 
 .runningTracksContainer {
@@ -375,32 +372,27 @@ h1 {
         opacity: 0.8;
         margin-top: 20px;
     }
- 
     .firstContainerTitle {
         display: flex;
         justify-content: space-between;
         max-width: 2300px;  
     }
-
     .imageHomePage {
         margin: 0;
         margin-top: -22px;
         max-width: 1100px;
         max-height: 1280px;
     }
-
     .imageFirstContainer {
         max-width: 1500px;
         max-height: 1200px;
     }
-    
-   .firstContainerText {
+    .firstContainerText {
         display: flex;
         justify-content: flex-end;
         margin-top: 50px;
         max-width: 1200px;
     }
-
     .firstContainerTextContainer {
         max-width: 1050px;
         height: 800px;
@@ -408,7 +400,6 @@ h1 {
         flex-direction: column;
         justify-content: space-between;
     }
-
     .secondTitle {
         font-size: 48px;
         font-weight: 800;
@@ -432,7 +423,6 @@ h1 {
         margin-top: 25px;
         width: 850px;
     }
-
     .explorerDestinations span:nth-child(1) {
         font-size: 32px;
         font-family: Arial, Helvetica, sans-serif;
@@ -444,10 +434,99 @@ h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
     }
+
+    .latestStoriesHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 300px;
+        margin-top: 42px;
+    }
+    
+    .latestStoriesHeader h1 {
+        font-size: 72px;
+    }
+
+    .btnLatestStory Button {
+        font-size: 24px;
+    }
+    .secondConOurKeyBen {
+        width: 700px;
+        height: 600px;
+    }
+    .secondConBackGrdn {
+        display: flex;
+        width: 1600px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .fourPictures {
+        width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .imageSecondContainer1 {
+        width: 300px;
+        height: 300px;
+        margin: 0;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    .imageSecondContainer2 {
+        width: 300px;
+        height: 300px;
+        margin: 0;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+    .textSecondContainer {
+        height: 600px;
+        width: 700px;
+    }
+    .secondContTextWhyRun {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 500px;
+    }
+
+    .textSecondContainer h2 {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .textSecondContainer h4 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    .iconTextParagraph h6 {
+        font-size: 26px;
+    }
+   
+    .secondConIconAndText p {
+        font-size: 18px;
+        margin: 0;
+    }
+    .secondConIconAndText h6 {
+        font-size: 32px;
+        margin: 0;
+    }
+    .iconSecondCon1 {
+        font-size: 34px;
+    }
+    .iconSecondCon2 {
+        font-size: 34px;
+    }
+    .iconSecondCon3 {
+        font-size: 34px;
+    }
+    .iconSecondCon4 {
+        font-size: 34px;
+    }
 }
 
-
- @media (min-width: 2300px) {
+@media (min-width: 2300px) {
    .mainContainer {
         font-family: Arial, Helvetica, sans-serif;
         max-width: 2500px;
@@ -494,10 +573,99 @@ h1 {
         flex-direction: column;
         justify-content: space-between;
     }
+
+    .latestStoriesHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 400px;
+        margin-top: 42px;
+    }
+
+    .latestStoriesHeader h1 {
+        font-size: 78px;
+    }
+
+    .btnLatestStory Button {
+        font-size: 28px;
+    }
     
+    .secondConOurKeyBen {
+        width: 800px;
+        height: 700px;
+    }
+    .secondConBackGrdn {
+        display: flex;
+        width: 1800px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .fourPictures {
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .imageSecondContainer1 {
+        width: 350px;
+        height: 350px;
+        margin: 0;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    .imageSecondContainer2 {
+        width: 350px;
+        height: 350px;
+        margin: 0;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+    .textSecondContainer {
+        height: 700px;
+        width: 700px;
+    }
+    .secondContTextWhyRun {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 600px;
+    }
+    .textSecondContainer h2 {
+        font-size: 42px;
+        font-weight: 600;
+    }
+    .textSecondContainer h4 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .iconTextParagraph h6 {
+        font-size: 32px;
+    }
+    .secondConIconAndText p {
+        font-size: 24px;
+        margin: 0;
+    }
+    .secondConIconAndText h6 {
+        font-size: 38px;
+        margin: 0;
+    }
+    .iconSecondCon1 {
+        font-size: 38px;
+    }
+    .iconSecondCon2 {
+        font-size: 38px;
+    }
+    .iconSecondCon3 {
+        font-size: 38px;
+    }
+    .iconSecondCon4 {
+        font-size: 38px;
+    }
+
 }
 
- @media (min-width: 2500px) {
+@media (min-width: 2500px) {
 
     .mainContainer {
         font-family: Arial, Helvetica, sans-serif;
@@ -579,6 +747,96 @@ h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
     }
+      .latestStoriesHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 500px;
+        margin-top: 42px;
+    }
+
+    .latestStoriesHeader h1 {
+        font-size: 88px;
+    }
+
+    .btnLatestStory Button {
+        font-size: 32px;
+    }
+
+    .secondConOurKeyBen {
+        width: 900px;
+        height: 800px;
+    }
+    .textSecondContainer {
+        height: 800px;
+        width: 1000px;
+    }
+    .secondConBackGrdn {
+        display: flex;
+        width: 2000px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .fourPictures {
+        width: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .imageSecondContainer1 {
+        width: 400px;
+        height: 400px;
+        margin: 0;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    .imageSecondContainer2 {
+        width: 400px;
+        height: 400px;
+        margin: 0;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+   
+    .secondContTextWhyRun {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 700px;
+    }
+    .textSecondContainer h2 {
+        font-size: 42px;
+        font-weight: 600;
+    }
+    .textSecondContainer h4 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .iconTextParagraph h6 {
+        font-size: 32px;
+    }
+    .secondConIconAndText p {
+        font-size: 28px;
+        margin: 0;
+    }
+    .secondConIconAndText h6 {
+        font-size: 42px;
+        margin: 0;
+    }
+    .iconSecondCon1 {
+        font-size: 42px;
+    }
+    .iconSecondCon2 {
+        font-size: 42px;
+    }
+    .iconSecondCon3 {
+        font-size: 42px;
+    }
+    .iconSecondCon4 {
+        font-size: 42px;
+    }
+
 }
 
 @media (min-width: 2800px) {
@@ -665,6 +923,97 @@ h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
     }
+
+    .latestStoriesHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 600px;
+        margin-top: 42px;
+    }
+
+    .latestStoriesHeader h1 {
+        font-size: 94px;
+    }
+
+    .btnLatestStory Button {
+        font-size: 36px;
+    }
+
+    .secondConOurKeyBen {
+        width: 1100px;
+        height: 1000px;
+    }
+    .textSecondContainer {
+        height: 900px;
+        width: 1100px;
+    }
+    .secondConBackGrdn {
+        display: flex;
+        width: 2200px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .fourPictures {
+        width: 950px;
+        height: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .imageSecondContainer1 {
+        width: 450px;
+        height: 450px;
+        margin: 0;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    .imageSecondContainer2 {
+        width: 450px;
+        height: 450px;
+        margin: 0;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+   
+    .secondContTextWhyRun {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 800px;
+    }
+    .textSecondContainer h2 {
+        font-size: 42px;
+        font-weight: 600;
+    }
+    .textSecondContainer h4 {
+        font-size: 38px;
+        font-weight: 600;
+    }
+    .iconTextParagraph h6 {
+        font-size: 38px;
+    }
+    .secondConIconAndText p {
+        font-size: 28px;
+        margin: 0;
+    }
+    .secondConIconAndText h6 {
+        font-size: 46px;
+        margin: 0;
+    }
+    .iconSecondCon1 {
+        font-size: 46px;
+    }
+    .iconSecondCon2 {
+        font-size: 46px;
+    }
+    .iconSecondCon3 {
+        font-size: 46px;
+    }
+    .iconSecondCon4 {
+        font-size: 46px;
+    }
 }
 
 @media (min-width: 3200px) {
@@ -750,4 +1099,95 @@ h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
     }
+
+    .latestStoriesHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 700px;
+        margin-top: 42px;
+    }
+
+    .latestStoriesHeader h1 {
+        font-size: 102px;
+    }
+
+    .btnLatestStory Button {
+        font-size: 48px;
+    }
+
+    .secondConOurKeyBen {
+        width: 1200px;
+        height: 1100px;
+    }
+    .textSecondContainer {
+        height: 1000px;
+        width: 1400px;
+    }
+    .secondConBackGrdn {
+        display: flex;
+        width: 2400px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .fourPictures {
+        width: 1100px;
+        height: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .imageSecondContainer1 {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    .imageSecondContainer2 {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+   
+    .secondContTextWhyRun {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 900px;
+    }
+    .textSecondContainer h2 {
+        font-size: 46px;
+        font-weight: 600;
+    }
+    .textSecondContainer h4 {
+        font-size: 42px;
+        font-weight: 600;
+    }
+    .iconTextParagraph h6 {
+        font-size: 42px;
+    }
+    .secondConIconAndText p {
+        font-size: 32px;
+        margin: 0;
+    }
+    .secondConIconAndText h6 {
+        font-size: 48px;
+        margin: 0;
+    }
+    .iconSecondCon1 {
+        font-size: 46px;
+    }
+    .iconSecondCon2 {
+        font-size: 46px;
+    }
+    .iconSecondCon3 {
+        font-size: 46px;
+    }
+    .iconSecondCon4 {
+        font-size: 46px;
+    }    
 }

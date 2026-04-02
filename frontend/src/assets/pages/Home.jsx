@@ -59,7 +59,7 @@ export default function HomePage() {
         <section className={classes.latestStories}>
           <div className={classes.latestStoriesHeader}>
             <h1>Новини и събития</h1>
-            <a href="./Блог енд Нюз">
+            <a href="./Блог енд Нюз" className={classes.btnLatestStory}>
               <Button variant="contained">Всички постове</Button>
             </a>
           </div>

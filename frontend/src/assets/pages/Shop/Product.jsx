@@ -1,5 +1,5 @@
 import classes from "../Shop/Product.module.css";
-import tshirt from "../../images/tshirtImages/tSDhirtER.jpg";
+import tshirt from "../../images/shopImage/tSDhirtER.jpg";
 
 export default function Product() {
   return (

@@ -1,11 +1,11 @@
-import pametnik2 from "../images/logos/home-page2.jpg";
+import pametnik2 from "../images/home-page2.jpg";
 import classes from "../pages/Home.module.css";
 
 import Button from "@mui/material/Button";
 import allStars from "../images/home-page.jpg";
 import shumenskataKrepost from "../images/shumenska-krepost.jpg";
 import pametnik from "../images/monument.jpg";
-import massRunn from "../images/5kmCommon/DSC05703.jpg";
+import massRunn from "../images/massRunStenata.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MarqueeSlider from "../components/FastMarquee/MarqueeSlideFooterRightToLeft.jsx";
 

@@ -1,12 +1,11 @@
 import classes from "./MadaraTrail.module.css";
 import Button from "@mui/material/Button";
-import madaraPlato from "../../../images/blogAndNewsImages/madaraRunNewLogo.jpg";
 
 export default function MadaraTrailPage() {
   return (
     <>
       <div className={classes.mainContainer}>
-        <img className={classes.imgMadaraTrail} src={madaraPlato} alt="" />
+        {/* <img className={classes.imgMadaraTrail} src={madaraPlato} alt="" /> */}
         <div className={classes.textContainer}>
           <h1>МАДАРА TRAIL 2026 - 05 април 2026 г.</h1>
           <h2>Програма на събитието</h2>

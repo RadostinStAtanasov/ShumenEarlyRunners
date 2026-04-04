@@ -63,3 +63,19 @@
     font-weight: 800;
     border-radius: 8px;
 }
+
+@media(max-width: 750px) {
+    .headerAndUnderline {
+        margin-bottom: 200px;
+    }
+    .mainContainerGadgets {
+        margin-top: 200px;
+        margin-bottom: 100px;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 32px;
+    }
+}

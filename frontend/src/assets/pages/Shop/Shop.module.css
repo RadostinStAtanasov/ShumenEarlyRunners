@@ -32,3 +32,15 @@
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 1250px) {
+    .headerAndUnderline {
+        margin-bottom: 250px;
+    }
+    .bodyContainerShop {
+        margin-bottom: 250px;
+    }
+    .orderMessage {
+        margin-bottom: 250px;
+    }
+}

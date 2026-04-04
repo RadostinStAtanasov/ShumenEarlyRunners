@@ -72,6 +72,8 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
+              className={classes.iconChange}
+              sx={{ p: 1 }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"

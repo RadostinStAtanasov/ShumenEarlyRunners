@@ -27,7 +27,7 @@ export default function GeneratedClickedBlogOrNews() {
         <div className={classes.postedByText}>
           posted by {blogAndNews.postedby} | {blogAndNews.posteddate}
         </div>
-        <p>{blogAndNews.infoblogandnews}</p>
+        <p className={classes.textPar}>{blogAndNews.infoblogandnews}</p>
         <div className={classes.imageCenter}>
           {images?.map((image, index) => (
             <img className={classes.imgBlogAndNews} src={image} alt="dali" />

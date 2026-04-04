@@ -64,150 +64,153 @@ const Footer = () => {
   };
 
   return (
-    <StyledFooter>
-      <Container maxWidth="lg">
-        <Grid container spacing={4} className={classes.fastLinks}>
-          <Grid item xs={12} sm={6} md={3} className={classes.forUs}>
-            <Typography variant="h6" gutterBottom>
-              {/* За Нас */}
-            </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
-              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+    <>
+      <StyledFooter>
+        <Container maxWidth="lg">
+          <Grid container spacing={4} className={classes.fastLinks}>
+            <Grid item xs={12} sm={6} md={3} className={classes.forUs}>
+              <Typography variant="h6" gutterBottom>
+                {/* За Нас */}
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2 }}>
+                {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
               quisquam distinctio maxime enim ipsa dolorum. */}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} className>
-            <Typography variant="h6" gutterBottom>
-              Булетин
-            </Typography>
-            <Box component="form" noValidate>
-              <TextField
-                fullWidth
-                size="small"
-                placeholder="напиши своя имеил"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: 1,
-                  input: { color: "#fff" },
-                }}
-                aria-label="Newsletter subscription email input"
-              />
-              <Button
-                fullWidth
-                variant="contained"
-                sx={{
-                  mt: 2,
-                  backgroundColor: "#90caf9",
-                  "&:hover": { backgroundColor: "#42a5f5" },
-                }}
-                onClick={handleSubscribe}
-                aria-label="Subscribe to newsletter"
-              >
-                Абонирай се
-              </Button>
-            </Box>
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3} className>
+              <Typography variant="h6" gutterBottom>
+                Булетин
+              </Typography>
+              <Box component="form" noValidate>
+                <TextField
+                  fullWidth
+                  size="small"
+                  placeholder="напиши своя имеил"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  sx={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    borderRadius: 1,
+                    input: { color: "#fff" },
+                  }}
+                  aria-label="Newsletter subscription email input"
+                />
+                <Button
+                  fullWidth
+                  variant="contained"
+                  sx={{
+                    mt: 2,
+                    backgroundColor: "#90caf9",
+                    "&:hover": { backgroundColor: "#42a5f5" },
+                  }}
+                  onClick={handleSubscribe}
+                  aria-label="Subscribe to newsletter"
+                >
+                  Абонирай се
+                </Button>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h6" gutterBottom>
+                Бързи линкове
+              </Typography>
+              <Box display="flex" flexDirection="column" gap={1}>
+                <FooterLink
+                  href="/начало"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Home"
+                >
+                  Начало
+                </FooterLink>
+                <FooterLink
+                  href="/за нас"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Products"
+                >
+                  За нас
+                </FooterLink>
+                <FooterLink
+                  href="/резултати"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Contact"
+                >
+                  Резултати
+                </FooterLink>
+                <FooterLink
+                  href="/джаджи"
+                  onClick={scrollToTop}
+                  aria-label="Navigate to Contact"
+                >
+                  Джаджи
+                </FooterLink>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h6" gutterBottom>
+                Информация за контакти
+              </Typography>
+              <Typography variant="body2" component="div">
+                {/* <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box> */}
+                <Box mb={1}>България, Шумен 9700</Box>
+                <Box mb={1}>Телефон: +359 878688970 </Box>
+                <Box>Имейл: irinova@yahoo.com</Box>
+              </Typography>
+            </Grid>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" gutterBottom>
-              Бързи линкове
+          <Box
+            sx={{
+              mt: 4,
+              pt: 3,
+              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Typography variant="body2" align={isMobile ? "center" : "left"}>
+              © {new Date().getFullYear()} Your Company Name. All rights
+              reserved.
             </Typography>
-            <Box display="flex" flexDirection="column" gap={1}>
-              <FooterLink
-                href="/начало"
-                onClick={scrollToTop}
-                aria-label="Navigate to Home"
-              >
-                Начало
-              </FooterLink>
-              <FooterLink
-                href="/за нас"
-                onClick={scrollToTop}
-                aria-label="Navigate to Products"
-              >
-                За нас
-              </FooterLink>
-              <FooterLink
-                href="/резултати"
-                onClick={scrollToTop}
-                aria-label="Navigate to Contact"
-              >
-                Резултати
-              </FooterLink>
-              <FooterLink
-                href="/джаджи"
-                onClick={scrollToTop}
-                aria-label="Navigate to Contact"
-              >
-                Джаджи
-              </FooterLink>
-            </Box>
-          </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" gutterBottom>
-              Информация за контакти
-            </Typography>
-            <Typography variant="body2" component="div">
-              {/* <Box mb={1}>ул. Незабравка Ибраимоваа 78</Box> */}
-              <Box mb={1}>България, Шумен 9700</Box>
-              <Box mb={1}>Телефон: +359 878688970 </Box>
-              <Box>Имейл: irinova@yahoo.com</Box>
-            </Typography>
-          </Grid>
-        </Grid>
-
-        <Box
-          sx={{
-            mt: 4,
-            pt: 3,
-            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 2,
-          }}
-        >
-          <Typography variant="body2" align={isMobile ? "center" : "left"}>
-            © {new Date().getFullYear()} Your Company Name. All rights reserved.
-          </Typography>
-
-          <Box className={classes.icons}>
-            <SocialIcon
-              aria-label="Visit our FaceBook page"
-              onClick={() =>
-                window.open("https://www.facebook.com/groups/118564220164455")
-              }
-            >
-              <FaFacebook />
-            </SocialIcon>
-            {/* <SocialIcon
+            <Box className={classes.icons}>
+              <SocialIcon
+                aria-label="Visit our FaceBook page"
+                onClick={() =>
+                  window.open("https://www.facebook.com/groups/118564220164455")
+                }
+              >
+                <FaFacebook />
+              </SocialIcon>
+              {/* <SocialIcon
               aria-label="Visit our Twitter page"
               onClick={() => window.open("https://x.com/tweeter?lang=bg")}
             >
               <FaTwitter />
             </SocialIcon> */}
-            <SocialIcon
-              aria-label="Visit our Instagram page"
-              onClick={() =>
-                window.open("https://www.instagram.com/shumenearlyrunners/")
-              }
-            >
-              <FaInstagram />
-            </SocialIcon>
-            {/* <SocialIcon
+              <SocialIcon
+                aria-label="Visit our Instagram page"
+                onClick={() =>
+                  window.open("https://www.instagram.com/shumenearlyrunners/")
+                }
+              >
+                <FaInstagram />
+              </SocialIcon>
+              {/* <SocialIcon
               aria-label="Visit our LinkedIn page"
               onClick={() => window.open("https://www.linkedin.com/feed/")}
             >
               <FaLinkedin />
             </SocialIcon> */}
+            </Box>
           </Box>
-        </Box>
-      </Container>
-    </StyledFooter>
+        </Container>
+      </StyledFooter>
+    </>
   );
 };
 

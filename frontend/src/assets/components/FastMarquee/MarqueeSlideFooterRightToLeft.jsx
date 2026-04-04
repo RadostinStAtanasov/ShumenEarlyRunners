@@ -61,6 +61,51 @@ export default function TrackSlider() {
               <img src={run9} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run1} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run2} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run3} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run4} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run5} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run6} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run7} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run8} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <a href="">
+              <img src={run9} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
         </div>
       </Marquee>
     </>

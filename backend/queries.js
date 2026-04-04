@@ -40,20 +40,14 @@ const getTestImages = async (req, res) => {
   });
 };
 
-// const createBlog = async (req, res) => {
-
-//   pool.query(
-//     "SELECT * FROM Test",
-//     [nameimage, image],
-
-//     (error, results) => {
-//       if (error) {
-//         throw console.log(`this message ${error}`);
-//       }
-//       res.status(201).send(`image added with ID: ${results.insertId}`);
-//     },
-//   );
-// };
+const getEvents = async (req, res) => {
+  pool.query("SELECT * FROM events", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
 
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
@@ -101,6 +95,7 @@ module.exports = {
   getBlogs,
   getBlogsById,
   getTestImages,
+  getEvents,
   // createBlog,
   // updateUser,
   // deleteUser,

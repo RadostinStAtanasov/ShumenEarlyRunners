@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 app.get("/gallery", db.getTestImages);
+app.get("/events", db.getEvents);
 
 const PORT = 3000;
 app.listen(PORT, () => {

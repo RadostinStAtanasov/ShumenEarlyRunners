@@ -1,8 +1,8 @@
 import classes from "../Shop/Detail.module.css";
-import tShirt1 from "../../images/tshirtImages/tshirt1.jpg";
-import tShirt2 from "../../images/tshirtImages/tshirt2.jpg";
-import tShirt3 from "../../images/tshirtImages/tshirt3.jpg";
-import tSDhirtER from "../../images/tshirtImages/tSDhirtER.jpg";
+import tShirt1 from "../../images/shopImage/tshirt1.jpg";
+import tShirt2 from "../../images/shopImage/tshirt2.jpg";
+import tShirt3 from "../../images/shopImage/tshirt3.jpg";
+import tSDhirtER from "../../images/shopImage/tSDhirtER.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 

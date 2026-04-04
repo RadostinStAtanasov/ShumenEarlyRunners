@@ -22,6 +22,20 @@
     align-items: center;
 }
 
-.headBlogANews {
-    margin-bottom: 150px;
+@media(max-width: 820px) {
+    .cardOrder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1600px;
+    }
+    .headerAndUnderline {
+        margin-top: 150px;
+    }
+    .headBlogANews {
+        margin-top: 150px;
+    }
+    .cardOrder {
+        margin-top: 350px;
+    }
 }

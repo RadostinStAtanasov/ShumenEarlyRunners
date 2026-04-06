@@ -29,6 +29,7 @@ export default function BlogAndNewsPage() {
             <HeadBlogAndNewsCard infoHeadBlog={objHeadblog} />
           </div>
         ))}
+        ;
       </div>
       <div className={classes.cardOrder}>
         {blogOrNews.slice(1).map((obj, index) => (

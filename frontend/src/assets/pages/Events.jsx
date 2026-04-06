@@ -1,7 +1,22 @@
 import classes from "../pages/Events.module.css";
 import "../pages/Events.module.css";
 
+import { useEffect, useState } from "react";
+
 export default function EventsPage() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.earlyrunners.bg/events/")
+      .then((response) => response.json())
+      .then((response) => {
+        setEvents(response);
+      })
+      .then((error) => console.log(error));
+  }, []);
+
+  console.log(events);
+
   return (
     <div className={classes.mainContainerEvents}>
       <div className={classes.headerAndUnderline}>
@@ -9,22 +24,28 @@ export default function EventsPage() {
         <div className={classes.underline}></div>
       </div>
       <div className={classes.habibi}>
-        <div className={classes.image}>
-          <a href="http://localhost:5173/мадараТрейл">
-            {/* <img className={classes.images} src={madaraRun} alt="" /> */}
-          </a>
-        </div>
-        <div className={classes.image}>
-          <a href="https://visitshumen.bg/стената-run-шуменско-езеро-2025">
-            {/* <img className={classes.images} src={stenataRun} alt="" /> */}
-          </a>
-        </div>
-        <div className={classes.image}>
-          <a href="https://tracksport.live/e/sumensko-plato-2025">
-            {/* <img className={classes.images} src={shumenskoPlato} alt="" /> */}
-          </a>
-        </div>
+        {events.map((evn, index) => (
+          <div key={index} className={classes.image}>
+            <span>{evn.title}</span>
+            <a href="http://localhost:5173/мадараТрейл">
+              <img className={classes.images} src={evn.urlimage} alt="" />
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
+}
+
+{
+  /* <div className={classes.image}>
+  <a href="https://visitshumen.bg/стената-run-шуменско-езеро-2025">
+    <img className={classes.images} src={events.urlimage} alt="" />
+  </a>
+</div>
+<div className={classes.image}>
+  <a href="https://tracksport.live/e/sumensko-plato-2025">
+    <img className={classes.images} src={events.urlimage} alt="" />
+  </a>
+</div> */
 }

@@ -1,4 +1,4 @@
-import pametnik2 from "../images/home-page2.jpg";
+import pametnik2 from "../images/home-page2black.jpg";
 import classes from "../pages/Home.module.css";
 
 import Button from "@mui/material/Button";

@@ -106,7 +106,7 @@ module.exports = {
   getTestImages,
   getEvents,
   getResults,
-  // createBlog,
+  // ccreateBlog,
   // updateUser,
   // deleteUser,
 };

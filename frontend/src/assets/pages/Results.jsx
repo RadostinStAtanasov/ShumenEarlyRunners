@@ -1,5 +1,6 @@
 import classes from "../pages/Results.module.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 export default function ResultsPage() {
   const [results, setResults] = useState([]);
@@ -12,6 +13,7 @@ export default function ResultsPage() {
       })
       .then((error) => console.log(error));
   }, []);
+  console.log(results);
 
   return (
     <>
@@ -22,10 +24,10 @@ export default function ResultsPage() {
         </div>
         <div className={classes.eventsContainer}>
           {results.map((results, index) => (
-            <div className={classes.image}>
-              <a href={results.urllinkresult}>
+            <div className={classes.image} key={index}>
+              <Link to={results.urllinkresults}>
                 <img className={classes.images} src={results.urlimage} alt="" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

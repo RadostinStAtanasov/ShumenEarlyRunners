@@ -1,6 +1,18 @@
 import classes from "../pages/Results.module.css";
+import { useState, useEffect } from "react";
 
 export default function ResultsPage() {
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.earlyrunners.bg/results")
+      .then((response) => response.json())
+      .then((response) => {
+        setResults(response);
+      })
+      .then((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <div className={classes.mainContainerResult}>
@@ -9,21 +21,13 @@ export default function ResultsPage() {
           <div className={classes.underline}></div>
         </div>
         <div className={classes.eventsContainer}>
-          <div className={classes.image}>
-            <a href="https://tracksport.live/r/madara-trail-2026">
-              {/* <img className={classes.images} src={madaraRun} alt="" /> */}
-            </a>
-          </div>
-          <div className={classes.image}>
-            <a href="https://tracksport.live/r/sumensko-plato-2025">
-              {/* <img className={classes.images} src={stenataRun} alt="" /> */}
-            </a>
-          </div>
-          <div className={classes.image}>
-            <a href="https://tracksport.live/r/sumensko-plato-2025">
-              {/* <img className={classes.images} src={shumenskoPlato} alt="" /> */}
-            </a>
-          </div>
+          {results.map((results, index) => (
+            <div className={classes.image}>
+              <a href={results.urllinkresult}>
+                <img className={classes.images} src={results.urlimage} alt="" />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </>

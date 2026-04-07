@@ -49,6 +49,15 @@ const getEvents = async (req, res) => {
   });
 };
 
+const getResults = async (req, res) => {
+  pool.query("SELECT * FROM results", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
+
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 

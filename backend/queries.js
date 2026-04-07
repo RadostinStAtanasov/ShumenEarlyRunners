@@ -105,6 +105,7 @@ module.exports = {
   getBlogsById,
   getTestImages,
   getEvents,
+  getResults,
   // createBlog,
   // updateUser,
   // deleteUser,

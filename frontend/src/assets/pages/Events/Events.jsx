@@ -1,5 +1,4 @@
-import classes from "../pages/Events.module.css";
-import "../pages/Events.module.css";
+import classes from "./Events.module.css";
 
 import { useEffect, useState } from "react";
 
@@ -27,7 +26,7 @@ export default function EventsPage() {
         {events.map((evn, index) => (
           <div key={index} className={classes.image}>
             <span>{evn.title}</span>
-            <a href="http://localhost:5173/мадараТрейл">
+            <a href={`/събития/${evn.id}`}>
               <img className={classes.images} src={evn.urlimage} alt="" />
             </a>
           </div>

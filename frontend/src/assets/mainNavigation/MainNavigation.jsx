@@ -135,7 +135,7 @@ function ResponsiveAppBar() {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                   className={classes.menuTextSize}
-                  style={{ fontSize: 16, fontWeight: 600 }}
+                  style={{ fontSize: 18, fontWeight: 600 }}
                 >
                   {page}
                 </Button>

@@ -6,12 +6,13 @@ import NewsPage from "./assets/pages/BlogAndNews/BlogAndNews";
 import ForUsPage from "./assets/pages/ForUs";
 import ResultsPage from "./assets/pages/Results";
 import GadgetsPage from "./assets/pages/Gadgets";
-import EventsPage from "./assets/pages/Events";
+import EventsPage from "./assets/pages/Events/Events";
 import GalleryPage from "./assets/pages/Gallery";
 import ShopPage from "./assets/pages/Shop/Shop";
 import MadaraPage from "./assets/pages/BlogAndNews/News/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
-import GeneratedClickedBlogOrNews from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews";
+import GenerateClickedEvent from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews.jsx";
+import GenerateSelectedEvent from "./assets/pages/Events/GenerateSelectedEvent.jsx";
 import DetailPage from "./assets/pages/Shop/Detail";
 
 const router = createBrowserRouter([
@@ -26,12 +27,13 @@ const router = createBrowserRouter([
       { path: "/Блог енд Нюз", element: <NewsPage /> },
       {
         path: "/Блог енд Нюз/:blogAndNewsId",
-        element: <GeneratedClickedBlogOrNews />,
+        element: <GenerateClickedEvent />,
       },
       { path: "/За Нас", element: <ForUsPage /> },
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
+      { path: "/събития/:eventsId", element: <GenerateSelectedEvent /> },
       { path: "/магазин", element: <ShopPage /> },
       { path: "/магазин/детайли", element: <DetailPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },

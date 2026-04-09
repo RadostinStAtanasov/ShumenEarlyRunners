@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import classes from "./GenerateSelectedEvent.module.css";
+import Button from "@mui/material/Button";
 
 export default function GenerateEventPage() {
   const [event, setEvent] = useState();
@@ -20,7 +22,7 @@ export default function GenerateEventPage() {
   return (
     <>
       <div className={classes.mainContainer}>
-        <img className={classes.imgMadaraTrail} src={madaraPlato} alt="" />
+        {/* <img className={classes.imgMadaraTrail} src={madaraPlato} alt="" /> */}
         <div className={classes.textContainer}>
           <h1>МАДАРА TRAIL 2026 - 05 април 2026 г.</h1>
           <h2>Програма на събитието</h2>

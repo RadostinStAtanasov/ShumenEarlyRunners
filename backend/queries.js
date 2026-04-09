@@ -60,7 +60,7 @@ const getResults = async (req, res) => {
 
 const getEventById = async (req, res) => {
   const id = req.params.eventsId;
-  pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
+  pool.query("SELECT * FROM events WHERE id = $1", [id], (error, results) => {
     if (error) {
       throw error;
     }

@@ -107,7 +107,7 @@ const getEventById = async (req, res) => {
 //     }
 //     res.status(200).send(`User delete with ID: ${id}`);
 //   });
-// };
+// };go
 
 module.exports = {
   getBlogs,

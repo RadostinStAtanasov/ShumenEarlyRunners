@@ -27,6 +27,7 @@ app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 app.get("/gallery", db.getTestImages);
 app.get("/events", db.getEvents);
+app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
 
 const PORT = 3000;

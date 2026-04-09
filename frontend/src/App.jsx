@@ -12,7 +12,7 @@ import ShopPage from "./assets/pages/Shop/Shop";
 import MadaraPage from "./assets/pages/BlogAndNews/News/MadaraTrail";
 import PartnersPage from "./assets/pages/Partners";
 import GenerateClickedEvent from "./assets/pages/BlogAndNews/GeneratedClickedBlogOrNews.jsx";
-import GenerateSelectedEvent from "./assets/pages/Events/GenerateSelectedEvent.jsx";
+import GenerateSelectedEventPage from "./assets/pages/Events/GenerateSelectedEvent.jsx";
 import DetailPage from "./assets/pages/Shop/Detail";
 
 const router = createBrowserRouter([
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       { path: "/резултати", element: <ResultsPage /> },
       { path: "/джаджи", element: <GadgetsPage /> },
       { path: "/събития", element: <EventsPage /> },
-      { path: "/събития/:eventsId", element: <GenerateSelectedEvent /> },
+      { path: "/събития/:eventsId", element: <GenerateSelectedEventPage /> },
       { path: "/магазин", element: <ShopPage /> },
       { path: "/магазин/детайли", element: <DetailPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },

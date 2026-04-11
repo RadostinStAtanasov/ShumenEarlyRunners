@@ -47,7 +47,7 @@
 
 
 
-.pulseBtn {
+/* .pulseBtn {
     background:#0b63bb;
     color:#fff;
     border:1px solid #0b63bb;
@@ -60,7 +60,7 @@
     animation: pulse 2s infinite;
     }
 
-    /* @keyframes pulse {
+    @keyframes pulse {
         0% {
             box-shadow: 0 0 0 0 rgba(88, 120, 243, 1);
         }

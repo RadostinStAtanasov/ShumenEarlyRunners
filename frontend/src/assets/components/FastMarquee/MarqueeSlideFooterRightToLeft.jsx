@@ -17,7 +17,7 @@ export default function TrackSlider() {
     <>
       <Marquee pauseOnHover>
         <div className={classes.marqueeContainer}>
-          <Link to="http://earlyrunners.bg/trailTracks/5km Шумен.gpx">
+          <Link to="http://earlyrunners.bg/trailTracks/5kmШумен.gpx">
             <div className={classes.imgWrapper}>
               <div>5км. Шумен</div>
               <img src={run1} alt="" className={classes.imgFastMarquee} />

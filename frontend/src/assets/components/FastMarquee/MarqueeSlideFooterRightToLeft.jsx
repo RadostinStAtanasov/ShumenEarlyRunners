@@ -17,6 +17,60 @@ export default function TrackSlider() {
       <Marquee pauseOnHover>
         <div className={classes.marqueeContainer}>
           <div className={classes.imgWrapper}>
+            <div>5км. Шумен</div>
+            <a href="http://earlyrunners.bg/trailTracks/5km Шумен.gpx">
+              <img src={run1} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>Трейл-Асфалт</div>
+            <a href="http://earlyrunners.bg/trailTracks/10км. трейл-асфалт.gpx">
+              <img src={run2} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>До паметника през вилна зона</div>
+            <a href="http://earlyrunners.bg/trailTracks/града-вилна зона-паметник-града.gpx">
+              <img src={run3} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>обиколко на шум.язовир</div>
+            <a href="http://earlyrunners.bg/trailTracks/обиколка на шум.язовир.gpx">
+              <img src={run4} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>по пътя до паметника и обратно</div>
+            <a href="http://earlyrunners.bg/trailTracks/по пътя до паметника и обратно.gpx">
+              <img src={run5} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>по черно на шум.плато</div>
+            <a href="http://earlyrunners.bg/trailTracks/по черно на шум.плато.gpx">
+              <img src={run6} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>стената на шум.язовир</div>
+            <a href="http://earlyrunners.bg/trailTracks/стената рън.gpx">
+              <img src={run7} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>голямата обиколко по асфалт на шум.плато</div>
+            <a href="http://earlyrunners.bg/trailTracks/шумен-паметника-курсистите-стария град-пивоварната-шумен.gpx">
+              <img src={run8} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          <div className={classes.imgWrapper}>
+            <div>до теменуга и изгората и обратно</div>
+            <a href="http://earlyrunners.bg/trailTracks/шумен-теменуга-из гората-шумен.gpx">
+              <img src={run9} alt="" className={classes.imgFastMarquee} />
+            </a>
+          </div>
+          {/* <div className={classes.imgWrapper}>
             <a href="">
               <img src={run1} alt="" className={classes.imgFastMarquee} />
             </a>
@@ -60,52 +114,7 @@ export default function TrackSlider() {
             <a href="">
               <img src={run9} alt="" className={classes.imgFastMarquee} />
             </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run1} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run2} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run3} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run4} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run5} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run6} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run7} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run8} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <a href="">
-              <img src={run9} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
+          </div> */}
         </div>
       </Marquee>
     </>

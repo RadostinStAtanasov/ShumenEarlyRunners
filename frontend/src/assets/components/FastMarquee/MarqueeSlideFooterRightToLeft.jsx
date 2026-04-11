@@ -10,24 +10,25 @@ import run6 from "../../images/tracks/run6.jpg";
 import run7 from "../../images/tracks/run7.jpg";
 import run8 from "../../images/tracks/run8.jpg";
 import run9 from "../../images/tracks/run9.jpg";
+import { Link } from "react-router-dom";
 
 export default function TrackSlider() {
   return (
     <>
       <Marquee pauseOnHover>
         <div className={classes.marqueeContainer}>
-          <div className={classes.imgWrapper}>
-            <div>5км. Шумен</div>
-            <a href="http://earlyrunners.bg/trailTracks/5km Шумен.gpx">
+          <Link to="http://earlyrunners.bg/trailTracks/5km Шумен.gpx">
+            <div className={classes.imgWrapper}>
+              <div>5км. Шумен</div>
               <img src={run1} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
-          <div className={classes.imgWrapper}>
-            <div>Трейл-Асфалт</div>
-            <a href="http://earlyrunners.bg/trailTracks/10км. трейл-асфалт.gpx">
+            </div>
+          </Link>
+          <a href="http://earlyrunners.bg/trailTracks/10км. трейл-асфалт.gpx">
+            <div className={classes.imgWrapper}>
+              <div>Трейл-Асфалт</div>
               <img src={run2} alt="" className={classes.imgFastMarquee} />
-            </a>
-          </div>
+            </div>
+          </a>
           <div className={classes.imgWrapper}>
             <div>До паметника през вилна зона</div>
             <a href="http://earlyrunners.bg/trailTracks/града-вилна зона-паметник-града.gpx">

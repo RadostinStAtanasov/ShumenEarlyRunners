@@ -1,4 +1,4 @@
-import classes from "./GenerateSelectedEvent.module.css";
+import classes from "../Events/GenerateSelectedEvent.module.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "@mui/material/Button";

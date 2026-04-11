@@ -39,15 +39,15 @@ export default function GenerateEventPage() {
           <span className={classes.headedrs}>РЕГИСТРАЦИЯ:</span>
           <span className={classes.headedrs}>РАННА:</span>
           <div className={classes.textSize}>
-            {event.registrationearly?.split(".").map((i, key) => (
+            {/* {event.registrationearly?.split(".").map((i, key) => (
               <div key={key}>{i}</div>
-            ))}
+            ))} */}
           </div>
           <span className={classes.headedrs}>СТАНДАРТНА:</span>
           <div className={classes.textSize}>
-            {event.registrationstandart?.split(".").map((i, key) => (
+            {/* {event.registrationstandart?.split(".").map((i, key) => (
               <div key={key}>{i}</div>
-            ))}
+            ))} */}
           </div>
           <span className={classes.headedrs}>ТРАСЕ:</span>
           <div className={classes.textSize}>{event.route}</div>

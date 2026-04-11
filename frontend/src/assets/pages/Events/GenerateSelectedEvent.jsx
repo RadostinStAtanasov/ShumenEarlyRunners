@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
-import classes from "./GenerateSelectedEvent.module.css";
+import classes from "../Events/GenerateSelectedEvent.module.css";
 
 export default function GenerateEventPage() {
   const [event, setEvent] = useState([]);
@@ -39,15 +39,15 @@ export default function GenerateEventPage() {
           <span className={classes.headedrs}>РЕГИСТРАЦИЯ:</span>
           <span className={classes.headedrs}>РАННА:</span>
           <div className={classes.textSize}>
-            {/* {event.registrationearly?.split(".").map((i, key) => (
+            {event.registrationearly?.split(".").map((i, key) => (
               <div key={key}>{i}</div>
-            ))} */}
+            ))}
           </div>
           <span className={classes.headedrs}>СТАНДАРТНА:</span>
           <div className={classes.textSize}>
-            {/* {event.registrationstandart?.split(".").map((i, key) => (
+            {event.registrationstandart?.split(".").map((i, key) => (
               <div key={key}>{i}</div>
-            ))} */}
+            ))}
           </div>
           <span className={classes.headedrs}>ТРАСЕ:</span>
           <div className={classes.textSize}>{event.route}</div>

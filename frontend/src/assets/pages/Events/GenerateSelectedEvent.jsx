@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
-// import classes from "./GenerateSelectedEvent.module.css";
+import classes from "./GenerateSelectedEvent.module.css";
 
 export default function GenerateEventPage() {
-  const [event, setEvent] = useState();
+  const [event, setEvent] = useState([]);
   const params = useParams();
   const id = params.eventsId;
 
   useEffect(() => {
-    fetch("https://api.earlyrunners.bg/" + id)
+    fetch("https://api.earlyrunners.bg/events/" + id)
       .then((response) => response.json())
       .then((response) => {
-        setEvent(response);
+        setEvent(response[0]);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -21,53 +21,58 @@ export default function GenerateEventPage() {
 
   return (
     <>
-      {/* <div className={classes.mainContainer}>
-         <img className={classes.imgMadaraTrail} src={madaraPlato} alt="" />
+      <div className={classes.mainContainer}>
         <div className={classes.textContainer}>
-          <h1>МАДАРА TRAIL 2026 - 05 април 2026 г.</h1>
-          <h2>Програма на събитието</h2>
-          <h2>ОТТУКА ЗАПОЧВА БЪЛГАРИЯ! </h2>
-          Скалният барелеф на Мадарския конник е известен по целия свят и не
-          случайно е глобален символ на България. Мистичните гори и скалите
-          разкриват красотата си и причудливите си форми единствено когато ги
-          приближиш. Можем да чуем във въображението си стъпките на древните
-          конници, препускали волно по тези земи. Да популяризираме глобалния
-          символ на България, да подкрепим местната общност и да се предизвикаме
-          по трудните скалисти терени – това е каузата на сдружение „Shumen
-          Early Runners“. Защото оттука започва България!
-          <h2>ГОТОВИ ЛИ СТЕ ДА НАДБЯГАТЕ КОННИКА?</h2>
-          <p>
-            За първи път Shumen Early Runners организира трейл бягане по
-            уникалното Мадарско плато в три дистанции. Състезанието ще се
-            проведе на територията на общините Шумен и Каспичан.За малчуганите
-            ще има детско бягане в зоната на старта.
-          </p>
-          <h3>СТАРТ:</h3> 9 часа, пред кметството на с. Мадара,община Шумен
-          <h3>ДИСТАНЦИИ: </h3>
-          <span>
-            13 км. 410 D+ за бързина и удоволствие 21 км. 570D+ златната среда
-            30 км. 880 D+ истинско изпитание
-          </span>
-          <h3>ТРАСЕ:</h3> горски пътеки, скали, технични участъци. Осигурени са
-          подкрепителни пунктове.
-          <h3>РЕГИСТРАЦИЯ: </h3>
-          РАННА до 28 февруари 2026
-          <span>13км - 20 евро 21км – 30 евро 30км – 35 евро </span>
-          СТАНДАРТНА от 01 март до 25 март 2026
-          <span>13км – 25 евро 20км – 35 евро 30км - 40 евро </span>
+          <h1 className={classes.titleEvent}>{event.title}</h1>
           <br />
-          <a href="https://tracksport.live/e/madara-trail-2026">
-            <Button variant="outlined" color="error">
+          <article className={classes.description}>{event.description}</article>
+          <br />
+          <span className={classes.headedrsSche}>ПРОГРАМА НА СЪБИТИЕТО</span>
+          <p>{event.schedule}</p>
+          <br />
+          <span className={classes.headedrs}>СТАРТ:</span>
+          <div className={classes.textSize}>{event.schedulestartinfo}</div>
+          <br />
+          <span className={classes.headedrs}>ДИСТАНЦИИ:</span>
+          <div className={classes.textSize}>{event.distants}</div>
+          <br />
+          <span className={classes.headedrs}>РЕГИСТРАЦИЯ:</span>
+          <span className={classes.headedrs}>РАННА:</span>
+          <div className={classes.textSize}>
+            {event.registrationearly?.split(".").map((i, key) => (
+              <div key={key}>{i}</div>
+            ))}
+          </div>
+          <span className={classes.headedrs}>СТАНДАРТНА:</span>
+          <div className={classes.textSize}>
+            {event.registrationstandart?.split(".").map((i, key) => (
+              <div key={key}>{i}</div>
+            ))}
+          </div>
+          <span className={classes.headedrs}>ТРАСЕ:</span>
+          <div className={classes.textSize}>{event.route}</div>
+          <br />
+          <a href={`${event.linkforregistration}`}>
+            <Button
+              variant="outlined"
+              color="error"
+              className={classes.pulseBtn}
+            >
               Регистрация
             </Button>
           </a>
           <br />
-          ЗАДЪЛЖИТЕЛНА ЕКИПИРОВКА ЗА ВСИЧКИ - ТРЕЙЛ ОБУВКИ ЗА БЯГАНЕ
-          ЗАДЪЛЖИТЕЛНА ЕКИПИРОВКА ЗА УЧАСТНИЦИТЕ НА 30 КМ. - съдове за вода с
-          вместимост поне 500 мл., храна
-          <span>КОНТАКТИ: earlyrunnerssh@gmail.com</span>
+          <span className={classes.headedrs}>ПРЕПОРЪЧИТЕЛНА ЕКИПИРОВКА: </span>
+          <div className={classes.textSize}>{event.recommendedequipment}</div>
+          <br />
+          <span className={classes.headedrs}>ЗАДЪЛЖИТЕЛНА ЕКИПИРОВКА: </span>
+          <div className={classes.textSize}>{event.mandatoryequipment}</div>
+          <br />
+          <span className={classes.headedrs}>КОНТАКТИ:</span>
+          <div className={classes.textSize}>{event.contacts}</div>
         </div>
-      </div> */}
+        <img className={classes.imgMadaraTrail} src={event.urlimage} alt="" />
+      </div>
     </>
   );
 }

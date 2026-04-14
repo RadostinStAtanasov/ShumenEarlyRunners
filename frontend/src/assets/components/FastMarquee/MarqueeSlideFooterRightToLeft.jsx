@@ -17,13 +17,19 @@ export default function TrackSlider() {
     <>
       <Marquee pauseOnHover>
         <div className={classes.marqueeContainer}>
-          <Link to="http://earlyrunners.bg/trailTracks/5kmШумен.gpx">
+          <a
+            href="http://earlyrunners.bg/trailTracks/5kmШумен.gpx"
+            download="file1.gpx"
+          >
             <div className={classes.imgWrapper}>
               <div>5км. Шумен</div>
               <img src={run1} alt="" className={classes.imgFastMarquee} />
             </div>
-          </Link>
-          <a href="http://earlyrunners.bg/trailTracks/10км. трейл-асфалт.gpx">
+          </a>
+          <a
+            href="http://earlyrunners.bg/trailTracks/10км. трейл-асфалт.gpx"
+            download="file2.gpx"
+          >
             <div className={classes.imgWrapper}>
               <div>Трейл-Асфалт</div>
               <img src={run2} alt="" className={classes.imgFastMarquee} />
@@ -31,13 +37,19 @@ export default function TrackSlider() {
           </a>
           <div className={classes.imgWrapper}>
             <div>До паметника през вилна зона</div>
-            <a href="http://earlyrunners.bg/trailTracks/града-вилна зона-паметник-града.gpx">
+            <a
+              href="http://earlyrunners.bg/trailTracks/града-вилна зона-паметник-града.gpx"
+              download
+            >
               <img src={run3} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>
           <div className={classes.imgWrapper}>
             <div>обиколко на шум.язовир</div>
-            <a href="http://earlyrunners.bg/trailTracks/обиколка на шум.язовир.gpx">
+            <a
+              href="http://earlyrunners.bg/trailTracks/обиколка на шум.язовир.gpx"
+              download
+            >
               <img src={run4} alt="" className={classes.imgFastMarquee} />
             </a>
           </div>

@@ -155,13 +155,13 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <section className={classes.runningTracksContainer}>
+        {/* <section className={classes.runningTracksContainer}>
           <div className={classes.headRunTrackContainer}>
             <h2>Най-бяганите тракове на Шуменското Плато</h2>
             <h3>Изтегли от тука</h3>
           </div>
           <MarqueeSlider />
-        </section>
+        </section> */}
       </div>
     </>
   );

@@ -10,7 +10,7 @@ import run6 from "../../images/tracks/run6.jpg";
 import run7 from "../../images/tracks/run7.jpg";
 import run8 from "../../images/tracks/run8.jpg";
 import run9 from "../../images/tracks/run9.jpg";
-import { Link } from "react-router-dom";
+import track from "./шумен-теменуга-из гората-шумен.gpx";
 
 export default function TrackSlider() {
   return (
@@ -18,7 +18,8 @@ export default function TrackSlider() {
       <Marquee pauseOnHover>
         <div className={classes.marqueeContainer}>
           <a
-            href="http://earlyrunners.bg/trailTracks/5kmШумен.gpx"
+            // href="http://earlyrunners.bg/trailTracks/5kmШумен.gpx"
+            href={track}
             download="file1.gpx"
           >
             <div className={classes.imgWrapper}>

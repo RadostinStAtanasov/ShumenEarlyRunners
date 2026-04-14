@@ -10,7 +10,7 @@ import run6 from "../../images/tracks/run6.jpg";
 import run7 from "../../images/tracks/run7.jpg";
 import run8 from "../../images/tracks/run8.jpg";
 import run9 from "../../images/tracks/run9.jpg";
-import track from "./шумен-теменуга-из гората-шумен.gpx";
+import track from "./shumen-temenuga-gorata-shumen.gpx";
 
 export default function TrackSlider() {
   return (

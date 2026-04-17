@@ -63,15 +63,13 @@ export default function ContactPage() {
 
     const data = { inputName, inputLastName, inputTopic, inputMessage };
 
-    async function addContact() {
-      await fetch("https://api.earlyrunners.bg/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-    }
+    fetch("https://api.earlyrunners.bg/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
     // if (!response.ok) {
     //   return;

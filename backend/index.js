@@ -29,6 +29,7 @@ app.get("/gallery", db.getTestImages);
 app.get("/events", db.getEvents);
 app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
+app.post("/контакти", db.postContactUs);
 
 const PORT = 3000;
 app.listen(PORT, () => {

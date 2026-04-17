@@ -67,6 +67,21 @@ const getEventById = async (req, res) => {
     res.status(200).json(results.rows);
   });
 };
+
+const postContactUs = async (req, res) => {
+  const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
+
+  pool.query(
+    "INSERT INTO contacts (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+    [inputName, inputLastName, inputTopic, inputMessage],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(201).send(`Message is added from contact form`);
+    },
+  );
+};
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 
@@ -116,7 +131,5 @@ module.exports = {
   getEvents,
   getResults,
   getEventById,
-  // ccreateBlog,
-  // updateUser,
-  // deleteUser,
+  postContactUs,
 };

@@ -8,20 +8,87 @@ import iRun from "../images/iRun.jpg";
 import allTrails from "../images/Alltrails.png";
 import fiveKmSat from "../images/5kmSatelit.png";
 import calc from "../images/calcpace.png";
-
+import { useActionState } from "react";
 import fiveKmImage2 from "../images/logos/5kmshNewNew.jpg";
-
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import Submit from "./Submit";
 <script
   src="https://your-site-or-cdn.com/fontawesome/v5.15.4/js/all.js"
   data-auto-a11y="true"
 ></script>;
 
-import TextField from "@mui/material/TextField";
-
-import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
-
 export default function ContactPage() {
+  async function handleSubmit(prevFormState, formData) {
+    const inputName = formData.get("name");
+    const inputLastName = formData.get("lastName");
+    const inputTopic = formData.get("topic");
+    const inputMessage = formData.get("message");
+
+    // console.log(inputName);
+    // console.log(inputLastName);
+    // console.log(inputTopic);
+    // console.log(inputMessage);
+
+    let errors = [];
+
+    if (inputName.trim().length === 0 || inputName.trim().length < 3) {
+      errors.push("Name need to be at least 3 characters long");
+    }
+
+    if (inputLastName.trim().length === 0 || inputName.trim().length < 3) {
+      errors.push("Lastname need to be at least 3 characters long");
+    }
+
+    if (inputTopic.trim().length <= 10) {
+      errors.push("Topic need to be at least 10 characters long");
+    }
+
+    if (inputMessage.trim().length <= 100) {
+      errors.push("Message need to be at least 100 characters long");
+    }
+
+    if (errors.length > 0) {
+      return {
+        errors,
+        enteredValues: {
+          inputName,
+          inputLastName,
+          inputTopic,
+          inputMessage,
+        },
+      };
+    }
+
+    const data = { inputName, inputLastName, inputTopic, inputMessage };
+
+    async function addContact() {
+      await fetch("https://api.earlyrunners.bg/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    }
+
+    // if (!response.ok) {
+    //   return;
+    // }
+
+    return { errors: null };
+  }
+
+  setTimeout(() => {}, 1000);
+
+  const [formState, formAction] = useActionState(handleSubmit, {
+    errors: null,
+  });
+
+  // mojem da slojim formAction={na butonite za vote downvote upVote}
+  //setTimeout(resolve, 1000); na butona submit
+
   return (
     <>
       <div className={classes.mainContainerContacts}>
@@ -32,36 +99,47 @@ export default function ContactPage() {
         </div>
         <div className={classes.mainContainer}>
           <div className={classes.mainContainerSendAndContact}>
-            <div className={classes.containerSendaMessage}>
+            <form action={formAction} className={classes.containerSendaMessage}>
               <div className={classes.sendMess}>Изпрати съобщение</div>
               <TextField
-                required
+                //required
                 className={classes.outlinedRequired}
                 label="Име"
-                //defaultValue="Име"
+                name="name"
+                defaultValue={formState?.enteredValues?.inputName}
               />
               <TextField
-                required
+                //required
                 className={classes.outlinedRequired}
                 label="Фамилия"
-                //defaultValue="Име"
+                name="lastName"
+                defaultValue={formState?.enteredValues?.inputLastName}
               />
               <TextField
                 className={classes.outlinedRequired}
                 label="Тема"
-                //defaultValue="Име"
+                name="topic"
+                defaultValue={formState?.enteredValues?.inputTopic}
               />
               <TextField
                 className={classes.outlinedMultilineStatic}
                 label="Съобщение"
                 multiline
                 rows={8}
-                //defaultValue="Default Value"
+                name="message"
+                defaultValue={formState?.enteredValues?.inputMessage}
               />
-              <Button variant="contained" endIcon={<SendIcon />}>
-                Изпрати
-              </Button>
-            </div>
+              <Submit />
+              {formState?.errors && (
+                <ul>
+                  {formState?.errors?.map((error) => (
+                    <li key={error} style={{ color: "red" }}>
+                      {error}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </form>
             <div>
               <div className={classes.containerContactLinks}>
                 <div className={classes.callContacts}>Контакти</div>

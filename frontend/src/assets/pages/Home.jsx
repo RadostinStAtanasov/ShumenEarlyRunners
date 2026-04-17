@@ -22,7 +22,6 @@ export default function HomePage() {
   return (
     <>
       <div className={classes.mainContainer}>
-        {/* <HomePageTopSlider /> */}
         <section className={classes.firstContainerTitle}>
           <section className={classes.firstContainerText}>
             <div className={classes.firstContainerTextContainer}>

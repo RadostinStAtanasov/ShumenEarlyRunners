@@ -72,7 +72,7 @@ const postContactUs = async (req, res) => {
   const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
 
   pool.query(
-    "INSERT INTO contacts (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+    "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
     [inputName, inputLastName, inputTopic, inputMessage],
     (error, results) => {
       if (error) {

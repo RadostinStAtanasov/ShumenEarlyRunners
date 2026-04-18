@@ -12,6 +12,10 @@ export default function Submit() {
 
   console.log(pending);
 
+  if (pending == true) {
+    setTimeout(() => {}, 3000);
+  }
+
   return (
     <Button
       type="submit"

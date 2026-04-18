@@ -63,7 +63,7 @@ export default function ContactPage() {
 
     const data = { inputName, inputLastName, inputTopic, inputMessage };
 
-    fetch("https://api.earlyrunners.bg/contact", {
+    await fetch("https://api.earlyrunners.bg/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,11 +78,10 @@ export default function ContactPage() {
     return { errors: null };
   }
 
-  setTimeout(() => {}, 1000);
-
   const [formState, formAction] = useActionState(handleSubmit, {
     errors: null,
   });
+  setTimeout(() => {}, 3000);
 
   // mojem da slojim formAction={na butonite za vote downvote upVote}
   //setTimeout(resolve, 1000); na butona submit

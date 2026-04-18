@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../images/logos/logoNavbar.png";
 import logoText from "../images/logos/textLogo.png";
 import classes from "./MainNavigation.module.css";
@@ -27,6 +27,8 @@ const pages = [
   "Джаджи",
   "Партньори",
   "Контакти",
+  "Регистър",
+  //<NavLink to="/регистър?mode=login">reg</NavLink>,
 ];
 //const settings = ["Профил", "Акаунт", "Управление", "Излизане"];
 

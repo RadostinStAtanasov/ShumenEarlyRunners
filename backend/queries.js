@@ -82,6 +82,21 @@ const postContactUs = async (req, res) => {
     },
   );
 };
+
+const createUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  pool.query(
+    "INSERT INTO users (email, password) VALUES ($1, $2)",
+    [email, password],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(201).send(`User added with ID:`);
+    },
+  );
+};
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 
@@ -122,7 +137,7 @@ const postContactUs = async (req, res) => {
 //     }
 //     res.status(200).send(`User delete with ID: ${id}`);
 //   });
-// };go
+// };
 
 module.exports = {
   getBlogs,
@@ -132,4 +147,5 @@ module.exports = {
   getResults,
   getEventById,
   postContactUs,
+  createUser,
 };

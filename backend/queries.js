@@ -93,18 +93,18 @@ const createUser = async (req, res) => {
   if (!isValidEmail(email)) {
     errors.email = "Invalid email.";
   } else {
-    try {
-      let emailExist = pool.query(
-        "SELECT email FROM users WHERE email = $1",
-        [email],
-        (error, results) => {
-          if (emailExist) {
-            throw new Error("Email exists already");
-          }
-        },
-      );
-    } catch (error) {
-      throw new Error("cheking fail.");
+    let emailExist = pool.query(
+      "SELECT * FROM users WHERE email = $1",
+      [email],
+      (error, results) => {
+        if (emailExist) {
+          throw new Error("Email exists already");
+        }
+      },
+    );
+
+    if (emailExist == mail) {
+      throw new Error("Email exists already");
     }
   }
 

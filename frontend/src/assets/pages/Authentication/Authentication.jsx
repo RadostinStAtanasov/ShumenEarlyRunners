@@ -10,7 +10,7 @@ export async function action({ request }) {
   const mode = searchParams.get("mode") || "login";
 
   if (mode !== "login" && mode !== "signup") {
-    throw json({ message: "Unsupported mode" }, { status: 422 });
+    throw Error("Unsupported mode 422");
   }
 
   const data = await request.formData();

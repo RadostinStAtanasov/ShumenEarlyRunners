@@ -1,4 +1,7 @@
 const Pool = require("pg").Pool;
+const { message } = require("statuses");
+const { isValidEmail, isValidText } = require("./validation");
+const { hash } = require("bcryptjs");
 
 // const dotenv = require("dotenv");
 
@@ -85,18 +88,58 @@ const postContactUs = async (req, res) => {
 
 const createUser = async (req, res) => {
   const { email, password } = req.body;
+  let errors = {};
 
-  pool.query(
-    "INSERT INTO users (email, password) VALUES ($1, $2)",
-    [email, password],
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      res.status(201).send(`User added with ID:`);
-    },
-  );
+  if (!isValidEmail(email)) {
+    errors.email = "Invalid email.";
+  } else {
+    try {
+      let emailExist = pool.query(
+        "SELECT email FROM users WHERE email = $1",
+        [email],
+        (error, results) => {
+          if (emailExist) {
+            throw error("Email exists already");
+          }
+        },
+      );
+    } catch (error) {}
+  }
+
+  if (!isValidText(database.password, 6)) {
+    errors.password = "Invalid password. Must be at least 6 characters long.";
+  }
+
+  if (Object.keys(errors).length > 0) {
+    return res
+      .status(422)
+      .json({ message: "User signup failed due to validation errors", errors });
+  }
+
+  try {
+    const hashedPw = await hash(password, 12);
+    try {
+      const authToken = createJSONToken(email);
+      res
+        .status(201)
+        .json({ message: "User created.", user: email, token: authToken });
+    } catch (error) {
+      throw error("Token fail");
+    }
+
+    pool.query(
+      "INSERT INTO users (email, password) VALUES ($1, $2)",
+      [email, hashedPw],
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res.status(201).send(`User added with ID:`);
+      },
+    );
+  } catch (error) {}
 };
+
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 

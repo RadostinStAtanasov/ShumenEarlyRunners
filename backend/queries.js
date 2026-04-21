@@ -89,23 +89,23 @@ const createUser = async (req, res) => {
   const { email, password } = req.body;
   let errors = {};
 
-  if (!isValidEmail(email)) {
-    errors.email = "Invalid email.";
-  } else {
-    let emailExist = pool.query(
-      "SELECT * FROM users WHERE email = $1",
-      [email],
-      (error, results) => {
-        if (emailExist) {
-          errors.email = "Email exists already";
-        }
-      },
-    );
+  // if (!isValidEmail(email)) {
+  //   errors.email = "Invalid email.";
+  // } else {
+  //   let emailExist = pool.query(
+  //     "SELECT * FROM users WHERE email = $1",
+  //     [email],
+  //     (error, results) => {
+  //       if (emailExist) {
+  //         errors.email = "Email exists already";
+  //       }
+  //     },
+  //   );
 
-    if (emailExist == mail) {
-      errors.email("email already exist from if check");
-    }
-  }
+  //   if (emailExist == mail) {
+  //     errors.email("email already exist from if check");
+  //   }
+  // }
 
   if (!isValidText(database.password, 6)) {
     errors.password = "Invalid password. Must be at least 6 characters long.";

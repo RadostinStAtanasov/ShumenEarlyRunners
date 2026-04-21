@@ -32,7 +32,7 @@ export async function action({ request }) {
   }
 
   if (!response.ok) {
-    throw new Error("Could not authenticate user status: 500");
+    throw new Error("Could not authenticate user status: 500 ");
   }
 
   return redirect("/");

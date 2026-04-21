@@ -19,7 +19,7 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  const response = await fetch("https://api.earlyrunners.bg/users", {
+  const response = await fetch("https://api.earlyrunners.bg/users" + mode, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

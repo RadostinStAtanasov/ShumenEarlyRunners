@@ -131,7 +131,10 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <NavLink key={page} to={page}>
+              <NavLink
+                key={page}
+                to={page === "Регистър" ? "/Регистър?mode=login" : page}
+              >
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}

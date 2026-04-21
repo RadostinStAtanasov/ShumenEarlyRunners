@@ -98,19 +98,19 @@ const createUser = async (req, res) => {
       [email],
       (error, results) => {
         if (emailExist) {
-          throw new Error("Email exists already");
+          errors.email = "Email exists already";
         }
       },
     );
 
     if (emailExist == mail) {
-      throw new Error("Email exists already");
+      errors.email("email already exist from if check");
     }
   }
 
-  // if (!isValidText(database.password, 6)) {
-  //   errors.password = "Invalid password. Must be at least 6 characters long.";
-  // }
+  if (!isValidText(database.password, 6)) {
+    errors.password = "Invalid password. Must be at least 6 characters long.";
+  }
 
   // if (Object.keys(errors).length > 0) {
   //   return res
@@ -129,15 +129,19 @@ const createUser = async (req, res) => {
 
   try {
     const hashedPw = await hash(password, 12);
+    const authToken = createJSONToken(email);
 
     pool.query(
-      "INSERT INTO users (email, password) VALUES ($1, $2)",
+      "INSERT INTO users (email, password, token) VALUES ($1, $2, $3)",
       [email, hashedPw],
       (error, results) => {
         if (error) {
           throw error;
         }
-        res.status(201).send(`User added with ID:`);
+        res
+          .status(201)
+          //.json({ message: "User created", user: email, token: authToken })
+          .send(`User added with ID:`);
       },
     );
   } catch (error) {

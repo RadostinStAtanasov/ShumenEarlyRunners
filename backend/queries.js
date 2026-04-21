@@ -1,5 +1,4 @@
 const Pool = require("pg").Pool;
-const { message } = require("statuses");
 const { isValidEmail, isValidText } = require("./validation");
 const { hash } = require("bcryptjs");
 
@@ -108,9 +107,9 @@ const createUser = async (req, res) => {
   //   }
   // }
 
-  if (!isValidText(database.password, 6)) {
-    errors.password = "Invalid password. Must be at least 6 characters long.";
-  }
+  // if (!isValidText(database.password, 6)) {
+  //   errors.password = "Invalid password. Must be at least 6 characters long.";
+  // }
 
   // if (Object.keys(errors).length > 0) {
   //   return res
@@ -132,7 +131,7 @@ const createUser = async (req, res) => {
     //const authToken = createJSONToken(email);
 
     pool.query(
-      "INSERT INTO users (email, password, token) VALUES ($1, $2, $3)",
+      "INSERT INTO users (email, password) VALUES ($1, $2)",
       [email, hashedPw],
       (error, results) => {
         if (error) {

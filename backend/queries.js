@@ -139,7 +139,7 @@ const createUser = async (req, res) => {
         }
         res
           .status(201)
-          .json({ message: "User created", user: email, token: authToken })
+          // .json({ message: "User created", user: email, token: authToken })
           .send(`User added with ID:`);
       },
     );

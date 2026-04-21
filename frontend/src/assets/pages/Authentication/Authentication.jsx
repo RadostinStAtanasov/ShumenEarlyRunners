@@ -35,5 +35,5 @@ export async function action({ request }) {
     throw new Error("Could not authenticate user status: 500 ");
   }
 
-  return redirect("/");
+  return redirect("/Начало");
 }

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const corsOption = {
-  origin: "*",
+  origin: true,
   credentials: true,
   optionSuccessStatus: 200,
 };

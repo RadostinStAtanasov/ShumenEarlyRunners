@@ -107,15 +107,15 @@ const createUser = async (req, res) => {
   //   }
   // }
 
-  if (!isValidText(database.password, 6)) {
-    errors.password = "Invalid password. Must be at least 6 characters long.";
-  }
+  // if (!isValidText(database.password, 6)) {
+  //   errors.password = "Invalid password. Must be at least 6 characters long.";
+  // }
 
-  if (Object.keys(errors).length > 0) {
-    return res
-      .status(422)
-      .json({ message: "User signup failed due to validation errors", errors });
-  }
+  // if (Object.keys(errors).length > 0) {
+  //   return res
+  //     .status(422)
+  //     .json({ message: "User signup failed due to validation errors", errors });
+  // }
 
   // try {
   //   const authToken = createJSONToken(email);

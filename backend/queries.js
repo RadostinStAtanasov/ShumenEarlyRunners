@@ -117,14 +117,14 @@ const createUser = async (req, res) => {
       .json({ message: "User signup failed due to validation errors", errors });
   }
 
-  try {
-    const authToken = createJSONToken(email);
-    res
-      .status(201)
-      .json({ message: "User created.", user: email, token: authToken });
-  } catch (error) {
-    throw error("Token fail");
-  }
+  // try {
+  //   const authToken = createJSONToken(email);
+  //   res
+  //     .status(201)
+  //     .json({ message: "User created.", user: email, token: authToken });
+  // } catch (error) {
+  //   throw error("Token fail");
+  // }
 
   try {
     const hashedPw = await hash(password, 12);

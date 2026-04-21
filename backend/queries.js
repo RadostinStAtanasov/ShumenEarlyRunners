@@ -127,7 +127,7 @@ const createUser = async (req, res) => {
   // }
 
   try {
-    const hashedPw = hash(password, 12);
+    const hashedPw = await hash(password, 12);
     //const authToken = createJSONToken(email);
 
     pool.query(

@@ -2,7 +2,6 @@ const Pool = require("pg").Pool;
 const { json } = require("body-parser");
 const { isValidEmail, isValidText } = require("./validation");
 const { hash } = require("bcryptjs");
-const { NotFound } = require("@aws-sdk/client-s3");
 
 // const dotenv = require("dotenv");
 
@@ -222,4 +221,5 @@ module.exports = {
   getEventById,
   postContactUs,
   createUser,
+  loginUser,
 };

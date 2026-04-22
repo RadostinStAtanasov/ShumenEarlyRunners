@@ -10,7 +10,7 @@ export async function action({ request }) {
   const mode = searchParams.get("mode") || "login";
 
   if (mode !== "login" && mode !== "signup") {
-    throw Error("Unsupported mode 422");
+    Response.json({ message: "Unsupported mode 422." }, { status: 422 });
   }
 
   const data = await request.formData();
@@ -31,9 +31,9 @@ export async function action({ request }) {
     return response;
   }
 
-  // if (!response.ok) {
-  //   throw new Error("Could not authenticate user status: 500 ");
-  // }
+  if (!response.ok) {
+    Response.json({ message: "Could not authenticate user" }, { status: 500 });
+  }
 
   return redirect("/");
 }

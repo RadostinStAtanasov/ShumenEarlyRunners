@@ -22,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    //errorElement: <ErrorPage />, da se napravi
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/начало", element: <HomePage /> },

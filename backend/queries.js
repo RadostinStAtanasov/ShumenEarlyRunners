@@ -1,6 +1,8 @@
 const Pool = require("pg").Pool;
+const { json } = require("body-parser");
 const { isValidEmail, isValidText } = require("./validation");
 const { hash } = require("bcryptjs");
+const { NotFound } = require("@aws-sdk/client-s3");
 
 // const dotenv = require("dotenv");
 
@@ -89,6 +91,27 @@ const createUser = async (req, res) => {
   const { email, password } = req.body;
   let errors = {};
 
+  try {
+    const hashedPw = await hash(password, 12);
+    //const authToken = createJSONToken(email);
+
+    pool.query(
+      "INSERT INTO users (email, password) VALUES ($1, $2)",
+      [email, hashedPw],
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res
+          .status(201)
+          .json({ message: "User created", user: email, token: authToken })
+          .send(`User added with ID:`);
+      },
+    );
+  } catch (error) {
+    throw new Error("Add fail");
+  }
+
   // if (!isValidEmail(email)) {
   //   errors.email = "Invalid email.";
   // } else {
@@ -125,29 +148,29 @@ const createUser = async (req, res) => {
   // } catch (error) {
   //   throw error("Token fail");
   // }
+};
+
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
 
   try {
-    const hashedPw = await hash(password, 12);
-    //const authToken = createJSONToken(email);
-
-    pool.query(
-      "INSERT INTO users (email, password) VALUES ($1, $2)",
-      [email, hashedPw],
-      (error, results) => {
+    const getAllUsers = await pool.query(
+      "SELECT * FROM users",
+      (errors, results) => {
         if (error) {
           throw error;
         }
-        res
-          .status(201)
-          // .json({ message: "User created", user: email, token: authToken })
-          .send(`User added with ID:`);
+        (res.status(200), json(results.rows));
       },
     );
+
+    if (getAllUsers.length == 0) {
+      throw new NotFoundError("Could not find users.");
+    }
   } catch (error) {
-    throw new Error("Add fail");
+    throw Error("fail check get users");
   }
 };
-
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 

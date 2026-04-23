@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import classes from "./GenerateTitleForNewBlogOrNews.module.css";
 import { useParams } from "react-router-dom";
+import { getAuthToken } from "../../util/auth";
 
 export default function GeneratedClickedBlogOrNews() {
   const [blogAndNews, setBlogOrNews] = useState([]);
@@ -8,8 +9,14 @@ export default function GeneratedClickedBlogOrNews() {
   const params = useParams();
   const id = params.blogAndNewsId;
 
+  const token = getAuthToken();
+
   useEffect(() => {
-    fetch("https://api.earlyrunners.bg/blogs/" + id)
+    fetch("https://api.earlyrunners.bg/blogs/" + id, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    })
       .then((response) => response.json())
       .then((response) => {
         setBlogOrNews(response);

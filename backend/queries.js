@@ -188,6 +188,7 @@ const loginUser = async (req, res) => {
   const token = createJSONToken(email);
   res.json({ token });
 };
+
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;
 

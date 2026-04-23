@@ -31,7 +31,7 @@ app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
 app.post("/contact", db.postContactUs);
 app.post("/signup", db.createUser);
-app.post("/login", db.loginUser);
+app.get("/login", db.loginUser);
 
 const PORT = 3000;
 app.listen(PORT, () => {

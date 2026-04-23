@@ -2,8 +2,9 @@ const Pool = require("pg").Pool;
 const { json } = require("body-parser");
 const { isValidEmail, isValidText, isValidPassword } = require("./validation");
 const { hash } = require("bcryptjs");
-const { message } = require("statuses");
+const { message, redirect } = require("statuses");
 const { createJSONToken } = require("./auth");
+//const { redirect } = require("react-router-dom");
 
 // const dotenv = require("dotenv");
 
@@ -154,36 +155,52 @@ const createUser = async (req, res) => {
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
-  try {
-    const getAllUsers = await pool.query(
-      "SELECT * FROM users",
-      (errors, results) => {
-        if (error) {
-          throw error;
-        }
-        (res.status(200), json(results.rows));
-      },
-    );
+  const getUser = await pool.query(
+    "SELECT * FROM users WHERE email == $1",
+    [email],
+    (errors, results) => {
+      if (error) {
+        throw error;
+      }
+      (res.status(200), json(results.rows));
+    },
+  );
 
-    if (getAllUsers.length == 0) {
-      throw new NotFoundError("Could not find users.");
-    }
-
-    const user = getAllUsers.find((e) => e.email === email);
-    if (!user) {
-      throw new NotFoundError("Could not find user for email");
-    }
-
-    const pwIsValid = await isValidPassword(password, user.password);
-    if (!pwIsValid) {
-      return res.status(422).json({
-        message: "Invalid credentials",
-        errors: { credentials: "Invalid email or password entered" },
-      });
-    }
-  } catch (error) {
-    throw Error("fail check get users");
+  if (getUser.length == 0) {
+    //throw new NotFoundError("Could not find users.");
+    return res.redirect("/login");
   }
+
+  bcrypt
+    .compare(password, user, password)
+    .then((doMatch) => {
+      if (doMatch) {
+        return res.redirect("/");
+      }
+      res.redirect("/login");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/");
+    });
+  req.session.isLoggedIn = true;
+  req.session.user = user;
+  req.session.save((err) => {
+    console.log(err);
+    res.redirect("/");
+  });
+  // const user = getAllUsers.find((e) => e.email === email);
+  // if (!user) {
+  //   throw new NotFoundError("Could not find user for email");
+  // }
+
+  //const pwIsValid = await isValidPassword(password, user.password);
+  // if (!pwIsValid) {
+  //   return res.status(422).json({
+  //     message: "Invalid credentials",
+  //     errors: { credentials: "Invalid email or password entered" },
+  //   });
+  // }
 
   const token = createJSONToken(email);
   res.json({ token });

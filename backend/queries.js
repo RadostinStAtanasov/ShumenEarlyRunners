@@ -1,7 +1,9 @@
 const Pool = require("pg").Pool;
 const { json } = require("body-parser");
-const { isValidEmail, isValidText } = require("./validation");
+const { isValidEmail, isValidText, isValidPassword } = require("./validation");
 const { hash } = require("bcryptjs");
+const { message } = require("statuses");
+const { createJSONToken } = require("./auth");
 
 // const dotenv = require("dotenv");
 
@@ -166,9 +168,25 @@ const loginUser = async (req, res) => {
     if (getAllUsers.length == 0) {
       throw new NotFoundError("Could not find users.");
     }
+
+    const user = getAllUsers.find((e) => e.email === email);
+    if (!user) {
+      throw new NotFoundError("Could not find user for email");
+    }
+
+    const pwIsValid = await isValidPassword(password, user.password);
+    if (!pwIsValid) {
+      return res.status(422).json({
+        message: "Invalid credentials",
+        errors: { credentials: "Invalid email or password entered" },
+      });
+    }
   } catch (error) {
     throw Error("fail check get users");
   }
+
+  const token = createJSONToken(email);
+  res.json({ token });
 };
 // const createUser = (req, res) => {
 //   const { name, email } = req.body;

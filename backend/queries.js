@@ -165,20 +165,20 @@ const postSignup = async (req, res) => {
   const { email, password } = req.body;
   //let errors = {};
 
-  let userSignup = pool.query(
-    "SELECT FROM users WHERE email = $1",
-    [email],
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      res.status(200).json(results.rows);
-    },
-  );
+  // let userSignup = pool.query(
+  //   "SELECT FROM users WHERE email = $1",
+  //   [email],
+  //   (error, results) => {
+  //     if (error) {
+  //       throw error;
+  //     }
+  //     res.status(200).json(results.rows);
+  //   },
+  // );
 
-  if (userSignup.length == 0) {
-    return res.redirect("/signup");
-  }
+  // if (userSignup.length == 0) {
+  //   return res.redirect("/signup");
+  // }
 
   const hashedPw = await hash(password, 12);
   //const authToken = createJSONToken(email);

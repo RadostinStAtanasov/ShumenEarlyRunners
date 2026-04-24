@@ -89,30 +89,98 @@ const postContactUs = async (req, res) => {
   );
 };
 
-const createUser = async (req, res) => {
+const getSignup = async (req, res) => {
+  pool.query("SELECT * FROM users", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
+
+const getLogin = async (req, res) => {
+  pool.query("SELECT * FROM users", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    res.status(200).json(results.rows);
+  });
+};
+
+const postLogin = async (req, res) => {
+  const { email, password } = req.body;
+
+  const getUser = await pool.query(
+    "SELECT * FROM users WHERE email == $1",
+    [email],
+    (errors, results) => {
+      if (error) {
+        throw error;
+      }
+      (res.status(200), json(results.rows));
+    },
+  );
+
+  if (getUser.length == 0) {
+    //throw new NotFoundError("Could not find users.");
+    return res.redirect("/login");
+  }
+
+  bcrypt
+    .compare(password, getUser.password)
+    .then((doMatch) => {
+      if (doMatch) {
+        req.session.isLoggedIn = true;
+        req.session.user = user;
+        return req.session.save((err) => {
+          console.log(err);
+          res.redirect("/");
+        });
+        res.redirect("/");
+      }
+      res.redirect("/login");
+    })
+    .catch((err) => {
+      console.log(err);
+      return res.redirect("/");
+    });
+  // const user = getAllUsers.find((e) => e.email === email);
+  // if (!user) {
+  //   throw new NotFoundError("Could not find user for email");
+  // }
+
+  //const pwIsValid = await isValidPassword(password, user.password);
+  // if (!pwIsValid) {
+  //   return res.status(422).json({
+  //     message: "Invalid credentials",
+  //     errors: { credentials: "Invalid email or password entered" },
+  //   });
+  // }
+
+  // const token = createJSONToken(email);
+  // res.json({ token });
+};
+
+const postSignup = async (req, res) => {
   const { email, password } = req.body;
   let errors = {};
 
-  try {
-    const hashedPw = await hash(password, 12);
-    //const authToken = createJSONToken(email);
+  const hashedPw = await hash(password, 12);
+  //const authToken = createJSONToken(email);
 
-    pool.query(
-      "INSERT INTO users (email, password) VALUES ($1, $2)",
-      [email, hashedPw],
-      (error, results) => {
-        if (error) {
-          throw error;
-        }
-        res
-          .status(201)
-          .json({ message: "User created", user: email, token: authToken })
-          .send(`User added with ID:`);
-      },
-    );
-  } catch (error) {
-    throw new Error("Add fail");
-  }
+  pool.query(
+    "INSERT INTO users (email, password) VALUES ($1, $2)",
+    [email, hashedPw],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res
+        .status(201)
+        .json({ message: "User created", user: email, token: authToken })
+        .send(`User added with ID:`);
+    },
+  );
 
   // if (!isValidEmail(email)) {
   //   errors.email = "Invalid email.";
@@ -152,58 +220,21 @@ const createUser = async (req, res) => {
   // }
 };
 
-const loginUser = async (req, res) => {
-  const { email, password } = req.body;
+const postLogout = async (req, res) => {};
 
-  const getUser = await pool.query(
-    "SELECT * FROM users WHERE email == $1",
-    [email],
-    (errors, results) => {
-      if (error) {
-        throw error;
-      }
-      (res.status(200), json(results.rows));
-    },
-  );
-
-  if (getUser.length == 0) {
-    //throw new NotFoundError("Could not find users.");
-    return res.redirect("/login");
-  }
-
-  bcrypt
-    .compare(password, user, password)
-    .then((doMatch) => {
-      if (doMatch) {
-        return res.redirect("/");
-      }
-      res.redirect("/login");
-    })
-    .catch((err) => {
-      console.log(err);
-      res.redirect("/");
-    });
-  req.session.isLoggedIn = true;
-  req.session.user = user;
-  req.session.save((err) => {
-    console.log(err);
-    res.redirect("/");
-  });
-  // const user = getAllUsers.find((e) => e.email === email);
-  // if (!user) {
-  //   throw new NotFoundError("Could not find user for email");
-  // }
-
-  //const pwIsValid = await isValidPassword(password, user.password);
-  // if (!pwIsValid) {
-  //   return res.status(422).json({
-  //     message: "Invalid credentials",
-  //     errors: { credentials: "Invalid email or password entered" },
-  //   });
-  // }
-
-  const token = createJSONToken(email);
-  res.json({ token });
+module.exports = {
+  getBlogs,
+  getBlogsById,
+  getTestImages,
+  getEvents,
+  getResults,
+  getEventById,
+  postContactUs,
+  postSignup,
+  getSignup,
+  postLogin,
+  getLogin,
+  postLogout,
 };
 
 // const createUser = (req, res) => {
@@ -247,15 +278,3 @@ const loginUser = async (req, res) => {
 //     res.status(200).send(`User delete with ID: ${id}`);
 //   });
 // };
-
-module.exports = {
-  getBlogs,
-  getBlogsById,
-  getTestImages,
-  getEvents,
-  getResults,
-  getEventById,
-  postContactUs,
-  createUser,
-  loginUser,
-};

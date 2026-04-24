@@ -30,8 +30,12 @@ app.get("/events", db.getEvents);
 app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
 app.post("/contact", db.postContactUs);
-app.post("/signup", db.createUser);
-app.post("/login", db.loginUser);
+
+app.post("/signup", db.postSignup);
+app.post("/login", db.postLogin);
+app.get("/signup", db.getSignup);
+app.get("/login", db.getLogin);
+app.post("/logout", db.postLogout);
 
 const PORT = 3000;
 app.listen(PORT, () => {

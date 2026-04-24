@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       { path: "/мадараТрейл", element: <MadaraPage /> },
       { path: "/партньори", element: <PartnersPage /> },
       {
-        path: "/Регистър",
+        path: "/register",
         element: <AuthenticationPage />,
         action: authAction,
       },

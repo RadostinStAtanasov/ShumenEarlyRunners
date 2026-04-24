@@ -40,5 +40,5 @@ export async function action({ request }) {
 
   //localStorage.setItem("token", token);
 
-  return redirect("/login");
+  //return redirect("/register?mode=login");
 }

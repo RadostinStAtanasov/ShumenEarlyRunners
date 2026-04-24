@@ -133,7 +133,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <NavLink
                 key={page}
-                to={page === "Регистър" ? "/Регистър?mode=login" : page}
+                to={page === "Регистър" ? "/register?mode=login" : page}
               >
                 <Button
                   key={page}

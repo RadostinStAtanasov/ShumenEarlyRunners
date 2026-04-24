@@ -190,7 +190,7 @@ const postSignup = async (req, res) => {
       if (error) {
         throw error;
       }
-      res.status(201).redirect("/Регистър");
+      res.status(201).redirect("/register?mode=login");
       //.json({ message: "User created", user: email, token: authToken })
       //.send(`User added with ID:`);
     },

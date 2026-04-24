@@ -166,7 +166,7 @@ const postSignup = async (req, res) => {
   //let errors = {};
 
   (async () => {
-    const { rows } = await pool.query("SELECT * FROM users WHERE = $1", [
+    const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
     console.log(rows);

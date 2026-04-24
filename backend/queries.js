@@ -165,8 +165,16 @@ const postSignup = async (req, res) => {
   const { email, password } = req.body;
   //let errors = {};
 
+  (async () => {
+    const { rows } = await pool.query("SELECT * FROM users WHERE = $1", [
+      email,
+    ]);
+    console.log(rows);
+    await pool.end();
+  })();
+
   // let userSignup = pool.query(
-  //   "SELECT FROM users WHERE email = $1",
+  //   "SELECT * FROM users WHERE email = $1",
   //   [email],
   //   (error, results) => {
   //     if (error) {                               // ne moga taka da provewqvam dali emeila sy6testvuva
@@ -190,7 +198,7 @@ const postSignup = async (req, res) => {
       if (error) {
         throw error;
       }
-      res.status(201).redirect("/register?mode=login");
+      res.status(201);
       //.json({ message: "User created", user: email, token: authToken })
       //.send(`User added with ID:`);
     },

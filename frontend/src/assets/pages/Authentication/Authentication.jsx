@@ -31,18 +31,14 @@ export async function action({ request }) {
     return response;
   }
 
-  //add to different routs and + mode
-  //add to different routs and + mode
-  //add to different routs and + mode last changes
-
   if (!response.ok) {
     Response.json({ message: "Could not authenticate user" }, { status: 500 });
   }
 
-  const resData = (await response).json();
-  const token = resData.token;
+  // const resData = (await response).json();
+  // const token = resData.token;
 
-  localStorage.setItem("token", token);
+  //localStorage.setItem("token", token);
 
-  return redirect("/");
+  //return redirect("/");
 }

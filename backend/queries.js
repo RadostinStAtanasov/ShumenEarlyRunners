@@ -163,7 +163,22 @@ const postLogin = async (req, res) => {
 
 const postSignup = async (req, res) => {
   const { email, password } = req.body;
-  let errors = {};
+  //let errors = {};
+
+  let userSignup = pool.query(
+    "SELECT FROM users WHERE email = $1",
+    [email],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(results.rows);
+    },
+  );
+
+  if (userSignup.length == 0) {
+    return res.redirect("/signup");
+  }
 
   const hashedPw = await hash(password, 12);
   //const authToken = createJSONToken(email);
@@ -175,10 +190,9 @@ const postSignup = async (req, res) => {
       if (error) {
         throw error;
       }
-      res
-        .status(201)
-        .json({ message: "User created", user: email, token: authToken })
-        .send(`User added with ID:`);
+      res.status(201).redirect("/login");
+      //.json({ message: "User created", user: email, token: authToken })
+      //.send(`User added with ID:`);
     },
   );
 

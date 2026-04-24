@@ -169,7 +169,7 @@ const postSignup = async (req, res) => {
   //   "SELECT FROM users WHERE email = $1",
   //   [email],
   //   (error, results) => {
-  //     if (error) {
+  //     if (error) {                               // ne moga taka da provewqvam dali emeila sy6testvuva
   //       throw error;
   //     }
   //     res.status(200).json(results.rows);
@@ -190,7 +190,7 @@ const postSignup = async (req, res) => {
       if (error) {
         throw error;
       }
-      res.status(201).redirect("/login");
+      res.status(201).redirect("/Регистър");
       //.json({ message: "User created", user: email, token: authToken })
       //.send(`User added with ID:`);
     },

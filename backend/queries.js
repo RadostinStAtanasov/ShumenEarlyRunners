@@ -1,7 +1,7 @@
 const Pool = require("pg").Pool;
 const { json } = require("body-parser");
 const { isValidEmail, isValidText, isValidPassword } = require("./validation");
-const { hash } = require("bcryptjs");
+const { hash, compare } = require("bcryptjs");
 const { message, redirect } = require("statuses");
 //const { createJSONToken } = require("./auth");
 const jwt = require("jsonwebtoken");
@@ -120,7 +120,7 @@ const postLogin = async (req, res) => {
       return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    const valid = await bcrypt.compare(password, user.password);
+    const valid = await compare(password, user.password);
     if (!valid) {
       return res.status(400).json({ error: "Invalid credentials" });
     }

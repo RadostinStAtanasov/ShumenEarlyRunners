@@ -3,8 +3,8 @@ const { json } = require("body-parser");
 const { isValidEmail, isValidText, isValidPassword } = require("./validation");
 const { hash } = require("bcryptjs");
 const { message, redirect } = require("statuses");
-const { createJSONToken } = require("./auth");
-//const { redirect } = require("react-router-dom");
+//const { createJSONToken } = require("./auth");
+const jwt = require("jsonwebtoken");
 
 // const dotenv = require("dotenv");
 
@@ -110,137 +110,63 @@ const getLogin = async (req, res) => {
 const postLogin = async (req, res) => {
   const { email, password } = req.body;
 
-  const getUser = await pool.query(
-    "SELECT * FROM users WHERE email == $1",
-    [email],
-    (errors, results) => {
-      if (error) {
-        throw error;
-      }
-      (res.status(200), json(results.rows));
-    },
-  );
+  try {
+    const result = await pool.query("SELECT * FROM users WHERE email == $1", [
+      email,
+    ]);
 
-  if (getUser.length == 0) {
-    //throw new NotFoundError("Could not find users.");
-    return res.redirect("/login");
-  }
+    const user = result.rows[0];
+    if (!user) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
 
-  bcrypt
-    .compare(password, getUser.password)
-    .then((doMatch) => {
-      if (doMatch) {
-        req.session.isLoggedIn = true;
-        req.session.user = user;
-        return req.session.save((err) => {
-          console.log(err);
-          res.redirect("/");
-        });
-        res.redirect("/");
-      }
-      res.redirect("/login");
-    })
-    .catch((err) => {
-      console.log(err);
-      return res.redirect("/");
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    const token = jwt.sign({ userId: user.id }, "supersecret", {
+      expiresIn: "1h",
     });
-  // const user = getAllUsers.find((e) => e.email === email);
-  // if (!user) {
-  //   throw new NotFoundError("Could not find user for email");
-  // }
-
-  //const pwIsValid = await isValidPassword(password, user.password);
-  // if (!pwIsValid) {
-  //   return res.status(422).json({
-  //     message: "Invalid credentials",
-  //     errors: { credentials: "Invalid email or password entered" },
-  //   });
-  // }
-
-  // const token = createJSONToken(email);
-  // res.json({ token });
+    res.json({ message: "Login successful", token });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error" });
+  }
 };
 
 const postSignup = async (req, res) => {
-  const { email, password } = req.body;
-  //let errors = {};
+  try {
+    const { email, password } = req.body;
 
-  (async () => {
-    const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
+    const existing = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
-    console.log(rows);
-    await pool.end();
-  })();
 
-  // let userSignup = pool.query(
-  //   "SELECT * FROM users WHERE email = $1",
-  //   [email],
-  //   (error, results) => {
-  //     if (error) {                               // ne moga taka da provewqvam dali emeila sy6testvuva
-  //       throw error;
-  //     }
-  //     res.status(200).json(results.rows);
-  //   },
-  // );
+    if (existing.rows.length > 0) {
+      return res.status(400).json({ error: "User already exists" });
+    }
 
-  // if (userSignup.length == 0) {
-  //   return res.redirect("/signup");
-  // }
+    const hashedPw = await hash(password, 12);
+    //const authToken = createJSONToken(email);
 
-  const hashedPw = await hash(password, 12);
-  //const authToken = createJSONToken(email);
+    const result = await pool.query(
+      "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
+      [email, hashedPw],
+    );
 
-  pool.query(
-    "INSERT INTO users (email, password) VALUES ($1, $2)",
-    [email, hashedPw],
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      res.status(201);
-      //.json({ message: "User created", user: email, token: authToken })
-      //.send(`User added with ID:`);
-    },
-  );
-
-  // if (!isValidEmail(email)) {
-  //   errors.email = "Invalid email.";
-  // } else {
-  //   let emailExist = pool.query(
-  //     "SELECT * FROM users WHERE email = $1",
-  //     [email],
-  //     (error, results) => {
-  //       if (emailExist) {
-  //         errors.email = "Email exists already";
-  //       }
-  //     },
-  //   );
-
-  //   if (emailExist == mail) {
-  //     errors.email("email already exist from if check");
-  //   }
-  // }
-
-  // if (!isValidText(database.password, 6)) {
-  //   errors.password = "Invalid password. Must be at least 6 characters long.";
-  // }
-
-  // if (Object.keys(errors).length > 0) {
-  //   return res
-  //     .status(422)
-  //     .json({ message: "User signup failed due to validation errors", errors });
-  // }
-
-  // try {
-  //   const authToken = createJSONToken(email);
-  //   res
-  //     .status(201)
-  //     .json({ message: "User created.", user: email, token: authToken });
-  // } catch (error) {
-  //   throw error("Token fail");
-  // }
+    res.json({ message: "User created", user: result.rows[0] });
+  } catch (error) {
+    console.log(error);
+    (res, status(500).json({ error: "Server error" }));
+  }
 };
+
+// (async () => {
+//   const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
+//     email,
+//   ]);
+// })();
 
 const postLogout = async (req, res) => {};
 
@@ -258,45 +184,3 @@ module.exports = {
   getLogin,
   postLogout,
 };
-
-// const createUser = (req, res) => {
-//   const { name, email } = req.body;
-
-//   pool.query(
-//     "INSERT INTO users (name, email) VALUES ($1, $2)",
-//     [name, email],
-//     (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       res.status(201).send(`User added with ID: ${results.insertId}`);
-//     },
-//   );
-// };
-
-// const updateUser = (req, res) => {
-//   const id = parseInt(req.params.id);
-//   const { name, email } = req.body;
-
-//   pool.query(
-//     "UPDATE users SET name = $1, email = $2 WHERE id = $3",
-//     [name, email, id],
-//     (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       res.status(200).send(`User modified with ID: ${id}`);
-//     },
-//   );
-// };
-
-// const deleteUser = (req, res) => {
-//   const id = parseInt(req.params.id);
-
-//   pool.query("DELETE FROM users WHERE id = $1", [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).send(`User delete with ID: ${id}`);
-//   });
-// };

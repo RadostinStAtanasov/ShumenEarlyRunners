@@ -18,7 +18,6 @@ export default function AuthForm() {
 
   const data = useActionData();
   const navigation = useNavigation();
-  console.log(data);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const isLogin = searchParams.get("mode") === "login";

@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 
 // const dotenv = require("dotenv");
 
-// dotenv.config();
+// dotenv.config();asd
 
 const pool = new Pool({
   user: "earlyrunners_me",

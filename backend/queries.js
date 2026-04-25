@@ -111,7 +111,7 @@ const postLogin = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const result = await pool.query("SELECT * FROM users WHERE email == $1", [
+    const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
 
@@ -154,7 +154,6 @@ const postSignup = async (req, res) => {
       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
       [email, hashedPw],
     );
-
     res.json({ message: "User created", user: result.rows[0] });
   } catch (error) {
     console.log(error);

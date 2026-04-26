@@ -27,13 +27,13 @@ export async function action({ request }) {
     body: JSON.stringify(authData),
   });
 
-  if (response.status === 422 || response.status === 401) {
+  if (response.status === 422 || response.status === 400) {
     return response;
   }
 
-  if (!response.ok) {
-    Response.json({ message: "Could not authenticate user" }, { status: 500 });
-  }
+  // if (!response.ok) {
+  //   Response.json({ message: "Could not authenticate user" }, { status: 500 });
+  // }
 
   // const resData = (await response).json();
   // const token = resData.token;

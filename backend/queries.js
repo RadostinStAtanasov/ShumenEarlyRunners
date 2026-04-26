@@ -147,7 +147,7 @@ const postSignup = async (req, res) => {
 
     if (existing.rows.length > 0) {
       errors.user = "User already exist";
-      return res.status(400).json({ error: "User already exists2" });
+      //return res.status(400).json({ error: "User already exists2" });
     }
 
     if (Object.keys(errors).length > 0) {

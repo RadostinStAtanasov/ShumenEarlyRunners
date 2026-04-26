@@ -139,12 +139,22 @@ const postSignup = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    errors = {};
+
     const existing = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
 
     if (existing.rows.length > 0) {
-      return res.status(400).json({ error: "User already exists" });
+      errors.user = "User already exist";
+      return res.status(400).json({ error: "User already exists2" });
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return res.status(422).json({
+        message: "User signup fail duo to validation errors.",
+        errors,
+      });
     }
 
     const hashedPw = await hash(password, 12);

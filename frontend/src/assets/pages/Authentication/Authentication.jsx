@@ -10,7 +10,7 @@ export async function action({ request }) {
   const mode = searchParams.get("mode") || "login";
 
   if (mode !== "login" && mode !== "signup") {
-    Response.json({ message: "Unsupported mode 422." }, { status: 422 });
+    Response.text({ message: "Unsupported mode 422." }, { status: 422 });
   }
 
   const data = await request.formData();
@@ -19,7 +19,7 @@ export async function action({ request }) {
     password: data.get("password"),
   };
 
-  const response = fetch("https://api.earlyrunners.bg/" + mode, {
+  const response = await fetch("https://api.earlyrunners.bg/" + mode, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

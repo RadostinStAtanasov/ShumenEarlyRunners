@@ -117,12 +117,12 @@ const postLogin = async (req, res) => {
 
     const user = result.rows[0];
     if (!user) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "Invalid credentials" });
     }
 
     const valid = await compare(password, user.password);
     if (!valid) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "Invalid credentials" });
     }
 
     const token = jwt.sign({ userId: user.id }, "supersecret", {
@@ -147,7 +147,7 @@ const postSignup = async (req, res) => {
 
     if (existing.rows.length > 0) {
       errors.user = "User already exist";
-      //return res.status(400).json({ error: "User already exists2" });
+      return res.status(400).json({ error: "User already exists2" });
     }
 
     if (Object.keys(errors).length > 0) {
@@ -167,7 +167,7 @@ const postSignup = async (req, res) => {
     res.json({ message: "User created", user: result.rows[0] });
   } catch (error) {
     console.log(error);
-    (res, status(500).json({ error: "Server error" }));
+    res.status(500).json({ error: "Server error" });
   }
 };
 

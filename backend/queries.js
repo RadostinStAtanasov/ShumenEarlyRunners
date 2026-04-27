@@ -110,6 +110,8 @@ const getLogin = async (req, res) => {
 const postLogin = async (req, res) => {
   const { email, password } = req.body;
 
+  let errors = {};
+
   try {
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
@@ -117,12 +119,20 @@ const postLogin = async (req, res) => {
 
     const user = result.rows[0];
     if (!user) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      errors.user = "Invalid credentials.";
+      //return res.status(400).json({ error: "Invalid credentials" });
     }
 
     const valid = await compare(password, user.password);
     if (!valid) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      errors.password = "Invalid credentials.";
+      //return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    if (Object.keys(errors).length > 0) {
+      return res
+        .status(422)
+        .json({ message: "User login fail duo to validation errors.", errors });
     }
 
     const token = jwt.sign({ userId: user.id }, "supersecret", {
@@ -147,7 +157,6 @@ const postSignup = async (req, res) => {
 
     if (existing.rows.length > 0) {
       errors.user = "User already exist";
-      //return res.status(400).json({ error: "User already exists2" });
     }
 
     if (Object.keys(errors).length > 0) {
@@ -158,7 +167,6 @@ const postSignup = async (req, res) => {
     }
 
     const hashedPw = await hash(password, 12);
-    //const authToken = createJSONToken(email);
 
     const result = await pool.query(
       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",

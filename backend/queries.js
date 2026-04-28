@@ -135,14 +135,17 @@ const postLogin = async (req, res) => {
         .json({ message: "User login fail duo to validation errors.", errors });
     }
 
-    const token = jwt.sign({ userId: user.id }, "supersecret", {
-      expiresIn: "1h",
-    });
     res.json({ message: "Login successful", token });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error" });
   }
+
+  const token = jwt.sign({ userId: user.id }, "supersecret", {
+    expiresIn: "1h",
+  });
+
+  return res.json({ token }); //da probvam tokena
 };
 
 const postSignup = async (req, res) => {
@@ -178,12 +181,6 @@ const postSignup = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-
-// (async () => {
-//   const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
-//     email,
-//   ]);
-// })();
 
 const postLogout = async (req, res) => {};
 

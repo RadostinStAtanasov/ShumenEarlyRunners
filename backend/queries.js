@@ -141,11 +141,11 @@ const postLogin = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 
-  const token = jwt.sign({ userId: user.id }, "supersecret", {
+  const token = jwt.sign({ email }, "supersecret", {
     expiresIn: "1h",
   });
 
-  return res.json({ token }); //da probvam tokena
+  return res.json({ message: "Login successful", token: token }); //da probvam tokena
 };
 
 const postSignup = async (req, res) => {

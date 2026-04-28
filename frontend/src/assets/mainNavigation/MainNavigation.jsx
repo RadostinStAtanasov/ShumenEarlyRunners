@@ -11,30 +11,37 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useRouteLoaderData } from "react-router-dom";
 import logo from "../images/logos/logoNavbar.png";
 import logoText from "../images/logos/textLogo.png";
 import classes from "./MainNavigation.module.css";
 
-const pages = [
-  "Начало",
-  "Блог енд Нюз",
-  "За Нас",
-  "Галерия",
-  "Събития",
-  "Резултати",
-  "Магазин",
-  "Джаджи",
-  "Партньори",
-  "Контакти",
-  "Регистър",
-  //<NavLink to="/регистър?mode=login">reg</NavLink>,
-];
+import { Form } from "react-router-dom";
+
+//<NavLink to="/регистър?mode=login">reg</NavLink>,
 //const settings = ["Профил", "Акаунт", "Управление", "Излизане"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const token = useRouteLoaderData("root");
+
+  let registerLink = !token && "Register";
+
+  let pages = [
+    "Начало",
+    "Блог енд Нюз",
+    "За Нас",
+    "Галерия",
+    "Събития",
+    "Резултати",
+    "Магазин",
+    "Джаджи",
+    "Партньори",
+    "Контакти",
+    registerLink,
+  ];
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -146,6 +153,11 @@ function ResponsiveAppBar() {
                 </Button>
               </NavLink>
             ))}
+            {token && (
+              <Form action="/logout" method="post">
+                <button>Logout</button>
+              </Form>
+            )}
           </Box>
         </Toolbar>
       </Container>

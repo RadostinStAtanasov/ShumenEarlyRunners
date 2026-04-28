@@ -134,6 +134,7 @@ const postLogin = async (req, res) => {
         .status(422)
         .json({ message: "User login fail duo to validation errors.", errors });
     }
+
     const token = jwt.sign({ email }, "supersecret", {
       expiresIn: "1h",
     });

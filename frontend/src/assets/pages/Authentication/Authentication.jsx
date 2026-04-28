@@ -35,9 +35,10 @@ export async function action({ request }) {
     Response.json({ message: "Could not authenticate user" }, { status: 500 });
   }
 
-  // const token = resData.token;
+  const resData = await response.json();
+  const token = resData.token;
 
-  //localStorage.setItem("token", token);
+  localStorage.setItem("token", token);
 
   return redirect("/register?mode=signup");
 }

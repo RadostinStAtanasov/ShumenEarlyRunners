@@ -23,7 +23,7 @@ export default function AuthForm() {
   const isLogin = searchParams.get("mode") === "login";
   const isSubmitting = navigation.state === "submitting";
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <>

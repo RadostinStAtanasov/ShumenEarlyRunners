@@ -18,11 +18,16 @@ import AuthenticationPage, {
   action as authAction,
 } from "./assets/pages/Authentication/Authentication.jsx";
 
+import { action as logoutAction } from "./assets/pages/Authentication/Logout.js";
+import { tokenLoader } from "../src/assets/util/auth.js";
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     //errorElement: <ErrorPage />, da se napravi
+    id: "root",
+    loader: tokenLoader,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/начало", element: <HomePage /> },
@@ -47,6 +52,7 @@ const router = createBrowserRouter([
         element: <AuthenticationPage />,
         action: authAction,
       },
+      { path: "logout", action: logoutAction },
     ],
   },
 ]);

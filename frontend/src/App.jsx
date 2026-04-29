@@ -19,7 +19,7 @@ import AuthenticationPage, {
 } from "./assets/pages/Authentication/Authentication.jsx";
 
 import { action as logoutAction } from "./assets/pages/Authentication/Logout.js";
-import { tokenLoader } from "../src/assets/util/auth.js";
+import { checkAuthLoader, tokenLoader } from "../src/assets/util/auth.js";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +46,11 @@ const router = createBrowserRouter([
       { path: "/магазин", element: <ShopPage /> },
       { path: "/магазин/детайли", element: <DetailPage /> },
       { path: "/мадараТрейл", element: <MadaraPage /> },
-      { path: "/партньори", element: <PartnersPage /> },
+      {
+        path: "/партньори",
+        element: <PartnersPage />,
+        //loader: checkAuthLoader,
+      },
       {
         path: "/register",
         element: <AuthenticationPage />,

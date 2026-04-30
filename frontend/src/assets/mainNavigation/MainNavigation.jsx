@@ -27,7 +27,7 @@ function ResponsiveAppBar() {
 
   const token = useRouteLoaderData("root");
 
-  let registerLink = !token && "Register";
+  let registerLink = !token && "Регистър";
 
   let pages = [
     "Начало",

@@ -37,7 +37,7 @@ app.get("/signup", db.getSignup);
 app.get("/login", db.getLogin);
 app.post("/logout", db.postLogout);
 
-//app.use(checkAuth) routes under this need token authentication
+//app.use(checkAuth); routes under this need token authentication
 
 const PORT = 3000;
 app.listen(PORT, () => {

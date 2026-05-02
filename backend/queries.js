@@ -140,7 +140,12 @@ const postLogin = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ message: "Login successful", token: token }); //da probvam tokena
+    req.session.IsLoggedIn = true;
+    req.session.user = email;
+    return req.session.save((err) => {
+      console.log(err);
+      res.json({ message: "Login successful", token: token }); //da probvam tokena
+    });
 
     //res.json({ message: "Login successful", token });
   } catch (error) {

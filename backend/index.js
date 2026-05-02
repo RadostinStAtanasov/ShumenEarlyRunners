@@ -33,9 +33,10 @@ app.post("/contact", db.postContactUs);
 
 app.post("/signup", db.postSignup);
 app.post("/login", db.postLogin);
+app.post("/logout", db.postLogout);
+
 app.get("/signup", db.getSignup);
 app.get("/login", db.getLogin);
-app.post("/logout", db.postLogout);
 
 //app.use(checkAuth); routes under this need token authentication
 

@@ -139,6 +139,9 @@ const postLogin = async (req, res) => {
       expiresIn: "1h",
     });
 
+    req.session.IsLoggedIn = true;
+    req.session.user = email;
+
     return res.json({ message: "Login successful", token: token }); //da probvam tokena
 
     //res.json({ message: "Login successful", token });
@@ -150,7 +153,7 @@ const postLogin = async (req, res) => {
 
 const postSignup = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password /*confirmPassword need to make*/ } = req.body;
 
     let errors = {};
 

@@ -123,7 +123,8 @@ const postLogin = async (req, res) => {
       //return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    const valid = await compare(password, user.password)
+    const valid = await bcrypt
+      .compare(password, user.password)
       .then((doMatch) => {
         if (doMatch) {
           req.session.IsLoggedIn = true;
@@ -154,7 +155,13 @@ const postLogin = async (req, res) => {
       expiresIn: "1h",
     });
 
-    return res.json({ message: "Login successful", token: token }); //da probvam tokena
+    req.session.IsLoggedIn = true;
+    req.session.user = email;
+    return req.session.save((err) => {
+      console.log(err);
+      res.redirect("/");
+      res.json({ message: "Login successful", token: token }); //da probvam tokena
+    });
 
     //res.json({ message: "Login successful", token });
   } catch (error) {

@@ -123,7 +123,22 @@ const postLogin = async (req, res) => {
       //return res.status(400).json({ error: "Invalid credentials" });
     }
 
-    const valid = await compare(password, user.password);
+    const valid = await compare(password, user.password)
+      .then((doMatch) => {
+        if (doMatch) {
+          req.session.IsLoggedIn = true;
+          req.session.user = email;
+          return req.session.save((err) => {
+            console.log(err);
+            res.redirect("/");
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        res.redirect("/login");
+      });
+
     if (!valid) {
       errors.password = "Invalid credentials.";
       //return res.status(400).json({ error: "Invalid credentials" });
@@ -138,9 +153,6 @@ const postLogin = async (req, res) => {
     const token = jwt.sign({ email }, "supersecret", {
       expiresIn: "1h",
     });
-
-    req.session.IsLoggedIn = true;
-    req.session.user = email;
 
     return res.json({ message: "Login successful", token: token }); //da probvam tokena
 

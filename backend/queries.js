@@ -17,7 +17,7 @@ const sequelize = require("./databaseSequelize");
 //   host: "93.94.140.42",
 //   database: "earlyrunners_api",
 //   password: "}B9#9(ijq;y.JLK-",
-//   port: 5432,
+//   port: 5432, //5433
 // });
 
 const getBlogs = async (req, res) => {

@@ -7,7 +7,7 @@ const sequelize = new Sequelize({
   user: "earlyrunners_me",
   password: "}B9#9(ijq;y.JLK-",
   host: "93.94.140.42",
-  port: 5432,
+  port: 5433,
   clientMinMessages: "notice",
 });
 

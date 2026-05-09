@@ -5,10 +5,38 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
+const { PrismaClient } = require("@prisma/client");
+const { PrismaPg } = require("@prisma/adapter-pg");
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+const prisma = new PrismaClient({ adapter });
+
 //const sequelize = require("./databaseSequelize");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post("/posts", async (req, res) => {
+  const { title, content } = req.body;
+  try {
+    const post = await prisma.post.create({
+      data: { title, content },
+    });
+    res.status(201).json(post);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+app.get("/posts", async (req, res) => {
+  try {
+    const posts = await prisma.post.findMany();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve posts" });
+  }
+});
 
 const corsOption = {
   origin: true,

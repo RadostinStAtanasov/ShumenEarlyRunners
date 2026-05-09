@@ -17,6 +17,21 @@ const prisma = new PrismaClient({ adapter });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const corsOption = {
+  origin: true,
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOption));
+app.use("/", router);
+
+app.get("/", (req, res) => {
+  res.json({ info: "Node.js, Express, and Postgres API!!!" });
+});
+
+//app.use("/images", express.static("images"));asd
+
 app.post("/posts", async (req, res) => {
   const { title, content } = req.body;
   try {
@@ -37,21 +52,6 @@ app.get("/posts", async (req, res) => {
     res.status(500).json({ error: "Failed to retrieve posts" });
   }
 });
-
-const corsOption = {
-  origin: true,
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-
-app.use(cors(corsOption));
-app.use("/", router);
-
-app.get("/", (req, res) => {
-  res.json({ info: "Node.js, Express, and Postgres API!!!" });
-});
-
-//app.use("/images", express.static("images"));asd
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);

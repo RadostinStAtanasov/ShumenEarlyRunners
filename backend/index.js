@@ -5,7 +5,7 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
-const sequelize = require("./databaseSequelize");
+//const sequelize = require("./databaseSequelize");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -42,17 +42,17 @@ app.get("/login", db.getLogin);
 
 //app.use(checkAuth); routes under this need token authentication
 
-sequelize
-  .sync()
-  .then((result) => {
-    console.log(result);
-    app.listen(3000);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// sequelize
+//   .sync()
+//   .then((result) => {
+//     console.log(result);
+//     app.listen(3000);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-// const PORT = 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost ${PORT}`);
-// });
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost ${PORT}`);
+});

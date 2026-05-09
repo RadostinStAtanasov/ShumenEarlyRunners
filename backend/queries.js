@@ -5,20 +5,20 @@ const { hash, compare } = require("bcryptjs");
 const { message, redirect } = require("statuses");
 const jwt = require("jsonwebtoken");
 
-const Sequelize = require("sequelize");
-const sequelize = require("./databaseSequelize");
+// const Sequelize = require("Sequelize");
+// const sequelize = require("./databaseSequelize");
 
 // const dotenv = require("dotenv");
 
 // dotenv.config();asd
 
-// const pool = new Pool({
-//   user: "earlyrunners_me",
-//   host: "93.94.140.42",
-//   database: "earlyrunners_api",
-//   password: "}B9#9(ijq;y.JLK-",
-//   port: 5432
-// });
+const pool = new Pool({
+  user: "earlyrunners_me",
+  host: "93.94.140.42",
+  database: "earlyrunners_api",
+  password: "}B9#9(ijq;y.JLK-",
+  port: 5432,
+});
 
 const getBlogs = async (req, res) => {
   pool.query("SELECT * FROM blogs", (error, results) => {

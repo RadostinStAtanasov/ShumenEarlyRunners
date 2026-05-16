@@ -5,14 +5,14 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
-// const { PrismaClient } = require("@prisma/client");
-// const { PrismaPg } = require("@prisma/adapter-pg");
-// const adapter = new PrismaPg({
-//   connectionString: process.env.DATABASE_URL,
-// });
-// const prisma = new PrismaClient({ adapter });
+require("dotenv").config();
 
-//const sequelize = require("./databaseSequelize");
+const { PrismaClient } = require("@prisma/client");
+const { PrismaPg } = require("@prisma/adapter-pg");
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+const prisma = new PrismaClient({ adapter });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,26 +32,26 @@ app.get("/", (req, res) => {
 
 //app.use("/images", express.static("images"));asd
 
-// app.post("/posts", async (req, res) => {
-//   const { title, content } = req.body;
-//   try {
-//     const post = await prisma.post.create({
-//       data: { title, content },
-//     });
-//     res.status(201).json(post);
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// });
+app.post("/posts", async (req, res) => {
+  const { title, content } = req.body;
+  try {
+    const post = await prisma.post.create({
+      data: { title, content },
+    });
+    res.status(201).json(post);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
-// app.get("/posts", async (req, res) => {
-//   try {
-//     const posts = await prisma.post.findMany();
-//     res.status(200).json(posts);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve posts" });
-//   }
-// });
+app.get("/posts", async (req, res) => {
+  try {
+    const posts = await prisma.post.findMany();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve posts" });
+  }
+});
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
@@ -69,16 +69,6 @@ app.get("/signup", db.getSignup);
 app.get("/login", db.getLogin);
 
 //app.use(checkAuth); routes under this need token authentication
-
-// sequelize
-//   .sync()
-//   .then((result) => {
-//     console.log(result);
-//     app.listen(3000);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
 
 const PORT = 3000;
 app.listen(PORT, () => {

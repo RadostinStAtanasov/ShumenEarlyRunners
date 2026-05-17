@@ -13,9 +13,55 @@ datasource db {
 }
 
 
-model Post {
+model post {
   id        Int       @id @default(autoincrement())
   title     String
   content   String?
   createAt  DateTime  @default(now())
+}
+
+model blogs {
+  id              Int     @id @default(autoincrement())
+  title           String
+  images          String[]
+  posteddate      String
+  postedby        String
+  blogornews      String
+  infoblogornews  String
+}
+
+model gallery {
+  id          Int @id @default(autoincrement())
+  database    String[]
+  slides      String[]
+}
+
+model events {
+  id                    Int @id @default(autoincrement())
+  urlimage              String
+  title                 String
+  description           String
+  schedulestartinfo     String
+  distants              String
+  route                 String
+  registrationearly     String
+  registrationstandart  String
+  linkforregistration   String
+  recommendedequipment  String
+  mandatoryequipment    String
+  contacts              String
+}
+
+model pesults {
+  id             Int @id @default(autoincrement())
+  urlimage       String
+  urllinkresults String
+}
+
+model contact {
+  id            Int @id @default(autoincrement())
+  name          String
+  lastname      String
+  topic         String
+  message       String
 }

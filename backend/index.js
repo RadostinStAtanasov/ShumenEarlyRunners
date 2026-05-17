@@ -5,15 +5,6 @@ const router = require("./routers/router");
 const app = express();
 const db = require("./queries");
 
-require("dotenv").config();
-
-const { PrismaClient } = require("@prisma/client");
-const { PrismaPg } = require("@prisma/adapter-pg");
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
-});
-const prisma = new PrismaClient({ adapter });
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -30,7 +21,7 @@ app.get("/", (req, res) => {
   res.json({ info: "Node.js, Express, and Postgres API!!!" });
 });
 
-//app.use("/images", express.static("images"));asd
+//app.use("/images", express.static("images"));
 
 app.post("/posts", async (req, res) => {
   const { title, content } = req.body;

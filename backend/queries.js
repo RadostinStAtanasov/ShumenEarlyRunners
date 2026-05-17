@@ -17,7 +17,23 @@ const jwt = require("jsonwebtoken");
 //   port: 5432,
 // });
 
+require("dotenv").config();
+
+const { PrismaClient } = require("@prisma/client");
+const { PrismaPg } = require("@prisma/adapter-pg");
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+const prisma = new PrismaClient({ adapter });
+
 const getBlogs = async (req, res) => {
+  try {
+    const blogs = await prisma.blogs.findMany();
+    res.status(200).json(blogs);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve blogs" });
+  }
+
   pool.query("SELECT * FROM blogs", (error, results) => {
     if (error) {
       throw error;

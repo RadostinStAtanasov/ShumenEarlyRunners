@@ -34,12 +34,12 @@ const getBlogs = async (req, res) => {
     res.status(500).json({ error: "Failed to retrieve blogs" });
   }
 
-  pool.query("SELECT * FROM blogs", (error, results) => {
-    if (error) {
-      throw error;
-    }
-    res.status(200).json(results.rows);
-  });
+  // pool.query("SELECT * FROM blogs", (error, results) => {
+  //   if (error) {
+  //     throw error;
+  //   }
+  //   res.status(200).json(results.rows);
+  // });
 };
 
 const getBlogsById = async (req, res) => {

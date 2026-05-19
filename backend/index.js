@@ -23,26 +23,26 @@ app.get("/", (req, res) => {
 
 //app.use("/images", express.static("images"));
 
-app.post("/posts", async (req, res) => {
-  const { title, content } = req.body;
-  try {
-    const post = await prisma.post.create({
-      data: { title, content },
-    });
-    res.status(201).json(post);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
+// app.post("/posts", async (req, res) => {
+//   const { title, content } = req.body;
+//   try {
+//     const post = await prisma.post.create({
+//       data: { title, content },
+//     });
+//     res.status(201).json(post);
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// });
 
-app.get("/posts", async (req, res) => {
-  try {
-    const posts = await prisma.post.findMany();
-    res.status(200).json(posts);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve posts" });
-  }
-});
+// app.get("/posts", async (req, res) => {
+//   try {
+//     const posts = await prisma.post.findMany();
+//     res.status(200).json(posts);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve posts" });
+//   }
+// });
 
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
@@ -63,5 +63,5 @@ app.get("/login", db.getLogin);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

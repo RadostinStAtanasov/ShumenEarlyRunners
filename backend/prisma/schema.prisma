@@ -13,14 +13,14 @@ datasource db {
 }
 
 
-model post {
+model Post {
   id        Int       @id @default(autoincrement())
   title     String
   content   String?
   createAt  DateTime  @default(now())
 }
 
-model blogs {
+model Blogs {
   id              Int     @id @default(autoincrement())
   title           String
   images          String[]
@@ -30,13 +30,13 @@ model blogs {
   infoblogornews  String
 }
 
-model gallery {
+model Gallery {
   id          Int @id @default(autoincrement())
   database    String[]
   slides      String[]
 }
 
-model events {
+model Events {
   id                    Int @id @default(autoincrement())
   urlimage              String
   title                 String
@@ -52,13 +52,13 @@ model events {
   contacts              String
 }
 
-model pesults {
+model Results {
   id             Int @id @default(autoincrement())
   urlimage       String
   urllinkresults String
 }
 
-model contact {
+model Contact {
   id            Int @id @default(autoincrement())
   name          String
   lastname      String

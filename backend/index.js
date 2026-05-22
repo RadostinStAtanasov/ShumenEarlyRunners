@@ -44,7 +44,10 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.get("/blogs", db.getBlogs);
+app.post("/post", db.postsPost);
+app.get("/post", db.getPosts);
+
+// app.get("/blogs", db.getBlogs);
 // app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 // app.get("/gallery", db.getTestImages);
 // app.get("/events", db.getEvents);

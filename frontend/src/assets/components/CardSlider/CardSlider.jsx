@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 
 export default function CardSlider() {
   const [blogOrNews, setBlogsAndNews] = useState([]);
+  console.log(blogOrNews);
+  console.log("asddsa");
 
   useEffect(() => {
     fetch("https://api.earlyrunners.bg/blogs")

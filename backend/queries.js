@@ -1,9 +1,9 @@
-const Pool = require("pg").Pool;
-const { json } = require("body-parser");
-const { isValidEmail, isValidText, isValidPassword } = require("./validation");
-const { hash, compare } = require("bcryptjs");
-const { message, redirect } = require("statuses");
-const jwt = require("jsonwebtoken");
+//const Pool = require("pg").Pool;
+//const { json } = require("body-parser");
+//const { isValidEmail, isValidText, isValidPassword } = require("./validation");
+// const { hash, compare } = require("bcryptjs");
+// const { message, redirect } = require("statuses");
+// const jwt = require("jsonwebtoken");
 
 // const dotenv = require("dotenv");
 
@@ -17,7 +17,7 @@ const jwt = require("jsonwebtoken");
 //   port: 5432,
 // });
 
-require("dotenv").config();
+//require("dotenv").config();
 
 const DATABASE_URL =
   "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";
@@ -25,25 +25,49 @@ const DATABASE_URL =
 const { PrismaClient } = require("@prisma/client");
 const { PrismaPg } = require("@prisma/adapter-pg");
 const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: DATABASE_URL,
 });
 const prisma = new PrismaClient({ adapter });
 
-const getBlogs = async (req, res) => {
-  try {
-    const blogs = await prisma.blogs.findMany();
-    res.status(200).json(blogs);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve blogs" });
-  }
+console.log(DATABASE_URL);
 
-  // pool.query("SELECT * FROM blogs", (error, results) => {
-  //   if (error) {
-  //     throw error;
-  //   }
-  //   res.status(200).json(results.rows);
-  // });
+const postsPost = async (req, res) => {
+  const { title, content } = req.body;
+
+  try {
+    const post = await prisma.post.create({
+      data: { title, content },
+    });
+    res.status(201).json(post);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 };
+
+const getPosts = async (req, res) => {
+  try {
+    const posts = await prisma.post.findMany();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
+// const getBlogs = async (req, res) => {
+//   try {
+//     const blogs = await prisma.blogs.findMany();
+//     res.status(200).json(blogs);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve blogs" });
+//   }
+
+//   // pool.query("SELECT * FROM blogs", (error, results) => {
+//   //   if (error) {
+//   //     throw error;
+//   //   }
+//   //   res.status(200).json(results.rows);
+//   // });
+// };
 
 // const getBlogsById = async (req, res) => {
 //   const id = req.params.blogAndNewsId;
@@ -204,5 +228,6 @@ const getBlogs = async (req, res) => {
 //const postLogout = async (req, res) => {};
 
 module.exports = {
-  getBlogs,
+  postsPost,
+  getPosts,
 };

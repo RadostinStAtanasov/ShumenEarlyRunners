@@ -226,7 +226,7 @@ const getPosts = async (req, res) => {
 // };
 
 //const postLogout = async (req, res) => {};
-
+//test
 module.exports = {
   postsPost,
   getPosts,

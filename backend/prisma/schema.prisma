@@ -20,6 +20,8 @@ model Post {
   createAt  DateTime  @default(now())
 }
 
+@@map("Post")
+
 model Blogs {
   id              Int     @id @default(autoincrement())
   title           String

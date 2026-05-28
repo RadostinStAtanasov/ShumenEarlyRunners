@@ -21,6 +21,15 @@ app.get("/", (req, res) => {
   res.json({ info: "Node.js, Express, and Postgres API!!!" });
 });
 
+app.get("/test", async (req, res) => {
+  const result = await prisma.$queryRawUnsafe(`
+    SELECT table_name FROM information_schema.tables
+    WHERE table_schema = 'public'
+  `);
+
+  res.json(result);
+});
+
 //app.use("/images", express.static("images"));
 
 // app.post("/posts", async (req, res) => {

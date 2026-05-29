@@ -12,6 +12,8 @@ model Post {
   title    String
   content  String?
   createAt DateTime @default(now())
+
+  @@map("Post")
 }
 
 model Blogs {
@@ -22,12 +24,16 @@ model Blogs {
   postedby       String
   blogornews     String
   infoblogornews String
+
+  @@map("Blogs")
 }
 
 model Gallery {
   id       Int      @id @default(autoincrement())
   database String[]
   slides   String[]
+
+  @@map("Gallery")
 }
 
 model Events {
@@ -44,12 +50,16 @@ model Events {
   recommendedequipment String
   mandatoryequipment   String
   contacts             String
+
+  @@map("Events")
 }
 
 model Results {
   id             Int    @id @default(autoincrement())
   urlimage       String
   urllinkresults String
+
+  @@map("Results")
 }
 
 model Contact {
@@ -58,4 +68,6 @@ model Contact {
   lastname String
   topic    String
   message  String
+
+  @@map("Contact")
 }

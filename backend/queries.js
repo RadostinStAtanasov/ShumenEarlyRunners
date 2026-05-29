@@ -30,6 +30,7 @@ const adapter = new PrismaPg({
 const prisma = new PrismaClient({ adapter });
 
 console.log(DATABASE_URL);
+console.log(prisma.$queryRaw(`SELECT * FROM "Post" LIMIT 1`));
 
 const postsPost = async (req, res) => {
   const { title, content } = req.body;

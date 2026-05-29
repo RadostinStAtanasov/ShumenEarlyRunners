@@ -58,6 +58,7 @@ model Results {
   id             Int    @id @default(autoincrement())
   urlimage       String
   urllinkresults String
+  time           String
 
   @@map("Results")
 }

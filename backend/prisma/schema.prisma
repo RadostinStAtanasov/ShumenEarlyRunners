@@ -13,7 +13,7 @@ model Post {
   content  String?
   createAt DateTime @default(now())
 
-  @@map("post")
+  @@map("Post")
 }
 
 model Blogs {

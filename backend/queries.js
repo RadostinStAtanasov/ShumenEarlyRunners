@@ -30,7 +30,6 @@ const adapter = new PrismaPg({
 const prisma = new PrismaClient({ adapter });
 
 console.log(DATABASE_URL);
-console.log(prisma.$queryRaw(`SELECT * FROM "Post" LIMIT 1`));
 
 const postsPost = async (req, res) => {
   const { title, content } = req.body;
@@ -54,21 +53,14 @@ const getPosts = async (req, res) => {
   }
 };
 
-// const getBlogs = async (req, res) => {
-//   try {
-//     const blogs = await prisma.blogs.findMany();
-//     res.status(200).json(blogs);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve blogs" });
-//   }
-
-//   // pool.query("SELECT * FROM blogs", (error, results) => {
-//   //   if (error) {
-//   //     throw error;
-//   //   }
-//   //   res.status(200).json(results.rows);
-//   // });
-// };
+const getBlogs = async (req, res) => {
+  try {
+    const blogs = await prisma.blogs.findMany();
+    res.status(200).json(blogs);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve blogs" });
+  }
+};
 
 // const getBlogsById = async (req, res) => {
 //   const id = req.params.blogAndNewsId;
@@ -231,4 +223,5 @@ const getPosts = async (req, res) => {
 module.exports = {
   postsPost,
   getPosts,
+  getBlogs,
 };

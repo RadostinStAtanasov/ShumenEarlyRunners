@@ -62,52 +62,59 @@ const getBlogs = async (req, res) => {
   }
 };
 
-// const getBlogsById = async (req, res) => {
-//   const id = req.params.blogAndNewsId;
-//   pool.query("SELECT * FROM blogs WHERE id = $1", [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows[0]);
-//   });
-// };
+const getBlogsById = async (req, res) => {
+  const id = req.params.blogAndNewsId;
 
-// const getTestImages = async (req, res) => {
-//   pool.query("SELECT * FROM Gallery", (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+  try {
+    const getblog = await prisma.blogs.findUnique({
+      where: { id: id },
+    });
+    res.status(200).json(getblog);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve blog by ID" });
+  }
+};
 
-// const getEvents = async (req, res) => {
-//   pool.query("SELECT * FROM events", (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+const getImages = async (req, res) => {
+  try {
+    const gallery = await prisma.gallery.findMany();
+    req.status(200).json(gallery);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve gallery" });
+  }
+};
 
-// const getResults = async (req, res) => {
-//   pool.query("SELECT * FROM results", (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+const getEvents = async (req, res) => {
+  try {
+    const events = await prisma.events.findMany();
+    res.status(200).json(events);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve events" });
+  }
+};
 
-// const getEventById = async (req, res) => {
-//   const id = req.params.eventsId;
-//   pool.query("SELECT * FROM events WHERE id = $1", [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+const getResults = async (req, res) => {
+  try {
+    const results = await prisma.results.findMany();
+    res.status(200).json(results);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve results" });
+  }
+};
+
+const getEventById = async (req, res) => {
+  const id = req.params.eventsId;
+
+  try {
+    const event = await prisma.events.findUnique({
+      where: { id: id },
+    });
+
+    res.status(200).json(event);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve event" });
+  }
+};
 
 // const postContactUs = async (req, res) => {
 //   const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
@@ -124,23 +131,23 @@ const getBlogs = async (req, res) => {
 //   );
 // };
 
-// const getSignup = async (req, res) => {
-//   pool.query("SELECT * FROM users", (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+const getSignup = async (req, res) => {
+  try {
+    const signups = await prisma.findMany();
+    res.status(200).json(signups);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve signups" });
+  }
+};
 
-// const getLogin = async (req, res) => {
-//   pool.query("SELECT * FROM users", (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     res.status(200).json(results.rows);
-//   });
-// };
+const getLogin = async (req, res) => {
+  try {
+    const getlogins = await prisma.findMany();
+    res.status(200).json(getlogins);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve logins" });
+  }
+};
 
 // const postLogin = async (req, res) => {
 //   const { email, password } = req.body;
@@ -224,4 +231,9 @@ module.exports = {
   postsPost,
   getPosts,
   getBlogs,
+  getLogin,
+  getSignup,
+  getResults,
+  getEvents,
+  getImages,
 };

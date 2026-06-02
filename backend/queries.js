@@ -116,20 +116,34 @@ const getEventById = async (req, res) => {
   }
 };
 
-// const postContactUs = async (req, res) => {
-//   const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
+const postContactUs = async (req, res) => {
+  const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
 
-//   pool.query(
-//     "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
-//     [inputName, inputLastName, inputTopic, inputMessage],
-//     (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       res.status(201).send(`Message is added from contact form`);
-//     },
-//   );
-// };
+  try {
+    const contact = await prisma.contact.create({
+      data: {
+        name: inputName,
+        lastname: inputLastName,
+        topic: inputTopic,
+        message: inputMessage,
+      },
+    });
+    res.status(200);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to add contact" });
+  }
+
+  //   pool.query(
+  //     "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+  //     [inputName, inputLastName, inputTopic, inputMessage],
+  //     (error, results) => {
+  //       if (error) {
+  //         throw error;
+  //       }
+  //       res.status(201).send(`Message is added from contact form`);
+  //     },
+  //   );
+};
 
 const getSignup = async (req, res) => {
   try {
@@ -149,84 +163,89 @@ const getLogin = async (req, res) => {
   }
 };
 
-// const postLogin = async (req, res) => {
-//   const { email, password } = req.body;
+const postLogin = async (req, res) => {
+  const { email, password } = req.body;
 
-//   let errors = {};
+  let errors = {};
 
-//   try {
-//     const result = await pool.query("SELECT * FROM users WHERE email = $1", [
-//       email,
-//     ]);
+  try {
+    const result = await prisma.users.findUnique({
+      where: { email: email },
+    });
+    if (!user) {
+      errors.user = "Invalid credentials.";
+      //return res.status(400).json({ error: "Invalid credentials" });
+    }
 
-//     const user = result.rows[0];
-//     if (!user) {
-//       errors.user = "Invalid credentials.";
-//       //return res.status(400).json({ error: "Invalid credentials" });
-//     }
+    const valid = await compare(password, user.password);
 
-//     const valid = await compare(password, user.password);
+    if (!valid) {
+      errors.password = "Invalid credentials.";
+      //return res.status(400).json({ error: "Invalid credentials" });
+    }
 
-//     if (!valid) {
-//       errors.password = "Invalid credentials.";
-//       //return res.status(400).json({ error: "Invalid credentials" });
-//     }
+    if (Object.keys(errors).length > 0) {
+      return res
+        .status(422)
+        .json({ message: "User login fail duo to validation errors.", errors });
+    }
 
-//     if (Object.keys(errors).length > 0) {
-//       return res
-//         .status(422)
-//         .json({ message: "User login fail duo to validation errors.", errors });
-//     }
+    const token = jwt.sign({ email }, "supersecret", {
+      expiresIn: "1h",
+    });
 
-//     const token = jwt.sign({ email }, "supersecret", {
-//       expiresIn: "1h",
-//     });
+    res.json({ message: "Login successful", token: token }); //da probvam tokena
+    //res.json({ message: "Login successful", token });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error cant post login" });
+  }
+};
 
-//     res.json({ message: "Login successful", token: token }); //da probvam tokena
+const postSignup = async (req, res) => {
+  try {
+    const { email, password /*confirmPassword need to make*/ } = req.body;
 
-//     //res.json({ message: "Login successful", token });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ error: "Server error" });
-//   }
-// };
+    let errors = {};
 
-// const postSignup = async (req, res) => {
-//   try {
-//     const { email, password /*confirmPassword need to make*/ } = req.body;
+    const existing = await prisma.users.findUnique({
+      where: { email: email },
+    });
 
-//     let errors = {};
+    if (existing.rows.length > 0) {
+      errors.user = "User already exist";
+    }
 
-//     const existing = await pool.query("SELECT * FROM users WHERE email = $1", [
-//       email,
-//     ]);
+    if (Object.keys(errors).length > 0) {
+      return res.status(422).json({
+        message: "User signup fail duo to validation errors.",
+        errors,
+      });
+    }
 
-//     if (existing.rows.length > 0) {
-//       errors.user = "User already exist";
-//     }
+    const hashedPw = await hash(password, 12);
 
-//     if (Object.keys(errors).length > 0) {
-//       return res.status(422).json({
-//         message: "User signup fail duo to validation errors.",
-//         errors,
-//       });
-//     }
+    const result = await prisma.users.create({
+      data: {
+        email: email,
+        password: hashedPw,
+      },
+    });
 
-//     const hashedPw = await hash(password, 12);
+    //     const result = await pool.query(
+    //       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
+    //       [email, hashedPw],
+    //     );
 
-//     const result = await pool.query(
-//       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
-//       [email, hashedPw],
-//     );
-//     res.json({ message: "User created", user: result.rows[0] });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ error: "Server error" });
-//   }
-// };
+    res.json({ message: "User created", user: result.rows[0] });
+  } catch (error) {
+    //     console.log(error);
+    res.status(500).json({ error: "Server error cant signup duo to errors" });
+  }
+};
 
 //const postLogout = async (req, res) => {};
-//test
+
 module.exports = {
   postsPost,
   getPosts,
@@ -236,4 +255,9 @@ module.exports = {
   getResults,
   getEvents,
   getImages,
+  getEventById,
+  getBlogsById,
+
+  postLogin,
+  postSignup,
 };

@@ -7,16 +7,14 @@ datasource db {
   provider = "postgresql"
 }
 
-model Post {
+model post {
   id       Int      @id @default(autoincrement())
   title    String
   content  String?
   createAt DateTime @default(now())
-
-  @@map("Post")
 }
 
-model Blogs {
+model blogs {
   id             Int      @id @default(autoincrement())
   title          String
   images         String[]
@@ -24,19 +22,15 @@ model Blogs {
   postedby       String
   blogornews     String
   infoblogornews String
-
-  @@map("Blogs")
 }
 
-model Gallery {
+model gallery {
   id       Int      @id @default(autoincrement())
   database String[]
   slides   String[]
-
-  @@map("Gallery")
 }
 
-model Events {
+model events {
   id                   Int    @id @default(autoincrement())
   urlimage             String
   title                String
@@ -50,25 +44,25 @@ model Events {
   recommendedequipment String
   mandatoryequipment   String
   contacts             String
-
-  @@map("Events")
 }
 
-model Results {
+model results {
   id             Int    @id @default(autoincrement())
   urlimage       String
   urllinkresults String
   time           String
-
-  @@map("Results")
 }
 
-model Contact {
+model contact {
   id       Int    @id @default(autoincrement())
   name     String
   lastname String
   topic    String
   message  String
+}
 
-  @@map("Contact")
+model users {
+  id        Int     @id @default(autoincrement())
+  email     String
+  password  String
 }

@@ -63,7 +63,8 @@ const getBlogs = async (req, res) => {
 };
 
 const getBlogsById = async (req, res) => {
-  const id = req.params.blogAndNewsId;
+  const id = Number(req.params.blogAndNewsId);
+  console.log(typeof id, id);
 
   try {
     const getblog = await prisma.blogs.findUniqueOrThrow({

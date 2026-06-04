@@ -25,6 +25,8 @@ export default function GeneratedClickedBlogOrNews() {
   }, []);
 
   console.log(blogAndNews);
+  console.log(id);
+
   let images = blogAndNews.images;
 
   return (

@@ -66,7 +66,7 @@ const getBlogsById = async (req, res) => {
   const id = req.params.blogAndNewsId;
 
   try {
-    const getblog = await prisma.blogs.findUnique({
+    const getblog = await prisma.blogs.findUniqueOrThrow({
       where: { id: id },
     });
     res.status(200).json(getblog);

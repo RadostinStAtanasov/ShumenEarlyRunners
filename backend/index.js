@@ -56,7 +56,7 @@ app.get("/results", db.getResults);
 app.get("/signup", db.getSignup);
 app.get("/login", db.getLogin);
 
-// app.post("/contact", db.postContactUs);
+//app.post("/contact", db.postContactUs);
 // app.post("/signup", db.postSignup);
 // app.post("/login", db.postLogin);
 // app.post("/logout", db.postLogout);

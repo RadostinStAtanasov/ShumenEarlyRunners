@@ -232,14 +232,9 @@ const postSignup = async (req, res) => {
       },
     });
 
-    //     const result = await pool.query(
-    //       "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
-    //       [email, hashedPw],
-    //     );
-
     res.json({ message: "User created", user: result.rows[0] });
   } catch (error) {
-    //     console.log(error);
+    //console.log(error);
     res.status(500).json({ error: "Server error cant signup duo to errors" });
   }
 };

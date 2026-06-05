@@ -65,4 +65,4 @@ model users {
   id        Int     @id @default(autoincrement())
   email     String
   password  String
-}
+} 

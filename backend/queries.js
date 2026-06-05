@@ -104,7 +104,7 @@ const getResults = async (req, res) => {
     const results = await prisma.results.findMany();
     res.status(200).json(results);
   } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve results" });
+    res.status(500).json(error);
   }
 };
 

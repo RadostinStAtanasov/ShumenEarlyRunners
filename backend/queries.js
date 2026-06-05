@@ -79,8 +79,13 @@ const getBlogsById = async (req, res) => {
 const getImages = async (req, res) => {
   try {
     const gallery = await prisma.gallery.findMany();
+
+    console.log("DATA", gallery);
+
     res.status(200).json(gallery);
   } catch (error) {
+    console.log("ERROR:", error);
+
     res.status(500).json({ error: "Failed to retrieve gallery" });
   }
 };

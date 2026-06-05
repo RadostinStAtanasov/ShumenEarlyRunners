@@ -86,7 +86,7 @@ const getImages = async (req, res) => {
   } catch (error) {
     console.log("ERROR:", error);
 
-    res.status(500).json({ error: "Failed to retrieve gallery" });
+    res.status(500).json(error);
   }
 };
 

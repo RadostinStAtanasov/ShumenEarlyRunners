@@ -46,17 +46,17 @@ app.get("/", (req, res) => {
 
 app.post("/post", db.postsPost);
 app.get("/post", db.getPosts);
-
 app.get("/blogs", db.getBlogs);
 app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-app.get("/gallery", db.getImages);
 app.get("/events", db.getEvents);
 app.get("/events/:eventsId", db.getEventById);
+
 app.get("/results", db.getResults);
+app.get("/gallery", db.getImages);
 app.get("/signup", db.getSignup);
 app.get("/login", db.getLogin);
 
-//app.post("/contact", db.postContactUs);
+// app.post("/contact", db.postContactUs);
 // app.post("/signup", db.postSignup);
 // app.post("/login", db.postLogin);
 // app.post("/logout", db.postLogout);
@@ -67,4 +67,3 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-//

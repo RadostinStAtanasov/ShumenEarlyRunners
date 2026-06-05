@@ -101,8 +101,8 @@ const getEvents = async (req, res) => {
 
 const getResults = async (req, res) => {
   try {
-    const results = await prisma.results.findMany();
-    res.status(200).json(results);
+    const result = await prisma.results.findMany();
+    res.status(200).json(result);
   } catch (error) {
     res.status(500).json(error);
   }

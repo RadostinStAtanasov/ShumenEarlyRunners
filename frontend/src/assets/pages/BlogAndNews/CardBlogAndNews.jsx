@@ -21,7 +21,7 @@ export default function CardBlogAndNewsPage({ info }) {
         </div>
         <div className={classes.headerCard}></div>
         <div className={classes.containerParagraph}>
-          <p className={classes.cutTheText}>{info.infoblogandnews}</p>
+          <p className={classes.cutTheText}>{info.infoblogornews}</p>
         </div>
         <div className={classes.containerLikesAndLeaveAComment}>
           <a href="">

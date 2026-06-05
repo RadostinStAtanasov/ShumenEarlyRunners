@@ -27,7 +27,7 @@ model blogs {
 model gallery {
   id       Int      @id @default(autoincrement())
   database String[]
-  slides   String[]
+  slides   Json
 }
 
 model events {

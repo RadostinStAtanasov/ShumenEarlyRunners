@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
 
           <div className={classes.containerLatestStoryHomePage}>
-            {/* <CardSlider /> */}
+            <CardSlider />
           </div>
         </section>
         <section className={classes.secondContainerWhyToRun}>

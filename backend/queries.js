@@ -86,7 +86,11 @@ const getImages = async (req, res) => {
   } catch (error) {
     console.log("ERROR:", error);
 
-    res.status(500).json(error);
+    res.status(500).json({
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+    });
   }
 };
 

@@ -12,18 +12,19 @@ export default function GenerateEventPage() {
     fetch("https://api.earlyrunners.bg/events/" + id)
       .then((response) => response.json())
       .then((response) => {
-        setEvent(response[0]);
+        setEvent(response);
       })
       .catch((error) => console.log(error));
   }, []);
 
   console.log(event);
+  console.log(id);
 
   return (
     <>
       <div className={classes.mainContainer}>
         <div className={classes.textContainer}>
-          <h1 className={classes.titleEvent}>{event.title}</h1>
+          <h1 className={classes.title}>{event.title}</h1>
           <br />
           <article className={classes.description}>{event.description}</article>
           <br />

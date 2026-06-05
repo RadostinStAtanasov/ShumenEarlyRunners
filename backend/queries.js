@@ -109,13 +109,12 @@ const getResults = async (req, res) => {
 };
 
 const getEventById = async (req, res) => {
-  const id = req.params.eventsId;
+  const id = Number(req.params.eventsId);
 
   try {
-    const event = await prisma.events.findUnique({
+    const event = await prisma.events.findUniqueOrThrow({
       where: { id: id },
     });
-
     res.status(200).json(event);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve event" });

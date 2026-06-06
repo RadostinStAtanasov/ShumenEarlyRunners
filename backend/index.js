@@ -53,8 +53,8 @@ app.get("/events/:eventsId", db.getEventById);
 
 app.get("/results", db.getResults);
 app.get("/gallery", db.getImages);
-app.get("/signup", db.getSignup);
-app.get("/login", db.getLogin);
+//app.get("/signup", db.getSignup);
+//app.get("/login", db.getLogin);
 
 // app.post("/contact", db.postContactUs);
 // app.post("/signup", db.postSignup);

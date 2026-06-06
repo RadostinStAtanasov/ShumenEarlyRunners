@@ -1,35 +1,9 @@
-//const Pool = require("pg").Pool;
-//const { json } = require("body-parser");
-//const { isValidEmail, isValidText, isValidPassword } = require("./validation");
-// const { hash, compare } = require("bcryptjs");
-// const { message, redirect } = require("statuses");
-// const jwt = require("jsonwebtoken");
-
-// const dotenv = require("dotenv");
-
-// dotenv.config();
-
-// const pool = new Pool({
-//   user: "earlyrunners_me",
-//   host: "93.94.140.42",
-//   database: "earlyrunners_api",
-//   password: "}B9#9(ijq;y.JLK-",
-//   port: 5432,
-// });
-
-//require("dotenv").config();
-
-const DATABASE_URL =
-  "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";
-
+require("dotenv").config();
 const { PrismaClient } = require("@prisma/client");
-const { PrismaPg } = require("@prisma/adapter-pg");
-const adapter = new PrismaPg({
-  connectionString: DATABASE_URL,
-});
-const prisma = new PrismaClient({ adapter });
 
-console.log(DATABASE_URL);
+const prisma = new PrismaClient();
+
+//console.log(Object.keys(prisma));
 
 const postsPost = async (req, res) => {
   const { title, content } = req.body;
@@ -79,13 +53,8 @@ const getBlogsById = async (req, res) => {
 const getImages = async (req, res) => {
   try {
     const gallery = await prisma.gallery.findMany();
-
-    console.log("DATA", gallery);
-
     res.status(200).json(gallery);
   } catch (error) {
-    console.log("ERROR:", error);
-
     res.status(500).json({
       message: error.message,
       code: error.code,
@@ -106,6 +75,8 @@ const getEvents = async (req, res) => {
 const getResults = async (req, res) => {
   try {
     const result = await prisma.results.findMany();
+    console.log("PRISMA INSTANCE:", prisma);
+    console.log("RESULTS:", prisma?.results);
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json({
@@ -141,7 +112,7 @@ const postContactUs = async (req, res) => {
         message: inputMessage,
       },
     });
-    res.status(200);
+    res.status(200).json(contact);
   } catch (error) {
     res.status(500).json({ error: "Failed to add contact" });
   }
@@ -158,99 +129,99 @@ const postContactUs = async (req, res) => {
   //   );
 };
 
-const getSignup = async (req, res) => {
-  try {
-    const signups = await prisma.findMany();
-    res.status(200).json(signups);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve signups" });
-  }
-};
+// const getSignup = async (req, res) => {
+//   try {
+//     const signups = await prisma.users.findMany();
+//     res.status(200).json(signups);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve signups" });
+//   }
+// };
 
-const getLogin = async (req, res) => {
-  try {
-    const getlogins = await prisma.findMany();
-    res.status(200).json(getlogins);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve logins" });
-  }
-};
+// const getLogin = async (req, res) => {
+//   try {
+//     const getlogins = await prisma.users.findMany();
+//     res.status(200).json(getlogins);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve logins" });
+//   }
+// };
 
-const postLogin = async (req, res) => {
-  const { email, password } = req.body;
+// const postLogin = async (req, res) => {
+//   const { email, password } = req.body;
 
-  let errors = {};
+//   let errors = {};
 
-  try {
-    const result = await prisma.users.findUnique({
-      where: { email: email },
-    });
-    if (!user) {
-      errors.user = "Invalid credentials.";
-      //return res.status(400).json({ error: "Invalid credentials" });
-    }
+//   try {
+//     const result = await prisma.users.findUnique({
+//       where: { email: email },
+//     });
+//     if (!user) {
+//       errors.user = "Invalid credentials.";
+//       //return res.status(400).json({ error: "Invalid credentials" });
+//     }
 
-    const valid = await compare(password, user.password);
+//     const valid = await compare(password, user.password);
 
-    if (!valid) {
-      errors.password = "Invalid credentials.";
-      //return res.status(400).json({ error: "Invalid credentials" });
-    }
+//     if (!valid) {
+//       errors.password = "Invalid credentials.";
+//       //return res.status(400).json({ error: "Invalid credentials" });
+//     }
 
-    if (Object.keys(errors).length > 0) {
-      return res
-        .status(422)
-        .json({ message: "User login fail duo to validation errors.", errors });
-    }
+//     if (Object.keys(errors).length > 0) {
+//       return res
+//         .status(422)
+//         .json({ message: "User login fail duo to validation errors.", errors });
+//     }
 
-    const token = jwt.sign({ email }, "supersecret", {
-      expiresIn: "1h",
-    });
+//     const token = jwt.sign({ email }, "supersecret", {
+//       expiresIn: "1h",
+//     });
 
-    res.json({ message: "Login successful", token: token }); //da probvam tokena
-    //res.json({ message: "Login successful", token });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: "Server error cant post login" });
-  }
-};
+//     res.json({ message: "Login successful", token: token }); //da probvam tokena
+//     //res.json({ message: "Login successful", token });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: "Server error cant post login" });
+//   }
+// };
 
-const postSignup = async (req, res) => {
-  try {
-    const { email, password /*confirmPassword need to make*/ } = req.body;
+// const postSignup = async (req, res) => {
+// try {
+//   const { email, password /*confirmPassword need to make*/ } = req.body;
 
-    let errors = {};
+//   let errors = {};
 
-    const existing = await prisma.users.findUnique({
-      where: { email: email },
-    });
+//   const existing = await prisma.users.findUnique({
+//     where: { email: email },
+//   });
 
-    if (existing.rows.length > 0) {
-      errors.user = "User already exist";
-    }
+//   if (existing.rows.length > 0) {
+//     errors.user = "User already exist";
+//   }
 
-    if (Object.keys(errors).length > 0) {
-      return res.status(422).json({
-        message: "User signup fail duo to validation errors.",
-        errors,
-      });
-    }
+//   if (Object.keys(errors).length > 0) {
+//     return res.status(422).json({
+//       message: "User signup fail duo to validation errors.",
+//       errors,
+//     });
+//   }
 
-    const hashedPw = await hash(password, 12);
+//   const hashedPw = await hash(password, 12);
 
-    const result = await prisma.users.create({
-      data: {
-        email: email,
-        password: hashedPw,
-      },
-    });
+//   const result = await prisma.users.create({
+//     data: {
+//       email: email,
+//       password: hashedPw,
+//     },
+//   });
 
-    res.json({ message: "User created", user: result.rows[0] });
-  } catch (error) {
-    //console.log(error);
-    res.status(500).json({ error: "Server error cant signup duo to errors" });
-  }
-};
+//   res.json({ message: "User created", user: result.rows[0] });
+// } catch (error) {
+//   //console.log(error);
+//   res.status(500).json({ error: "Server error cant signup duo to errors" });
+// }
+//};
 
 //const postLogout = async (req, res) => {};
 
@@ -258,14 +229,14 @@ module.exports = {
   postsPost,
   getPosts,
   getBlogs,
-  getLogin,
-  getSignup,
+  // getLogin,
+  // getSignup,
   getResults,
   getEvents,
   getImages,
   getEventById,
   getBlogsById,
 
-  postLogin,
-  postSignup,
+  // postLogin,
+  // postSignup,
 };

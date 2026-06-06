@@ -1,10 +1,10 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model post {
@@ -62,7 +62,7 @@ model contact {
 }
 
 model users {
-  id        Int     @id @default(autoincrement())
-  email     String
-  password  String
-} 
+  id       Int    @id @default(autoincrement())
+  email    String
+  password String
+}

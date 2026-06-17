@@ -46,13 +46,13 @@ app.get("/", (req, res) => {
 
 app.post("/post", db.postsPost);
 app.get("/post", db.getPosts);
-app.get("/blogs", db.getBlogs);
-app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-app.get("/events", db.getEvents);
-app.get("/events/:eventsId", db.getEventById);
+// app.get("/blogs", db.getBlogs);
+// app.get("/blogs/:blogAndNewsId", db.getBlogsById);
+// app.get("/events", db.getEvents);
+// app.get("/events/:eventsId", db.getEventById);
 
-app.get("/results", db.getResults);
-app.get("/gallery", db.getImages);
+// app.get("/results", db.getResults);
+// app.get("/gallery", db.getImages);
 //app.get("/signup", db.getSignup);
 //app.get("/login", db.getLogin);
 

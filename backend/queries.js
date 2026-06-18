@@ -1,14 +1,14 @@
 const { PrismaClient } = require("@prisma/client");
-const { PrismaPg } = require("@prisma/adapter-pg");
+//const { PrismaPg } = require("@prisma/adapter-pg");
 require("dotenv").config();
 
-const DATABASE_URL =
-  "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";
+// const DATABASE_URL =
+//   "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";
 
-const adapter = new PrismaPg({
-  connectionString: DATABASE_URL,
-});
-const prisma = new PrismaClient({ adapter });
+// const adapter = new PrismaPg({
+//   connectionString: DATABASE_URL,
+// });
+const prisma = new PrismaClient();
 
 //console.log(Object.keys(prisma));
 

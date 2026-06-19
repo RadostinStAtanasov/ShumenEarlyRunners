@@ -35,7 +35,11 @@ const getPosts = async (req, res) => {
     const posts = await prisma.post.findMany();
     res.json(posts);
   } catch (error) {
-    res.status(500).json({ error });
+    console.error("GET POSTS ERROR:", error);
+    res.status(500).json({
+      message: error.message,
+      code: error.code,
+    });
   }
 };
 

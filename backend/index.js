@@ -73,8 +73,17 @@ app.get("/post", db.getPosts);
 
 //app.use(checkAuth); routes under this need token authentication
 
-const PORT = 3000;
+// const PORT = 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app;

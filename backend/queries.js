@@ -10,6 +10,11 @@ const adapter = new PrismaPg({
 });
 const prisma = new PrismaClient({ adapter });
 
+prisma
+  .$connect()
+  .then(() => console.log("✅ DB CONNECTED"))
+  .catch((e) => console.error("❌ DB ERROR:", e));
+
 //console.log(Object.keys(prisma));
 
 const postsPost = async (req, res) => {

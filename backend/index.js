@@ -1,9 +1,19 @@
+console.log("APP START...");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 //const router = require("./routers/router");
 const app = express();
-const db = require("./queries");
+//const db = require("./queries");
+
+let db;
+
+try {
+  db = require("./queries");
+  console.log("QUERIES LOADED");
+} catch (e) {
+  console.error("ERROR LOADING QUERIES:", e);
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

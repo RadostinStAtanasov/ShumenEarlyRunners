@@ -1,6 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 //const { PrismaPg } = require("@prisma/adapter-pg");
-require("dotenv").config();
+//require("dotenv").config();
 
 // const DATABASE_URL =
 //   "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";

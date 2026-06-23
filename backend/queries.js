@@ -1,19 +1,19 @@
-const { PrismaClient } = require("@prisma/client");
-const { PrismaPg } = require("@prisma/adapter-pg");
-require("dotenv").config();
+// const { PrismaClient } = require("@prisma/client");
+// const { PrismaPg } = require("@prisma/adapter-pg");
+// require("dotenv").config();
 
 // const DATABASE_URL =
 //   "postgresql://earlyrunners_me:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api";
 
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL,
-});
-const prisma = new PrismaClient({ adapter });
+// const adapter = new PrismaPg({
+//   connectionString: process.env.DATABASE_URL,
+// });
+// const prisma = new PrismaClient({ adapter });
 
-prisma
-  .$connect()
-  .then(() => console.log("✅ DB CONNECTED"))
-  .catch((e) => console.error("❌ DB ERROR:", e));
+// prisma
+//   .$connect()
+//   .then(() => console.log("✅ DB CONNECTED"))
+//   .catch((e) => console.error("❌ DB ERROR:", e));
 
 //console.log(Object.keys(prisma));
 
@@ -241,17 +241,17 @@ prisma
 
 //const postLogout = async (req, res) => {};
 
-module.exports = {
-  // postsPost,
-  // getPosts,
-  // getBlogs,
-  // getLogin,
-  // getSignup,
-  // getResults,
-  // getEvents,
-  // getImages,
-  // getEventById,
-  // getBlogsById,
-  // postLogin,
-  // postSignup,
-};
+//module.exports = {
+// postsPost,
+// getPosts,
+// getBlogs,
+// getLogin,
+// getSignup,
+// getResults,
+// getEvents,
+// getImages,
+// getEventById,
+// getBlogsById,
+// postLogin,
+// postSignup,
+//};

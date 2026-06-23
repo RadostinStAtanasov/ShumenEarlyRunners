@@ -54,8 +54,8 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.post("/post", db.postsPost);
-app.get("/post", db.getPosts);
+// app.post("/post", db.postsPost);
+// app.get("/post", db.getPosts);
 // app.get("/blogs", db.getBlogs);
 // app.get("/blogs/:blogAndNewsId", db.getBlogsById);
 // app.get("/events", db.getEvents);

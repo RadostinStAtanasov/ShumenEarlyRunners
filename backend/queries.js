@@ -17,31 +17,31 @@ prisma
 
 //console.log(Object.keys(prisma));
 
-const postsPost = async (req, res) => {
-  const { title, content } = req.body;
+// const postsPost = async (req, res) => {
+//   const { title, content } = req.body;
 
-  try {
-    const post = await prisma.post.create({
-      data: { title, content },
-    });
-    res.status(201).json(post);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-};
+//   try {
+//     const post = await prisma.post.create({
+//       data: { title, content },
+//     });
+//     res.status(201).json(post);
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
 
-const getPosts = async (req, res) => {
-  try {
-    const posts = await prisma.post.findMany();
-    res.json(posts);
-  } catch (error) {
-    console.error("GET POSTS ERROR:", error);
-    res.status(500).json({
-      message: error.message,
-      code: error.code,
-    });
-  }
-};
+// const getPosts = async (req, res) => {
+//   try {
+//     const posts = await prisma.post.findMany();
+//     res.json(posts);
+//   } catch (error) {
+//     console.error("GET POSTS ERROR:", error);
+//     res.status(500).json({
+//       message: error.message,
+//       code: error.code,
+//     });
+//   }
+// };
 
 // const getBlogs = async (req, res) => {
 //   try {
@@ -242,9 +242,9 @@ const getPosts = async (req, res) => {
 //const postLogout = async (req, res) => {};
 
 module.exports = {
-  postsPost,
-  getPosts,
-  //getBlogs,
+  // postsPost,
+  // getPosts,
+  // getBlogs,
   // getLogin,
   // getSignup,
   // getResults,
@@ -252,7 +252,6 @@ module.exports = {
   // getImages,
   // getEventById,
   // getBlogsById,
-
   // postLogin,
   // postSignup,
 };

@@ -2,8 +2,8 @@ const { PrismaClient } = require("@prisma/client");
 const { PrismaPg } = require("@prisma/adapter-pg");
 require("dotenv").config();
 
-const DATABASE_URL =
-    "postgresql://earlyrunners_me:}B9#9(ijq;y.JLK-@93.94.140.42:5432/earlyrunners_api";
+//DATABASE_URL = "postgresql://earlyrunners:}B9#9(ijq;y.JLK-@93.94.140.42:5432/earlyrunners_api";
+DATABASE_URL = "postgresql://earlyrunners:%7DB9%239%28ijq%3By.JLK-@93.94.140.42:5432/earlyrunners_api"
 
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
@@ -50,7 +50,11 @@ const getBlogs = async (req, res) => {
     const blogs = await prisma.blogs.findMany();
     res.status(200).json(blogs);
   } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve blogs" });
+    res.status(500).json({ 
+      message: error.message,
+      code: error.code,
+      meta: error.meta}
+    );
   }
 };
 
@@ -92,9 +96,7 @@ const getEvents = async (req, res) => {
 
 const getResults = async (req, res) => {
   try {
-    const result = await prisma.results.findMany();
-    console.log("PRISMA INSTANCE:", prisma);
-    console.log("RESULTS:", prisma?.results);
+    const result = await prisma.results.findMany() || {};
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json({

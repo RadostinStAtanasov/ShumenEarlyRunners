@@ -2,16 +2,17 @@ console.log("APP START...");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+//const router = require("./routers/router");
 const app = express();
 let db = require("./queries");
 
 const wrap = (fn) => (req, res, next) => {
   try {
-    return Promise.resolve(fn(req, res, next)).catch(next)
-  } catch (error) {
-    next(error)
+    return Promise.resolve(fn(req, res, next)).catch(next);
+  } catch (err) {
+    next(err);
   }
-}
+};
 
 try {
   db = require("./queries");
@@ -59,7 +60,7 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.post("/post", wrap(db.postsPost));
+app.post("/post", wrap(db.postsPost()));
 app.get("/post", wrap(db.getPosts));
 app.get("/blogs", wrap(db.getBlogs));
 app.get("/blogs/:blogAndNewsId", wrap(db.getBlogsById));

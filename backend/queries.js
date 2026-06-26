@@ -18,8 +18,8 @@ prisma
 console.log(Object.keys(prisma));
 
 const postsPost = async (req, res) => {
-    if(req == null || res == null) return; 
-
+    if(req == null || res == null) return;
+    
   const { title, content } = req.body || {};
 
   try {
@@ -134,6 +134,7 @@ const postContactUs = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to add contact" });
   }
+
   //   pool.query(
   //     "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
   //     [inputName, inputLastName, inputTopic, inputMessage],

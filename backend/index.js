@@ -39,27 +39,6 @@ app.get("/", (req, res) => {
 
 //app.use("/images", express.static("images"));
 
-// app.post("/posts", async (req, res) => {
-//   const { title, content } = req.body;
-//   try {
-//     const post = await prisma.post.create({
-//       data: { title, content },
-//     });
-//     res.status(201).json(post);
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// });
-
-// app.get("/posts", async (req, res) => {
-//   try {
-//     const posts = await prisma.post.findMany();
-//     res.status(200).json(posts);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve posts" });
-//   }
-// });
-
 app.post("/post", wrap(db.postsPost()));
 app.get("/post", wrap(db.getPosts));
 app.get("/blogs", wrap(db.getBlogs));

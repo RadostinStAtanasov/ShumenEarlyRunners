@@ -57,7 +57,7 @@ const getBlogs = async (req, res) => {
       code: error.code,
       meta: error.meta}
     );
-  }
+  } 
 };
 
 const getBlogsById = async (req, res) => {

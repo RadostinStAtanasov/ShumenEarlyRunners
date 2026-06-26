@@ -18,7 +18,9 @@ prisma
 console.log(Object.keys(prisma));
 
 const postsPost = async (req, res) => {
-  const { title, content } = req.body;
+    if(req == null || res == null) return; 
+
+  const { title, content } = req.body || {};
 
   try {
     const post = await prisma.post.create({
@@ -117,7 +119,7 @@ const getEventById = async (req, res) => {
 };
 
 const postContactUs = async (req, res) => {
-  const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
+  const { inputName, inputLastName, inputTopic, inputMessage } = req.body || {};
 
   try {
     const contact = await prisma.contact.create({
@@ -132,7 +134,6 @@ const postContactUs = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to add contact" });
   }
-
   //   pool.query(
   //     "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
   //     [inputName, inputLastName, inputTopic, inputMessage],
@@ -164,7 +165,7 @@ const getLogin = async (req, res) => {
 };
 
 const postLogin = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = req.body || {};
 
   let errors = {};
 
@@ -204,7 +205,7 @@ const postLogin = async (req, res) => {
 
 const postSignup = async (req, res) => {
   try {
-    const { email, password /*confirmPassword need to make*/ } = req.body;
+    const { email, password /*confirmPassword need to make*/ } = req.body || {};
 
     let errors = {};
 

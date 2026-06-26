@@ -2,11 +2,16 @@ console.log("APP START...");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-//const router = require("./routers/router");
 const app = express();
-//const db = require("./queries");
+let db = require("./queries");
 
-let db;
+const wrap = (fn) => (req, res, next) => {
+  try {
+    return Promise.resolve(fn(req, res, next)).catch(next)
+  } catch (error) {
+    next(error)
+  }
+}
 
 try {
   db = require("./queries");
@@ -54,22 +59,22 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.post("/post", db.postsPost);
-app.get("/post", db.getPosts);
-app.get("/blogs", db.getBlogs);
-app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-app.get("/events", db.getEvents);
-app.get("/events/:eventsId", db.getEventById);
+app.post("/post", wrap(db.postsPost));
+app.get("/post", wrap(db.getPosts));
+app.get("/blogs", wrap(db.getBlogs));
+app.get("/blogs/:blogAndNewsId", wrap(db.getBlogsById));
+app.get("/events", wrap(db.getEvents));
+app.get("/events/:eventsId", wrap(db.getEventById));
 
-app.get("/results", db.getResults);
-app.get("/gallery", db.getImages);
-app.get("/signup", db.getSignup);
-app.get("/login", db.getLogin);
+app.get("/results", wrap(db.getResults));
+app.get("/gallery", wrap(db.getImages));
+app.get("/signup", wrap(db.getSignup));
+app.get("/login", wrap(db.getLogin));
 
-app.post("/contact", db.postContactUs);
-app.post("/signup", db.postSignup);
-app.post("/login", db.postLogin);
-app.post("/logout", db.postLogout);
+app.post("/contact", wrap(db.postContactUs));
+app.post("/signup", wrap(db.postSignup));
+app.post("/login", wrap(db.postLogin));
+app.post("/logout", wrap(db.postLogout));
 
 //app.use(checkAuth); routes under this need token authentication
 

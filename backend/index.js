@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 
 //app.use("/images", express.static("images"));
 
-app.post("/post", wrap(db.postsPost()));
+app.post("/post", wrap(db.postsPost));
 app.get("/post", wrap(db.getPosts));
 app.get("/blogs", wrap(db.getBlogs));
 app.get("/blogs/:blogAndNewsId", wrap(db.getBlogsById));

@@ -13,7 +13,7 @@ prisma
   .catch((e) => console.error("❌ DB ERROR:", e));
 
 console.log(process.env.DATABASE_URL);
-
+ 
 
 const postsPost = async (req, res) => {
     if(req == null || res == null) return;

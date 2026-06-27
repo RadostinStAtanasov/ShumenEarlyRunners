@@ -12,8 +12,6 @@ prisma
   .then(() => console.log("✅ DB CONNECTED"))
   .catch((e) => console.error("❌ DB ERROR:", e));
 
-//console.log(Object.keys(prisma));
-
 console.log(process.env.DATABASE_URL);
 
 

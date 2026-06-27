@@ -10,7 +10,7 @@ const prisma = new PrismaClient({ adapter });
 prisma
   .$connect()
   .then(() => console.log("✅ DB CONNECTED"))
-  .catch((e) => console.error("❌ DB ERROR:", e));
+  .catch((e) => console.error("❌ DB ERROR:", e)); 
 
 console.log(process.env.DATABASE_URL);
  

@@ -45,7 +45,7 @@ const getPosts = async (req, res) => {
 
 const getBlogs = async (req, res) => {
   try {
-    const blogs = await prisma.blogs.findMany();
+    const blogs = await prisma.blogs.findMany({select: {id: true}});
     res.status(200).json(blogs);
   } catch (error) {
     res.status(500).json({ 

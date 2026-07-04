@@ -25,7 +25,6 @@ export default function GeneratedClickedBlogOrNews() {
   }, []);
 
   console.log(blogAndNews);
-  console.log(id);
 
   let images = blogAndNews.images;
 
@@ -39,7 +38,9 @@ export default function GeneratedClickedBlogOrNews() {
         <p className={classes.textPar}>{blogAndNews.infoblogornews}</p>
         <div className={classes.imageCenter}>
           {images?.map((image, index) => (
-            <img className={classes.imgBlogAndNews} src={image} alt="dali" />
+            <li key={index}>
+              <img className={classes.imgBlogAndNews} src={image} alt="dali" />
+            </li>
           ))}
         </div>
       </div>

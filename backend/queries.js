@@ -12,7 +12,7 @@ const pool = new Pool({
 const getBlogs = async (req, res) => {
   try {
     const blogs = await pool.query("SELECT * FROM blogs");
-    res.json(blogs)
+    res.json(blogs.rows)
   } catch (error) {
     res.status(500).json({ 
       message: error.message,
@@ -25,7 +25,7 @@ const getBlogs = async (req, res) => {
 const getPosts = async (req, res) => {
   try {
     const posts = await pool.query("SELECT * FROM post");
-    res.json(posts);
+    res.json(posts.rows);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -37,7 +37,7 @@ const getPosts = async (req, res) => {
 const getImages = async (req, res) => {
   try {
     const gallery = await pool.query("SELECT * FROM gallery");
-    res.status(200).json(gallery);
+    res.status(200).json(gallery.rows);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -50,7 +50,7 @@ const getImages = async (req, res) => {
 const getEvents = async (req, res) => {
   try {
     const events = await pool.query("SELECT * FROM events");
-    res.status(200).json(events);
+    res.status(200).json(events.rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve events" });
   }
@@ -59,7 +59,7 @@ const getEvents = async (req, res) => {
 const getResults = async (req, res) => {
   try {
     const results = await pool.query("SELECT * FROM results");
-    res.status(200).json(results);
+    res.status(200).json(results.rows);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -74,18 +74,18 @@ const getBlogsById = async (req, res) => {
 
   try {
     const getblog = await pool.query("SELECT * FROM blogs WHERE id = $1", [id])
-    res.status(200).json(getblog);
+    res.status(200).json(getblog.rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve blog by ID" });
   }
 };
 
 const getEventById = async (req, res) => {
-  const id = req.params.eventsId;
+  const id = Number(req.params.eventsId);
 
   try {
     const event = await pool.query("SELECT * FROM events WHERE id = $1", [id])
-    res.status(200).json(event);
+    res.status(200).json(event.rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve event" });
   }
@@ -111,14 +111,14 @@ const postContactUs = async (req, res) => {
   }    
 };
 
-const getSignup = async (req, res) => {
-  try {
-    const signups = await prisma.users.findMany();
-    res.status(200).json(signups);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve signups" });
-  }
-};
+// const getSignup = async (req, res) => {
+//   try {
+//     const signups = await prisma.users.findMany();
+//     res.status(200).json(signups);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve signups" });
+//   }
+// };
 
 // const postsPost = async (req, res) => {
 //     if(req == null || res == null) return;

@@ -9,7 +9,7 @@ export default function Images(props) {
 
   return (
     <div className={classes.imagesContainer}>
-      {data.map((slide, index) => (
+      {data?.map((slide, index) => (
         <div
           onClick={() => handleClickImage(index)}
           key={index}

@@ -30,13 +30,14 @@ app.get("/events", db.getEvents);
 app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
 app.get("/gallery", db.getImages);
-app.post("/contact", db.postContactUs);
+app.get("/post", db.getPosts);
 
 
+
+//app.get("/login", db.getLogin);
+//app.get("/signup", db.getSignup);
+// app.post("/contact", db.postContactUs);
 // app.post("/post", db.postsPost);
-// app.get("/post", db.getPosts);
-// app.get("/signup", db.getSignup);
-// app.get("/login", db.getLogin);
 // app.post("/signup", db.postSignup);
 // app.post("/login", db.postLogin);
 // app.post("/logout", db.postLogout);

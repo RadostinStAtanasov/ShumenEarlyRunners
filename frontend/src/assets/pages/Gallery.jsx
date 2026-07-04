@@ -21,13 +21,14 @@ export default function App() {
     fetch("https://api.earlyrunners.bg/gallery")
       .then((response) => response.json())
       .then((response) => {
-        setImagesData(response[0].data);
+        setImagesData(response[0].database);
         setImagesSlides(response[0].slides);
       })
       .catch((error) => console.log(error));
   }, []);
 
   console.log(imagesData);
+
 
   return (
     <>

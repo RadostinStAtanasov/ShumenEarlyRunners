@@ -91,34 +91,24 @@ const getEventById = async (req, res) => {
   }
 };
 
-const postContactUs = async (req, res) => {
-  const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
-
-  try {
-    const contacts = await pool.query(
-      "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
-      [inputName, inputLastName, inputTopic, inputMessage],
-      (error, results) => {
-        if (error) {
-          throw error;
-        }
-        res.status(201).send(`Message is added from contact form`);
-      },
-    );
-    res.status(200).json(contacts);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to add contact" });
-  }    
-};
-
 // const getSignup = async (req, res) => {
 //   try {
-//     const signups = await prisma.users.findMany();
+//     const signups = await pool.query("");
 //     res.status(200).json(signups);
 //   } catch (error) {
 //     res.status(500).json({ error: "Failed to retrieve signups" });
 //   }
 // };
+
+// const getLogin = async (req, res) => {
+//   try {
+//     const getlogins = await prisma.users.findMany();
+//     res.status(200).json(getlogins);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to retrieve logins" });
+//   }
+// };
+
 
 // const postsPost = async (req, res) => {
 //     if(req == null || res == null) return;
@@ -132,15 +122,6 @@ const postContactUs = async (req, res) => {
 //     res.status(201).json(post);
 //   } catch (error) {
 //     res.status(500).json(error);
-//   }
-// };
-
-// const getLogin = async (req, res) => {
-//   try {
-//     const getlogins = await prisma.users.findMany();
-//     res.status(200).json(getlogins);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve logins" });
 //   }
 // };
 
@@ -220,6 +201,26 @@ const postContactUs = async (req, res) => {
 //   }
 // };
 
+// const postContactUs = async (req, res) => {
+//   const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
+
+//   try {
+//     const contacts = await pool.query(
+//       "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+//       [inputName, inputLastName, inputTopic, inputMessage],
+//       (error, results) => {
+//         if (error) {
+//           throw error;
+//         }
+//         res.status(201).send(`Message is added from contact form`);
+//       },
+//     );
+//     res.status(200).json(contacts);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to add contact" });
+//   }    
+// };
+
 // const postLogout = async (req, res) => {};
 
 module.exports = {
@@ -230,11 +231,11 @@ module.exports = {
   getEventById,
   getBlogsById,
   getPosts,
-  postContactUs,
 
-  // postsPost,
   // getLogin,
   // getSignup,
+  // postContactUs,
+  // postsPost,
   // postLogin,
   // postSignup,
 };

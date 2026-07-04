@@ -92,26 +92,34 @@ const getEventById = async (req, res) => {
   }
 };
 
-// const postContactUs = async (req, res) => {
-//   const { inputName, inputLastName, inputTopic, inputMessage } = req.body || {};
+const postContactUs = async (req, res) => {
+  const { inputName, inputLastName, inputTopic, inputMessage } = req.body;
 
-//   try {
-//     const contacts = await pool.query(
-//       "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
-//       [inputName, inputLastName, inputTopic, inputMessage],
-//       (error, results) => {
-//         if (error) {
-//           throw error;
-//         }
-//         res.status(201).send(`Message is added from contact form`);
-//       },
-//     );
+  try {
+    const contacts = await pool.query(
+      "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+      [inputName, inputLastName, inputTopic, inputMessage],
+      (error, results) => {
+        if (error) {
+          throw error;
+        }
+        res.status(201).send(`Message is added from contact form`);
+      },
+    );
+    res.status(200).json(contacts);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to add contact" });
+  }    
+};
 
-//     res.status(200).json(contacts);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to add contact" });
-//   }    
-// };
+const getSignup = async (req, res) => {
+  try {
+    const signups = await prisma.users.findMany();
+    res.status(200).json(signups);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve signups" });
+  }
+};
 
 // const postsPost = async (req, res) => {
 //     if(req == null || res == null) return;
@@ -125,20 +133,6 @@ const getEventById = async (req, res) => {
 //     res.status(201).json(post);
 //   } catch (error) {
 //     res.status(500).json(error);
-//   }
-// };
-
-
-
-
-
-
-// const getSignup = async (req, res) => {
-//   try {
-//     const signups = await prisma.users.findMany();
-//     res.status(200).json(signups);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve signups" });
 //   }
 // };
 
@@ -231,15 +225,17 @@ const getEventById = async (req, res) => {
 
 module.exports = {
   getBlogs,
+  getResults,
+  getEvents,
+  getImages,
+  getEventById,
+  getBlogsById,
+  getPosts,
+  postContactUs,
+
   // postsPost,
-  // getPosts,
   // getLogin,
   // getSignup,
-  // getResults,
-  // getEvents,
-  // getImages,
-  // getEventById,
-  // getBlogsById,
   // postLogin,
   // postSignup,
 };

@@ -25,18 +25,18 @@ app.get("/", (req, res) => {
 //app.use("/images", express.static("images"));
 
 app.get("/blogs", db.getBlogs);
+app.get("/blogs/:blogAndNewsId", db.getBlogsById);
+app.get("/events", db.getEvents);
+app.get("/events/:eventsId", db.getEventById);
+app.get("/results", db.getResults);
+app.get("/gallery", db.getImages);
+app.post("/contact", db.postContactUs);
+
+
 // app.post("/post", db.postsPost);
 // app.get("/post", db.getPosts);
-// app.get("/blogs/:blogAndNewsId", db.getBlogsById);
-// app.get("/events", wrap(db.getEvents));
-// app.get("/events/:eventsId", db.getEventById);
-
-// app.get("/results", db.getResults);
-// app.get("/gallery", db.getImages);
 // app.get("/signup", db.getSignup);
 // app.get("/login", db.getLogin);
-
-// app.post("/contact", db.postContactUs);
 // app.post("/signup", db.postSignup);
 // app.post("/login", db.postLogin);
 // app.post("/logout", db.postLogout);

@@ -71,10 +71,9 @@ const getResults = async (req, res) => {
 
 const getBlogsById = async (req, res) => {
   const id = Number(req.params.blogAndNewsId);
-  console.log(typeof id, id);
 
   try {
-    const getblog = await pool.query("SELECT * FROM blogs WHERE id = ?", [id])
+    const getblog = await pool.query("SELECT * FROM blogs WHERE id = $1", [id])
     res.status(200).json(getblog);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve blog by ID" });
@@ -85,7 +84,7 @@ const getEventById = async (req, res) => {
   const id = req.params.eventsId;
 
   try {
-    const event = await pool.query("SELECT * FROM events WHERE id = ?", [id])
+    const event = await pool.query("SELECT * FROM events WHERE id = $1", [id])
     res.status(200).json(event);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve event" });

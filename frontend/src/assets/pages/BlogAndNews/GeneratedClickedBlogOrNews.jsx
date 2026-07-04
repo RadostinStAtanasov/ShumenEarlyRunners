@@ -13,13 +13,13 @@ export default function GeneratedClickedBlogOrNews() {
 
   useEffect(() => {
     fetch("https://api.earlyrunners.bg/blogs/" + id, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
+      // headers: {
+      //   Authorization: "Bearer " + token,
+      // },
     })
       .then((response) => response.json())
       .then((response) => {
-        setBlogOrNews(response);
+        setBlogOrNews(response[0]);
       })
       .catch((error) => console.log(error));
   }, []);

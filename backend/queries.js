@@ -22,6 +22,97 @@ const getBlogs = async (req, res) => {
   } 
 };
 
+const getPosts = async (req, res) => {
+  try {
+    const posts = await pool.query("SELECT * FROM post");
+    res.json(posts);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+      code: error.code,
+    });
+  }
+};
+
+const getImages = async (req, res) => {
+  try {
+    const gallery = await pool.query("SELECT * FROM gallery");
+    res.status(200).json(gallery);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+    });
+  }
+};
+
+const getEvents = async (req, res) => {
+  try {
+    const events = await pool.query("SELECT * FROM events");
+    res.status(200).json(events);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve events" });
+  }
+};
+
+const getResults = async (req, res) => {
+  try {
+    const results = await pool.query("SELECT * FROM results");
+    res.status(200).json(results);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+      code: error.code,
+      meta: error.meta,
+    });
+  }
+};
+
+const getBlogsById = async (req, res) => {
+  const id = Number(req.params.blogAndNewsId);
+  console.log(typeof id, id);
+
+  try {
+    const getblog = await pool.query("SELECT * FROM blogs WHERE id = ?", [id])
+    res.status(200).json(getblog);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve blog by ID" });
+  }
+};
+
+const getEventById = async (req, res) => {
+  const id = req.params.eventsId;
+
+  try {
+    const event = await pool.query("SELECT * FROM events WHERE id = ?", [id])
+    res.status(200).json(event);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve event" });
+  }
+};
+
+// const postContactUs = async (req, res) => {
+//   const { inputName, inputLastName, inputTopic, inputMessage } = req.body || {};
+
+//   try {
+//     const contacts = await pool.query(
+//       "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
+//       [inputName, inputLastName, inputTopic, inputMessage],
+//       (error, results) => {
+//         if (error) {
+//           throw error;
+//         }
+//         res.status(201).send(`Message is added from contact form`);
+//       },
+//     );
+
+//     res.status(200).json(contacts);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to add contact" });
+//   }    
+// };
+
 // const postsPost = async (req, res) => {
 //     if(req == null || res == null) return;
     
@@ -37,109 +128,10 @@ const getBlogs = async (req, res) => {
 //   }
 // };
 
-// const getPosts = async (req, res) => {
-//   try {
-//     const posts = await prisma.post.findMany();
-//     res.json(posts);
-//   } catch (error) {
-//     console.error("GET POSTS ERROR:", error);
-//     res.status(500).json({
-//       message: error.message,
-//       code: error.code,
-//     });
-//   }
-// };
 
-// const getBlogsById = async (req, res) => {
-//   const id = Number(req.params.blogAndNewsId);
-//   console.log(typeof id, id);
 
-//   try {
-//     const getblog = await prisma.blogs.findUniqueOrThrow({
-//       where: { id: id },
-//     });
-//     res.status(200).json(getblog);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve blog by ID" });
-//   }
-// };
 
-// const getImages = async (req, res) => {
-//   try {
-//     const gallery = await prisma.gallery.findMany();
-//     res.status(200).json(gallery);
-//   } catch (error) {
-//     res.status(500).json({
-//       message: error.message,
-//       code: error.code,
-//       meta: error.meta,
-//     });
-//   }
-// };
 
-// const getEvents = async (req, res) => {
-//   try {
-//     const events = await prisma.events.findMany();
-//     res.status(200).json(events);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve events" });
-//   }
-// };
-
-// const getResults = async (req, res) => {
-//   try {
-//     const result = await prisma.results.findMany() || {};
-//     res.status(200).json(result);
-//   } catch (error) {
-//     res.status(500).json({
-//       message: error.message,
-//       code: error.code,
-//       meta: error.meta,
-//     });
-//   }
-// };
-
-// const getEventById = async (req, res) => {
-//   const id = Number(req.params.eventsId);
-
-//   try {
-//     const event = await prisma.events.findUniqueOrThrow({
-//       where: { id: id },
-//     });
-//     res.status(200).json(event);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to retrieve event" });
-//   }
-// };
-
-// const postContactUs = async (req, res) => {
-//   const { inputName, inputLastName, inputTopic, inputMessage } = req.body || {};
-
-//   try {
-//     const contact = await prisma.contact.create({
-//       data: {
-//         name: inputName,
-//         lastname: inputLastName,
-//         topic: inputTopic,
-//         message: inputMessage,
-//       },
-//     });
-//     res.status(200).json(contact);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to add contact" });
-//   }
-
-//   //   pool.query(
-//   //     "INSERT INTO contact (name, lastname, topic, message) VALUES ($1, $2, $3, $4)",
-//   //     [inputName, inputLastName, inputTopic, inputMessage],
-//   //     (error, results) => {
-//   //       if (error) {
-//   //         throw error;
-//   //       }
-//   //       res.status(201).send(`Message is added from contact form`);
-//   //     },
-//   //   );
-// };
 
 // const getSignup = async (req, res) => {
 //   try {

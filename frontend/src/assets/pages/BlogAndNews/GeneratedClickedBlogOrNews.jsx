@@ -9,7 +9,7 @@ export default function GeneratedClickedBlogOrNews() {
   const params = useParams();
   const id = params.blogAndNewsId;
 
-  const token = getAuthToken();
+  //const token = getAuthToken();
 
   useEffect(() => {
     fetch("https://api.earlyrunners.bg/blogs/" + id, {
@@ -25,6 +25,7 @@ export default function GeneratedClickedBlogOrNews() {
   }, []);
 
   console.log(blogAndNews);
+  console.log("asd");
 
   let images = blogAndNews.images;
 

@@ -1,13 +1,22 @@
-console.log("APP START...");
 const express = require("express");
+const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-//const router = require("./routers/router");
-const app = express();
+const path = require("path");
 let db = require("./queries");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.get("/", (req, res) => {
+  res.send("WORKING ✅");
+});
 
 const corsOption = {
   origin: true,
@@ -16,7 +25,6 @@ const corsOption = {
 };
 
 app.use(cors(corsOption));
-//app.use("/", router);
 
 app.get("/", (req, res) => {
   res.json({ info: "Node.js, Express, and Postgres API!!!" });
@@ -31,8 +39,6 @@ app.get("/events/:eventsId", db.getEventById);
 app.get("/results", db.getResults);
 app.get("/gallery", db.getImages);
 app.get("/post", db.getPosts);
-
-
 
 //app.get("/login", db.getLogin);
 //app.get("/signup", db.getSignup);

@@ -12,14 +12,14 @@ const pool = new Pool({
 const getBlogs = async (req, res) => {
   try {
     const blogs = await pool.query("SELECT * FROM blogs");
-    res.json(blogs.rows)
+    res.json(blogs.rows);
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       message: error.message,
       code: error.code,
-      meta: error.meta}
-    );
-  } 
+      meta: error.meta,
+    });
+  }
 };
 
 const getPosts = async (req, res) => {
@@ -59,7 +59,7 @@ const getEvents = async (req, res) => {
 const getResults = async (req, res) => {
   try {
     const results = await pool.query("SELECT * FROM results");
-    res.status(200).json(results.rows);
+    res.status(200).json(results);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -73,8 +73,8 @@ const getBlogsById = async (req, res) => {
   const id = Number(req.params.blogAndNewsId);
 
   try {
-    const getblog = await pool.query("SELECT * FROM blogs WHERE id = $1", [id])
-    res.status(200).json(getblog.rows);
+    const getblog = await pool.query("SELECT * FROM blogs WHERE id = $1", [id]);
+    res.status(200).json(getblog);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve blog by ID" });
   }
@@ -84,8 +84,8 @@ const getEventById = async (req, res) => {
   const id = Number(req.params.eventsId);
 
   try {
-    const event = await pool.query("SELECT * FROM events WHERE id = $1", [id])
-    res.status(200).json(event.rows);
+    const event = await pool.query("SELECT * FROM events WHERE id = $1", [id]);
+    res.status(200).json(event);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve event" });
   }
@@ -109,10 +109,9 @@ const getEventById = async (req, res) => {
 //   }
 // };
 
-
 // const postsPost = async (req, res) => {
 //     if(req == null || res == null) return;
-    
+
 //   const { title, content } = req.body || {};
 
 //   try {
@@ -218,7 +217,7 @@ const getEventById = async (req, res) => {
 //     res.status(200).json(contacts);
 //   } catch (error) {
 //     res.status(500).json({ error: "Failed to add contact" });
-//   }    
+//   }
 // };
 
 // const postLogout = async (req, res) => {};

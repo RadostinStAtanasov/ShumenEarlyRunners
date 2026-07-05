@@ -59,7 +59,7 @@ const getEvents = async (req, res) => {
 const getResults = async (req, res) => {
   try {
     const results = await pool.query("SELECT * FROM results");
-    res.status(200).json(results);
+    res.status(200).json(results.rows);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -74,7 +74,7 @@ const getBlogsById = async (req, res) => {
 
   try {
     const getblog = await pool.query("SELECT * FROM blogs WHERE id = $1", [id]);
-    res.status(200).json(getblog);
+    res.status(200).json(getblog.rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve blog by ID" });
   }
@@ -85,7 +85,7 @@ const getEventById = async (req, res) => {
 
   try {
     const event = await pool.query("SELECT * FROM events WHERE id = $1", [id]);
-    res.status(200).json(event);
+    res.status(200).json(event.rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve event" });
   }

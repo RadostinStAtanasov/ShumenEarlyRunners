@@ -10,10 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "build")));
 
-app.get("/", (req, res) => {
-  res.send("WORKING ✅");
-});
-
 const corsOption = {
   origin: true,
   credentials: true,

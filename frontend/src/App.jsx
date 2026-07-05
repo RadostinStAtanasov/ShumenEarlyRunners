@@ -32,8 +32,8 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/начало", element: <HomePage /> },
       { path: "/контакти", element: <ContactPage /> },
-      { path: "/галерия", element: <GalleryPage /> },
-      { path: "/Блог енд Нюз", element: <NewsPage /> },
+      { path: "/", element: <GalleryPage /> },
+      { path: "/blogandnews", element: <NewsPage /> },
       {
         path: "/Блог енд Нюз/:blogAndNewsId",
         element: <GenerateClickedEvent />,

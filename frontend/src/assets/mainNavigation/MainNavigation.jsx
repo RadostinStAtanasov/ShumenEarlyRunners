@@ -31,7 +31,7 @@ function ResponsiveAppBar() {
 
   let pages = [
     "Начало",
-    "Блог енд Нюз",
+    "blogandnews",
     "За Нас",
     "Галерия",
     "Събития",
@@ -40,7 +40,6 @@ function ResponsiveAppBar() {
     "Джаджи",
     "Партньори",
     "Контакти",
-    registerLink,
   ];
 
   const handleOpenNavMenu = (event) => {

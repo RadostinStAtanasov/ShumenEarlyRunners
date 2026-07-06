@@ -8,7 +8,7 @@ export default function CardBlogAndNewsPage({ info }) {
     <>
       <div className={classes.mainCardContainer}>
         <div className={classes.imageContainer}>
-          <a href={`/Блог енд Нюз/${info.id}`}>
+          <a href={`/blogandnews/${info.id}`}>
             <img
               className={classes.imagesBlogAndNews}
               src={info.images[0]}

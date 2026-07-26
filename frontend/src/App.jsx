@@ -26,14 +26,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     //errorElement: <ErrorPage />, da se napravi
-    id: "root",
-    loader: tokenLoader,
+    // id: "root",
+    // loader: tokenLoader,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/начало", element: <HomePage /> },
       { path: "/контакти", element: <ContactPage /> },
-      { path: "/", element: <GalleryPage /> },
-      { path: "/blogandnews", element: <NewsPage /> },
+      { path: "/Галери", element: <GalleryPage /> },
+      { path: "/Блог енд Нюз", element: <NewsPage /> },
       {
         path: "/Блог енд Нюз/:blogAndNewsId",
         element: <GenerateClickedEvent />,
